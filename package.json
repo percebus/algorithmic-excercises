@@ -1,0 +1,36 @@
+{
+  "name": "algorithmic-excercises",
+  "version": "0.1.0",
+  "description": "Algorithmic excercises",
+  "main": "index.js",
+  "scripts": {
+    "python:pip:install": "python -m pip install pipx",
+    "python:pipx:install": "python -m pipx install poetry",
+    "python:black": "python -m black .",
+    "python:pylint": "python -m pylint problems",
+    "setup": "npm run python:pip:install && npm run python:pipx:install",
+    "prettier": "prettier .",
+    "prettier:check": "npm run prettier -- --check",
+    "prettier:write": "npm run prettier -- --write",
+    "lint": "npm run python:pylint && npm run prettier:check",
+    "style": "npm run prettier:write && npm run python:black",
+    "poststyle": "npm run lint",
+    "pretest": "npm run style",
+    "test": "python -m pytest",
+    "poetry:shell": "poetry shell",
+    "poetry:install": "poetry install --no-root",
+    "dev": "npm run poetry:shell",
+    "postinstall": "npm run poetry:install"
+  },
+  "keywords": [
+    "algo",
+    "algorithm",
+    "python",
+    "test"
+  ],
+  "author": "JCystems",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "devDependencies": {
+    "prettier": "^3.1.0"
+  }
+}

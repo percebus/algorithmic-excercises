@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "algorithmic-excercises"
+version = "0.1.0"
+description = ""
+authors = ["percebus"]
+license = "SEE LICENSE IN LICENSE.md"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.11.0"
+pylint = "^3.0.2"
+pytest-bdd = "^7.0.1"
+pytest = "^7.4.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
