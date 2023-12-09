@@ -3,7 +3,7 @@ from pytest_bdd import scenarios, given, when, then, step, parsers
 from ..utils import assert_is_in_range
 from problems.leetcode.easy.longest_common_prefix import longest_common_prefix
 
-scenarios("leetcode__longest_common_prefix.feature")
+scenarios("leetcode/Longest Common Prefix.feature")
 
 # TODO: Enhance
 # consists of only lower-case English letters.
