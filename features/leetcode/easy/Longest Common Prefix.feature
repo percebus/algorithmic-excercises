@@ -10,8 +10,8 @@ Feature: Longest Common Prefix
 
   Scenario Outline: Common prefix
     Given some <words>
-    When I call longest_common_prefix
-    Then find the longest common <prefix> string amongst an array of strings
+    When longest_common_prefix is invoked
+    Then it finds the longest common <prefix> string amongst an array of strings
 
   Examples:
   |       words          | prefix |
@@ -25,8 +25,8 @@ Feature: Longest Common Prefix
 
   Scenario Outline: No common prefix
     Given some <words>
-    When I call longest_common_prefix
-    Then returns an empty string
+    When longest_common_prefix is invoked
+    Then it returns an empty string
 
   Examples:
   |         words          |
@@ -38,7 +38,7 @@ Feature: Longest Common Prefix
 
   Scenario Outline: Out of bounds
     Given an array of invalid <strings>
-    Then handle the exception for the invalid chars
+    Then it handles the exception for the invalid chars
 
   Examples:
   |   strings  |

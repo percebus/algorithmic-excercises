@@ -56,7 +56,7 @@ def given_some_words(words):
     return {"strings": words}
 
 
-@when("I call longest_common_prefix")
+@when("longest_common_prefix is invoked")
 def when__longest_common_prefix(context):
     strings = context["strings"]
     context["result"] = longest_common_prefix(strings)
@@ -64,7 +64,7 @@ def when__longest_common_prefix(context):
 
 @then(
     parsers.parse(
-        "find the longest common {prefix} string amongst an array of strings"
+        "it finds the longest common {prefix} string amongst an array of strings"
     ),
     converters={"prefix": clean},
 )
@@ -85,14 +85,14 @@ def given_invalid_strings(strings):
         return {"strings": strings, "exception": exception}
 
 
-@then("returns an empty string")
+@then("it returns an empty string")
 def then_is_empty(context):
     prefix = ""
     result = context["result"]
     assert result == prefix, f"expected:'{prefix}', got:'{result}'"
 
 
-@then("handle the exception for the invalid chars")
+@then("it handles the exception for the invalid chars")
 def then_handle_exception(context):
     oException = context["exception"]
     assert isinstance(oException, Exception), f"expected:Exception, got:{oException}"
