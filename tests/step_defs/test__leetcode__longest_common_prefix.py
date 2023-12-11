@@ -93,6 +93,6 @@ def then_is_empty(context):
 
 
 @then("handle the exception for the invalid chars")
-def then_handle_exception():
-    pass
-    # assert isinstance(world.exception, Exception), f"expected:Exception, got:{world.exception}"
+def then_handle_exception(context):
+    oException = context["exception"]
+    assert isinstance(oException, Exception), f"expected:Exception, got:{oException}"
