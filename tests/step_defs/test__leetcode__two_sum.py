@@ -16,11 +16,6 @@ validate = {
     "target": lambda target: assert_is_in_range(target, constraints["target"]),
 }
 
-# XXX
-# def parse_numbers(lines):
-#     first_line = lines.split("\n")[0]
-#     return [int(number) for number in first_line.split(", ")]
-
 
 @given(
     parsers.parse("an array of integer {numbers}"),
@@ -33,9 +28,8 @@ def given_array(numbers):
     map(validate["value"], numbers)
     return {"numbers": numbers}
 
-@given(
-    parsers.parse("an integer {target:d} number")
-)
+
+@given(parsers.parse("an integer {target:d} number"))
 def given_target(context, target):
     validate["target"](target)
     context["target"] = target
@@ -46,6 +40,7 @@ def when__two_sum(context):
     nums = context["numbers"]
     target = context["target"]
     context["result"] = two_sum(nums, target)
+
 
 @then(
     parsers.parse("it returns {indexes} of the {two_numbers}"),
