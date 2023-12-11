@@ -10,8 +10,8 @@ scenarios("leetcode/Longest Common Prefix.feature")
 valid_chars = list(string.ascii_lowercase) + [""]
 
 constraints = {
-    "words": {"min": 1, "max": 200},  # 1 <= strs.length <= 200
     "word": {"min": 0, "max": 200},  # 0 <= strs[i].length <= 200
+    "words": {"min": 1, "max": 200},  # 1 <= strs.length <= 200
 }
 
 
@@ -49,7 +49,7 @@ def parse(words):
 @given(
     parsers.parse("some {words}"),
     converters={"words": parse},
-    target_fixture="test_case",
+    target_fixture="context",
 )
 def given_some_words(words):
     validate["words"](words)
@@ -57,9 +57,9 @@ def given_some_words(words):
 
 
 @when("I call longest_common_prefix")
-def when__longest_common_prefix(test_case):
-    strings = test_case["strings"]
-    test_case["result"] = longest_common_prefix(strings)
+def when__longest_common_prefix(context):
+    strings = context["strings"]
+    context["result"] = longest_common_prefix(strings)
 
 
 @then(
@@ -68,15 +68,15 @@ def when__longest_common_prefix(test_case):
     ),
     converters={"prefix": clean},
 )
-def then_it_matches(test_case, prefix):
-    result = test_case["result"]
+def then_it_matches(context, prefix):
+    result = context["result"]
     assert result == prefix, f"expected:'{prefix}', got:{result}"
 
 
 @given(
     parsers.parse("an array of invalid {strings}"),
     converters={"strings": parse},
-    target_fixture="test_case",
+    target_fixture="context",
 )
 def given_invalid_strings(strings):
     try:
@@ -86,15 +86,13 @@ def given_invalid_strings(strings):
 
 
 @then("returns an empty string")
-def then_is_empty(test_case):
+def then_is_empty(context):
     prefix = ""
-    result = test_case["result"]
+    result = context["result"]
     assert result == prefix, f"expected:'{prefix}', got:'{result}'"
 
 
 @then("handle the exception for the invalid chars")
 def then_handle_exception(self):
     pass
-
-
-#   assert isinstance(world.exception, Exception), f"expected:Exception, got:{world.exception}"
+    # assert isinstance(world.exception, Exception), f"expected:Exception, got:{world.exception}"
