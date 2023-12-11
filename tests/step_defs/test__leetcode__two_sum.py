@@ -2,7 +2,7 @@ from ..utils import assert_is_in_range
 from pytest_bdd import scenarios, given, when, then, parsers
 from problems.leetcode.easy.two_sum import two_sum
 
-scenarios("leetcode/Two Sum.feature")
+scenarios("leetcode/easy/Two Sum.feature")
 
 constraints = {
     "value": {"min": -109, "max": 109},  # -109 <= nums[i] <= 109
