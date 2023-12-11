@@ -32,9 +32,8 @@ Feature: Two Sum
     And they add up to <target>
 
     Examples:
-      |   case |    numbers    | target | indexes  | two_numbers |
-      | 0-13   | range(14)     |     13 |  [0, 13] |   [0, 13]   |
-      | 1-13   | range(1,  14) |     13 |  [0, 11] |   [1, 12]   |
-      | 0-99   | range(100)    |     13 |  [0, 13] |   [0, 13]   |
-    # | 0-200  | range(201)    |     13 |  [0, 13] |   [0, 13]   | # Negative test: length.- outside constraints
-    # | 0-200  | range(201)    |     13 |  [0, 13] |   [0, 13]   | # Negative test: length.- outside constraints
+      |   case |   numbers    | target | indexes  | two_numbers |
+      | 0-13   | range(14)    |     13 |  [0, 13] |   [0, 13]   |
+      | 1-13   | range(1, 14) |     13 |  [0, 11] |   [1, 12]   |
+      | 0-99   | range(100)   |     13 |  [0, 13] |   [0, 13]   |
+    # | 0-200  | range(201)   |     13 |  [0, 13] |   [0, 13]   | # Negative test: length.- outside constraints
