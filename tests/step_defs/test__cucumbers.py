@@ -1,6 +1,6 @@
 from pytest_bdd import scenarios, given, when, then, parsers
 
-scenarios("cucumbers.feature")
+scenarios("Eat cucumbers.feature")
 
 
 @given(parsers.parse("there are {start:d} cucumbers"), target_fixture="cucumbers")
