@@ -39,7 +39,7 @@ validate = {"word": validate_word, "words": validate_words}
 
 
 def clean(word):
-    return word.replace("''", "").split("\n")[0]
+    return word.replace("''", "")
 
 
 def parse(words):
