@@ -18,30 +18,30 @@ def longest_common_prefix(words):
     return result
 
 
-def run(words, expected=None):
+def test(words, expected=None):
     result = longest_common_prefix(words)
     assert result == expected, f'expected:"{expected}", got:"{result}"'
     print("✅", end="")
 
 
-def run_all():
+def run():
     # Example1:
     #
     # * Input: strs = ["flower", "flow", "flight"]
     # * Output: "fl"
-    run(["flower", "flow", "flight"], expected="fl")
+    test(["flower", "flow", "flight"], expected="fl")
 
     # Example 2:
     #
     # * Input: strs = ["dog", "racecar", "car"]
     # * Output: ""
     # Explanation: There is no common prefix among the input strings.
-    run(["dog", "racecar", "car"], expected="")
+    test(["dog", "racecar", "car"], expected="")
 
-    run([""], expected="")
+    test([""], expected="")
 
     print("\n")
 
 
 if __name__ == "__main__":
-    run_all()
+    run()
