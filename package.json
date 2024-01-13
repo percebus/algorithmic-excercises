@@ -4,11 +4,11 @@
   "description": "Algorithmic excercises",
   "main": "index.js",
   "scripts": {
-    "python:pip:install": "python -m pip install pipx",
+    "python:pip:install:upgrade": "python -m pip install --upgrade --requirement requirements.upgrade.txt",
     "python:pipx:install": "python -m pipx install poetry",
     "python:black": "python -m black .",
     "python:pylint": "python -m pylint problems",
-    "setup": "npm run python:pip:install && npm run python:pipx:install",
+    "setup": "npm run python:pip:install:upgrade && npm run python:pipx:install",
     "prettier": "prettier .",
     "prettier:check": "npm run prettier -- --check",
     "prettier:write": "npm run prettier -- --write",
@@ -18,7 +18,7 @@
     "pretest": "npm run style",
     "test": "python -m pytest",
     "poetry:shell": "poetry shell",
-    "poetry:install": "poetry install --no-root",
+    "poetry:install": "poetry install",
     "dev": "npm run poetry:shell",
     "postinstall": "npm run poetry:install"
   },
