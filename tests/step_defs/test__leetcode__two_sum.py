@@ -4,7 +4,7 @@ from src.problems.leetcode.easy.two_sum import two_sum
 
 from ..utils import assert_is_in_range
 
-scenarios("leetcode/easy/Two Sum.feature")
+scenarios("problems/leetcode/easy/Two Sum.feature")
 
 constraints = {
     "value": {"min": -109, "max": 109},  # -109 <= nums[i] <= 109

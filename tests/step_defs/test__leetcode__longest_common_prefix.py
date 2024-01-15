@@ -6,7 +6,7 @@ from src.problems.leetcode.easy.longest_common_prefix import longest_common_pref
 
 from ..utils import assert_is_in_range
 
-scenarios("leetcode/easy/Longest Common Prefix.feature")
+scenarios("problems/leetcode/easy/Longest Common Prefix.feature")
 
 # TODO: Enhance
 # consists of only lower-case English letters.
