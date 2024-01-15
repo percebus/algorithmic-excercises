@@ -1,5 +1,6 @@
 import string
 
+from hamcrest import assert_that, equal_to, instance_of, is_
 from pytest_bdd import given, parsers, scenarios, then, when
 
 from src.problems.leetcode.easy.longest_common_prefix import longest_common_prefix
@@ -73,7 +74,7 @@ def when__longest_common_prefix(context):
 )
 def then_it_matches(context, prefix):
     result = context["result"]
-    assert result == prefix, f"expected:'{prefix}', got:{result}"
+    assert_that(result, equal_to(prefix))
 
 
 @given(
@@ -92,10 +93,10 @@ def given_invalid_strings(strings):
 def then_is_empty(context):
     prefix = ""
     result = context["result"]
-    assert result == prefix, f"expected:'{prefix}', got:'{result}'"
+    assert_that(result, equal_to(prefix))
 
 
 @then("it handles the exception for the invalid chars")
 def then_handle_exception(context):
     oException = context["exception"]
-    assert isinstance(oException, Exception), f"expected:Exception, got:{oException}"
+    assert_that(oException, is_(instance_of(Exception)))

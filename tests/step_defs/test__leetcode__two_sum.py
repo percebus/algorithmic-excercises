@@ -1,3 +1,4 @@
+from hamcrest import assert_that, equal_to
 from pytest_bdd import given, parsers, scenarios, then, when
 
 from src.problems.leetcode.easy.two_sum import two_sum
@@ -59,8 +60,8 @@ def then_returns_tuple_of_indexes(context, indexes, two_numbers):
     num2 = nums[idx2]
     context["number1"] = num1
     context["number2"] = num2
-    assert expected_num1 == num1, f"expected:{expected_num1}, got:{num1}"
-    assert expected_num2 == num2, f"expected:{expected_num2}, got:{num2}"
+    assert_that(expected_num1, equal_to(num1))
+    assert_that(expected_num2, equal_to(num2))
 
 
 @then(parsers.parse("they add up to {target:d}"))
@@ -68,4 +69,4 @@ def then_indexes_sum_target(context, target):
     num1 = context["number1"]
     num2 = context["number2"]
     result = num1 + num2
-    assert result == target, f"expected:{target}, got:{result}"
+    assert_that(result, equal_to(target))

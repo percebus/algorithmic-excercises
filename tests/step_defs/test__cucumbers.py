@@ -1,3 +1,4 @@
+from hamcrest import assert_that, equal_to
 from pytest_bdd import given, parsers, scenarios, then, when
 
 scenarios("Eat cucumbers.feature")
@@ -15,4 +16,4 @@ def eat_cucumbers(cucumbers, eat):
 
 @then(parsers.parse("I should have {left:d} cucumbers"))
 def should_have_left_cucumbers(cucumbers, left):
-    assert cucumbers["start"] - cucumbers["eat"] == left
+    assert_that(cucumbers["start"] - cucumbers["eat"], equal_to(left))
