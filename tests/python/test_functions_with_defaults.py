@@ -1,4 +1,4 @@
-from hamcrest import assert_that, contains, equal_to
+from hamcrest import assert_that, equal_to
 
 
 # Array only gets defined the first time
