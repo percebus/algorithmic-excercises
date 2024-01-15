@@ -8,6 +8,9 @@
 # and you may not use the same element twice.
 #
 # You can return the answer in any order.
+from hamcrest import assert_that, equal_to
+
+
 def two_sum(nums, target):
     for idx1, value1 in enumerate(nums):
         for idx2, value2 in enumerate(nums):
@@ -24,7 +27,7 @@ def two_sum(nums, target):
 
 def test(nums, target, expected=None):
     result = two_sum(nums, target)
-    assert result == expected
+    assert_that(result, equal_to(expected))
     print("✅", end="")
 
 

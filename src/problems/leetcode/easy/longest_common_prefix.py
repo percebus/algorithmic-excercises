@@ -3,6 +3,9 @@
 
 # Write a function to find the longest common prefix string amongst an array of strings.
 # If there is no common prefix, return an empty string "".
+from hamcrest import assert_that, equal_to
+
+
 def longest_common_prefix(words):
     first_word = words[0]
     chars = list(first_word)
@@ -20,7 +23,7 @@ def longest_common_prefix(words):
 
 def test(words, expected=None):
     result = longest_common_prefix(words)
-    assert result == expected, f'expected:"{expected}", got:"{result}"'
+    assert_that(result, equal_to(expected))
     print("✅", end="")
 
 
