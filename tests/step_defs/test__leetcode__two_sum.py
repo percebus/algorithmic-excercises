@@ -1,6 +1,6 @@
 from pytest_bdd import given, parsers, scenarios, then, when
 
-from problems.leetcode.easy.two_sum import two_sum
+from src.problems.leetcode.easy.two_sum import two_sum
 
 from ..utils import assert_is_in_range
 

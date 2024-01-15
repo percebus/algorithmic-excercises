@@ -2,7 +2,7 @@ import string
 
 from pytest_bdd import given, parsers, scenarios, then, when
 
-from problems.leetcode.easy.longest_common_prefix import longest_common_prefix
+from src.problems.leetcode.easy.longest_common_prefix import longest_common_prefix
 
 from ..utils import assert_is_in_range
 

@@ -8,7 +8,7 @@
     "python:pipx:install": "bash scripts/pipx/install.ba.sh",
     "python:isort": "python -m isort .",
     "python:black": "python -m black .",
-    "python:flake8": "python -m flake8 problems",
+    "python:flake8": "python -m flake8 src",
     "setup": "npm run python:pip:install:upgrade && npm run python:pipx:install",
     "prettier": "prettier .",
     "prettier:check": "npm run prettier -- --check",

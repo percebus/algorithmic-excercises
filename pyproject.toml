@@ -5,7 +5,7 @@ description = ""
 authors = ["percebus"]
 license = "SEE LICENSE IN LICENSE.md"
 readme = "README.md"
-packages = [{include = "problems"}]
+packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
 python = "~3.12"
