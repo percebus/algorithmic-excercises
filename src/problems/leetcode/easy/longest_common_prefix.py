@@ -1,16 +1,18 @@
-# SRC: https://leetcode.com/problems/longest-common-prefix/
-
-
-# Write a function to find the longest common prefix string amongst an array of strings.
-# If there is no common prefix, return an empty string "".
 from hamcrest import assert_that, equal_to
 
 
-def longest_common_prefix(words):
-    first_word = words[0]
-    chars = list(first_word)
-    prefix = ""
-    result = prefix
+def longest_common_prefix(words: list[str]) -> str:
+    """
+    Write a function to find the longest common prefix string amongst an array of strings.
+    If there is no common prefix, return an empty string.
+
+    SRC: https://leetcode.com/problems/longest-common-prefix/
+    """
+
+    first_word: str = words[0]
+    chars: list[str] = list(first_word)
+    prefix: str = ""
+    result: str = prefix
     for char in chars:
         prefix += char
         invalid = next((word for word in words if not word.startswith(prefix)), None)
@@ -18,16 +20,17 @@ def longest_common_prefix(words):
             result = prefix
         else:
             return result
+
     return result
 
 
-def test(words, expected=None):
+def test(words, expected=None) -> None:
     result = longest_common_prefix(words)
     assert_that(result, equal_to(expected))
     print("✅", end="")
 
 
-def run():
+def run() -> None:
     # Example1:
     #
     # * Input: strs = ["flower", "flow", "flight"]

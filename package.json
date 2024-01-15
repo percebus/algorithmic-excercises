@@ -9,7 +9,7 @@
     "python:isort": "python -m isort .",
     "python:black": "python -m black .",
     "python:flake8": "python -m flake8 src --benchmark --statistics",
-    "python:pyright": "python -m pyright src --verbose",
+    "python:pyright": "python -m pyright src --warnings",
     "python:pytest": "python -m pytest",
     "setup": "npm run python:pip:install:upgrade && npm run python:pipx:install",
     "prettier": "prettier .",
