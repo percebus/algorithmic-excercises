@@ -17,6 +17,8 @@ pytest = "^7.4.3"
 setuptools = "^69.0.3"
 flake8 = "^7.0.0"
 isort = "^5.13.2"
+pyhamcrest = "^2.1.0"
+pyright = "^1.1.345"
 
 [tool.black]
 target-version = ["py312"]
@@ -24,6 +26,16 @@ line-length = 90
 
 [tool.isort]
 profile = "black"
+
+[tool.pyright]
+defineConstant = { DEBUG = true }
+include = ["src"]
+# stubPath = "src/stubs" # TODO?
+# ignore = ["src/oldstuff"] # NOTE what is the difference between exclude and ignore?
+exclude = [
+    "**/node_modules",
+    "**/__pycache__",
+]
 
 [virtualenvs]
 create = true
