@@ -9,6 +9,7 @@ packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
 python = "~3.12"
+pyhamcrest = "^2.1.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.11.0"
@@ -17,7 +18,6 @@ pytest = "^7.4.3"
 setuptools = "^69.0.3"
 flake8 = "^7.0.0"
 isort = "^5.13.2"
-pyhamcrest = "^2.1.0"
 pyright = "^1.1.345"
 
 [tool.black]
@@ -30,6 +30,7 @@ profile = "black"
 [tool.pyright]
 defineConstant = { DEBUG = true }
 include = ["src"]
+strict = ["src"]
 # stubPath = "src/stubs" # TODO?
 # ignore = ["src/oldstuff"] # NOTE what is the difference between exclude and ignore?
 exclude = [

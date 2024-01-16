@@ -36,7 +36,7 @@ def is_valid(string: str) -> bool:
     return not opened
 
 
-def test(string, expected=None) -> None:
+def test(string: str, expected: bool) -> None:
     result = is_valid(string)
     assert_that(result, equal_to(expected))
     print("✅", end="")

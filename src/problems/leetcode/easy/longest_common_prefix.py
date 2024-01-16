@@ -34,7 +34,7 @@ def longest_common_prefix(words: list[str]) -> str:
     return result
 
 
-def test(words, expected=None) -> None:
+def test(words: list[str], expected: str) -> None:
     result = longest_common_prefix(words)
     assert_that(result, equal_to(expected))
     print("✅", end="")

@@ -40,7 +40,7 @@ def two_sum(nums: list[int], target: int) -> Optional[list[int]]:
     return None
 
 
-def test(nums, target, expected=None) -> None:
+def test(nums: list[int], target: int, expected: list[int]) -> None:
     result = two_sum(nums, target)
     assert_that(result, equal_to(expected))
     print("✅", end="")
