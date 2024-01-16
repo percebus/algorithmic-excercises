@@ -2,8 +2,7 @@ from hamcrest import assert_that, equal_to
 from pytest_bdd import given, parsers, scenarios, then, when
 
 from src.problems.leetcode.easy.two_sum import two_sum
-
-from ..utils import assert_is_in_range
+from tests.utils import assert_is_in_range
 
 scenarios("problems/leetcode/easy/Two Sum.feature")
 
