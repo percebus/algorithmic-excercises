@@ -66,9 +66,7 @@ def when__longest_common_prefix(context):
 
 
 @then(
-    parsers.parse(
-        "it finds the longest common {prefix} string amongst an array of strings"
-    ),
+    parsers.parse("it finds the longest common {prefix} string amongst an array of strings"),
     converters={"prefix": clean},
 )
 def then_it_matches(context, prefix):

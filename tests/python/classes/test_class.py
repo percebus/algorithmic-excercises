@@ -5,7 +5,6 @@ from hamcrest import assert_that, empty, equal_to, is_, is_not
 
 def test_cls_VS_self_mutable_items_with_same_name():
     class BadClass:
-
         __test__ = False
 
         # cls.items
@@ -51,7 +50,6 @@ def test_cls_VS_self_mutable_items_with_same_name():
 
 def test_cls_VS_self_mutable_items_with_different_names():
     class GoodClass:
-
         __test__ = False
 
         # cls.items
