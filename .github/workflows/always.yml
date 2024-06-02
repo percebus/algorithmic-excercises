@@ -46,7 +46,7 @@ jobs:
   verify_matrix:
     name: Verify Matrix
     needs: verify
-    # if: github.ref == 'refs/heads/main' # TODO
+    if: github.ref == 'refs/heads/main'
     continue-on-error: true
     strategy:
       max-parallel: 10
@@ -94,6 +94,9 @@ jobs:
       - name: npm install
         run: npm ci
 
+      # FIXME prettier fails on windows
+      # Because of EOL differences
+      # Thus, we disabled 'npm'
       - name: lint
         run: pypyr lint npm=False
 
