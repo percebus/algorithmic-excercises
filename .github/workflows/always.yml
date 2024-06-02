@@ -94,5 +94,8 @@ jobs:
       - name: npm install
         run: npm ci
 
+      - name: lint
+        run: pypyr lint npm=False
+
       - name: test
-        run: pypyr test npm=False
+        run: pypyr test lint=False
