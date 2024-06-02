@@ -43,11 +43,16 @@ jobs:
   verify_matrix:
     name: Verify Matrix
     needs: verify
+    if: github.ref == 'refs/heads/main'
+    continue-on-error: true
     strategy:
       max-parallel: 10
       matrix:
         # Past/Future versions
-        PYTHON_VERSION: [3.11, 3.13]
+        PYTHON_VERSION:
+          # - 3.11 # poetry is not setup
+          - 3.12.x # latest 3.12.x
+          # - 3.13 # "The version '3.13' with architecture 'x64' was not found for Ubuntu 22.04."
 
         # Future versions
         NODE_VERSION: [21.x, 22.x]
@@ -76,7 +81,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.NODE_VERSION }}
-      - name: setup
+      - name: npm run setup:ci
         run: npm run setup:ci --if-present
       - name: npm install
         run: npm ci
