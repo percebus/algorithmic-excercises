@@ -29,7 +29,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - name: setup
+      - name: npm run setup:ci
         run: npm run setup:ci --if-present
       - name: npm install
         run: npm ci
@@ -42,39 +42,44 @@ jobs:
 
   verify_matrix:
     name: Verify Matrix
-    runs-on: ubuntu-latest
     needs: verify
     strategy:
       max-parallel: 10
       matrix:
-        python-version: [3.11, 3.13]
-        node-version: [21.x, 22.x]
-        architecture: [x64, arm64]
+        # Past/Future versions
+        PYTHON_VERSION: [3.11, 3.13]
+
+        # Future versions
+        NODE_VERSION: [21.x, 22.x]
+
+        # Different architectures
+        ARCHITECTURE: [x64, arm64]
+
+        # Different OS
+        OS: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.OS }}
     steps:
       - name: checkout
         uses: actions/checkout@v3
       - name: ls
         run: ls -la
 
-      - name: setup python @ ${{ env.PYTHON_VERSION }}
+      - name: setup python @ ${{ matrix.PYTHON_VERSION }}
         uses: actions/setup-python@v4
         with:
-          architecture: ${{ env.ARCHITECTURE }}
-          python-version: ${{ env.PYTHON_VERSION }}
+          architecture: ${{ matrix.ARCHITECTURE }}
+          python-version: ${{ matrix.PYTHON_VERSION }}
       - name: pip install
         run: bash scripts/pip/install.ba.sh
 
-      - name: setup node @ ${{ env.NODE_VERSION }}
+      - name: setup node @ ${{ matrix.NODE_VERSION }}
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version: ${{ matrix.NODE_VERSION }}
       - name: setup
         run: npm run setup:ci --if-present
       - name: npm install
         run: npm ci
 
-      - name: lint
-        run: pypyr lint
-
       - name: test
-        run: pypyr test lint=False
+        run: pypyr test
