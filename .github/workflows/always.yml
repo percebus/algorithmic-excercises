@@ -1,0 +1,104 @@
+name: Verify
+on:
+  push:
+
+env:
+  ARCHITECTURE: x64
+  NODE_VERSION: 20.x
+  PYTHON_VERSION: 3.12.1
+
+  # FIXME? "npm ERR! notarget No matching version found for pyright@true."
+  # PYRIGHT_PYTHON_FORCE_VERSION: true
+
+jobs:
+  verify:
+    name: Verify
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: ls
+        run: ls -la
+
+      - name: setup python @ ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v5
+        with:
+          architecture: ${{ env.ARCHITECTURE }}
+          python-version: ${{ env.PYTHON_VERSION }}
+      - name: pip install
+        run: bash scripts/pip/install.ba.sh
+
+      - name: setup node @ ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: npm run setup:ci
+        run: npm run setup:ci --if-present
+      - name: npm install
+        run: npm ci
+
+      - name: lint
+        run: pypyr lint
+
+      - name: test
+        run: pypyr test lint=False
+
+  verify_matrix:
+    name: Verify Matrix
+    needs: verify
+    if: github.ref == 'refs/heads/main'
+    continue-on-error: true
+    strategy:
+      max-parallel: 10
+      matrix:
+        # Different OS
+        OS:
+          - ubuntu-latest
+          - windows-latest
+
+        # Past/Future versions
+        PYTHON_VERSION:
+          # - 3.11 # poetry is not setup
+          - 3.12.x # latest 3.12.x
+          # - 3.13 # "The version '3.13' with architecture 'x64' was not found for Ubuntu 22.04."
+
+        # Future versions
+        NODE_VERSION: [21.x, 22.x]
+
+        # Different architectures
+        ARCHITECTURE:
+          - x64
+          # - arm64 # "The version '3.12.x' with architecture 'arm64' was not found for Ubuntu 22.04."
+
+    runs-on: ${{ matrix.OS }}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: ls
+        run: ls
+
+      - name: setup python @ ${{ matrix.PYTHON_VERSION }}
+        uses: actions/setup-python@v5
+        with:
+          architecture: ${{ matrix.ARCHITECTURE }}
+          python-version: ${{ matrix.PYTHON_VERSION }}
+      - name: pip install
+        run: bash scripts/pip/install.ba.sh
+
+      - name: setup node @ ${{ matrix.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.NODE_VERSION }}
+      - name: npm run setup:ci
+        run: npm run setup:ci --if-present
+      - name: npm install
+        run: npm ci
+
+      # FIXME prettier fails on windows
+      # Because of EOL differences
+      # Thus, we disabled 'npm'
+      - name: lint
+        run: pypyr lint npm=False
+
+      - name: test
+        run: pypyr test lint=False
