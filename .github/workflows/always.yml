@@ -51,6 +51,11 @@ jobs:
     strategy:
       max-parallel: 10
       matrix:
+        # Different OS
+        OS:
+          - ubuntu-latest
+          - windows-latest
+
         # Past/Future versions
         PYTHON_VERSION:
           # - 3.11 # poetry is not setup
@@ -61,16 +66,16 @@ jobs:
         NODE_VERSION: [21.x, 22.x]
 
         # Different architectures
-        ARCHITECTURE: [x64, arm64]
+        ARCHITECTURE:
+          - x64
+          # - arm64 # "The version '3.12.x' with architecture 'arm64' was not found for Ubuntu 22.04."
 
-        # Different OS
-        OS: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.OS }}
     steps:
       - name: checkout
         uses: actions/checkout@v3
       - name: ls
-        run: ls -la
+        run: ls
 
       - name: setup python @ ${{ matrix.PYTHON_VERSION }}
         uses: actions/setup-python@v4

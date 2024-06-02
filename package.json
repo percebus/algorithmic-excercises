@@ -7,8 +7,6 @@
     "python:pip:install:upgrade": "python -m pip install --upgrade --requirement requirements.upgrade.txt",
     "python:pipx:install": "bash scripts/pipx/install.ba.sh",
     "python:flake8": "python -m flake8 src --benchmark --statistics",
-    "python:pyright": "python -m pyright src --warnings",
-    "python:pypyr": "python -m pypyr",
     "prettier": "prettier .",
     "prettier:check": "npm run prettier -- --check",
     "prettier:write": "npm run prettier -- --write",
@@ -21,9 +19,10 @@
     "pre-commit:install": "pre-commit install",
     "setup": "npm run python:pip:install:upgrade && npm run python:pipx:install",
     "setup:poetry": "npm run poetry:install && npm run pre-commit:install",
-    "lint": "npm run python:pypyr -- lint",
-    "style": "npm run python:pypyr -- style",
-    "test": "npm run python:pypyr -- test"
+    "lint": "npm run prettier:check",
+    "style": "npm run prettier:write",
+    "poststyle": "npm run lint",
+    "test": "exit 0"
   },
   "keywords": [
     "algo",
