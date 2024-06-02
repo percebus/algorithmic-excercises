@@ -1,0 +1,40 @@
+name: Verify
+on:
+  push:
+
+env:
+  ARCHITECTURE: x64
+  NODE_VERSION: 20.x
+  PYTHON_VERSION: 3.12.1
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: ls
+        run: ls -la
+
+      - name: setup python@${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v4
+        with:
+          architecture: ${{ env.ARCHITECTURE }}
+          python-version: ${{ env.PYTHON_VERSION }}
+      - name: pip install
+        run: bash scripts/setup.ba.sh
+
+      - name: setup node@${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: setup
+        run: npm run setup:ci --if-present
+      - name: npm install
+        run: npm ci
+
+      - name: lint
+        run: pypyr lint
+
+      - name: test
+        run: pypyr test lint=False
