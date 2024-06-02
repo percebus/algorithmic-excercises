@@ -2,7 +2,7 @@
   "name": "algorithmic-excercises",
   "version": "0.1.0",
   "description": "Algorithmic excercises",
-  "main": "index.js",
+  "main": "FIXME",
   "scripts": {
     "python:pip:install:upgrade": "python -m pip install --upgrade --requirement requirements.upgrade.txt",
     "python:pipx:install": "bash scripts/pipx/install.ba.sh",
