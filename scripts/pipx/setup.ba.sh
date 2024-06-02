@@ -1,12 +1,11 @@
-
-SCRIPTS_PATH="$(dirname "$(readlink -f "$0")")"
-echo "Script directory: ${SCRIPTS_PATH}"
+#!/bin/bash
 
 set -e
 set -v
 
-bash ${SCRIPTS_PATH}/pipx/install.ba.sh
-bash ${SCRIPTS_PATH}/pipx/inject.ba.sh
+parent_folder="$(dirname "$(readlink -f "$0")")"
+bash ${parent_folder}/install.ba.sh
+bash ${parent_folder}/inject.ba.sh
 
 set +v
 set +e

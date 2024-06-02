@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 target_config=$1
 echo "target_config:'${target_config}'"
 
