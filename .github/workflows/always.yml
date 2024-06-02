@@ -6,7 +6,9 @@ env:
   ARCHITECTURE: x64
   NODE_VERSION: 20.x
   PYTHON_VERSION: 3.12.1
-  PYRIGHT_PYTHON_FORCE_VERSION: true
+
+  # FIXME? "npm ERR! notarget No matching version found for pyright@true."
+  # PYRIGHT_PYTHON_FORCE_VERSION: true
 
 jobs:
   verify:
