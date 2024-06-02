@@ -6,6 +6,7 @@ env:
   ARCHITECTURE: x64
   NODE_VERSION: 20.x
   PYTHON_VERSION: 3.12.1
+  PYRIGHT_PYTHON_FORCE_VERSION: true
 
 jobs:
   verify:
@@ -43,7 +44,7 @@ jobs:
   verify_matrix:
     name: Verify Matrix
     needs: verify
-    if: github.ref == 'refs/heads/main'
+    # if: github.ref == 'refs/heads/main' # TODO
     continue-on-error: true
     strategy:
       max-parallel: 10
