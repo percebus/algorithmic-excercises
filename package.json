@@ -22,7 +22,6 @@
     "setup": "npm run setup:ci && npm run python:pipx:install && npm run pre-commit:install",
     "poetry:install": "poetry install",
     "postpoetry:install": "npm run poetry:plugins",
-    "postinstall": "npm run poetry:install",
     "lint": "npm run prettier:check",
     "style": "npm run prettier:write",
     "poststyle": "npm run lint",
