@@ -44,10 +44,22 @@ jobs:
       - name: test
         run: pypyr test lint=False
 
+  docker_compose:
+    name: docker compose
+    needs: verify
+    # if: github.ref == 'refs/heads/main' # TODO?
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: docker compose up
+        run: docker-compose up --abort-on-container-exit
+
   docker_build_matrix:
     name: Dockerize Matrix
-    needs: verify
-    # if: github.ref == 'refs/heads/main' # TODO
+    needs: docker_compose
+    if: github.ref == 'refs/heads/main'
     continue-on-error: true
     strategy:
       max-parallel: 10
@@ -68,18 +80,6 @@ jobs:
 
       - name: "docker build: ${{ matrix.DOCKER_TARGET }}"
         run: docker build . --target ${{ matrix.DOCKER_TARGET }}
-
-  docker_compose:
-    name: docker compose
-    needs: docker_build_matrix
-    # if: github.ref == 'refs/heads/main' # TODO
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout@v4
-
-      - name: docker compose up
-        run: docker-compose up --abort-on-container-exit
 
   verify_matrix:
     name: Verify Matrix
