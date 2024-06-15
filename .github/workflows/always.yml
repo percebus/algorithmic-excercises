@@ -57,9 +57,15 @@ jobs:
           # - project
           # - dev
           - test
-          # - release # docker-compose tests this
+
+          # docker-compose tests this
+          # - release
+
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
       - name: "docker build: ${{ matrix.DOCKER_TARGET }}"
         run: docker build . --target ${{ matrix.DOCKER_TARGET }}
 
@@ -69,6 +75,9 @@ jobs:
     # if: github.ref == 'refs/heads/main' # TODO
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
       - name: docker compose up
         run: docker-compose up --abort-on-container-exit
 
