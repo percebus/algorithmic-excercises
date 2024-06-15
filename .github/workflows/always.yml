@@ -7,6 +7,7 @@ env:
   NODE_VERSION: 20.x
   PYTHON_VERSION: 3.12.1
   DOCKER_BUILDKIT: 1
+  PYRIGHT_PYTHON_FORCE_VERSION: latest
 
   # FIXME? "npm ERR! notarget No matching version found for pyright@true."
   # PYRIGHT_PYTHON_FORCE_VERSION: true
@@ -44,10 +45,22 @@ jobs:
       - name: test
         run: pypyr test lint=False
 
+  docker_compose:
+    name: docker compose
+    needs: verify
+    # if: github.ref == 'refs/heads/main' # TODO?
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: docker compose up
+        run: docker-compose up --abort-on-container-exit
+
   docker_build_matrix:
     name: Dockerize Matrix
-    needs: verify
-    # if: github.ref == 'refs/heads/main' # TODO
+    needs: docker_compose
+    if: github.ref == 'refs/heads/main'
     continue-on-error: true
     strategy:
       max-parallel: 10
@@ -57,20 +70,17 @@ jobs:
           # - project
           # - dev
           - test
-          # - release # docker-compose tests this
+
+          # docker-compose tests this
+          # - release
+
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
       - name: "docker build: ${{ matrix.DOCKER_TARGET }}"
         run: docker build . --target ${{ matrix.DOCKER_TARGET }}
-
-  docker_compose:
-    name: docker compose
-    needs: docker_build_matrix
-    # if: github.ref == 'refs/heads/main' # TODO
-    runs-on: ubuntu-latest
-    steps:
-      - name: docker compose up
-        run: docker-compose up --abort-on-container-exit
 
   verify_matrix:
     name: Verify Matrix
