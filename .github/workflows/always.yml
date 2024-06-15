@@ -6,6 +6,7 @@ env:
   ARCHITECTURE: x64
   NODE_VERSION: 20.x
   PYTHON_VERSION: 3.12.1
+  DOCKER_BUILDKIT: 1
 
   # FIXME? "npm ERR! notarget No matching version found for pyright@true."
   # PYRIGHT_PYTHON_FORCE_VERSION: true
@@ -42,6 +43,35 @@ jobs:
 
       - name: test
         run: pypyr test lint=False
+
+  docker_build_matrix:
+    name: Dockerize Matrox
+    needs: verify
+    # if: github.ref == 'refs/heads/main' # TODO
+    continue-on-error: true
+    strategy:
+      max-parallel: 10
+      matrix:
+        DOCKER_TARGET:
+          # - base
+          # - project
+          # - dev
+          - test
+          # - release # docker-compose tests this
+    runs-on: ubuntu-latest
+    steps:
+      - name: "docker build: ${{ matrix.DOCKER_TARGET }}"
+        run: docker build . --target ${{ matrix.DOCKER_TARGET }}
+
+  docker_compose:
+    name: docker compose
+    needs: docker_build_matrix
+    # if: github.ref == 'refs/heads/main' # TODO
+    runs-on: ubuntu-latest
+    steps:
+      - name: docker compose up
+        run: docker-compose up --abort-on-container-exit
+
 
   verify_matrix:
     name: Verify Matrix
