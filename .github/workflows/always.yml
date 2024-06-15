@@ -9,9 +9,6 @@ env:
   DOCKER_BUILDKIT: 1
   PYRIGHT_PYTHON_FORCE_VERSION: latest
 
-  # FIXME? "npm ERR! notarget No matching version found for pyright@true."
-  # PYRIGHT_PYTHON_FORCE_VERSION: true
-
 jobs:
   verify:
     name: Verify
@@ -58,7 +55,7 @@ jobs:
         run: docker-compose up --abort-on-container-exit
 
   docker_build_matrix:
-    name: Dockerize Matrix
+    name: docker build --target
     needs: docker_compose
     if: github.ref == 'refs/heads/main'
     continue-on-error: true
