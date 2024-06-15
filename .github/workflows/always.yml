@@ -45,7 +45,7 @@ jobs:
         run: pypyr test lint=False
 
   docker_build_matrix:
-    name: Dockerize Matrox
+    name: Dockerize Matrix
     needs: verify
     # if: github.ref == 'refs/heads/main' # TODO
     continue-on-error: true
@@ -71,7 +71,6 @@ jobs:
     steps:
       - name: docker compose up
         run: docker-compose up --abort-on-container-exit
-
 
   verify_matrix:
     name: Verify Matrix
