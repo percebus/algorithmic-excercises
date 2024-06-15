@@ -10,9 +10,6 @@ python -m pip install --upgrade --verbose --requirement requirements.upgrade.txt
 bash ${SCRIPTS_PATH}/pipx/setup.ba.sh
 
 python -m pip install --verbose --requirement requirements.txt
-
-# FIXME move this inside a requirements.txt
-# - dev: w/ -i flag
 python -m pip install --verbose .
 
 set +v

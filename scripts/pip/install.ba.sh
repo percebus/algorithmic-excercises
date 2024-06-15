@@ -3,10 +3,12 @@
 target_config=$1
 echo "target_config:'${target_config}'"
 
+PIP_CLI_OPTS=""
 requirements="requirements.txt"
-if [[ "$target_config" == "prd" ]]; then
+if [[ "$target_config" == "release" ]]; then
     echo "Installing ONLY prd requirements..."
-    requirements="requirements.prd.txt"
+    requirements="requirements.release.txt"
+    PIP_CLI_OPTS="-e"
 else
     echo "Installing everything..."
 fi
@@ -16,7 +18,7 @@ set -v
 
 python -m pip install --verbose --upgrade --requirement requirements.upgrade.txt
 python -m pip install --verbose --requirement ${requirements}
-python -m pip install --verbose .
+python -m pip install --verbose ${PIP_CLI_OPTS} .
 
 set +v
 set +e
