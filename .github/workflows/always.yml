@@ -103,7 +103,7 @@ jobs:
   verify_matrix:
     name: Verify Matrix
     needs: verify
-    # if: github.ref == 'refs/heads/main' # FIXME
+    if: github.ref == 'refs/heads/main'
     continue-on-error: true
     strategy:
       max-parallel: 10
@@ -129,14 +129,15 @@ jobs:
 
     runs-on: ${{ matrix.OS }}
     steps:
-      - run: echo ${{ github.job }}
-      - run: |
-          JOB_NAME="OS:${{ matrix.os }}, python@${{ matrix.PYTHON_VERSION }}, node@${{ matrix.NODE_VERSION }}, ${{ matrix.ARCHITECTURE }}"
-          echo $JOB_NAME
-          echo "JOB_NAME=$JOB_NAME" >> $GITHUB_ENV
-      - name: echo JOB_NAME
-        run: |
-          echo "JOB_NAME: ${{ env.JOB_NAME }}"
+      # FIXME: Does NOT work on Windows
+      # - run: echo ${{ github.job }}
+      # - run: |
+      #     JOB_NAME="OS:${{ matrix.os }}, python@${{ matrix.PYTHON_VERSION }}, node@${{ matrix.NODE_VERSION }}, ${{ matrix.ARCHITECTURE }}"
+      #     echo $JOB_NAME
+      #     echo "JOB_NAME=$JOB_NAME" >> $GITHUB_ENV
+      # - name: echo JOB_NAME
+      #   run: |
+      #     echo "JOB_NAME: ${{ env.JOB_NAME }}"
 
       - name: checkout
         uses: actions/checkout@v4
@@ -168,13 +169,3 @@ jobs:
 
       - name: test
         run: pypyr test lint=False
-
-      - name: Publish test-results.xml summary ${{ env.JOB_NAME }}
-        if: always()
-        uses: pmeier/pytest-results-action@main
-        with:
-          path: test-results.xml
-          summary: true
-          display-options: fEX
-          fail-on-empty: true
-          title: Test results
