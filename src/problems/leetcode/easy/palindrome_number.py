@@ -1,5 +1,3 @@
-from typing import Optional
-
 from hamcrest import assert_that, equal_to
 
 # SRC: https://leetcode.com/problems/palindrome-number/
@@ -15,7 +13,7 @@ def is_palindrome(number: int) -> bool:
     return str1 == str2
 
 
-def test(number: int, expected: Optional[int] = None):
+def test(number: int, expected: bool):
     result = is_palindrome(number)
     #   print(f'{number}: {result}') # DEBUG only
     assert_that(result, equal_to(expected))

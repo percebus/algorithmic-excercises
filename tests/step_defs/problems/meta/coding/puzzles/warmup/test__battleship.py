@@ -10,14 +10,9 @@ from src.problems.meta.coding.puzzles.warmup.battleship import getHitProbability
 scenarios("problems/meta/coding/puzzles/warmup/Battleship.feature")
 
 
-@given("a battleship matrix of 2 by 3", target_fixture="context")
-def given_a_battleship_matrix_of_2_by_3():
-    return {"R": 2, "C": 3}
-
-
-@given("a battleship matrix of 2 by 2", target_fixture="context")
-def given_a_battleship_matrix_of_2_by_2():
-    return {"R": 2, "C": 2}
+@given(parsers.parse("a battleship matrix of {x} by {y}"), converters={"x": int, "y": int}, target_fixture="context")
+def given_a_battleship_matrix_of_x_by_y(x, y):
+    return {"R": x, "C": y}
 
 
 @given(parsers.parse("with the following data:\n{data}"))
@@ -25,7 +20,8 @@ def given_with_the_following_data(data, context):
     oStringIO = StringIO(data)
     oDataFrame = pandas.read_csv(oStringIO, header=None, sep="|")
     lists = oDataFrame.values.tolist()
-    context["grid"] = [filter(lambda number: (not numpy.isnan(number)), numbers) for numbers in lists]
+    clean_lists = [filter(lambda number: (not numpy.isnan(number)), numbers) for numbers in lists]
+    context["grid"] = [list(numbers) for numbers in clean_lists]
     return context
 
 

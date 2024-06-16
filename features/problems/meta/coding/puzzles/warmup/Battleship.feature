@@ -1,6 +1,8 @@
 Feature: Battleship
 
-  # SRC: https://www.facebookrecruiting.com/portal/coding_puzzles/?puzzle=3641006936004915
+  # SRC:
+  # * https://www.facebookrecruiting.com/portal/coding_puzzles/?puzzle=3641006936004915
+  # * https://www.metacareers.com/profile/coding_puzzles/?puzzle=3641006936004915
   #
   # Constraints:
   #  * 1 ≤ R,C ≤100
