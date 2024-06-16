@@ -21,6 +21,15 @@ steps:
   - name: pypyr.steps.echo
     run: "{npm}"
     in:
+      echoMe: "=== dockerlint =============================================="
+  - name: pypyr.steps.shell
+    run: "{npm}"
+    in:
+      cmd: "npm run dockerlint"
+
+  - name: pypyr.steps.echo
+    run: "{npm}"
+    in:
       echoMe: "=== npx prettier --check ===================================="
   - name: pypyr.steps.shell
     run: "{npm}"
