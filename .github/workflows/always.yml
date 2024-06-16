@@ -42,7 +42,7 @@ jobs:
       - name: test
         run: pypyr test lint=False
 
-      - name: Publish test results
+      - name: Publish test-results.xml Summary
         if: always()
         uses: pmeier/pytest-results-action@main
         with:
@@ -51,6 +51,13 @@ jobs:
           display-options: fEX
           fail-on-empty: true
           title: Test results
+
+      - name: Publish test-results.xml
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          files: |
+            test-results.xml
 
   docker_compose:
     name: docker compose
@@ -92,7 +99,7 @@ jobs:
   verify_matrix:
     name: Verify Matrix
     needs: verify
-    if: github.ref == 'refs/heads/main'
+    # if: github.ref == 'refs/heads/main' # FIXME
     continue-on-error: true
     strategy:
       max-parallel: 10
@@ -118,6 +125,15 @@ jobs:
 
     runs-on: ${{ matrix.OS }}
     steps:
+      - run: echo ${{ github.job }}
+      - run: |
+          JOB_NAME="OS:${{ matrix.os }}, python@${{ matrix.PYTHON_VERSION }}, node@${{ matrix.NODE_VERSION }}, ${{ matrix.ARCHITECTURE }}"
+          echo $JOB_NAME
+          echo "JOB_NAME=$JOB_NAME" >> $GITHUB_ENV
+      - name: echo JOB_NAME
+        run: |
+          echo "JOB_NAME: ${{ env.JOB_NAME }}"
+
       - name: checkout
         uses: actions/checkout@v4
       - name: ls
@@ -149,7 +165,7 @@ jobs:
       - name: test
         run: pypyr test lint=False
 
-      - name: Publish test results
+      - name: Publish test-results.xml summary ${{ env.JOB_NAME }}
         if: always()
         uses: pmeier/pytest-results-action@main
         with:
