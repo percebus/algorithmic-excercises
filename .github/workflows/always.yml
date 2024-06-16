@@ -1,4 +1,4 @@
-name: Verify
+name: "[C]ontinuous [I]ntegration"
 on:
   push:
 
@@ -8,6 +8,10 @@ env:
   PYTHON_VERSION: 3.12.1
   DOCKER_BUILDKIT: 1
   PYRIGHT_PYTHON_FORCE_VERSION: latest
+
+permissions:
+  checks: write
+  pull-requests: write
 
 jobs:
   verify:
