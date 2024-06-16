@@ -18,13 +18,19 @@
     "poetry:export": "npm run poetry:export:all && npm run poetry:export:min",
     "poetry:plugins": "npm run poetry:sort && npm run poetry:export",
     "pre-commit:install": "pre-commit install",
+    "dockerlint": "dockerlint Dockerfile",
     "setup": "npm run python:pip:install:upgrade && npm run setup:ci && npm run python:pipx:install && npm run pre-commit:install",
     "poetry:install": "poetry install",
     "postpoetry:install": "npm run poetry:plugins",
-    "lint": "npm run prettier:check",
+    "lint": "npm run dockerlint && npm run prettier:check",
     "style": "npm run prettier:write",
     "poststyle": "npm run lint",
-    "test": "pypyr ci"
+    "docker:build": "docker build .",
+    "docker:build:test": "npm run docker:build -- --target test",
+    "predocker:build": "npm run dockerlint",
+    "docker:compose:up": "docker compose up",
+    "test": "pypyr ci",
+    "test:docker": "npm run docker:build:test"
   },
   "keywords": [
     "algo",
@@ -35,6 +41,7 @@
   "author": "JCystems",
   "license": "SEE LICENSE IN LICENSE.md",
   "devDependencies": {
+    "dockerlint": "^0.3.9",
     "prettier": "^3.1.0"
   }
 }
