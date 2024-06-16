@@ -42,6 +42,16 @@ jobs:
       - name: test
         run: pypyr test lint=False
 
+      - name: Publish test results
+        if: always()
+        uses: pmeier/pytest-results-action@main
+        with:
+          path: test-results.xml
+          summary: true
+          display-options: fEX
+          fail-on-empty: true
+          title: Test results
+
   docker_compose:
     name: docker compose
     needs: verify
@@ -138,3 +148,13 @@ jobs:
 
       - name: test
         run: pypyr test lint=False
+
+      - name: Publish test results
+        if: always()
+        uses: pmeier/pytest-results-action@main
+        with:
+          path: test-results.xml
+          summary: true
+          display-options: fEX
+          fail-on-empty: true
+          title: Test results
