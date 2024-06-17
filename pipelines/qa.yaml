@@ -35,7 +35,7 @@ steps:
   - name: pypyr.steps.shell
     run: "{test}"
     in:
-      cmd: "python -m pypyr test path={path} lint=False"
+      cmd: "python -m pypyr test path={path} lint=False stats={stats}"
 
   - name: pypyr.steps.shell
     run: "{integration}"

@@ -44,7 +44,7 @@ jobs:
         run: pypyr lint
 
       - name: test
-        run: pypyr test lint=False
+        run: pypyr ci lint=False
 
       - name: Publish test-results.xml Summary
         if: always()
@@ -164,8 +164,5 @@ jobs:
       # FIXME prettier fails on windows
       # Because of EOL differences
       # Thus, we disabled 'npm'
-      - name: lint
-        run: pypyr lint npm=False
-
       - name: test
-        run: pypyr test lint=False
+        run: pypyr ci npm=False
