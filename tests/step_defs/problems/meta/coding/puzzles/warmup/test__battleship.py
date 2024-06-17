@@ -35,7 +35,7 @@ def when_I_call_getHitProbability(context):
 
 
 @then(parsers.parse("it returns a hit probability of {percent}%"), converters={"percent": float})
-def then_it_returns_a_hit_probability_of_50(percent, context):
+def then_it_returns_a_hit_probability_of_x_percent(percent, context):
     result = context["result"]
     actual = result * 100
     assert_that(actual, equal_to(percent))
