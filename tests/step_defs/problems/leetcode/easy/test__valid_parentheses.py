@@ -2,8 +2,17 @@ from hamcrest import assert_that, is_
 from pytest_bdd import given, parsers, scenarios, then, when
 
 from src.problems.leetcode.easy.valid_parentheses import is_valid
+from tests.utils import assert_is_in_range
 
 scenarios("problems/leetcode/easy/Valid Parentheses.feature")
+
+
+constraints = {"value": {"min": 1, "max": 104}}
+
+
+validate = {
+    "value": lambda x: assert_is_in_range(len(x), constraints["value"]),
+}
 
 
 @given(
@@ -11,6 +20,7 @@ scenarios("problems/leetcode/easy/Valid Parentheses.feature")
     target_fixture="context",
 )
 def given_a_string_containing_characters(string):
+    validate["value"](string)
     return {"string": string}
 
 
