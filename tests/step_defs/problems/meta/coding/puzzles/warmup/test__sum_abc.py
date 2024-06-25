@@ -2,13 +2,27 @@ from hamcrest import assert_that, equal_to
 from pytest_bdd import given, parsers, scenarios, then, when
 
 from src.problems.meta.coding.puzzles.warmup.sum_abc import getSum
+from tests.utils import assert_is_in_range
 
 scenarios("problems/meta/coding/puzzles/warmup/sum ABCs.feature")
 
 
+constraints = {
+    "value": {"min": 1, "max": 100},  # 1 <= x <= 100
+}
+
+validate = {
+    "value": lambda x: assert_is_in_range(x, constraints["value"]),
+}
+
+
 @given(parsers.parse("three integers {A}, {B}, and {C}"), converters={"A": int, "B": int, "C": int}, target_fixture="context")
 def given_3_integers(A, B, C):
-    # TODO validate restrictions
+    _validate = validate["value"]
+    _validate(A)
+    _validate(B)
+    _validate(C)
+
     return {"A": A, "B": B, "C": C}
 
 
