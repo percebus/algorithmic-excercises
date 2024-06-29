@@ -4,6 +4,7 @@ disable=
     C0115, # missing-class-docstring
     C0116, # missing-function-docstring
     W0105, # pointless-string-statement
+    W0511, # fixme
 
 [FORMAT]
 max-line-length=150
