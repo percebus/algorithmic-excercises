@@ -3,20 +3,55 @@ on:
   push:
 
 env:
+  OS: ubuntu-latest
   ARCHITECTURE: x64
   NODE_VERSION: 20.x
   PYTHON_VERSION: 3.12.1
   DOCKER_BUILDKIT: 1
   PYRIGHT_PYTHON_FORCE_VERSION: latest
+  GITHUB_IS_BRANCH_MAIN: github.ref == 'refs/heads/main'
+  GITHUB_IS_PULL_REQUEST: github.event_name == 'pull_request'
+  GITHUB_IS_ACTION_CLOSED: github.event.action == 'closed'
+  GITHUB_IS_PULL_REQUEST_MERGED: github.event.pull_request.merged == true
 
 permissions:
   checks: write
   pull-requests: write
 
 jobs:
+  # SRC: https://github.com/semantic-release/semantic-release/blob/master/docs/recipes/ci-configurations/github-actions.md
+  semantic-versioning:
+    if: ${{ env.GITHUB_IS_ACTION_CLOSED }} && ${{ env.GITHUB_IS_PULL_REQUEST }} && ${{ env.GITHUB_IS_PULL_REQUEST_MERGED }}
+    name: Tag
+    runs-on: ${{ env.OS }}
+    env:
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: ls
+        run: ls -la
+
+      - name: setup node @ ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: npm run setup:ci
+        run: npm run setup:ci --if-present
+      - name: npm install
+        run: npm ci
+      - name: semantic-versioning
+        run: npm run semantic-versioning
+
   verify:
+    if: always()
     name: Verify
-    runs-on: ubuntu-latest
+    runs-on: ${{ env.OS }}
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -66,8 +101,8 @@ jobs:
   docker_compose:
     name: docker compose
     needs: verify
-    # if: github.ref == 'refs/heads/main' # TODO?
-    runs-on: ubuntu-latest
+    # if: ${{ env.GITHUB_IS_BRANCH_MAIN }}
+    runs-on: ${{ env.OS }}
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -76,9 +111,9 @@ jobs:
         run: docker-compose up --abort-on-container-exit
 
   docker_build_matrix:
+    if: ${{ env.GITHUB_IS_BRANCH_MAIN }}
     name: docker build --target
     needs: docker_compose
-    if: github.ref == 'refs/heads/main'
     continue-on-error: true
     strategy:
       max-parallel: 10
@@ -92,7 +127,7 @@ jobs:
           # docker-compose tests this
           # - release
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ env.OS }}
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -110,7 +145,7 @@ jobs:
       matrix:
         # Different OS
         OS:
-          - ubuntu-latest
+          - ${{ env.OS }}
           - windows-latest
 
         # Past/Future versions

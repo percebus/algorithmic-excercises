@@ -41,7 +41,11 @@
   "author": "JCystems",
   "license": "SEE LICENSE IN LICENSE.md",
   "devDependencies": {
+    "@semantic-release/commit-analyzer": "^13.0.0",
+    "@semantic-release/github": "^10.0.7",
+    "@semantic-release/release-notes-generator": "^14.0.1",
     "dockerlint": "^0.3.9",
-    "prettier": "^3.1.0"
+    "prettier": "^3.1.0",
+    "semantic-versioning": "^1.0.2"
   }
 }
