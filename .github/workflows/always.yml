@@ -101,7 +101,7 @@ jobs:
   docker_compose:
     name: docker compose
     needs: verify
-    # if: ${{ env.GITHUB_IS_BRANCH_MAIN }}
+    # if: ${GITHUB_IS_BRANCH_MAIN}
     runs-on: ${OS}
     steps:
       - name: checkout
@@ -111,7 +111,7 @@ jobs:
         run: docker-compose up --abort-on-container-exit
 
   docker_build_matrix:
-    if: ${{ env.GITHUB_IS_BRANCH_MAIN }}
+    if: ${GITHUB_IS_BRANCH_MAIN}
     name: docker build --target
     needs: docker_compose
     continue-on-error: true
@@ -138,7 +138,7 @@ jobs:
   verify_matrix:
     name: Verify Matrix
     needs: verify
-    if: ${{ env.GITHUB_IS_BRANCH_MAIN }}
+    if: ${GITHUB_IS_BRANCH_MAIN}
     continue-on-error: true
     strategy:
       max-parallel: 10
