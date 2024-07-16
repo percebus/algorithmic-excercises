@@ -24,8 +24,6 @@ jobs:
     if: ${{ env.GITHUB_IS_ACTION_CLOSED }} && ${{ env.GITHUB_IS_PULL_REQUEST }} && ${{ env.GITHUB_IS_PULL_REQUEST_MERGED }}
     name: Tag
     runs-on: ${{ env.OS }}
-    env:
-      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
     permissions:
       contents: write # to be able to publish a GitHub release
       issues: write # to be able to comment on released issues
@@ -47,6 +45,8 @@ jobs:
         run: npm ci
       - name: semantic-versioning
         run: npm run semantic-versioning
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
   verify:
     if: always()
@@ -138,7 +138,7 @@ jobs:
   verify_matrix:
     name: Verify Matrix
     needs: verify
-    if: github.ref == 'refs/heads/main'
+    if: ${{ env.GITHUB_IS_BRANCH_MAIN }}
     continue-on-error: true
     strategy:
       max-parallel: 10
