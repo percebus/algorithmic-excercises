@@ -51,7 +51,7 @@ jobs:
   verify:
     if: always()
     name: Verify
-    runs-on: ${{ env.OS }}
+    runs-on: ${OS}
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -102,7 +102,7 @@ jobs:
     name: docker compose
     needs: verify
     # if: ${{ env.GITHUB_IS_BRANCH_MAIN }}
-    runs-on: ${{ env.OS }}
+    runs-on: ${OS}
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -127,7 +127,7 @@ jobs:
           # docker-compose tests this
           # - release
 
-    runs-on: ${{ env.OS }}
+    runs-on: ${OS}
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -145,7 +145,7 @@ jobs:
       matrix:
         # Different OS
         OS:
-          - ${{ env.OS }}
+          - ${OS}
           - windows-latest
 
         # Past/Future versions
