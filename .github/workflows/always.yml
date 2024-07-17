@@ -17,7 +17,7 @@ permissions:
 
 jobs:
   # SRC: https://github.com/semantic-release/semantic-release/blob/master/docs/recipes/ci-configurations/github-actions.md
-  semantic-versioning:
+  semantic-release:
     # if: github.ref == 'refs/heads/main' # TODO
     # if: github.event.action == 'closed' && github.event_name == 'pull_request' && github.event.pull_request.merged == true # FIXME
     name: Tag
@@ -43,8 +43,8 @@ jobs:
         run: npm run setup:ci --if-present
       - name: npm install
         run: npm ci
-      - name: semantic-versioning
-        run: npm run semantic-versioning
+      - name: semantic-release
+        run: npm run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
@@ -52,7 +52,7 @@ jobs:
     if: always()
     name: Verify
     runs-on: ubuntu-latest
-    needs: semantic-versioning
+    needs: semantic-release
     steps:
       - name: checkout
         uses: actions/checkout@v4
