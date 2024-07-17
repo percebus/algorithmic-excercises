@@ -18,8 +18,7 @@ permissions:
 jobs:
   # SRC: https://github.com/semantic-release/semantic-release/blob/master/docs/recipes/ci-configurations/github-actions.md
   semantic-release:
-    # if: github.ref == 'refs/heads/main' # TODO
-    # if: github.event.action == 'closed' && github.event_name == 'pull_request' && github.event.pull_request.merged == true # FIXME
+    if: github.ref == 'refs/heads/main' && github.event.pull_request.merged == true
     name: Tag
     runs-on: ubuntu-latest
     permissions:
