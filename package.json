@@ -30,7 +30,9 @@
     "predocker:build": "npm run dockerlint",
     "docker:compose:up": "docker compose up",
     "test": "pypyr ci",
-    "test:docker": "npm run docker:build:test"
+    "test:docker": "npm run docker:build:test",
+    "semantic-versioning": "npm run semantic-versioning",
+    "tag": "npm run semantic-versioning"
   },
   "keywords": [
     "algo",
