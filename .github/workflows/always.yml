@@ -12,16 +12,16 @@ env:
 
 permissions:
   checks: write
+  contents: read
   pull-requests: write
 
 jobs:
   # SRC: https://github.com/semantic-release/semantic-release/blob/master/docs/recipes/ci-configurations/github-actions.md
   semantic-versioning:
-    if: github.event.action == 'closed' && github.event_name == 'pull_request' && github.event.pull_request.merged == true
+    if: github.ref == 'refs/heads/main'
+    # if: github.event.action == 'closed' && github.event_name == 'pull_request' && github.event.pull_request.merged == true # FIXME
     name: Tag
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
     permissions:
       contents: write # to be able to publish a GitHub release
       issues: write # to be able to comment on released issues
@@ -30,6 +30,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: ls
         run: ls -la
 
@@ -43,6 +45,8 @@ jobs:
         run: npm ci
       - name: semantic-versioning
         run: npm run semantic-versioning
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
   verify:
     if: always()
