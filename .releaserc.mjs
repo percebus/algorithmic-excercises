@@ -20,16 +20,19 @@ export default {
       },
     ],
     [
+      "@semantic-release/github",
+      {
+        assets: [
+          {path: "CHANGELOG"}, // XXX?
+          {path: "dist/*.tgz"}
+        ],
+      },
+    ],
+    [
       "@semantic-release/git",
       {
         assets: ["package.json"],
         changelogFile: "CHANGELOG.md",
-      },
-    ],
-    [
-      "@semantic-release/github",
-      {
-        assets: "dist/*.tgz",
       },
     ],
   ],
