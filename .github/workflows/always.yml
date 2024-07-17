@@ -9,7 +9,6 @@ env:
   PYTHON_VERSION: 3.12.1
   DOCKER_BUILDKIT: 1
   PYRIGHT_PYTHON_FORCE_VERSION: latest
-  GITHUB_IS_BRANCH_MAIN: github.ref == 'refs/heads/main'
 
 permissions:
   checks: write
@@ -98,7 +97,7 @@ jobs:
   docker_compose:
     name: docker compose
     needs: verify
-    # if: ${GITHUB_IS_BRANCH_MAIN}
+    # if: github.ref == 'refs/heads/main'
     runs-on: ${OS}
     steps:
       - name: checkout
@@ -108,7 +107,7 @@ jobs:
         run: docker-compose up --abort-on-container-exit
 
   docker_build_matrix:
-    if: ${GITHUB_IS_BRANCH_MAIN}
+    if: github.ref == 'refs/heads/main'
     name: docker build --target
     needs: docker_compose
     continue-on-error: true
@@ -135,7 +134,7 @@ jobs:
   verify_matrix:
     name: Verify Matrix
     needs: verify
-    if: ${GITHUB_IS_BRANCH_MAIN}
+    if: github.ref == 'refs/heads/main'
     continue-on-error: true
     strategy:
       max-parallel: 10
