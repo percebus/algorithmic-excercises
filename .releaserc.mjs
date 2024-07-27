@@ -17,14 +17,14 @@ export default {
     [
       "@semantic-release/git",
       {
-        assets: ["package.json"],
+        assets: ["package.json", "CHANGELOG.md"],
         changelogFile: "CHANGELOG.md",
       },
     ],
     [
       "@semantic-release/github",
       {
-        assets: [{ path: "CHANGELOG.md" }, { path: "dist/*.tgz" }],
+        assets: [{ path: "dist/*.tgz" }],
       },
     ],
   ],
