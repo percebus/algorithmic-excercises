@@ -32,6 +32,7 @@
     "test": "pypyr ci",
     "test:docker": "npm run docker:build:test",
     "semantic-release": "semantic-release",
+    "postsemantic-release": "npm run prettier:write",
     "tag": "npm run semantic-release"
   },
   "keywords": [
