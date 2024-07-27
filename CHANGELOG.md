@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/percebus/algorithmic-excercises/compare/v1.1.2...v1.1.3) (2024-07-27)
+
+
+### Bug Fixes
+
+* **.releaserc.msj:** Moved CHANGELOG ([d6639eb](https://github.com/percebus/algorithmic-excercises/commit/d6639eb9df7755b6b82800d4c0055babf76ebe86))
+
 # algorithmic-excercises CHANGELOG
 
 ## [1.1.0](https://github.com/percebus/algorithmic-excercises/compare/v1.0.1...v1.1.0) (2024-07-27)
