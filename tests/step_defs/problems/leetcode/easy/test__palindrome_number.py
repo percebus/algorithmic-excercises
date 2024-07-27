@@ -1,3 +1,4 @@
+from hamcrest import assert_that, instance_of, is_
 from pytest_bdd import given, parsers, scenarios, then, when
 
 from src.problems.leetcode.easy.palindrome_number import is_palindrome
@@ -53,4 +54,4 @@ def then_returns_False_if_number_is_not_palindrome(context):
 @then("handle the exception for the very large number")
 def then_it_handles_the_exception_for_very_large_number(context):
     exception = context["exception"]
-    assert isinstance(exception, Exception), f"expected:Exception, got:{exception}"
+    assert_that(exception, is_(instance_of(Exception)))
