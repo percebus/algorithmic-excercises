@@ -1,7 +1,7 @@
 from hamcrest import assert_that, is_
 from pytest_bdd import given, parsers, scenarios, then, when
 
-from src.problems.leetcode.easy.valid_parentheses import is_valid
+from src.problems.leetcode.easy.valid_parentheses.v1 import is_valid
 from tests.utils import assert_is_in_range
 
 scenarios("problems/leetcode/easy/Valid Parentheses.feature")

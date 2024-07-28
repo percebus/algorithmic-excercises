@@ -1,7 +1,5 @@
 from typing import Optional
 
-from hamcrest import assert_that, equal_to
-
 brackets = {"[": "]", "{": "}", "(": ")"}
 
 
@@ -34,37 +32,3 @@ def is_valid(string: str) -> bool:
             pass  # any other char
 
     return not opened
-
-
-def test(string: str, expected: bool) -> None:
-    result = is_valid(string)
-    assert_that(result, equal_to(expected))
-    print("✅", end="")
-
-
-def run():
-    # Example 1:
-    #  * Input: s = "()"
-    #  * Output: true
-    test("()", expected=True)
-
-    # Example 2:
-    #  * Input: s = "()[]{}"
-    #  * Output: true
-    test("()[]{}", expected=True)
-
-    # Example 3:
-    #  * Input: s = "(]"
-    #  * Output: false
-    test("(]", expected=False)
-
-    # Example
-    #  * Input: s = "["
-    #  * Output: false
-    test("[", expected=False)
-
-    print("\n")
-
-
-if __name__ == "__main__":
-    run()
