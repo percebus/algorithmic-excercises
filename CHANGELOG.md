@@ -1,9 +1,8 @@
 ## [1.1.4](https://github.com/percebus/algorithmic-excercises/compare/v1.1.3...v1.1.4) (2024-07-28)
 
-
 ### Bug Fixes
 
-* **.github/workflows/always.yml:** pip install ([0efd84b](https://github.com/percebus/algorithmic-excercises/commit/0efd84b2eaaab89051b8fa1fff51134b2253a0a1))
+- **.github/workflows/always.yml:** pip install ([0efd84b](https://github.com/percebus/algorithmic-excercises/commit/0efd84b2eaaab89051b8fa1fff51134b2253a0a1))
 
 ## [1.1.3](https://github.com/percebus/algorithmic-excercises/compare/v1.1.2...v1.1.3) (2024-07-27)
 
