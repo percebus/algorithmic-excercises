@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/percebus/algorithmic-excercises/compare/v1.1.4...v1.1.5) (2024-07-28)
+
+
+### Bug Fixes
+
+* **package.json:** remove setup:ci ([1dabbbf](https://github.com/percebus/algorithmic-excercises/commit/1dabbbf7107674f387f670085d97966e5105c7d2))
+
 ## [1.1.4](https://github.com/percebus/algorithmic-excercises/compare/v1.1.3...v1.1.4) (2024-07-28)
 
 ### Bug Fixes
