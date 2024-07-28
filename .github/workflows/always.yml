@@ -34,14 +34,6 @@ jobs:
       - name: ls
         run: ls -la
 
-      - name: setup python @ ${{ env.PYTHON_VERSION }}
-        uses: actions/setup-python@v5
-        with:
-          architecture: ${{ env.ARCHITECTURE }}
-          python-version: ${{ env.PYTHON_VERSION }}
-      - name: pip install
-        run: bash scripts/pip/install.ba.sh
-
       - name: setup node @ ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
         with:
