@@ -17,7 +17,12 @@ export default {
     [
       "@semantic-release/git",
       {
-        assets: ["package.json", "CHANGELOG.md", "requirements.all.txt", "requirements.min.txt"],
+        assets: [
+          "package.json",
+          "CHANGELOG.md",
+          "requirements.all.txt",
+          "requirements.min.txt",
+        ],
         changelogFile: "CHANGELOG.md",
       },
     ],
