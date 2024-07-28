@@ -15,4 +15,4 @@ RUN pypyr ci npm=False stats=False
 # TODO use light image. alpine?
 FROM project as release
 RUN bash scripts/pip/install.ba.sh 'release'
-CMD [ "python", "src/problems/leetcode/easy/two_sum.py" ]
+CMD [ "python", "src/problems/leetcode/easy/two_sum" ]
