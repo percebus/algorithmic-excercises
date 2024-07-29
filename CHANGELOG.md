@@ -1,3 +1,12 @@
+algorithmic-excercises CHANGELOG
+
+## [2.0.1](https://github.com/percebus/algorithmic-excercises/compare/v2.0.0...v2.0.1) (2024-07-29)
+
+
+### Bug Fixes
+
+* **CHANGELOG:** Added Title ([c3224a9](https://github.com/percebus/algorithmic-excercises/commit/c3224a99498827e2f4d0afba85515bc0daa0b0d8))
+
 # [2.0.0](https://github.com/percebus/algorithmic-excercises/compare/v1.1.5...v2.0.0) (2024-07-29)
 
 ### Code Refactoring
