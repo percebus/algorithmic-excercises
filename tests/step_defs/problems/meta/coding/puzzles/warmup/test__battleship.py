@@ -5,7 +5,7 @@ import pandas
 from hamcrest import assert_that, equal_to
 from pytest_bdd import given, parsers, scenarios, then, when
 
-from src.problems.meta.coding.puzzles.warmup.battleship import getHitProbability
+from src.problems.meta.coding.puzzles.warmup.battleship.v1 import getHitProbability
 
 scenarios("problems/meta/coding/puzzles/warmup/Battleship.feature")
 
