@@ -1,5 +1,12 @@
 algorithmic-excercises CHANGELOG
 
+# [2.1.0](https://github.com/percebus/algorithmic-excercises/compare/v2.0.1...v2.1.0) (2024-07-29)
+
+
+### Features
+
+* **!config:** Settings & Configuration ([0427239](https://github.com/percebus/algorithmic-excercises/commit/04272398ec2e6bdcc5834c0cfbd2a366871ba426))
+
 ## [2.0.1](https://github.com/percebus/algorithmic-excercises/compare/v2.0.0...v2.0.1) (2024-07-29)
 
 
