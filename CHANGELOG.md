@@ -2,26 +2,21 @@
 
 ## [2.1.1](https://github.com/percebus/algorithmic-excercises/compare/v2.1.0...v2.1.1) (2024-07-29)
 
-
 ### Bug Fixes
 
-* **CHANGELOG:** Add proper title ([1d28fc0](https://github.com/percebus/algorithmic-excercises/commit/1d28fc0c94b32e2ef122288d7f181235df0762f6))
-
-algorithmic-excercises CHANGELOG
+- **CHANGELOG:** Add proper title ([1d28fc0](https://github.com/percebus/algorithmic-excercises/commit/1d28fc0c94b32e2ef122288d7f181235df0762f6))
 
 # [2.1.0](https://github.com/percebus/algorithmic-excercises/compare/v2.0.1...v2.1.0) (2024-07-29)
 
-
 ### Features
 
-* **!config:** Settings & Configuration ([0427239](https://github.com/percebus/algorithmic-excercises/commit/04272398ec2e6bdcc5834c0cfbd2a366871ba426))
+- **config:** Settings & Configuration ([0427239](https://github.com/percebus/algorithmic-excercises/commit/04272398ec2e6bdcc5834c0cfbd2a366871ba426))
 
 ## [2.0.1](https://github.com/percebus/algorithmic-excercises/compare/v2.0.0...v2.0.1) (2024-07-29)
 
-
 ### Bug Fixes
 
-* **CHANGELOG:** Added Title ([c3224a9](https://github.com/percebus/algorithmic-excercises/commit/c3224a99498827e2f4d0afba85515bc0daa0b0d8))
+- **CHANGELOG:** Added Title ([c3224a9](https://github.com/percebus/algorithmic-excercises/commit/c3224a99498827e2f4d0afba85515bc0daa0b0d8))
 
 # [2.0.0](https://github.com/percebus/algorithmic-excercises/compare/v1.1.5...v2.0.0) (2024-07-29)
 
