@@ -1,7 +1,7 @@
 from hamcrest import assert_that, equal_to, instance_of, is_
 from pytest_bdd import given, parsers, scenarios, then, when
 
-from src.problems.leetcode.hard import median_of_two_sorted_arrays
+from src.problems.leetcode.hard.median_of_two_sorted_arrays.v1 import find_median
 from tests.utils import assert_is_in_range
 
 scenarios("problems/leetcode/hard/Median of Two Sorted Arrays.feature")
@@ -62,7 +62,7 @@ def given_of_size_m_an_n(m, n, context):
 def when_I_call__find_median(context):
     nums1 = context["nums1"]
     nums2 = context["nums2"]
-    result = median_of_two_sorted_arrays.find_median(nums1, nums2)
+    result = find_median(nums1, nums2)
     context["result"] = result
     return context
 
