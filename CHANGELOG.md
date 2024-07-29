@@ -1,21 +1,18 @@
 # [2.0.0](https://github.com/percebus/algorithmic-excercises/compare/v1.1.5...v2.0.0) (2024-07-29)
 
-
 ### Code Refactoring
 
-* **src.problems:** Changed several into modules ([#14](https://github.com/percebus/algorithmic-excercises/issues/14)) ([3c2fc3b](https://github.com/percebus/algorithmic-excercises/commit/3c2fc3b182b770f6f894fb7ad6c6df01bda457d1))
-
+- **src.problems:** Changed several into modules ([#14](https://github.com/percebus/algorithmic-excercises/issues/14)) ([3c2fc3b](https://github.com/percebus/algorithmic-excercises/commit/3c2fc3b182b770f6f894fb7ad6c6df01bda457d1))
 
 ### BREAKING CHANGES
 
-* **src.problems:** Changed py files into py modules
+- **src.problems:** Changed py files into py modules
 
 ## [1.1.5](https://github.com/percebus/algorithmic-excercises/compare/v1.1.4...v1.1.5) (2024-07-28)
 
-
 ### Bug Fixes
 
-* **package.json:** remove setup:ci ([1dabbbf](https://github.com/percebus/algorithmic-excercises/commit/1dabbbf7107674f387f670085d97966e5105c7d2))
+- **package.json:** remove setup:ci ([1dabbbf](https://github.com/percebus/algorithmic-excercises/commit/1dabbbf7107674f387f670085d97966e5105c7d2))
 
 ## [1.1.4](https://github.com/percebus/algorithmic-excercises/compare/v1.1.3...v1.1.4) (2024-07-28)
 

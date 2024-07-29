@@ -13,4 +13,6 @@ def calculate_sum(a: int, b: int, c: int) -> int:
 # pylint: disable=invalid-name
 def getSum(A: int, B: int, C: int) -> int:
     return calculate_sum(A, B, C)
+
+
 # pylint: enable=invalid-name
