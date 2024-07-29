@@ -6,7 +6,12 @@ export default {
   plugins: [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
-    "@semantic-release/changelog",
+    [
+      "@semantic-release/changelog",
+      {
+        changelogTitle: "algorithmic-excercises CHANGELOG",
+      },
+    ],
     [
       "@semantic-release/npm",
       {
