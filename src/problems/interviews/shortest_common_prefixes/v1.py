@@ -1,7 +1,7 @@
 import string
 from typing import Any
 
-from src.problems.config import DEBUG
+from src.problems.config.configuration import configuration
 
 
 # FIXME change signature
@@ -41,7 +41,7 @@ def pluck(data: dict[str, Any | str]) -> list[str]:
 
 def get_prefixes(words: list[str]):
     data = categorize(words)
-    if DEBUG:
+    if configuration.settings.debug:
         print(data)
 
     # {

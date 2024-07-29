@@ -9,7 +9,10 @@ packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
 python = "~3.12"
+logger = "^1.4"
+logging-config = "^1.0.4"
 more-itertools = "^10.3.0"
+pydantic-settings = "^2.3.4"
 pyhamcrest = "^2.1.0"
 
 [tool.poetry.group.dev.dependencies]
