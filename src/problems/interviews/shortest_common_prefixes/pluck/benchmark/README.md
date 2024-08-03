@@ -1,7 +1,7 @@
 # Results
 
-* ~~v1 is still actually faster~~
-* v3 is now the fastest
+- ~~v1 is still actually faster~~
+- v3 is now the fastest
 
 ```
 pluck.v1...
