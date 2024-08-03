@@ -2,7 +2,7 @@ import timeit
 
 from src.problems.interviews.shortest_common_prefixes.pluck.v1 import pluck as pluck_v1
 from src.problems.interviews.shortest_common_prefixes.pluck.v2 import pluck as pluck_v2
-from src.problems.interviews.shortest_common_prefixes.pluck.v2 import pluck as pluck_v3
+from src.problems.interviews.shortest_common_prefixes.pluck.v3 import pluck as pluck_v3
 
 
 def run():
