@@ -25,11 +25,11 @@ def run():
     result1 = timeit.timeit(lambda: pluck_v1(data), number=samples)
     print(f" - result: {result1}")
 
-    print("pluck.v2")
+    print("pluck.v2...")
     result2 = timeit.timeit(lambda: pluck_v2(data), number=samples)
     print(f" - result: {result2}")
 
-    print("pluck.v3")
+    print("pluck.v3...")
     result2 = timeit.timeit(lambda: pluck_v3(data), number=samples)
     print(f" - result: {result2}")
 
