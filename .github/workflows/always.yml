@@ -18,7 +18,6 @@ permissions:
 jobs:
   # SRC: https://github.com/semantic-release/semantic-release/blob/master/docs/recipes/ci-configurations/github-actions.md
   semantic-release:
-    if: github.ref == 'refs/heads/main' # && github.event.pull_request.merged == true # TODO
     name: Tag
     runs-on: ubuntu-latest
     permissions:
@@ -48,7 +47,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
   verify:
-    if: always()
+    if: always() # XXX
     name: Verify
     runs-on: ubuntu-latest
     needs: semantic-release
