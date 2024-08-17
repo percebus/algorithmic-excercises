@@ -1,5 +1,12 @@
 # algorithmic-excercises CHANGELOG
 
+## [2.2.1](https://github.com/percebus/algorithmic-excercises/compare/v2.2.0...v2.2.1) (2024-08-17)
+
+
+### Bug Fixes
+
+* **problems/lib:** remove *.pyc ([d395aab](https://github.com/percebus/algorithmic-excercises/commit/d395aab83959547b5f02ed0a4185a76c002a2f0d))
+
 # [2.2.0](https://github.com/percebus/algorithmic-excercises/compare/v2.1.2...v2.2.0) (2024-08-17)
 
 ### Features
