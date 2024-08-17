@@ -1,5 +1,12 @@
 # algorithmic-excercises CHANGELOG
 
+## [2.1.2](https://github.com/percebus/algorithmic-excercises/compare/v2.1.1...v2.1.2) (2024-08-17)
+
+
+### Bug Fixes
+
+* **scripts/pip/installl.ba.sh:** PIP_CLI_OPTS ([92e592a](https://github.com/percebus/algorithmic-excercises/commit/92e592a58a69c159aa26638679a4faa6cea0ff84))
+
 ## [2.1.1](https://github.com/percebus/algorithmic-excercises/compare/v2.1.0...v2.1.1) (2024-07-29)
 
 ### Bug Fixes
