@@ -1,18 +1,18 @@
-FROM python:3.12.1 as base
+FROM python:3.12.1 AS base
 
-FROM base as project
+FROM base AS project
 WORKDIR /usr/app
 COPY . .
 RUN bash scripts/bash/clean.ba.sh
 
 
-FROM project as dev
+FROM project AS dev
 RUN bash scripts/pip/install.ba.sh
 
-FROM dev as test
+FROM dev AS test
 RUN pypyr ci npm=False stats=False
 
 # TODO use light image. alpine?
-FROM project as release
+FROM project AS release
 RUN bash scripts/pip/install.ba.sh 'release'
-CMD [ "python", "src/problems/leetcode/easy/two_sum" ]
+CMD [ "python", "src/problems/" ]

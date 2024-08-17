@@ -37,8 +37,6 @@ def run():
     # Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
     test(10, expected=False)
 
-    print("\n")
-
 
 if __name__ == "__main__":
     run()

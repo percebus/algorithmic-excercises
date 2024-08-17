@@ -25,8 +25,6 @@ def run() -> None:
 
     test([""], expected="")
 
-    print("\n")
-
 
 if __name__ == "__main__":
     run()

@@ -30,8 +30,6 @@ def run():
     #  * Output: false
     test("[", expected=False)
 
-    print("\n")
-
 
 if __name__ == "__main__":
     run()
