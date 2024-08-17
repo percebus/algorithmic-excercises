@@ -1,5 +1,7 @@
 # Results
 
+## Simple
+
 - ~~v1 is still actually faster~~
 - v3 is now the fastest
 
