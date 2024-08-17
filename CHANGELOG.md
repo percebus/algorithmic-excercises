@@ -1,5 +1,13 @@
 # algorithmic-excercises CHANGELOG
 
+# [2.2.0](https://github.com/percebus/algorithmic-excercises/compare/v2.1.2...v2.2.0) (2024-08-17)
+
+
+### Features
+
+* **__main__:** All problems so far ([c3a7d62](https://github.com/percebus/algorithmic-excercises/commit/c3a7d6249abbd8d5e3e328833e8b2d3c1e75a609))
+* **__main__:** All problems so far ([#18](https://github.com/percebus/algorithmic-excercises/issues/18)) ([36537f2](https://github.com/percebus/algorithmic-excercises/commit/36537f2d0cf1bef220c84266db6c6f3c73cc060c))
+
 ## [2.1.2](https://github.com/percebus/algorithmic-excercises/compare/v2.1.1...v2.1.2) (2024-08-17)
 
 ### Bug Fixes
