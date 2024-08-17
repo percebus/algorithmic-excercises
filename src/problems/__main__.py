@@ -1,4 +1,3 @@
-
 # TODO make each module self contained and importable
 # TODO or perhaps look recursively for all '__main__' modules in the problems directory
 from src.problems.euler.multiples_of_3_or_5 import __main__ as multiples_of_3_or_5
@@ -29,11 +28,13 @@ modules = [
 ]
 # fmt: on
 
+
 def run() -> None:
     for module in modules:
         print(f"{module.__name__}", end=": ")
         module.run()
-        print("") # Force a \n
+        print("")  # Force a \n
+
 
 if __name__ == "__main__":
     run()
