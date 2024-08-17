@@ -37,8 +37,6 @@ def run() -> None:
     # - Output: [0,1]
     test([3, 3], 6, expected=[0, 1])
 
-    print("\n")
-
 
 if __name__ == "__main__":
     run()
