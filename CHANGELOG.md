@@ -1,5 +1,14 @@
 # algorithmic-excercises CHANGELOG
 
+# [2.3.0](https://github.com/percebus/algorithmic-excercises/compare/v2.2.1...v2.3.0) (2024-09-07)
+
+
+### Features
+
+* **euler:** Sum Fobonacci Even Numbers ([5c5706b](https://github.com/percebus/algorithmic-excercises/commit/5c5706b510e351020bd67b0e6967c1248e38b84d))
+* **even_fibonacci_numbers:** From EULER ([#20](https://github.com/percebus/algorithmic-excercises/issues/20)) ([07144b8](https://github.com/percebus/algorithmic-excercises/commit/07144b8072c9ddfe19658695e1f700ddbec784d4))
+* **pypyr build:** w/ poetry export ([259d1a2](https://github.com/percebus/algorithmic-excercises/commit/259d1a2cc77afe7e57bc753e6e44cc35b79371ae))
+
 ## [2.2.1](https://github.com/percebus/algorithmic-excercises/compare/v2.2.0...v2.2.1) (2024-08-17)
 
 ### Bug Fixes
