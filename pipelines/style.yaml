@@ -23,6 +23,13 @@ steps:
 
 style:
   - name: pypyr.steps.echo
+    in:
+      echoMe: "=== poetry sort ========================================"
+  - name: pypyr.steps.shell
+    in:
+      cmd: poetry sort
+
+  - name: pypyr.steps.echo
     run: "{npm}"
     in:
       echoMe: "=== npx prettier --write ======================================"
