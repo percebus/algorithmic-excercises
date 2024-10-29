@@ -11,13 +11,13 @@ from src.problems.config.settings import Settings
 
 @dataclass
 class Configuration:
-    settings: Settings = field(default_factory=Settings)  # type: ignore
+    settings: Settings = field(default_factory=Settings)
 
     # pylint: disable=W0108 # unnecessary-lambda
     logging: Optional[dict[str, Any]] = field(init=False, default=None)
     # pylint: enable=W0108
 
-    def configure_logging(self):
+    def configure_logging(self) -> None:
         _path: str = self.settings.logging_config or ""
 
         with open(_path, "r", encoding="utf-8") as f:
@@ -26,7 +26,7 @@ class Configuration:
         logging.config.dictConfig(logging_config)  # type: ignore
         logging.getLogger(__name__).debug("Configuration: initializing...")
 
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         self.configure_logging()
 
 

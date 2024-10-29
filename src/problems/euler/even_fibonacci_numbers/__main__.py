@@ -5,13 +5,13 @@ from hamcrest import assert_that, equal_to
 from src.problems.euler.even_fibonacci_numbers.v1 import sum_fibonacci_evens
 
 
-def test(limit: int, expected: Optional[int] = None):
+def test(limit: int, expected: Optional[int] = None) -> None:
     result = sum_fibonacci_evens(limit)
     assert_that(result, equal_to(expected))
     print("✅", end="")
 
 
-def run():
+def run() -> None:
     #       2
     #       8
     test(10, expected=10)

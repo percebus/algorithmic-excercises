@@ -5,7 +5,7 @@ from src.problems.euler.multiples_of_3_or_5.v1 import sum_multiples as sum_multi
 from src.problems.euler.multiples_of_3_or_5.v2 import sum_multiples as sum_multiples_v2
 
 
-def run():
+def run() -> None:
     limit = 1000
     samples = 100000
     multiples = [3, 5]

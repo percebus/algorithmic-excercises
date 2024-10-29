@@ -9,7 +9,7 @@ def test(string: str, expected: bool) -> None:
     print("✅", end="")
 
 
-def run():
+def run() -> None:
     # Example 1:
     #  * Input: s = "()"
     #  * Output: true

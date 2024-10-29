@@ -1,6 +1,7 @@
-import pprint
+import pprint as _pprint
+from collections.abc import Callable
 
-pretty_printer = pprint.PrettyPrinter(indent=3)
+oPrettyPrinter = _pprint.PrettyPrinter(indent=3)
 
 # pprint = print
-pprint = pretty_printer.pprint
+pprint: Callable[[object], None] = oPrettyPrinter.pprint
