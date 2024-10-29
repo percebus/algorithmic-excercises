@@ -4,7 +4,7 @@
 # If there is no common prefix, return an empty string.
 
 
-# Ideally, you would want issubclass(...) to return False
+# NOTE: Ideally, you would want issubclass(...) to return False
 # when the implementing class doesn’t define all of the interface’s abstract methods.
 # pylint: disable=E1120 # no-value-for-parameter  # FIXME
 class SolutionMeta(type):
@@ -28,7 +28,7 @@ class SolutionMeta(type):
 # pylint: enable = E1120
 
 
-# NOTE: 'Informal Interface'. Make "formal"?
+# NOTE: 'Informal Interface'.
 class SolutionInterface(metaclass=SolutionMeta):
     """An Interface for LongestCommonPrefix Solution problem."""
 
@@ -36,8 +36,9 @@ class SolutionInterface(metaclass=SolutionMeta):
         """Longest Common Prefix
 
         Parameters:
-            words (list[str]): Different words that might share a common prefix.
+            `words` (`list[str]`): Different words that might share a common prefix.
 
         Returns:
-            str: A prefix that is common to all words in the list.
+            `str`: The longest common prefix string amongst an array of strings.
+                If there is no common prefix, it returns an empty string.
         """

@@ -1,3 +1,7 @@
-from .v1 import is_palindrome
+from .protocol import SolutionProtocol
+from .v1 import Solution
 
-__all__ = ["is_palindrome"]
+oSolution: SolutionProtocol = Solution()
+is_palindrome = oSolution.isPalindrome
+
+__all__ = ["Solution", "is_palindrome"]
