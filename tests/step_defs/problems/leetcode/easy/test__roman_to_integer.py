@@ -1,7 +1,7 @@
 from hamcrest import assert_that, equal_to, instance_of, is_
 from pytest_bdd import given, parsers, scenarios, then, when
 
-from src.problems.leetcode.easy.roman_to_integer.v1 import roman_to_int
+from src.problems.leetcode.easy.roman_to_integer import roman_to_int
 from tests.utils import assert_is_in_range
 
 scenarios("problems/leetcode/easy/Roman to Integer.feature")

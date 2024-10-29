@@ -1,7 +1,7 @@
 from hamcrest import assert_that, instance_of, is_
 from pytest_bdd import given, parsers, scenarios, then, when
 
-from src.problems.leetcode.easy.palindrome_number.v1 import is_palindrome
+from src.problems.leetcode.easy.palindrome_number import is_palindrome
 from tests.utils import assert_is_in_range
 
 constraints = {

@@ -1,6 +1,6 @@
 from hamcrest import assert_that, equal_to
 
-from src.problems.leetcode.easy.longest_common_prefix.v1 import longest_common_prefix
+from src.problems.leetcode.easy.longest_common_prefix import longest_common_prefix
 
 
 def test(words: list[str], expected: str) -> None:

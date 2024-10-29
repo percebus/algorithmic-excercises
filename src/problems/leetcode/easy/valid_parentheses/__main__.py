@@ -1,6 +1,6 @@
 from hamcrest import assert_that, equal_to
 
-from src.problems.leetcode.easy.valid_parentheses.v1 import is_valid
+from src.problems.leetcode.easy.valid_parentheses import is_valid
 
 
 def test(string: str, expected: bool) -> None:

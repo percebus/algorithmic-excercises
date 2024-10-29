@@ -1,6 +1,6 @@
 from hamcrest import assert_that, equal_to
 
-from src.problems.leetcode.easy.two_sum.v1 import two_sum
+from src.problems.leetcode.easy.two_sum import two_sum
 
 # SRC: https://leetcode.com/problems/two-sum/
 #

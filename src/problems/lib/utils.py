@@ -6,5 +6,5 @@ def identity(x: Any) -> Any:
 
 # pylint: disable=unused-argument
 def noop(x: Any) -> None:
-    return None
+    pass
 # pylint: enable=unused-argument
