@@ -17,19 +17,19 @@ def fn_good_default(arr: Optional[list[int]] = None) -> list[int]:
     return arr
 
 
-def test__fn__empty__returns__1():
+def test__fn__empty__returns__1() -> None:
     for fn in [fn_bad_default, fn_good_default]:
         result = fn()
         assert_that(result, equal_to([1]))
 
 
-def test__fn__1_2_3__returns__1_2_3_1():
+def test__fn__1_2_3__returns__1_2_3_1() -> None:
     for fn in [fn_bad_default, fn_good_default]:
         result = fn([1, 2, 3])
         assert_that(result, equal_to([1, 2, 3, 1]))
 
 
-def test__fn_bad_default__empty_multiple_times__has_side_effects():
+def test__fn_bad_default__empty_multiple_times__has_side_effects() -> None:
     for num in range(3):
         result = fn_bad_default()
 
@@ -37,7 +37,7 @@ def test__fn_bad_default__empty_multiple_times__has_side_effects():
     assert set(result) <= set([1, 1, 1])
 
 
-def test__fn_good_default__empty_multiple_times__is_indiscreet():
+def test__fn_good_default__empty_multiple_times__is_indiscreet() -> None:
     for num in range(3):
         result = fn_good_default()
         assert_that(result, equal_to([1]))

@@ -1,6 +1,5 @@
-from .v1 import Solution
+from .v1 import Solution, solution
 
-oSolution = Solution()
-roman_to_int = oSolution.romanToInt
+roman_to_int = solution.romanToInt
 
-__all__ = ["Solution", "roman_to_int"]
+__all__ = ["Solution", "solution", "roman_to_int"]

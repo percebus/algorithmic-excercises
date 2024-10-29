@@ -1,3 +1,5 @@
-from .v1 import two_sum
+from .v1 import Solution, solution
 
-__all__ = ["two_sum"]
+two_sum = solution.twoSum
+
+__all__ = ["Solution", "solution", "two_sum"]

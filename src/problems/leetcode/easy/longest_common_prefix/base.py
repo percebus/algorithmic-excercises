@@ -10,10 +10,10 @@
 class SolutionMeta(type):
     """A Parser metaclass that will be used for parser class creation."""
 
-    def __instancecheck__(cls, instance: object):
+    def __instancecheck__(cls, instance: object) -> bool:
         return cls.__subclasscheck__(type(instance))
 
-    def __subclasscheck__(cls, subclass: type):
+    def __subclasscheck__(cls, subclass: type) -> bool:
         attribute_names = ["longestCommonPrefix"]
         attributes = (getattr(subclass, attribute, None) for attribute in attribute_names)
         if not all(attributes):
@@ -32,13 +32,15 @@ class SolutionMeta(type):
 class SolutionInterface(metaclass=SolutionMeta):
     """An Interface for LongestCommonPrefix Solution problem."""
 
-    def longestCommonPrefix(self, words: list[str]) -> str:  # type: ignore
+    def longestCommonPrefix(self, words: list[str]) -> str:
         """Longest Common Prefix
 
         Parameters:
-            `words` (`list[str]`): Different words that might share a common prefix.
+            - :param: `words` (list[str]): Different words that might share a common prefix.
 
         Returns:
-            `str`: The longest common prefix string amongst an array of strings.
-                If there is no common prefix, it returns an empty string.
+            - :result: str:
+              - The longest common prefix string amongst an array of strings.
+              - If there is no common prefix, it returns an empty string.
         """
+        raise NotImplementedError

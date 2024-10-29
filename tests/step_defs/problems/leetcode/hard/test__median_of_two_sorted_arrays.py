@@ -14,7 +14,7 @@ constraints = {
 
 def validate_list(array, expected):
     length = len(array)
-    assert length == expected, f"len({array}): expected:{expected}, got:{length}"
+    assert_that(length, equal_to(expected))
     validate["m"](length)
 
 

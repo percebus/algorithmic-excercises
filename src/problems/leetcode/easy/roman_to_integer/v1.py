@@ -35,3 +35,6 @@ class Solution(SolutionBase):
                 values[idx] = value * -1
 
         return sum(values)
+
+
+solution = Solution()

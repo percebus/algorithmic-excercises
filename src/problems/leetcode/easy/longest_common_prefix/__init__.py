@@ -1,6 +1,5 @@
-from .v1 import Solution
+from .v1 import Solution, solution
 
-oSolution = Solution()
-longest_common_prefix = oSolution.longestCommonPrefix
+longest_common_prefix = solution.longestCommonPrefix
 
-__all__ = ["Solution", "longest_common_prefix"]
+__all__ = ["Solution", "solution", "longest_common_prefix"]
