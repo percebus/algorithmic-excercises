@@ -1,4 +1,4 @@
-from hamcrest import assert_that, equal_to, has_length, instance_of, is_
+from hamcrest import assert_that, equal_to, instance_of, is_
 from pytest_bdd import given, parsers, scenarios, then, when
 
 from src.problems.leetcode.hard.median_of_two_sorted_arrays import find_median
@@ -14,7 +14,7 @@ constraints = {
 
 def validate_list(array, expected):
     length = len(array)
-    assert_that(array, has_length(expected))
+    assert_that(length, equal_to(expected))
     validate["m"](length)
 
 
