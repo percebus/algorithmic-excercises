@@ -1,6 +1,6 @@
 from hamcrest import assert_that, equal_to
 
-from src.problems.leetcode.easy.palindrome_number.v1 import is_palindrome
+from . import is_palindrome
 
 # SRC: https://leetcode.com/problems/palindrome-number/
 #
@@ -9,14 +9,14 @@ from src.problems.leetcode.easy.palindrome_number.v1 import is_palindrome
 # For example, 121 is a palindrome while 123 is not.
 
 
-def test(number: int, expected: bool):
+def test(number: int, expected: bool) -> None:
     result = is_palindrome(number)
     #   print(f'{number}: {result}') # DEBUG only
     assert_that(result, equal_to(expected))
     print("✅", end="")
 
 
-def run():
+def run() -> None:
     # Input: x = 121
     # Output: true
     # Explanation: 121 reads as 121 from left to right and from right to left.

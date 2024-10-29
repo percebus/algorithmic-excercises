@@ -1,8 +1,10 @@
+from typing import Any
 
-def identity(x: any) -> any: # type: ignore
-    return x # type: ignore
+
+def identity(x: Any) -> Any:
+    return x
 
 # pylint: disable=unused-argument
-def noop(x: any) -> None: # type: ignore
-    return None
+def noop(x: Any) -> None:
+    pass
 # pylint: enable=unused-argument

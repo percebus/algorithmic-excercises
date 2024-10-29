@@ -3,7 +3,7 @@ from typing import Any
 from hamcrest import assert_that, empty, equal_to, is_, is_not
 
 
-def test_cls_VS_self_mutable_items_with_same_name():
+def test_cls_VS_self_mutable_items_with_same_name() -> None:
     class BadClass:
         __test__ = False
 
@@ -48,7 +48,7 @@ def test_cls_VS_self_mutable_items_with_same_name():
     assert_that(badClass2.get_instance_items(), is_(equal_to([7, 8, 9])))
 
 
-def test_cls_VS_self_mutable_items_with_different_names():
+def test_cls_VS_self_mutable_items_with_different_names() -> None:
     class GoodClass:
         __test__ = False
 

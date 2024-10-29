@@ -1,15 +1,15 @@
 from hamcrest import assert_that, equal_to
 
-from src.problems.leetcode.hard.median_of_two_sorted_arrays.v1 import find_median
+from . import find_median
 
 
-def test(nums1: list[int], nums2: list[int], expected: float):
+def test(nums1: list[int], nums2: list[int], expected: float) -> None:
     result = find_median(nums1, nums2)
     assert_that(result, equal_to(expected))
     print("✅", end="")
 
 
-def run():
+def run() -> None:
     # Example 1:
     # - Input: nums1 = [1,3], nums2 = [2]
     # - Output: 2.00000

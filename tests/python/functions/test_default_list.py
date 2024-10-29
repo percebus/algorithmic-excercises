@@ -1,3 +1,5 @@
+from typing import Optional
+
 from hamcrest import assert_that, equal_to
 
 
@@ -7,7 +9,7 @@ def fn_bad_default(arr: list[int] = []) -> list[int]:
     return arr
 
 
-def fn_good_default(arr: list[int] = None) -> list[int]:
+def fn_good_default(arr: Optional[list[int]] = None) -> list[int]:
     if arr is None:
         arr = []  # always initialize a new array
 

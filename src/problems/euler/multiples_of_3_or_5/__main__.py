@@ -2,7 +2,7 @@ from typing import Optional
 
 from hamcrest import assert_that, equal_to
 
-from src.problems.euler.multiples_of_3_or_5.v2 import sum_multiples
+from . import sum_multiples
 
 multiples = [3, 5]
 

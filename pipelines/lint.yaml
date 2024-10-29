@@ -52,6 +52,13 @@ steps:
 
   - name: pypyr.steps.echo
     in:
+      echoMe: "=== mypy ==================================================="
+  - name: pypyr.steps.shell
+    in:
+      cmd: python -m mypy src --check-untyped-defs
+
+  - name: pypyr.steps.echo
+    in:
       echoMe: "=== pylint =================================================="
   - name: pypyr.steps.shell
     in:

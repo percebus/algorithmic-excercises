@@ -12,7 +12,7 @@ A, B = ("A", "B")
 opposites = {"A": B, "B": A}
 
 
-def inverse(char: str):
+def inverse(char: str) -> str:
     return opposites[char]
 
 

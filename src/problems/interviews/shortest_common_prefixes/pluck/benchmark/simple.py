@@ -5,7 +5,7 @@ from src.problems.interviews.shortest_common_prefixes.pluck.v2 import pluck as p
 from src.problems.interviews.shortest_common_prefixes.pluck.v3 import pluck as pluck_v3
 
 
-def run():
+def run() -> None:
     # fmt: off
     data = {
         'b': 'bananas',

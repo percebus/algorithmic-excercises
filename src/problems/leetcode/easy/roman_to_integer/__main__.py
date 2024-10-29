@@ -1,6 +1,6 @@
 from hamcrest import assert_that, equal_to
 
-from src.problems.leetcode.easy.roman_to_integer.v1 import roman_to_int
+from . import roman_to_int
 
 
 def test(string: str, expected: int) -> None:
