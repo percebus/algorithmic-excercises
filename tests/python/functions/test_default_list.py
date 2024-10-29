@@ -1,4 +1,5 @@
 from typing import Optional
+
 from hamcrest import assert_that, equal_to
 
 
