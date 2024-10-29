@@ -1,5 +1,13 @@
 # algorithmic-excercises CHANGELOG
 
+# [2.4.0](https://github.com/percebus/algorithmic-excercises/compare/v2.3.0...v2.4.0) (2024-10-29)
+
+
+### Features
+
+* **benchmarks:** Main benchmark for benchmarks ([8d57abe](https://github.com/percebus/algorithmic-excercises/commit/8d57abe468365fe9d4cf3e6fbf99747e9bac31ca))
+* **typing:** Added typing, protocols, interfaces, ABCs, etc. ([#21](https://github.com/percebus/algorithmic-excercises/issues/21)) ([3330b4f](https://github.com/percebus/algorithmic-excercises/commit/3330b4f3b6f09abb2d42e3d815434260e46bb0ca))
+
 # [2.3.0](https://github.com/percebus/algorithmic-excercises/compare/v2.2.1...v2.3.0) (2024-09-07)
 
 ### Features
