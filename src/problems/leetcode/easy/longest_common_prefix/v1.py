@@ -16,3 +16,6 @@ class Solution(SolutionInterface):
                 return result
 
         return result
+
+
+solution = Solution()

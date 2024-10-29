@@ -1,4 +1,4 @@
-from typing import Protocol
+from typing import Protocol, runtime_checkable
 
 # SRC: https://leetcode.com/problems/palindrome-number/
 #
@@ -7,8 +7,9 @@ from typing import Protocol
 # For example, 121 is a palindrome while 123 is not.
 
 
+@runtime_checkable  # NOTE: Allows for isinstance check.
 class SolutionProtocol(Protocol):
-    def isPalindrome(self, number: int) -> bool:  # type: ignore
+    def isPalindrome(self, number: int) -> bool:
         """
         SolutionProtocol.isPalindrome
 
@@ -21,3 +22,4 @@ class SolutionProtocol(Protocol):
             `bool`:
                 `True` or `False`.
         """
+        raise NotImplementedError

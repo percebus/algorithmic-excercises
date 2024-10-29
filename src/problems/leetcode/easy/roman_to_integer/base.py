@@ -6,7 +6,7 @@ import abc
 # NOTE: Formal 'interface' (abstract base class) with no implementation
 class SolutionBase(metaclass=abc.ABCMeta):
     @classmethod
-    def __subclasshook__(cls, subclass: type):
+    def __subclasshook__(cls, subclass: type) -> bool:
         attribute_names = ["romanToInt"]
         attributes = (getattr(subclass, attribute, None) for attribute in attribute_names)
         if not all(attributes):

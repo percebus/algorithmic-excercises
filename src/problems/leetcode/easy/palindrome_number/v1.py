@@ -1,6 +1,9 @@
+from .protocol import SolutionProtocol
+
+
 # NOTE: Look mom, no inheritance!
 class Solution:  # SolutionProtocol
-    def isPalindrome(self, number: int) -> bool:  # type: ignore
+    def isPalindrome(self, number: int) -> bool:
         """
         Solution.isPalindrome
 
@@ -8,10 +11,10 @@ class Solution:  # SolutionProtocol
         An integer is a palindrome when it reads the same backward as forward.
 
         Parameters:
-            `number` (`int`): An integer x.
+            - :param: `number` (int): An integer x.
 
         Returns:
-            `bool`:
+            - :result: (bool)
                 `True` when it reads the same backward as forward.
                 Otherwise `False`.
         """
@@ -19,3 +22,6 @@ class Solution:  # SolutionProtocol
         str1 = str(number)
         str2 = str1[::-1]
         return str1 == str2
+
+
+solution: SolutionProtocol = Solution()

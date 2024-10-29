@@ -44,6 +44,7 @@ strict = ["src"]
 exclude = [
     "**/node_modules",
     "**/__pycache__",
+    "**/test*.py"
 ]
 
 [virtualenvs]

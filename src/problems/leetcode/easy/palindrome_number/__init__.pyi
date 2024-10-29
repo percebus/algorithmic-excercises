@@ -6,11 +6,11 @@ def is_palindrome(number: int) -> bool:
     An integer is a palindrome when it reads the same backward as forward.
 
     Parameters:
-        `number` (`int`): An integer x.
+        - :param: `number` (int): An integer x.
 
     Returns:
-        `bool`:
-            `True` when it reads the same backward as forward.
-            Otherwise `False`.
+        - :result: (bool):
+            - True when it reads the same backward as forward.
+            - Otherwise False.
     """
     ...
