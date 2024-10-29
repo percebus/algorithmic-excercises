@@ -3,12 +3,14 @@
 ignore-patterns=.+.pyi
 
 disable=
+    C0103, # invalid-name
     C0114, # missing-module-docstring
     C0115, # missing-class-docstring
     C0116, # missing-function-docstring
+    R0801, # similar lines
+    R0903, # too-few-public-methods
     W0105, # pointless-string-statement
     W0511, # fixme
-    R0801, # similar lines
 
 [FORMAT]
 max-line-length=150
