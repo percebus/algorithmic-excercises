@@ -1,4 +1,4 @@
-from .interface import SolutionInterface
+from .base import SolutionInterface
 
 
 class Solution(SolutionInterface):
