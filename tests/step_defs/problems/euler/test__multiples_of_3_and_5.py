@@ -3,7 +3,7 @@ from typing import Any
 from hamcrest import assert_that, equal_to
 from pytest_bdd import given, parsers, scenarios, then, when
 
-from src.problems.euler.multiples_of_3_or_5.v2 import sum_multiples
+from src.problems.euler.multiples_of_3_or_5 import sum_multiples
 
 scenarios("problems/euler/Sum Multiples of 3 or 5.feature")
 

@@ -2,7 +2,7 @@ from typing import Optional
 
 from hamcrest import assert_that, equal_to
 
-from src.problems.euler.even_fibonacci_numbers.v1 import sum_fibonacci_evens
+from src.problems.euler.even_fibonacci_numbers import sum_fibonacci_evens
 
 
 def test(limit: int, expected: Optional[int] = None) -> None:
