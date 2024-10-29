@@ -1,6 +1,6 @@
 from hamcrest import assert_that, equal_to
 
-from src.problems.meta.coding.puzzles.warmup.sum_abc.v1 import getSum
+from src.problems.meta.coding.puzzles.warmup.sum_abc import getSum
 
 # pylint: disable=invalid-name
 

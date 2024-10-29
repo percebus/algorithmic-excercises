@@ -1,7 +1,7 @@
 from hamcrest import assert_that, equal_to
 from pytest_bdd import given, parsers, scenarios, then, when
 
-from src.problems.meta.coding.puzzles.warmup.all_wrong.v1 import getWrongAnswers
+from src.problems.meta.coding.puzzles.warmup.all_wrong import getWrongAnswers
 
 scenarios("problems/meta/coding/puzzles/warmup/All Wrong.feature")
 

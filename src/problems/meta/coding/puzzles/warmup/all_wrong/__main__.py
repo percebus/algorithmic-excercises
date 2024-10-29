@@ -1,6 +1,6 @@
 from hamcrest import assert_that, equal_to
 
-from src.problems.meta.coding.puzzles.warmup.all_wrong.v1 import getWrongAnswers
+from src.problems.meta.coding.puzzles.warmup.all_wrong import getWrongAnswers
 
 # pylint: disable=invalid-name
 
