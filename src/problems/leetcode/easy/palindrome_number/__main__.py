@@ -1,6 +1,6 @@
 from hamcrest import assert_that, equal_to
 
-from src.problems.leetcode.easy.palindrome_number import is_palindrome
+from . import is_palindrome
 
 # SRC: https://leetcode.com/problems/palindrome-number/
 #

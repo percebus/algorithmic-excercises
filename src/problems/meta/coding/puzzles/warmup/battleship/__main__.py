@@ -2,7 +2,7 @@ from typing import List
 
 from hamcrest import assert_that, equal_to
 
-from src.problems.meta.coding.puzzles.warmup.battleship import getHitProbability
+from . import getHitProbability
 
 # pylint: disable=invalid-name
 

@@ -1,6 +1,6 @@
 from hamcrest import assert_that, equal_to
 
-from src.problems.leetcode.hard.median_of_two_sorted_arrays import find_median
+from . import find_median
 
 
 def test(nums1: list[int], nums2: list[int], expected: float) -> None:

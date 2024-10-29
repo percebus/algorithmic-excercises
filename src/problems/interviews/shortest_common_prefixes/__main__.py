@@ -2,7 +2,7 @@ from typing import Optional
 
 from hamcrest import assert_that, equal_to
 
-from src.problems.interviews.shortest_common_prefixes import get_prefixes
+from . import get_prefixes
 
 
 def test(words: list[str], expected: Optional[list[str]] = None):
