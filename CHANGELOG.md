@@ -1,5 +1,19 @@
 # algorithmic-excercises CHANGELOG
 
+# [2.6.0](https://github.com/percebus/algorithmic-excercises/compare/v2.5.0...v2.6.0) (2024-10-30)
+
+
+### Bug Fixes
+
+* **configuration.py typings:** Added type hints ([85b6fe8](https://github.com/percebus/algorithmic-excercises/commit/85b6fe8b87b94e0d35e67afe13490e83e8e111c4))
+* **coverage:** Remove tests/ from stats ([8777834](https://github.com/percebus/algorithmic-excercises/commit/877783475aba077f5b7dec3725558ebf2251beb9))
+
+
+### Features
+
+* **more linting:** part 2 ([#24](https://github.com/percebus/algorithmic-excercises/issues/24)) ([5633a24](https://github.com/percebus/algorithmic-excercises/commit/5633a241a283283d1fde194f845fd58d4610b8c0))
+* **typings:** For logging ([fc7ebc4](https://github.com/percebus/algorithmic-excercises/commit/fc7ebc4f7e77dd87410dfb9a39f4ff13bdf095ab))
+
 # [2.5.0](https://github.com/percebus/algorithmic-excercises/compare/v2.4.0...v2.5.0) (2024-10-30)
 
 ### Features
