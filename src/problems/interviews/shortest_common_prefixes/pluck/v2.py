@@ -28,10 +28,7 @@ def pluck(data: dict[str, Any | str]) -> Iterator[Any]:
     """
 
     def recurse(dictionary: NestedStrDict) -> list[Any | str]:
-        return [
-            recurse(value) if isinstance(value, dict) else key  # type: ignore
-            for key, value in dictionary.items()
-        ]
+        return [recurse(value) if isinstance(value, dict) else key for key, value in dictionary.items()]
 
     results = recurse(data)
     return more_itertools.collapse(results)
