@@ -1,5 +1,12 @@
 # algorithmic-excercises CHANGELOG
 
+# [2.5.0](https://github.com/percebus/algorithmic-excercises/compare/v2.4.0...v2.5.0) (2024-10-30)
+
+
+### Features
+
+* **more linting:** Tweaked linters and fixed accordingly ([#23](https://github.com/percebus/algorithmic-excercises/issues/23)) ([4446d06](https://github.com/percebus/algorithmic-excercises/commit/4446d06e5928b9a0bef91575bf99f770a79602cb))
+
 # [2.4.0](https://github.com/percebus/algorithmic-excercises/compare/v2.3.0...v2.4.0) (2024-10-29)
 
 ### Features
