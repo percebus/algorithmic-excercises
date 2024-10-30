@@ -1,9 +1,8 @@
 import json
 import logging
+import logging.config
 from dataclasses import dataclass, field
-
-# NOTE: This import is needed to properly configure logging
-from logging import config  # type: ignore # pylint: disable=W0611 # noqa
+from logging import Logger
 from typing import Any, Optional
 
 from src.problems.config.settings import Settings
@@ -23,8 +22,9 @@ class Configuration:
         with open(_path, "r", encoding="utf-8") as f:
             logging_config = json.load(f)
 
-        logging.config.dictConfig(logging_config)  # type: ignore
-        logging.getLogger(__name__).debug("Configuration: initializing...")
+        logging.config.dictConfig(logging_config)
+        logger: Logger = logging.getLogger(__name__)
+        logger.debug("Configuration: initializing...")  # type: ignore # FIXME: 'Type of "debug" is partially unknown'
 
     def __post_init__(self) -> None:
         self.configure_logging()
