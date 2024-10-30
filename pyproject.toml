@@ -10,6 +10,7 @@ packages = [{include = "src"}]
 [tool.poetry.dependencies]
 python = "~3.12"
 logger = "^1.4"
+logging = "^0.4.9.6"
 logging-config = "^1.0.4"
 more-itertools = "^10.3.0"
 pandas-stubs = "^2.2.3.241009"
@@ -36,12 +37,17 @@ ruff = "^0.4.7"
 setuptools = "^69.0.3"
 
 [tool.pyright]
+venvPath = "."
+venv = ".venv"
 defineConstant = { DEBUG = true }
+typeCheckingMode = "strict"
 include = ["src"]
 strict = ["src"]
 # stubPath = "src/stubs" # TODO?
 # ignore = ["src/oldstuff"] # NOTE what is the difference between exclude and ignore?
 exclude = [
+    ".venv",
+    "typings",
     "**/node_modules",
     "**/__pycache__",
     "**/test*.py",

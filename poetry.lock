@@ -236,6 +236,16 @@ files = [
 ]
 
 [[package]]
+name = "logging"
+version = "0.4.9.6"
+description = "A logging module for Python"
+optional = false
+python-versions = "*"
+files = [
+    {file = "logging-0.4.9.6.tar.gz", hash = "sha256:26f6b50773f085042d301085bd1bf5d9f3735704db9f37c1ce6d8b85c38f2417"},
+]
+
+[[package]]
 name = "logging-config"
 version = "1.0.4"
 description = "A wrapper class for the Python standard logging module"
@@ -1299,4 +1309,4 @@ test = ["covdefaults (>=2.3)", "coverage (>=7.2.7)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.12"
-content-hash = "bc4af394ae8b1b69b46eea7163debb1b776b14aeb7b72ebdef5dec971041d989"
+content-hash = "bd490d6dfb35f1b77d33d13faa158e3ac387c9f6aec3b9599076ec3a9eff7ef2"

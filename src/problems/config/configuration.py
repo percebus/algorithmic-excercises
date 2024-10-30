@@ -24,7 +24,7 @@ class Configuration:
 
         logging.config.dictConfig(logging_config)
         logger: Logger = logging.getLogger(__name__)
-        logger.debug("Configuration: initializing...")  # type: ignore # FIXME: 'Type of "debug" is partially unknown'
+        logger.debug("Configuration: initializing...")
 
     def __post_init__(self) -> None:
         self.configure_logging()
