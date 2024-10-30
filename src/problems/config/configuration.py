@@ -21,7 +21,7 @@ class Configuration:
         _path: str = self.settings.logging_config or ""
 
         with open(_path, "r", encoding="utf-8") as f:
-            logging_config = json.load(f)  # type: ignore
+            logging_config = json.load(f)
 
         logging.config.dictConfig(logging_config)  # type: ignore
         logging.getLogger(__name__).debug("Configuration: initializing...")

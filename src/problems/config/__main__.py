@@ -1,6 +1,10 @@
+from typing import TYPE_CHECKING
+
 from src.problems.config.configuration import configuration
-from src.problems.config.settings import Settings
 from src.problems.lib.printing import pprint
+
+if TYPE_CHECKING:
+    from src.problems.config.settings import Settings
 
 
 def run() -> None:

@@ -46,10 +46,10 @@ def when__two_sum(context):
 
 @then(
     parsers.parse("it returns {indexes} of the {two_numbers}"),
-    converters=dict(
-        indexes=eval,
-        two_numbers=eval,
-    ),
+    converters={
+        "indexes": eval,
+        "two_numbers": eval,
+    },
 )
 def then_returns_tuple_of_indexes(context, indexes, two_numbers):
     idx1, idx2 = indexes

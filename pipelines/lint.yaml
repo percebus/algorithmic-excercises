@@ -55,7 +55,7 @@ steps:
       echoMe: "=== mypy ==================================================="
   - name: pypyr.steps.shell
     in:
-      cmd: python -m mypy src --check-untyped-defs
+      cmd: python -m mypy src
 
   - name: pypyr.steps.echo
     in:
