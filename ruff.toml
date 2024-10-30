@@ -39,5 +39,5 @@ fixable = ["ALL"]
 ignore = [
     "TD",  # TODO
     "D1",  # Missing docstring
-    "TID252", # Prefer absolute imports over relative imports from parent modules
+    "TID252", # "Prefer absolute imports over relative imports from parent modules"
 ]
