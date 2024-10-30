@@ -34,7 +34,7 @@ def test__fn_bad_default__empty_multiple_times__has_side_effects() -> None:
         result = fn_bad_default()
 
     assert_that(result, not (equal_to([1])))
-    assert set(result) <= set([1, 1, 1])
+    assert set(result) <= {1, 1, 1}
 
 
 def test__fn_good_default__empty_multiple_times__is_indiscreet() -> None:

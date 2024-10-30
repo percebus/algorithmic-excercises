@@ -16,7 +16,7 @@ def is_valid(string: str) -> bool:
     opened: list[str] = []  # TODO? use queue instead?
     for char in string:
         # pylint: disable=consider-iterating-dictionary
-        is_opening: bool = char in brackets.keys()
+        is_opening: bool = char in brackets
         is_closing: bool = char in brackets.values()
         # pylint: enable=consider-iterating-dictionary
 

@@ -1,7 +1,8 @@
 line-length = 150
 indent-width = 4
+show-fixes = true
 
-# Assume Python 3.12
+# Minimum Python version: 3.12
 target-version = "py312"
 
 [format]
@@ -26,6 +27,9 @@ select = [
     "E",  # a subset of the pycodestyle
     "I"  # isort
 ]
+
+# Additional rules
+extend-select = ["C4", "SIM", "TCH"]
 
 fixable = ["ALL"]
 ignore = [

@@ -1,13 +1,17 @@
 import timeit
+from typing import TYPE_CHECKING
 
-from src.problems.interviews.shortest_common_prefixes.pluck.v1 import pluck as pluck_v1
-from src.problems.interviews.shortest_common_prefixes.pluck.v2 import pluck as pluck_v2
-from src.problems.interviews.shortest_common_prefixes.pluck.v3 import pluck as pluck_v3
+from ..v1 import pluck as pluck_v1
+from ..v2 import pluck as pluck_v2
+from ..v3 import pluck as pluck_v3
+
+if TYPE_CHECKING:
+    from ...types import NestedStrDict
 
 
 def run() -> None:
     # fmt: off
-    data = {
+    data: NestedStrDict = {
         'b': 'bananas',
         'd': {
             'do': {

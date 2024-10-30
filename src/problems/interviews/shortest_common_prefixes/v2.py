@@ -9,10 +9,7 @@ if TYPE_CHECKING:
 
 
 def get_prefixes(words: list[str]) -> list[str]:
-    data: str | NestedStrDict = categorize(words)
-
-    if isinstance(data, str):  # XXX FIXME Invalid. Categorize should return NestedStrDict
-        raise ValueError("Data is not a dict.")
+    data: NestedStrDict = categorize(words)
 
     entries = pluck(data)
     return list(entries)
