@@ -47,6 +47,11 @@ exclude = [
     "**/test*.py",
 ]
 
+[tool.coverage.run]
+omit = [
+    "**/tests/**",
+]
+
 [virtualenvs]
 create = true
 in-project = true
