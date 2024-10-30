@@ -1,6 +1,7 @@
 line-length = 150
 indent-width = 4
 show-fixes = true
+exclude = ["typings"]
 
 # Minimum Python version: 3.12
 target-version = "py312"
@@ -23,9 +24,12 @@ line-ending = "auto"
 
 [lint]
 select = [
-    "F",  # Pyflakes
-    "E",  # a subset of the pycodestyle
-    "I"  # isort
+    "F",   # Pyflakes
+    "E",   # pycodestyle
+    "I",   # isort
+    "SIM", # flake8-simplify
+    "TID", # flake8-tidy-imports
+    "W",   # warning
 ]
 
 # Additional rules
@@ -35,4 +39,5 @@ fixable = ["ALL"]
 ignore = [
     "TD",  # TODO
     "D1",  # Missing docstring
+    "TID252", # "Prefer absolute imports over relative imports from parent modules"
 ]
