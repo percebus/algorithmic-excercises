@@ -29,7 +29,7 @@ select = [
     "I",   # isort
     "SIM", # flake8-simplify
     "W",   # ???
-    "TID", # TID
+    "TID", # ???
 ]
 
 # Additional rules
