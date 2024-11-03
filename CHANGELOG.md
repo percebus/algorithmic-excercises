@@ -1,5 +1,14 @@
 # algorithmic-excercises CHANGELOG
 
+# [2.7.0](https://github.com/percebus/algorithmic-excercises/compare/v2.6.0...v2.7.0) (2024-11-03)
+
+
+### Features
+
+* **largest palindrome product:** by digits ([#25](https://github.com/percebus/algorithmic-excercises/issues/25)) ([cdee058](https://github.com/percebus/algorithmic-excercises/commit/cdee0589ec7495b6be36855402fca4801c3350d3))
+* **largest_palindrome_product:** Code ([907efc0](https://github.com/percebus/algorithmic-excercises/commit/907efc0f525cb06f258ac4ecefa29811f9c79e33))
+* **typings/hamcrest:** "Partially unkown" ([58359c4](https://github.com/percebus/algorithmic-excercises/commit/58359c48a3c86621498d95da9508bc971551b491))
+
 # [2.6.0](https://github.com/percebus/algorithmic-excercises/compare/v2.5.0...v2.6.0) (2024-10-30)
 
 ### Bug Fixes
