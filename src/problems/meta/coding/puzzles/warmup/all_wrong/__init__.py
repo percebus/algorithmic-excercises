@@ -1,3 +1,5 @@
-from .v1 import getWrongAnswers
+from .v1 import Puzzle, puzzle
 
-__all__ = ["getWrongAnswers"]
+get_wrong_answers = puzzle.getWrongAnswers
+
+__all__ = ["Puzzle", "puzzle", "get_wrong_answers"]

@@ -1,7 +1,7 @@
 from typing import TYPE_CHECKING
 
+from src.problems.commons.printing import pprint
 from src.problems.config.configuration import configuration
-from src.problems.lib.printing import pprint
 
 if TYPE_CHECKING:
     from src.problems.config.settings import Settings
