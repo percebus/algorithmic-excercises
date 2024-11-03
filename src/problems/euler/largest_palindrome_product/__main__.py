@@ -2,7 +2,11 @@ import logging
 
 from hamcrest import assert_that, equal_to
 
-from src.problems.euler.largest_palindrome_product.v1 import format_pair, get_largest_paindrome_product, get_limits
+from src.problems.euler.largest_palindrome_product.v1 import get_largest_paindrome_product, get_limits
+
+
+def format_pair(numbers: tuple[int, int]) -> str:
+    return "x".join(str(num) for num in numbers)
 
 
 def test(chars: int, product: int, expected: tuple[int, int]) -> None:
@@ -17,7 +21,10 @@ def test(chars: int, product: int, expected: tuple[int, int]) -> None:
 
 
 def run() -> None:
+    # "The largest palindrome made from the product of two `2`-digit numbers is `9009 = 91 x 99`.
     test(chars=2, product=9009, expected=(91, 99))
+
+    # Find the largest palindrome made from the product of two `3`-digit numbers.
     test(chars=3, product=906609, expected=(913, 993))
 
 

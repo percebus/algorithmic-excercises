@@ -29,7 +29,3 @@ def get_largest_paindrome_product(minimum: int, maximum: int) -> tuple[int, int]
     palindromes = [result for result in results if result]
     logging.debug("palindromes: %s", palindromes)
     return palindromes[-1]
-
-
-def format_pair(numbers: tuple[int, int]) -> str:
-    return "x".join(str(num) for num in numbers)
