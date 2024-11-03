@@ -1,12 +1,10 @@
 from hamcrest import assert_that, equal_to
 
-from . import getWrongAnswers
-
-# pylint: disable=invalid-name
+from . import get_wrong_answers
 
 
 def test(N: int, C: str, expected: str) -> None:
-    result = getWrongAnswers(N, C)
+    result = get_wrong_answers(N, C)
     assert_that(result, equal_to(expected))
     print("✅", end="")
 
@@ -22,5 +20,3 @@ def run() -> None:
 
 if __name__ == "__main__":
     run()
-
-# pylint: enable=invalid-name
