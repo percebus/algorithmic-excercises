@@ -1,30 +1,50 @@
 from typing import Generator, Optional
 
+from src.problems.commons.utils import noop
 
-def get_factors(x: int) -> Generator[tuple[int, int]]:
+
+def get_factors(x: int) -> Generator[tuple[int, int], None, None]:
     nums = range(x + 1)
-    return ((a, b) for a in nums for b in (num for num in nums if num >= a) if (a * b) == x)
+    # fmt: off
+    return (
+        (a, b)
+        for a in nums
+        for b in (
+            num
+            for num in nums
+            if num >= a)
+        if (a * b) == x)
+    # fmt: on
 
 
 def is_prime_number(x: int) -> bool:
     if x == 0:
         return False
-    elif x == 2:
+
+    if x == 2:
         return True
-    elif x % 2 == 0:
+
+    if x % 2 == 0:
         return False
 
-    count: int = 0
+    # FIXME REFACTOR
+    count = 0
     for pair in get_factors(x):  # type: ignore
-        count += 1  # noqa: SIM113 # FIXME?
+        noop(pair)
+        count += 1  # noqa: SIM113
         if count > 1:
             return False
 
     return True
 
 
-def get_prime_factors(num: int) -> Optional[int]:
-    nums = [num for pair in get_factors(num) for num in pair]
+def get_prime_factors(x: int) -> Optional[int]:
+    # fmt: off
+    nums = [
+        num
+        for pair in get_factors(x)
+        for num in pair]
+    # fmt: on
 
     nums.sort(reverse=True)
     for num in nums:
