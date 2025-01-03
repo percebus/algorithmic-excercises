@@ -2,7 +2,7 @@ from typing import Optional
 
 from hamcrest import assert_that, equal_to
 
-from src.problems.euler.largest_prime_factor.v1 import get_prime_factors
+from src.problems.euler.largest_prime_factor import get_prime_factors
 
 
 def test(x: int, expected: Optional[int] = None) -> None:
@@ -16,7 +16,7 @@ def run() -> None:
     test(13195, expected=29)
 
     # What is the largest prime factor of the number 600851475143 ?
-    test(600851475143, expected=10)
+    test(600851475143, expected=6857)
 
 
 if __name__ == "__main__":

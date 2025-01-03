@@ -1,6 +1,6 @@
 import math
 
-from src.problems.euler.largest_prime_factor.grae.prime.v2 import is_prime
+from src.problems.euler.largest_prime_factor.grae_drake.prime.v2 import is_prime
 
 
 def largest_prime_factor(n: int) -> list[int]:
