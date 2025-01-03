@@ -2,11 +2,11 @@ from typing import Optional
 
 from hamcrest import assert_that, equal_to
 
-from src.problems.euler.largest_prime_factor import get_prime_factors
+from src.problems.euler.largest_prime_factor import get_largest_prime_factor
 
 
 def test(x: int, expected: Optional[int] = None) -> None:
-    result = get_prime_factors(x)
+    result = get_largest_prime_factor(x)
     assert_that(result, equal_to(expected))
     print("✅", end="")
 

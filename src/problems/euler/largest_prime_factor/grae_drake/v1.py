@@ -10,7 +10,7 @@ Finally take the biggest one and there’s your answer.
 """
 
 
-def largest_prime_factor(n: int) -> list[int]:
+def largest_prime_factor(n: int) -> int:
     factors = []
     for x in range(2, n):
         if is_prime(x):  # noqa: SIM102

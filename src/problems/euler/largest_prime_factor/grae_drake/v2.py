@@ -3,7 +3,7 @@ import math
 from src.problems.euler.largest_prime_factor.grae_drake.prime.v2 import is_prime
 
 
-def largest_prime_factor(n: int) -> list[int]:
+def largest_prime_factor(n: int) -> int:
     factors = []
     for x in range(2, math.floor(math.sqrt(n)) + 1):
         if is_prime(x):  # noqa: SIM102
