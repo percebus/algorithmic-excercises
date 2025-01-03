@@ -1,5 +1,13 @@
 from src.problems.euler.largest_prime_factor.grae.prime.v2 import is_prime
 
+'''
+Ok, let’s just iterate over every number
+between 1 and 600,851,475,143,
+test whether it’s prime,
+then if so test whether it’s a factor of 600,851,475,143.
+
+Finally take the biggest one and there’s your answer.
+'''
 
 def largest_prime_factor(n: int) -> list[int]:
     factors = []
