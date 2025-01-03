@@ -16,6 +16,7 @@ fi
 set -e
 set -v
 
+python -m pip install --verbose --upgrade pip
 python -m pip install --verbose --upgrade --requirement requirements.upgrade.txt
 python -m pip install --verbose --requirement ${requirements}
 
