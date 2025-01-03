@@ -4,6 +4,8 @@
   "description": "Algorithmic excercises",
   "main": "FIXME",
   "scripts": {
+    "python:pip:upgrade": "python -m pip install --upgrade pip",
+    "prepython:pip:install:upgrade": "npm run python:pip:upgrade",
     "python:pip:install:upgrade": "python -m pip install --upgrade --requirement requirements.upgrade.txt",
     "python:pipx:install": "bash scripts/pipx/install.ba.sh",
     "python:flake8": "python -m flake8 src --benchmark --statistics",
