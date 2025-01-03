@@ -1,6 +1,6 @@
 # algorithmic-excercises
 
-## 'To-Do's
+## TODOs
 
 - [x] ~~Remove `tests/` from `coverage`~~
 - [ ] `mypy --strict` for all `.py` files

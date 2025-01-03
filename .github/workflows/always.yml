@@ -83,8 +83,7 @@ jobs:
     needs: verify
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
+      - uses: percebus/github-actions-common/.github/actions/checkout@main
 
       - name: docker compose up
         run: docker compose up --abort-on-container-exit
@@ -108,8 +107,7 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
+      - uses: percebus/github-actions-common/.github/actions/checkout@main
 
       - name: "docker build: ${{ matrix.DOCKER_TARGET }}"
         run: |
@@ -119,7 +117,7 @@ jobs:
   verify_matrix:
     name: Verify
     needs: verify
-    # if: github.ref == 'refs/heads/main' # FIXME
+    if: github.ref == 'refs/heads/main'
     continue-on-error: true
     strategy:
       max-parallel: 10
@@ -133,11 +131,7 @@ jobs:
         PYTHON_VERSION:
           # - 3.11 # poetry is not setup
           - 3.12.x # latest 3.12.x
-          - 3.13.x # "The version '3.13' with architecture 'x64' was not found for Ubuntu 22.04."
-
-        # Future versions
-        NODE_VERSION:
-          - 22.x
+          # - 3.13.x # FIXME "The version '3.13' with architecture 'x64' was not found for Ubuntu 22.04."
 
         # Different architectures
         ARCHITECTURE:
@@ -167,9 +161,6 @@ jobs:
         run: bash scripts/pip/install.ba.sh
 
       - uses: percebus/github-actions-node/.github/actions/node_setup@main
-        with:
-          node-version: ${{ matrix.NODE_VERSION }}
-
       - uses: percebus/github-actions-npm/.github/actions/npm_install@main
 
       # FIXME prettier fails on windows
