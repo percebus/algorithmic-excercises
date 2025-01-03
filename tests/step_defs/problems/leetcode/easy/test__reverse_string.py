@@ -24,9 +24,10 @@ def then_it_returns_None(context):
     result = context["result"]
     assert_that(result, is_(None))
 
+
 @then(parsers.parse("the same array is procedurally {expected_reversed} by reference"))
 def then_the_string_got_reversed(expected_reversed, context):
     reversed = context["reversed"]
-    reversed_chars = reversed.split(',')
+    reversed_chars = reversed.split(",")
 
     assert_that(expected_reversed, equal_to(reversed_chars))

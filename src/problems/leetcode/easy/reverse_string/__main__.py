@@ -2,10 +2,10 @@ from typing import Optional
 
 from hamcrest import assert_that, equal_to
 
-from . import reverse_string
+from src.problems.leetcode.easy.reverse_string import reverse_string
 
 
-def test(chars: list[str], expected: Optional[list[str]] = None):
+def test(chars: list[str], expected: Optional[list[str]] = None) -> None:
     reverse_string(chars)
     actual_string: str = "".join(chars)
     expected_string: str = "".join(expected or [])
@@ -13,7 +13,7 @@ def test(chars: list[str], expected: Optional[list[str]] = None):
     print("✅", end="")
 
 
-def run():
+def run() -> None:
     # Example 1:
     # Input: s = ['h','e','l','l','o']
     # Output: ['o','l','l','e','h']
