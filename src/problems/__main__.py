@@ -4,6 +4,7 @@ import logging
 # TODO or perhaps look recursively for all '__main__' modules in the problems directory
 from src.problems.euler.even_fibonacci_numbers import __main__ as sum_fibonacci_evens
 from src.problems.euler.largest_palindrome_product import __main__ as largest_palindrome_product
+from src.problems.euler.largest_prime_factor import __main__ as largest_prime_factor
 from src.problems.euler.multiples_of_3_or_5 import __main__ as multiples_of_3_or_5
 from src.problems.interviews.shortest_common_prefixes import __main__ as shortest_common_prefixes
 from src.problems.leetcode.easy.longest_common_prefix import __main__ as longest_common_prefix
@@ -20,6 +21,7 @@ from src.problems.meta.coding.puzzles.warmup.sum_abc import __main__ as sum_abc
 modules = [
     sum_fibonacci_evens,
     largest_palindrome_product,
+    largest_prime_factor,
     multiples_of_3_or_5,
     shortest_common_prefixes,
     longest_common_prefix,
