@@ -9,10 +9,9 @@
 
 ## [2.9.1](https://github.com/percebus/algorithmic-excercises/compare/v2.9.0...v2.9.1) (2025-01-04)
 
-
 ### Bug Fixes
 
-* requirements.min.txt left-overs ([ec940fb](https://github.com/percebus/algorithmic-excercises/commit/ec940fb085426a9d285af5ffb83a9ed7d5ab5202))
+- requirements.min.txt left-overs ([ec940fb](https://github.com/percebus/algorithmic-excercises/commit/ec940fb085426a9d285af5ffb83a9ed7d5ab5202))
 
 # [2.9.0](https://github.com/percebus/algorithmic-excercises/compare/v2.8.0...v2.9.0) (2025-01-04)
 
