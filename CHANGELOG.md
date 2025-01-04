@@ -2,10 +2,9 @@
 
 # [2.9.0](https://github.com/percebus/algorithmic-excercises/compare/v2.8.0...v2.9.0) (2025-01-04)
 
-
 ### Features
 
-* **Reverse String:** From LeetCode  ([#28](https://github.com/percebus/algorithmic-excercises/issues/28)) ([0125e0b](https://github.com/percebus/algorithmic-excercises/commit/0125e0bbab11c7b8d6636d5fe0d5804867fec6af))
+- **Reverse String:** From LeetCode ([#28](https://github.com/percebus/algorithmic-excercises/issues/28)) ([0125e0b](https://github.com/percebus/algorithmic-excercises/commit/0125e0bbab11c7b8d6636d5fe0d5804867fec6af))
 
 # [2.8.0](https://github.com/percebus/algorithmic-excercises/compare/v2.7.0...v2.8.0) (2025-01-03)
 
