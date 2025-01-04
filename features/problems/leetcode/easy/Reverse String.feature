@@ -2,6 +2,10 @@ Feature: Reverse String
 
   # SRC: https://leetcode.com/problems/reverse-string/
 
+  # Constraints
+  # - 1 <= s.length <= 105
+  # - s[i] is a printable ascii character.
+
 
   Scenario Outline: _
     Given an array of <chars>

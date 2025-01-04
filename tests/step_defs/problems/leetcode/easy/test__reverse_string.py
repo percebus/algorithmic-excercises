@@ -26,11 +26,9 @@ def then_it_returns_None(context):
 
 
 @then(
-    parsers.parse("the same array is procedurally {expected_reversed} by reference"),
-    converters={"expected_reversed": lambda s: s.split(",")},
+    parsers.parse("the same array is procedurally {expected} by reference"),
+    converters={"expected": lambda s: s.split(",")},
 )
-def then_the_string_got_reversed(expected_reversed, context):
-    reversed = context["reversed"]
-    reversed_chars = reversed
-
-    assert_that(expected_reversed, equal_to(reversed_chars))
+def then_the_string_got_reversed(expected, context):
+    actual = context["reversed"]
+    assert_that(expected, equal_to(actual))
