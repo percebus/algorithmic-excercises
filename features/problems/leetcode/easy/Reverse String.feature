@@ -12,6 +12,7 @@ Feature: Reverse String
     When I call reverseString
     Then the void function returns None
     And the same array is procedurally <reversed> by reference
+#   And it used 0(1) extra memory # TODO how to test?
 
   Examples:
   |    chars    |  reversed   |
