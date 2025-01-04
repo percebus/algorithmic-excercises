@@ -5,6 +5,8 @@ logger==1.4 ; python_version >= "3.12" and python_version < "3.13" \
     --hash=sha256:4ecac57133c6376fa215f0fe6b4dc4d60e4d1ad8be005cab4e8a702df682f8b3
 logging-config==1.0.4 ; python_version >= "3.12" and python_version < "3.13" \
     --hash=sha256:840a2c807e5580b9da35dbbc2513b2206c9a37c2f4f7ca605b035a3ae88f55c7
+logging==0.4.9.6 ; python_version >= "3.12" and python_version < "3.13" \
+    --hash=sha256:26f6b50773f085042d301085bd1bf5d9f3735704db9f37c1ce6d8b85c38f2417
 more-itertools==10.5.0 ; python_version >= "3.12" and python_version < "3.13" \
     --hash=sha256:037b0d3203ce90cca8ab1defbbdac29d5f993fc20131f3664dc8d6acfa872aef \
     --hash=sha256:5482bfef7849c25dc3c6dd53a6173ae4795da2a41a80faea6700d9f5846c5da6

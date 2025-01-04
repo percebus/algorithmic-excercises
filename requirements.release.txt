@@ -1,2 +1,2 @@
 # . # TODO
--r requirements.min.txt
+-r requirements.main.txt

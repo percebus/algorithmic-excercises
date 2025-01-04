@@ -19,8 +19,6 @@ set -v
 python -m pip install --verbose --upgrade pip
 python -m pip install --verbose --upgrade --requirement requirements.upgrade.txt
 python -m pip install --verbose --requirement ${requirements}
-
-# FIXME move this inside a requirements.txt
 python -m pip install --verbose ${PIP_CLI_OPTS} .
 
 set +v
