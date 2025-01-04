@@ -9,6 +9,7 @@ from src.problems.euler.multiples_of_3_or_5 import __main__ as multiples_of_3_or
 from src.problems.interviews.shortest_common_prefixes import __main__ as shortest_common_prefixes
 from src.problems.leetcode.easy.longest_common_prefix import __main__ as longest_common_prefix
 from src.problems.leetcode.easy.palindrome_number import __main__ as palindrome_number
+from src.problems.leetcode.easy.reverse_string import __main__ as reverse_string
 from src.problems.leetcode.easy.roman_to_integer import __main__ as roman_to_integer
 from src.problems.leetcode.easy.two_sum import __main__ as two_sum
 from src.problems.leetcode.easy.valid_parentheses import __main__ as valid_parentheses
@@ -26,6 +27,7 @@ modules = [
     shortest_common_prefixes,
     longest_common_prefix,
     palindrome_number,
+    reverse_string,
     roman_to_integer,
     two_sum,
     valid_parentheses,
