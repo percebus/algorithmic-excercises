@@ -1,5 +1,12 @@
 # algorithmic-excercises CHANGELOG
 
+## [2.9.3](https://github.com/percebus/algorithmic-excercises/compare/v2.9.2...v2.9.3) (2025-01-04)
+
+
+### Bug Fixes
+
+* **scripts:** To run setup.ba.sh ([#29](https://github.com/percebus/algorithmic-excercises/issues/29)) ([a47517f](https://github.com/percebus/algorithmic-excercises/commit/a47517f6529bf99b24c640235ff7b7d072bd40f9))
+
 ## [2.9.2](https://github.com/percebus/algorithmic-excercises/compare/v2.9.1...v2.9.2) (2025-01-04)
 
 ### Bug Fixes
