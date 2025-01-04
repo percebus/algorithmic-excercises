@@ -26,7 +26,7 @@ export default {
           "package.json",
           "CHANGELOG.md",
           "requirements.all.txt",
-          "requirements.min.txt",
+          "requirements.main.txt",
         ],
         changelogFile: "CHANGELOG.md",
       },

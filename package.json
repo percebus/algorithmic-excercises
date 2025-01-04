@@ -16,7 +16,7 @@
     "poetry:sort": "poetry sort",
     "_poetry:export": "poetry export --no-interaction --format requirements.txt",
     "poetry:export:all": "npm run _poetry:export -- --output requirements.all.txt --with dev",
-    "poetry:export:min": "npm run _poetry:export -- --output requirements.min.txt",
+    "poetry:export:min": "npm run _poetry:export -- --output requirements.main.txt",
     "poetry:export": "npm run poetry:export:all && npm run poetry:export:min",
     "poetry:plugins": "npm run poetry:sort && npm run poetry:export",
     "pre-commit:install": "pre-commit install",
