@@ -9,10 +9,9 @@
 
 # [2.8.0](https://github.com/percebus/algorithmic-excercises/compare/v2.7.0...v2.8.0) (2025-01-03)
 
-
 ### Features
 
-* **reusable workflows:** From percebus/github-actions-* ([#27](https://github.com/percebus/algorithmic-excercises/issues/27)) ([389e942](https://github.com/percebus/algorithmic-excercises/commit/389e9420bb2a1da0ff0cbf870d3549a4bc0fdb33))
+- **reusable workflows:** From percebus/github-actions-\* ([#27](https://github.com/percebus/algorithmic-excercises/issues/27)) ([389e942](https://github.com/percebus/algorithmic-excercises/commit/389e9420bb2a1da0ff0cbf870d3549a4bc0fdb33))
 
 # [2.7.0](https://github.com/percebus/algorithmic-excercises/compare/v2.6.0...v2.7.0) (2024-11-03)
 
