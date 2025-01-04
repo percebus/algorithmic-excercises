@@ -3,7 +3,13 @@
 set -e
 set -v
 
-cat requirements.poetry-plugin.txt | sed 's/.*/"&"/' | xargs -n 1 poetry self add
+filename="requirements.poetry-plugin.txt"
+if [[ -z $(grep '[^[:space:]]' $filename) ]]; then
+  echo "${filename} is empty, skipping..."
+else
+  cat ${filename} | sed 's/.*/"&"/' | xargs -n 1 poetry self add
+fi
+
 poetry self show plugins
 
 set +v

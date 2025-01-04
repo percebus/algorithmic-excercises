@@ -50,7 +50,7 @@ jobs:
           architecture: ${{ env.ARCHITECTURE }}
           python-version: ${{ env.PYTHON_VERSION }}
       - name: pip install
-        run: bash scripts/pip/install.ba.sh
+        run: bash scripts/setup.ba.sh
 
       - uses: percebus/github-actions-node/.github/actions/node_setup@main
       - uses: percebus/github-actions-npm/.github/actions/npm_install@main
