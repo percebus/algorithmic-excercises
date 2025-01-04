@@ -1,5 +1,12 @@
 # algorithmic-excercises CHANGELOG
 
+## [2.9.2](https://github.com/percebus/algorithmic-excercises/compare/v2.9.1...v2.9.2) (2025-01-04)
+
+
+### Bug Fixes
+
+* **package.json:** requirements.min left-over ([337b0f5](https://github.com/percebus/algorithmic-excercises/commit/337b0f55ac0a75d725572b6000987c8726a102bf))
+
 ## [2.9.1](https://github.com/percebus/algorithmic-excercises/compare/v2.9.0...v2.9.1) (2025-01-04)
 
 
