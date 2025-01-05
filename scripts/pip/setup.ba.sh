@@ -11,7 +11,7 @@ set -x
 
 bash ${parent_folder}/upgrade.ba.sh
 bash ${parent_folder}/install.ba.sh ${target_config}
-bash ${parent_folder}/freeze.ba.sh
+# bash ${parent_folder}/freeze.ba.sh # TODO?
 
 set +x
 set +e

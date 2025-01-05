@@ -139,8 +139,8 @@ jobs:
       - name: test
         run: pypyr ci npm=False
 
-  poetry_install:
-    name: poetry install
+  pypyr_lock:
+    name: pypyr lock
     needs: verify
     runs-on: ubuntu-latest
     steps:
@@ -154,11 +154,8 @@ jobs:
       - name: scripts/setup.ba.sh
         run: bash scripts/setup.ba.sh
 
-      - name: poetry install
-        run: poetry install
-
-      - name: pypyr build
-        run: pypyr build
+      - name: pypyr lock
+        run: pypyr lock
 
       # TODO commit back upgraded requirements
 
