@@ -27,5 +27,5 @@ Feature: Reverse String
 #   And it used 0(1) extra memory # TODO how to test?
 
   Examples:
-  |    chars    |  reversed   | size |
-  |   h,e,l,l,o | o,l,l,e,h   |    5 |
+  |  chars    |  reversed | size |
+  | h,e,l,l,o | o,l,l,e,h |    5 |
