@@ -1,11 +1,16 @@
--e git+ssh://git@github.com/percebus/algorithmic-excercises.git@a79632306d4cfee4b3172f1843c0f88704b7e344#egg=algorithmic_excercises
+-e git+ssh://git@github.com/percebus/algorithmic-excercises.git@fbc31ab2c191f680999eb5b090dc287b83109e17#egg=algorithmic_excercises
 annotated-types==0.7.0
 argcomplete==3.5.3
 astroid==3.3.8
+cfgv==3.4.0
 click==8.1.8
 colorama==0.4.6
 coverage==7.6.1
 dill==0.3.9
+distlib==0.3.9
+filelock==3.16.1
+flake8==7.1.1
+identify==2.6.5
 iniconfig==2.0.0
 isort==5.13.2
 logger==1.4
@@ -27,9 +32,13 @@ parse_type==0.6.3
 pipx==1.7.1
 platformdirs==4.3.6
 pluggy==1.5.0
+pre_commit==4.0.1
+pyclean==3.0.0
+pycodestyle==2.12.1
 pydantic==2.9.0
 pydantic-settings==2.4.0
 pydantic_core==2.23.2
+pyflakes==3.2.0
 PyHamcrest==2.1.0
 pylint==3.3.3
 pypyr==5.9.1
@@ -41,6 +50,7 @@ pytest-dotenv==0.5.2
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
 pytz==2024.1
+PyYAML==6.0.2
 ruamel.yaml==0.18.9
 ruamel.yaml.clib==0.2.12
 ruff==0.4.10
@@ -52,3 +62,4 @@ types-pytz==2024.2.0.20241003
 typing_extensions==4.12.2
 tzdata==2024.1
 userpath==1.9.2
+virtualenv==20.28.1
