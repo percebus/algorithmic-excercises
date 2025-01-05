@@ -2,9 +2,6 @@
 
 set -e
 
-target_config=$1
-echo "target_config:'${target_config}'"
-
 scripts_path="$(dirname "$(readlink -f "$0")")"
 echo "Script directory: ${scripts_path}"
 
