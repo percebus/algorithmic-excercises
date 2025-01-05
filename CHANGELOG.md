@@ -1,5 +1,12 @@
 # algorithmic-excercises CHANGELOG
 
+## [2.9.5](https://github.com/percebus/algorithmic-excercises/compare/v2.9.4...v2.9.5) (2025-01-05)
+
+
+### Bug Fixes
+
+* **semantic-release:** added exec plugin ([#33](https://github.com/percebus/algorithmic-excercises/issues/33)) ([be73f1a](https://github.com/percebus/algorithmic-excercises/commit/be73f1a07eafcfb85691e4850bf1ff436d15acab))
+
 ## [2.9.4](https://github.com/percebus/algorithmic-excercises/compare/v2.9.3...v2.9.4) (2025-01-05)
 
 ### Bug Fixes
