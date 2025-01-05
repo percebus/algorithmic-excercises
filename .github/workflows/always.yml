@@ -102,6 +102,12 @@ jobs:
           - x64
           # - arm64 # "The version '3.12.x' with architecture 'arm64' was not found for Ubuntu 22.04."
 
+        exclude:
+          # Repetitive from job:verify
+          - OS: ubuntu-latest
+            PYTHON_VERSION: 3.12.x
+            ARCHITECTURE: x64
+
     runs-on: ${{ matrix.OS }}
     steps:
       # FIXME: Does NOT work on Windows
@@ -155,7 +161,6 @@ jobs:
         run: pypyr build
 
       # TODO commit back upgraded requirements
-
 
   docker_compose:
     name: docker compose

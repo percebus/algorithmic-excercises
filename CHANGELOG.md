@@ -2,10 +2,9 @@
 
 ## [2.9.4](https://github.com/percebus/algorithmic-excercises/compare/v2.9.3...v2.9.4) (2025-01-05)
 
-
 ### Bug Fixes
 
-* **leetcode/easy/reverse_string:** w/o mem alloc ([#30](https://github.com/percebus/algorithmic-excercises/issues/30)) ([865f241](https://github.com/percebus/algorithmic-excercises/commit/865f2412ae6429909ad9c256c0aca9c2aad4af7a))
+- **leetcode/easy/reverse_string:** w/o mem alloc ([#30](https://github.com/percebus/algorithmic-excercises/issues/30)) ([865f241](https://github.com/percebus/algorithmic-excercises/commit/865f2412ae6429909ad9c256c0aca9c2aad4af7a))
 
 ## [2.9.3](https://github.com/percebus/algorithmic-excercises/compare/v2.9.2...v2.9.3) (2025-01-04)
 
