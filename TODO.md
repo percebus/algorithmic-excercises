@@ -7,6 +7,20 @@
 - [ ] Remove `src.` from all `import`s
 - [ ] Remove `python` commands from `package.json`.
 
+### pipx
+
+Move CLI cmds like `pypyr` to `requirements.pipx.txt`
+
+- [ ] `flake8`
+- [ ] `mypy`
+- [ ] `pre-commit`
+- [ ] `pyclean`
+- [ ] `pylint`
+- [ ] `pyright`
+- [ ] `pypyr`
+- [ ] `ruff`
+- [ ] etc.
+
 ## Done
 
 - [x] ~~Remove `tests/` from `coverage`~~
