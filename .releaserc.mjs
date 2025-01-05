@@ -3,9 +3,6 @@
  */
 export default {
   branches: ["main", "next"],
-  exec: {
-    prepareCmd: ["npm run style"],
-  },
   plugins: [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
@@ -22,7 +19,11 @@ export default {
         tarballDir: "dist",
       },
     ],
-    "@semantic-release/exec",
+    [
+      "@semantic-release/exec", {
+        prepareCmd: ["npm run style"]
+      }
+    ]
     [
       "@semantic-release/git",
       {
