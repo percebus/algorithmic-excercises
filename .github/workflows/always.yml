@@ -17,9 +17,31 @@ permissions:
   pull-requests: write
 
 jobs:
+  pypyr_lock:
+    name: pypyr lock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: percebus/github-actions-common/.github/actions/checkout@main
+
+      - name: setup python @ ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v5
+        with:
+          architecture: ${{ env.ARCHITECTURE }}
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      # includes poetry install
+      - name: scripts/setup.ba.sh
+        run: bash scripts/setup.ba.sh
+
+      - name: pypyr lock
+        run: pypyr lock freeze=True
+
+      # TODO commit back upgraded requirements
+
   # SRC: https://github.com/semantic-release/semantic-release/blob/master/docs/recipes/ci-configurations/github-actions.md
   semantic-release:
     name: Tag
+    needs: pypyr_lock
     runs-on: ubuntu-latest
     permissions:
       issues: write # to be able to comment on released issues
@@ -138,43 +160,6 @@ jobs:
       # Thus, we disabled 'npm'
       - name: test
         run: pypyr ci npm=False
-
-  pypyr_lock:
-    name: pypyr lock
-    needs: verify
-    runs-on: ubuntu-latest
-    steps:
-      - uses: percebus/github-actions-common/.github/actions/checkout@main
-
-      - name: setup python @ ${{ env.PYTHON_VERSION }}
-        uses: actions/setup-python@v5
-        with:
-          architecture: ${{ env.ARCHITECTURE }}
-          python-version: ${{ env.PYTHON_VERSION }}
-      - name: scripts/install.ba.sh
-        run: bash scripts/install.ba.sh
-
-      - name: pypyr lock
-        run: pypyr lock freeze=True
-
-      # TODO commit back upgraded requirements
-
-  poetry_install:
-    name: poetry install
-    needs: verify
-    runs-on: ubuntu-latest
-    steps:
-      - uses: percebus/github-actions-common/.github/actions/checkout@main
-
-      - name: setup python @ ${{ env.PYTHON_VERSION }}
-        uses: actions/setup-python@v5
-        with:
-          architecture: ${{ env.ARCHITECTURE }}
-          python-version: ${{ env.PYTHON_VERSION }}
-
-      # includes poetry install
-      - name: scripts/setup.ba.sh
-        run: bash scripts/setup.ba.sh
 
   docker_compose:
     name: docker compose
