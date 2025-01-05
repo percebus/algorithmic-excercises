@@ -2,18 +2,16 @@
 
 ## [2.9.9](https://github.com/percebus/algorithmic-excercises/compare/v2.9.8...v2.9.9) (2025-01-05)
 
-
 ### Bug Fixes
 
-* **CHANGELOG.md:** style ([3e456e3](https://github.com/percebus/algorithmic-excercises/commit/3e456e3e97feb2da916387eb3bdf2cb38586043f))
-* **package.json:** Remove postsemantic-release ([403ded0](https://github.com/percebus/algorithmic-excercises/commit/403ded0b761ed92b70e958fa63956cd565ace3d0))
+- **CHANGELOG.md:** style ([3e456e3](https://github.com/percebus/algorithmic-excercises/commit/3e456e3e97feb2da916387eb3bdf2cb38586043f))
+- **package.json:** Remove postsemantic-release ([403ded0](https://github.com/percebus/algorithmic-excercises/commit/403ded0b761ed92b70e958fa63956cd565ace3d0))
 
 ## [2.9.8](https://github.com/percebus/algorithmic-excercises/compare/v2.9.7...v2.9.8) (2025-01-05)
 
-
 ### Bug Fixes
 
-* **.releaserc.mjs:** verifyReleaseCmd ([92e606c](https://github.com/percebus/algorithmic-excercises/commit/92e606cb2aaf93a7468685fdbc5163433978a0cc))
+- **.releaserc.mjs:** verifyReleaseCmd ([92e606c](https://github.com/percebus/algorithmic-excercises/commit/92e606cb2aaf93a7468685fdbc5163433978a0cc))
 
 ## [2.9.7](https://github.com/percebus/algorithmic-excercises/compare/v2.9.6...v2.9.7) (2025-01-05)
 
