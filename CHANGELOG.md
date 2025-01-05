@@ -2,10 +2,9 @@
 
 ## [2.9.10](https://github.com/percebus/algorithmic-excercises/compare/v2.9.9...v2.9.10) (2025-01-05)
 
-
 ### Bug Fixes
 
-* **.releaserc.mjs:** prepareCmd ([6e72678](https://github.com/percebus/algorithmic-excercises/commit/6e726789a5dc644cb24431721edbc399b76e9ffd))
+- **.releaserc.mjs:** prepareCmd ([6e72678](https://github.com/percebus/algorithmic-excercises/commit/6e726789a5dc644cb24431721edbc399b76e9ffd))
 
 ## [2.9.9](https://github.com/percebus/algorithmic-excercises/compare/v2.9.8...v2.9.9) (2025-01-05)
 

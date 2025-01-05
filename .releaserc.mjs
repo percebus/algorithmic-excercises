@@ -22,9 +22,9 @@ export default {
     [
       "@semantic-release/exec",
       {
-        prepareCmd: "npm run style"
-      }
-    ]
+        prepareCmd: "npm run style",
+      },
+    ],
     [
       "@semantic-release/git",
       {
