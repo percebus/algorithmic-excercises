@@ -15,13 +15,7 @@ else
     echo "Installing everything..."
 fi
 
-set -v
-
-# pip upgrades pip
-python -m pip install --verbose --upgrade pip
-
-# pip upgrades pipx
-python -m pip install --verbose --upgrade --requirement requirements.upgrade.txt
+set -x
 
 # all pip dependencies (generated w/ poetry)
 python -m pip install --verbose --requirement ${requirements}
@@ -29,5 +23,5 @@ python -m pip install --verbose --requirement ${requirements}
 # The project itself (to use src)
 python -m pip install --verbose ${PIP_CLI_OPTS} .
 
-set +v
+set +x
 set +e

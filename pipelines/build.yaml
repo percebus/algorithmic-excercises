@@ -13,3 +13,10 @@ steps:
   - name: pypyr.steps.shell
     in:
       cmd: poetry export --no-interaction --format requirements.txt --output requirements.main.txt
+
+  - name: pypyr.steps.echo
+    in:
+      echoMe: "= pip freeze ================================================"
+  - name: pypyr.steps.shell
+    in:
+      cmd: bash scripts/pip/freeze.ba.sh
