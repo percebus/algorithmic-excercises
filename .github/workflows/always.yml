@@ -151,11 +151,11 @@ jobs:
         with:
           architecture: ${{ env.ARCHITECTURE }}
           python-version: ${{ env.PYTHON_VERSION }}
-      - name: scripts/setup.ba.sh
-        run: bash scripts/setup.ba.sh
+      - name: scripts/install.ba.sh
+        run: bash scripts/install.ba.sh
 
       - name: pypyr lock
-        run: python -m pypyr lock freeze=True
+        run: pypyr lock freeze=True
 
       # TODO commit back upgraded requirements
 
