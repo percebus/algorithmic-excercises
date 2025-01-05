@@ -34,7 +34,7 @@ jobs:
         run: bash scripts/setup.ba.sh
 
       - name: pypyr lock
-        run: pypyr lock freeze=True
+        run: python -m pypyr lock freeze=True
 
       # TODO commit back upgraded requirements
 
