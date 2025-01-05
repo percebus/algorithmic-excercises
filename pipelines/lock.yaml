@@ -8,6 +8,7 @@ steps:
     in:
       defaults:
         update: False
+        freeze: False # FIXME sometimes it gets stuck when running locally
 
   - name: pypyr.steps.echo
     run: "{update}"
@@ -29,8 +30,10 @@ steps:
       cmd: poetry export --no-interaction --format requirements.txt --output requirements.main.txt
 
   - name: pypyr.steps.echo
+    run: "{freeze}"
     in:
       echoMe: "= pip freeze =============================================="
   - name: pypyr.steps.shell
+    run: "{freeze}"
     in:
       cmd: bash scripts/pip/freeze.ba.sh
