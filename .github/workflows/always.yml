@@ -50,7 +50,7 @@ jobs:
           architecture: ${{ env.ARCHITECTURE }}
           python-version: ${{ env.PYTHON_VERSION }}
       - name: pip install
-        run: bash scripts/pip/setup.ba.sh
+        run: bash scripts/install.ba.sh
 
       - uses: percebus/github-actions-node/.github/actions/node_setup@main
       - uses: percebus/github-actions-npm/.github/actions/npm_install@main
@@ -128,7 +128,7 @@ jobs:
           architecture: ${{ matrix.ARCHITECTURE }}
           python-version: ${{ matrix.PYTHON_VERSION }}
       - name: pip install
-        run: bash scripts/pip/setup.ba.sh
+        run: bash scripts/install.ba.sh
 
       - uses: percebus/github-actions-node/.github/actions/node_setup@main
       - uses: percebus/github-actions-npm/.github/actions/npm_install@main
@@ -151,11 +151,11 @@ jobs:
         with:
           architecture: ${{ env.ARCHITECTURE }}
           python-version: ${{ env.PYTHON_VERSION }}
-      - name: scripts/setup.ba.sh
-        run: bash scripts/setup.ba.sh
+      - name: scripts/install.ba.sh
+        run: bash scripts/install.ba.sh
 
       - name: pypyr lock
-        run: pypyr lock
+        run: pypyr lock freeze=True
 
       # TODO commit back upgraded requirements
 
