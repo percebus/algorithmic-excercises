@@ -159,6 +159,23 @@ jobs:
 
       # TODO commit back upgraded requirements
 
+  poetry_install:
+    name: poetry install
+    needs: verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: percebus/github-actions-common/.github/actions/checkout@main
+
+      - name: setup python @ ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v5
+        with:
+          architecture: ${{ env.ARCHITECTURE }}
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      # includes poetry install
+      - name: scripts/setup.ba.sh
+        run: bash scripts/setup.ba.sh
+
   docker_compose:
     name: docker compose
     needs: verify
