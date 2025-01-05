@@ -20,8 +20,9 @@ export default {
       },
     ],
     [
-      "@semantic-release/exec", {
-        prepareCmd: ["npm run style"]
+      "@semantic-release/exec",
+      {
+        prepareCmd: "npm run style"
       }
     ]
     [
