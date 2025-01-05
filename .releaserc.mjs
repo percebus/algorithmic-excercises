@@ -4,7 +4,7 @@
 export default {
   branches: ["main", "next"],
   exec: {
-    verifyRelease: ["npm run style"],
+    generateNotes: ["npm run style"],
   },
   plugins: [
     "@semantic-release/commit-analyzer",

@@ -2,10 +2,9 @@
 
 ## [2.9.6](https://github.com/percebus/algorithmic-excercises/compare/v2.9.5...v2.9.6) (2025-01-05)
 
-
 ### Bug Fixes
 
-* **TODO.md:** Added note ([494c50a](https://github.com/percebus/algorithmic-excercises/commit/494c50ac43e8e05c955d874a9b5c0f200b5925ea))
+- **TODO.md:** Added note ([494c50a](https://github.com/percebus/algorithmic-excercises/commit/494c50ac43e8e05c955d874a9b5c0f200b5925ea))
 
 ## [2.9.5](https://github.com/percebus/algorithmic-excercises/compare/v2.9.4...v2.9.5) (2025-01-05)
 
