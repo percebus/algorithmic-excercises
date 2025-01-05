@@ -2,10 +2,9 @@
 
 ## [2.9.7](https://github.com/percebus/algorithmic-excercises/compare/v2.9.6...v2.9.7) (2025-01-05)
 
-
 ### Bug Fixes
 
-* **.releaserc.mjs:** generateNotes ([460a1b4](https://github.com/percebus/algorithmic-excercises/commit/460a1b40d4d590ef7b26e0a2f5e389b200a47afd))
+- **.releaserc.mjs:** generateNotes ([460a1b4](https://github.com/percebus/algorithmic-excercises/commit/460a1b40d4d590ef7b26e0a2f5e389b200a47afd))
 
 ## [2.9.6](https://github.com/percebus/algorithmic-excercises/compare/v2.9.5...v2.9.6) (2025-01-05)
 
