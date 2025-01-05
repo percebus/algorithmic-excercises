@@ -34,7 +34,7 @@ jobs:
         run: bash scripts/setup.ba.sh
 
       - name: pypyr lock
-        run: python -m pypyr lock freeze=True
+        run: pypyr lock freeze=True
 
       # TODO commit back upgraded requirements
 
@@ -77,10 +77,10 @@ jobs:
       - uses: percebus/github-actions-node/.github/actions/node_setup@main
       - uses: percebus/github-actions-npm/.github/actions/npm_install@main
 
-      - name: lint
+      - name: pypyr lint
         run: pypyr lint stats=True
 
-      - name: test
+      - name: pypyr test
         run: pypyr ci lint=False
 
       - name: Publish test-results.xml Summary
@@ -158,7 +158,7 @@ jobs:
       # FIXME prettier fails on windows
       # Because of EOL differences
       # Thus, we disabled 'npm'
-      - name: test
+      - name: pypyr test
         run: pypyr ci npm=False
 
   docker_compose:
