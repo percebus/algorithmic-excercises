@@ -11,7 +11,8 @@
 
 Move CLI cmds like `pypyr` to `requirements.pipx.txt`
 
-- [ ] `mypy`
+- [ ] `mypy`: There is another `mypy-extensions` dependency
+- [ ] `ruff`: `pypyr lint` did NOT work
 - [ ] etc.
 
 ## Done
@@ -29,4 +30,3 @@ Move CLI cmds like `pypyr` to `requirements.pipx.txt`
 - [x] ~~`pylint`~~
 - [x] ~~`pyright`~~
 - [x] ~~`pypyr`~~
-- [x] ~~`ruff`~~
