@@ -1,5 +1,12 @@
 # algorithmic-excercises CHANGELOG
 
+## [2.9.8](https://github.com/percebus/algorithmic-excercises/compare/v2.9.7...v2.9.8) (2025-01-05)
+
+
+### Bug Fixes
+
+* **.releaserc.mjs:** verifyReleaseCmd ([92e606c](https://github.com/percebus/algorithmic-excercises/commit/92e606cb2aaf93a7468685fdbc5163433978a0cc))
+
 ## [2.9.7](https://github.com/percebus/algorithmic-excercises/compare/v2.9.6...v2.9.7) (2025-01-05)
 
 
