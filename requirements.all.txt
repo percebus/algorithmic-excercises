@@ -262,6 +262,9 @@ mypy==1.13.0 ; python_version >= "3.12" and python_version < "3.13" \
     --hash=sha256:bde31fc887c213e223bbfc34328070996061b0833b0a4cfec53745ed61f3519b \
     --hash=sha256:c5fc54dbb712ff5e5a0fca797e6e0aa25726c7e72c6a5850cfd2adbc1eb0a372 \
     --hash=sha256:de2904956dac40ced10931ac967ae63c5089bd498542194b436eb097a9f77bc8
+nodeenv==1.9.1 ; python_version >= "3.12" and python_version < "3.13" \
+    --hash=sha256:6ec12890a2dab7946721edbfbcd91f3319c6ccc9aec47be7c7e6b7011ee6645f \
+    --hash=sha256:ba11c9782d29c27c70ffbdda2d7415098754709be8a7056d79a737cd901155c9
 numpy==2.1.1 ; python_version >= "3.12" and python_version < "3.13" \
     --hash=sha256:046356b19d7ad1890c751b99acad5e82dc4a02232013bd9a9a712fddf8eb60f5 \
     --hash=sha256:0b8cc2715a84b7c3b161f9ebbd942740aaed913584cae9cdc7f8ad5ad41943d0 \
@@ -460,6 +463,9 @@ pydantic==2.9.0 ; python_version >= "3.12" and python_version < "3.13" \
 pyhamcrest==2.1.0 ; python_version >= "3.12" and python_version < "3.13" \
     --hash=sha256:c6acbec0923d0cb7e72c22af1926f3e7c97b8e8d69fc7498eabacaf7c975bd9c \
     --hash=sha256:f6913d2f392e30e0375b3ecbd7aee79e5d1faa25d345c8f4ff597665dcac2587
+pyright==1.1.391 ; python_version >= "3.12" and python_version < "3.13" \
+    --hash=sha256:54fa186f8b3e8a55a44ebfa842636635688670c6896dcf6cf4a7fc75062f4d15 \
+    --hash=sha256:66b2d42cdf5c3cbab05f2f4b76e8bec8aa78e679bfa0b6ad7b923d9e027cadb2
 pytest-bdd==7.2.0 ; python_version >= "3.12" and python_version < "3.13" \
     --hash=sha256:96e9dc5437100fe627596e366dbe60e02f105974134e9aee8fe83ed67c2404d6 \
     --hash=sha256:c89996dc18b72033c471c40ef1281a0f77f5a7419bc53720c52e70c68c886e64
