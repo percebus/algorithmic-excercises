@@ -6,6 +6,7 @@
 - [ ] Centralize print("✅") in `lib`
 - [ ] Remove `src.` from all `import`s
 - [ ] Remove `python` commands from `package.json`.
+- [ ] Fix `CHANGELOG.md` style from `semantic-release`
 
 ### CLI cmds
 
