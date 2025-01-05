@@ -20,8 +20,6 @@ class Solution:  # (SolutionProtocol)
         size: int = len(chars)
         top: int = size - 1
         mid: int = floor(size / 2)
-
-        # FIXME do not process middle char
         for idx in range(mid):
             char_a: str = chars[idx]
             char_b: str = chars[top - idx]
