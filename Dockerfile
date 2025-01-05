@@ -14,5 +14,5 @@ RUN pypyr ci npm=False stats=False
 
 # TODO use light image. alpine?
 FROM project AS release
-RUN bash scripts/install.ba.sh 'release'
+RUN bash scripts/pip/install.ba.sh 'release'
 CMD [ "python", "src/problems/" ]

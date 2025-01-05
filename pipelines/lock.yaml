@@ -7,17 +7,14 @@ steps:
     comment: set default values for optional cli inputs
     in:
       defaults:
-        update: False
         freeze: False # FIXME sometimes it gets stuck when running locally
 
   - name: pypyr.steps.echo
-    run: "{update}"
     in:
       echoMe: "= poetry lock ============================================="
   - name: pypyr.steps.shell
-    run: "{update}"
     in:
-      cmd: poetry lock
+      cmd: poetry lock --no-update
 
   - name: pypyr.steps.echo
     in:
