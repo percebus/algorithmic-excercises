@@ -16,7 +16,9 @@ bash ${scripts_path}/pipx/setup.ba.sh
 # poetry has its own plugins
 bash ${scripts_path}/poetry/plugin/add.ba.sh
 
-poetry install
+# Install dependencies from requirements{.release}.txt
+bash ${scripts_path}/pip/install.ba.sh ${target_config}
+bash ${scripts_path}/pip/freeze.ba.sh
 
 set +v
 set +e

@@ -2,14 +2,7 @@ context_parser: pypyr.parser.keyvaluepairs
 steps:
   - name: pypyr.steps.echo
     in:
-      echoMe: "= pypyr lock ==============================================="
-
-  - name: pypyr.steps.echo
-    in:
-      echoMe: "= poetry lock =============================================="
-  - name: pypyr.steps.shell
-    in:
-      cmd: poetry lock
+      echoMe: "= pypyr build ==============================================="
 
   - name: pypyr.steps.echo
     in:
