@@ -11,9 +11,6 @@
 
 Move CLI cmds like `pypyr` to `requirements.pipx.txt`
 
-- [ ] `mypy`: There is another `mypy-extensions` dependency
-- [ ] `pylint`: `pypyr lint` did NOT work
-- [ ] `pyright`: `pypyr lint` did NOT work
 - [ ] `ruff`: `pypyr lint` did NOT work
 - [ ] etc.
 
@@ -28,6 +25,9 @@ Move CLI cmds like `pypyr` to `requirements.pipx.txt`
 Move CLI cmds like `pypyr` to `requirements.pipx.txt`
 
 - [x] ~~`flake8`~~
+- [x] ~~`mypy`~~
 - [x] ~~`pre-commit`~~
 - [x] ~~`pyclean`~~
+- [x] ~~`pylint`~~:
 - [x] ~~`pypyr`~~
+- [x] ~~`pyright`~~

@@ -59,7 +59,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
   verify:
-    if: always() # XXX
     name: Verify
     needs: semantic-release
     runs-on: ubuntu-latest
