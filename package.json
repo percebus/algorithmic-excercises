@@ -8,7 +8,7 @@
     "prepython:pip:install:upgrade": "npm run python:pip:upgrade",
     "python:pip:install:upgrade": "python -m pip install --upgrade --requirement requirements.upgrade.txt",
     "python:pipx:install": "bash scripts/pipx/install.ba.sh",
-    "python:flake8": "python -m flake8 src --benchmark --statistics",
+    "python:flake8": "flake8 src --benchmark --statistics",
     "prettier": "prettier .",
     "prettier:check": "npm run prettier -- --check",
     "prettier:write": "npm run prettier -- --write",
