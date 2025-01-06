@@ -48,18 +48,18 @@ steps:
       echoMe: "=== pyright ================================================="
   - name: pypyr.steps.shell
     in:
-      cmd: python -m pyright --warnings
+      cmd: pyright --warnings
 
   - name: pypyr.steps.echo
     in:
       echoMe: "=== mypy ==================================================="
   - name: pypyr.steps.shell
     in:
-      cmd: python -m mypy src
+      cmd: mypy src
 
   - name: pypyr.steps.echo
     in:
       echoMe: "=== pylint =================================================="
   - name: pypyr.steps.shell
     in:
-      cmd: "python -m pylint {PYLINT_CLI_ARGS} src"
+      cmd: "pylint {PYLINT_CLI_ARGS} src"
