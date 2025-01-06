@@ -1,4 +1,4 @@
--e git+ssh://git@github.com/percebus/algorithmic-excercises.git@3dbd07ce6b6866a859fc95bca371f16275c643a2#egg=algorithmic_excercises
+-e git+ssh://git@github.com/percebus/algorithmic-excercises.git@d3695feec50a6a4c57424915cc3163bc9e9ff184#egg=algorithmic_excercises
 annotated-types==0.7.0
 argcomplete==3.5.3
 astroid==3.3.8
@@ -26,6 +26,7 @@ parse_type==0.6.3
 pipx==1.7.1
 platformdirs==4.3.6
 pluggy==1.5.0
+pyclean==3.0.0
 pydantic==2.9.0
 pydantic-settings==2.4.0
 pydantic_core==2.23.2

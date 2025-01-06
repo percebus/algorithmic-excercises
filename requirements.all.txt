@@ -382,6 +382,9 @@ platformdirs==4.3.6 ; python_version >= "3.12" and python_version < "3.13" \
 pluggy==1.5.0 ; python_version >= "3.12" and python_version < "3.13" \
     --hash=sha256:2cffa88e94fdc978c4c574f15f9e59b7f4201d439195c3715ca9e2486f1d0cf1 \
     --hash=sha256:44e1ad92c8ca002de6377e165f3e0f1be63266ab4d554740532335b9d75ea669
+pyclean==3.0.0 ; python_version >= "3.12" and python_version < "3.13" \
+    --hash=sha256:a1d8114991cf09994bc511cd0b050f3e398ae2bc8bfc0bbd1bdbec8ba048e6dd \
+    --hash=sha256:a48be7afd512b1923a7b9decc1219bbbe2d73199c939b46c936448f904a180ce
 pydantic-core==2.23.2 ; python_version >= "3.12" and python_version < "3.13" \
     --hash=sha256:0102e49ac7d2df3379ef8d658d3bc59d3d769b0bdb17da189b75efa861fc07b4 \
     --hash=sha256:0123655fedacf035ab10c23450163c2f65a4174f2bb034b188240a6cf06bb123 \
