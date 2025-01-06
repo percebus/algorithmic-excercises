@@ -16,7 +16,6 @@ Move CLI cmds like `pypyr` to `requirements.pipx.txt`
 - [ ] `pre-commit`
 - [ ] `pyclean`
 - [ ] `pylint`: `pypyr lint` did NOT work
-- [ ] `pypyr`
 - [ ] `pyright`: `pypyr lint` did NOT work
 - [ ] `ruff`: `pypyr lint` did NOT work
 - [ ] etc.
@@ -30,3 +29,5 @@ Move CLI cmds like `pypyr` to `requirements.pipx.txt`
 ### requirements.pipx.txt
 
 Move CLI cmds like `pypyr` to `requirements.pipx.txt`
+
+- [x] ~~`pypyr`~~
