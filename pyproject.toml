@@ -13,14 +13,14 @@ logger = "^1.4"
 logging = "^0.4.9.6"
 logging-config = "^1.0.4"
 more-itertools = "^10.3.0"
+pandas = "^2.2.2"
+pandas-stubs = "^2.2.3.241009" # py-hamcrest not found w/o stubs
 pydantic-settings = "^2.3.4"
 pyhamcrest = "^2.1.0"
 
 [tool.poetry.group.dev.dependencies]
 coverage = "^7.5.3"
 numpy = "^2.0.0"
-pandas = "^2.2.2" # FIXME: why is stubs as a main.dependency?
-pandas-stubs = "^2.2.3.241009" # XXX? why is this needed? .pyi?
 pyhamcrest = "^2.1.0"
 pypyr = "^5.9.1"
 pytest = "^7.4.3"

@@ -5,7 +5,8 @@
 - [ ] `mypy --strict` for all `.py` files
 - [ ] Centralize print("✅") in `lib`
 - [ ] Remove `src.` from all `import`s
-- [ ] Remove `python` commands from `package.json`.
+- [ ] Remove `python` commands from `package.json`
+- [ ] Combine `scripts/setup.ba.sh` with `install.ba.sh`
 
 ### CLI cmds
 
