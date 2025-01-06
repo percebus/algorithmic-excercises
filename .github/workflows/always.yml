@@ -172,7 +172,7 @@ jobs:
         run: docker compose up --abort-on-container-exit
 
   docker_build_matrix:
-    if: github.ref == 'refs/heads/main'
+    # if: github.ref == 'refs/heads/main' # FIXME
     name: docker build --target
     needs: docker_compose
     continue-on-error: true
