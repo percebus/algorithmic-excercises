@@ -5,6 +5,7 @@ set -e
 filename="requirements.pipx_inject.txt"
 if [[ -z $(grep '[^[:space:]]' $filename) ]]; then
   echo "${filename} is empty, skipping..."
+  exit 0
 fi
 
 set -v
