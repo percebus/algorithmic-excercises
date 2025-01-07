@@ -1,5 +1,17 @@
 # algorithmic-excercises CHANGELOG
 
+# [3.0.0](https://github.com/percebus/algorithmic-excercises/compare/v2.10.0...v3.0.0) (2025-01-07)
+
+### chore
+
+- **poetry:** update to 2.0 ([#39](https://github.com/percebus/algorithmic-excercises/issues/39)) ([d1d61b2](https://github.com/percebus/algorithmic-excercises/commit/d1d61b2db216a393b5c1a86a12f01a9590b40bca))
+
+### BREAKING CHANGES
+
+- **poetry:** Some commands don't work as they used to, like
+
+`$> poetry lock --no-update`
+
 # [2.10.0](https://github.com/percebus/algorithmic-excercises/compare/v2.9.11...v2.10.0) (2025-01-07)
 
 ### Features
