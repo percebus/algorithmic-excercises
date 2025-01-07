@@ -18,31 +18,46 @@ steps:
       set:
         PYLINT_CLI_ARGS: "--report y"
 
-  - name: pypyr.steps.echo
+  - name: pypyr.steps.call
     run: "{npm}"
+    in:
+      call:
+        - dockerlint
+        - prettier
+
+  - name: pypyr.steps.call
+    in:
+      call:
+        - ruff
+        - pyright
+        - mypy
+        - pylint
+
+dockerlint:
+  - name: pypyr.steps.echo
     in:
       echoMe: "=== dockerlint =============================================="
   - name: pypyr.steps.shell
-    run: "{npm}"
     in:
       cmd: "npm run dockerlint"
 
+prettier:
   - name: pypyr.steps.echo
-    run: "{npm}"
     in:
       echoMe: "=== npx prettier --check ===================================="
   - name: pypyr.steps.shell
-    run: "{npm}"
     in:
       cmd: "npx prettier {path} --check"
 
+ruff:
   - name: pypyr.steps.echo
     in:
       echoMe: "=== ruff check =============================================="
   - name: pypyr.steps.shell
     in:
-      cmd: python -m ruff check {path}
+      cmd: ruff check {path}
 
+pyright:
   - name: pypyr.steps.echo
     in:
       echoMe: "=== pyright ================================================="
@@ -50,6 +65,7 @@ steps:
     in:
       cmd: pyright --warnings
 
+mypy:
   - name: pypyr.steps.echo
     in:
       echoMe: "=== mypy ==================================================="
@@ -57,6 +73,7 @@ steps:
     in:
       cmd: mypy src
 
+pylint:
   - name: pypyr.steps.echo
     in:
       echoMe: "=== pylint =================================================="
