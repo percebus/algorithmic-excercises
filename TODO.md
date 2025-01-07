@@ -14,8 +14,8 @@ Move CLI cmds like `pypyr` to `requirements.pipx.txt`
 
 - [x] ~~`flake8`~~
 - [ ] ~~`mypy`~~: Needs to be 'injected' as a dependency to evaluate `import`s
-- [x] ~~`pyclean`~~: "Command not found"
 - [ ] ~~`pylint`~~: Needs to be 'injected' as a dependency to evaluate `import`s
+- [ ] ~~`pypyr`~~: Needs to be run as `pypyr`
 - [ ] ~~`pyright`~~: Needs to be 'injected' as a dependency to evaluate `import`s
 - [ ] `ruff`: `pypyr lint` did NOT work
 - [ ] etc.
@@ -31,4 +31,4 @@ Move CLI cmds like `pypyr` to `requirements.pipx.txt`
 Move CLI cmds like `pypyr` to `requirements.pipx.txt`
 
 - [x] ~~`pre-commit`~~
-- [x] ~~`pypyr`~~
+- [x] ~~`pyclean`~~
