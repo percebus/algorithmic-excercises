@@ -1,4 +1,6 @@
--r requirements.all.txt
+-r requirements.cli.txt
+-r requirements.dev.txt
+-r requirements.main.txt
 
 # TODO?
 # -e git+ssh://git@github.com/percebus/algorithmic-excercises.git@main#egg=algorithmic_excercises
