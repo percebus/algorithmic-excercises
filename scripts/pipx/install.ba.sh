@@ -11,7 +11,7 @@ fi
 set -v
 
 cat ${filename} | sed 's/.*/"&"/' | xargs -n 1 pipx install
-pipx ensurepath
+pipx ensurepath --prepend --force
 
 set +v
 set +e
