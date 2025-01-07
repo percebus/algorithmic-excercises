@@ -1,5 +1,11 @@
 # algorithmic-excercises CHANGELOG
 
+# [2.10.0](https://github.com/percebus/algorithmic-excercises/compare/v2.9.11...v2.10.0) (2025-01-07)
+
+### Features
+
+- **requirements.cli.txt:** Refactor dev.dependencies ([#38](https://github.com/percebus/algorithmic-excercises/issues/38)) ([4257250](https://github.com/percebus/algorithmic-excercises/commit/4257250603abf7e7fbc89d10d45133952e2f600c))
+
 ## [2.9.11](https://github.com/percebus/algorithmic-excercises/compare/v2.9.10...v2.9.11) (2025-01-05)
 
 ### Bug Fixes
