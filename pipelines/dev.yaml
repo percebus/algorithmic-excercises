@@ -18,4 +18,4 @@ steps:
 
   - name: pypyr.steps.shell
     in:
-      cmd: "pypyr qa path={path} npm={npm} clean={clean} style={style} lint={lint} test={test} integration={integration} stats={stats}"
+      cmd: "python -m pypyr qa path={path} npm={npm} clean={clean} style={style} lint={lint} test={test} integration={integration} stats={stats}"
