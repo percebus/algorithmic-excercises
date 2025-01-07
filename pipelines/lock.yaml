@@ -14,7 +14,7 @@ steps:
       echoMe: "= poetry lock ============================================="
   - name: pypyr.steps.shell
     in:
-      cmd: poetry lock --no-update
+      cmd: poetry lock
 
   - name: pypyr.steps.echo
     in:

@@ -3,6 +3,7 @@ FROM python:3.12.5 AS base
 FROM base AS project
 WORKDIR /usr/app
 COPY . .
+RUN ls -la
 RUN bash scripts/bash/clean.ba.sh
 
 
