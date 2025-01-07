@@ -9,6 +9,14 @@ steps:
       defaults:
         freeze: False # FIXME sometimes it gets stuck when running locally
 
+  - name: pypyr.steps.call
+    in:
+      call:
+        - poetry_lock
+        - poetry_export
+        - pip_freeze
+
+poetry_lock:
   - name: pypyr.steps.echo
     in:
       echoMe: "= poetry lock ============================================="
@@ -16,6 +24,7 @@ steps:
     in:
       cmd: poetry lock
 
+poetry_export:
   - name: pypyr.steps.echo
     in:
       echoMe: "= poetry export requirements(cli|dev|main).txt ============"
@@ -24,6 +33,7 @@ steps:
     in:
       cmd: poetry export --no-interaction --format requirements.txt --output requirements.{i}.txt --only {i}
 
+pip_freeze:
   - name: pypyr.steps.echo
     run: "{freeze}"
     in:
