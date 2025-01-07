@@ -1,5 +1,11 @@
 # algorithmic-excercises CHANGELOG
 
+# [3.1.0](https://github.com/percebus/algorithmic-excercises/compare/v3.0.0...v3.1.0) (2025-01-07)
+
+### Features
+
+- **pypyr-config.yaml:** for qa aliases ([#41](https://github.com/percebus/algorithmic-excercises/issues/41)) ([6a2b3f4](https://github.com/percebus/algorithmic-excercises/commit/6a2b3f481a9d2a75611c3f5a7ed2711946acc831))
+
 # [3.0.0](https://github.com/percebus/algorithmic-excercises/compare/v2.10.0...v3.0.0) (2025-01-07)
 
 ### chore
