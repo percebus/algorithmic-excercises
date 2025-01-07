@@ -40,4 +40,4 @@ steps:
   - name: pypyr.steps.shell
     run: "{integration}"
     in:
-      cmd: "pipx run pypyr test path={path} integration=True stats=False lint=False"
+      cmd: "pypyr test path={path} integration=True stats=False lint=False"

@@ -15,7 +15,7 @@ Move CLI cmds like `pypyr` to `requirements.pipx.txt`
 - [x] ~~`flake8`~~
 - [ ] ~~`mypy`~~: Needs to be 'injected' as a dependency to evaluate `import`s
 - [ ] ~~`pylint`~~: Needs to be 'injected' as a dependency to evaluate `import`s
-- [ ] ~~`pypyr`~~: Needs to be run as `pipx run pypyr`
+- [ ] ~~`pypyr`~~: Needs to be run as `pypyr`
 - [ ] ~~`pyright`~~: Needs to be 'injected' as a dependency to evaluate `import`s
 - [ ] `ruff`: `pypyr lint` did NOT work
 - [ ] etc.

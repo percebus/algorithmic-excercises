@@ -34,7 +34,7 @@ jobs:
         run: bash scripts/setup.ba.sh
 
       - name: pypyr lock
-        run: pipx run pypyr lock freeze=True
+        run: pypyr lock freeze=True
 
       # TODO commit back upgraded requirements
 
@@ -77,10 +77,10 @@ jobs:
       - uses: percebus/github-actions-npm/.github/actions/npm_install@main
 
       - name: pypyr lint
-        run: pipx run pypyr lint stats=True
+        run: pypyr lint stats=True
 
       - name: pypyr test
-        run: pipx run pypyr ci lint=False
+        run: pypyr ci lint=False
 
       - name: Publish test-results.xml Summary
         if: always()
@@ -158,7 +158,7 @@ jobs:
       # Because of EOL differences
       # Thus, we disabled 'npm'
       - name: pypyr test
-        run: pipx run pypyr ci npm=False
+        run: pypyr ci npm=False
 
   docker_compose:
     name: docker compose
