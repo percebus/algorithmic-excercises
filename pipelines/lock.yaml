@@ -18,10 +18,13 @@ steps:
 
   - name: pypyr.steps.echo
     in:
-      echoMe: "= poetry export requirements(all|main).txt ================"
+      echoMe: "= poetry export requirements(cli|dev|main).txt ============"
   - name: pypyr.steps.shell
     in:
-      cmd: poetry export --no-interaction --format requirements.txt --output requirements.all.txt --with dev
+      cmd: poetry export --no-interaction --format requirements.txt --output requirements.dev.txt --only dev
+  - name: pypyr.steps.shell
+    in:
+      cmd: poetry export --no-interaction --format requirements.txt --output requirements.cli.txt --only cli
   - name: pypyr.steps.shell
     in:
       cmd: poetry export --no-interaction --format requirements.txt --output requirements.main.txt
