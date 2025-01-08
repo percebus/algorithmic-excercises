@@ -33,6 +33,9 @@ jobs:
       - name: scripts/setup.ba.sh
         run: bash scripts/setup.ba.sh
 
+      - name: poetry install
+        run: poetry install
+
       - name: pypyr lock
         run: pypyr lock freeze=True
 

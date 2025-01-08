@@ -16,7 +16,5 @@ bash ${scripts_path}/pipx/setup.ba.sh
 # poetry has its own plugins
 bash ${scripts_path}/poetry/plugin/add.ba.sh
 
-poetry install
-
 set +v
 set +e
