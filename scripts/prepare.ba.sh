@@ -12,7 +12,6 @@ set -x
 
 if [ "${environment}" == "pre-docker" ]; then
     rm ${scripts_path}/setup.ba.sh
-    bash mv ${scripts_path}/noop.ba.sh ${scripts_path}/setup.ba.sh
 fi
 
 # Upgrades top-level dependencies, like pipx
