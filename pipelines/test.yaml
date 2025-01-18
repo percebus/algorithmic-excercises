@@ -16,7 +16,7 @@ steps:
         PYTEST_CLI_ARGS:
 
   - name: pypyr.steps.shell
-    run: {lint}
+    run: { lint }
     in:
       cmd: pipx run -- pypyr lint path={path} npm={npm} stats={stats}
 
@@ -26,13 +26,13 @@ steps:
 
 pytest:
   - name: pypyr.steps.set
-    run: {stats}
+    run: { stats }
     in:
       set:
         PYTEST_CLI_ARGS: --cov --cov-report=term-missing
 
   - name: pypyr.steps.set
-    run: {integration}
+    run: { integration }
     in:
       set:
         markers: integration

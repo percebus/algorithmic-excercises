@@ -13,7 +13,7 @@ steps:
         stats: False
 
   - name: pypyr.steps.call
-    run: {npm}
+    run: { npm }
     in:
       call:
         - prettier
@@ -25,7 +25,7 @@ steps:
         - ruff
 
   - name: pypyr.steps.shell
-    run: {lint}
+    run: { lint }
     in:
       cmd: pipx run -- pypyr lint path={path} npm={npm} stats={stats}
 
