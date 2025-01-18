@@ -10,7 +10,7 @@ steps:
         npm: True
         path: .
         stats: False
-        PYLINT_CLI_ARGS:
+        PYLINT_CLI_ARGS: ""
 
   - name: pypyr.steps.set
     run: "{stats}"
