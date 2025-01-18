@@ -31,14 +31,11 @@ jobs:
           architecture: ${{ env.ARCHITECTURE }}
           python-version: ${{ env.PYTHON_VERSION }}
 
-      # includes poetry install
       - name: scripts/prepare.ba.sh
         run: bash scripts/prepare.ba.sh
 
       - name: poetry install
-        run: |
-          poetry config virtualenvs.create false
-          poetry install
+        run: bash _scripts/poetry/install.ba.sh ci
 
       - name: pypyr lock
         run: pipx run -- pypyr lock freeze=True
@@ -87,9 +84,7 @@ jobs:
         run: bash scripts/prepare.ba.sh
 
       - name: poetry install
-        run: |
-          poetry config virtualenvs.create false
-          poetry install
+        run: bash _scripts/poetry/install.ba.sh ci
 
       - name: pypyr lint
         run: pipx run -- pypyr lint stats=True
@@ -173,9 +168,7 @@ jobs:
         run: bash scripts/prepare.ba.sh
 
       - name: poetry install
-        run: |
-          poetry config virtualenvs.create false
-          poetry install
+        run: bash _scripts/poetry/install.ba.sh ci
 
       # FIXME prettier fails on windows
       # Because of EOL differences
@@ -191,9 +184,6 @@ jobs:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
         with:
           ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
-
-      - name: mv scripts/setup/noop.ba.sh
-        run: mv scripts/setup/noop.ba.sh scripts/setup.ba.sh
 
       - name: scripts/prepare.ba.sh
         run: bash scripts/prepare.ba.sh 'pre-docker'
