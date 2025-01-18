@@ -12,4 +12,4 @@ steps:
 pyclean:
   - name: pypyr.steps.shell
     in:
-      cmd: "pipx run pyclean ."
+      cmd: "pipx run -- pyclean ."

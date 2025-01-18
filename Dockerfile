@@ -4,16 +4,16 @@ FROM base AS project
 WORKDIR /usr/app
 COPY . .
 RUN ls -la
-RUN bash scripts/bash/clean.ba.sh
+RUN bash _scripts/bash/clean.ba.sh
 
 
 FROM project AS dev
-RUN bash scripts/install.ba.sh
+RUN bash _scripts/install.ba.sh
 
 FROM dev AS test
-RUN pypyr ci npm=False stats=False
+RUN pipx run -- pypyr ci npm=False stats=False
 
 # TODO use light image. alpine?
 FROM project AS release
-RUN bash scripts/pip/install.ba.sh 'release'
+RUN bash _scripts/pip/install.ba.sh 'release'
 CMD [ "python", "src/problems/" ]
