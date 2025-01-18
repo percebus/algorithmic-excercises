@@ -2,7 +2,7 @@ context_parser: pypyr.parser.keyvaluepairs
 steps:
   - name: pypyr.steps.echo
     in:
-      echoMe: "= pypyr lint ================================================"
+      echoMe: = pypyr lint ================================================
   - name: pypyr.steps.default
     comment: set default values for optional cli inputs
     in:
@@ -10,16 +10,16 @@ steps:
         npm: True
         path: .
         stats: False
-        PYLINT_CLI_ARGS: ""
+        PYLINT_CLI_ARGS:
 
   - name: pypyr.steps.set
-    run: "{stats}"
+    run: {stats}
     in:
       set:
-        PYLINT_CLI_ARGS: "--report y"
+        PYLINT_CLI_ARGS: --report y
 
   - name: pypyr.steps.call
-    run: "{npm}"
+    run: {npm}
     in:
       call:
         - dockerlint
@@ -36,47 +36,47 @@ steps:
 dockerlint:
   - name: pypyr.steps.echo
     in:
-      echoMe: "=== dockerlint =============================================="
+      echoMe: === dockerlint ==============================================
   - name: pypyr.steps.shell
     in:
-      cmd: "npm run dockerlint"
+      cmd: npm run dockerlint
 
 prettier:
   - name: pypyr.steps.echo
     in:
-      echoMe: "=== npx prettier --check ===================================="
+      echoMe: === npx prettier --check ====================================
   - name: pypyr.steps.shell
     in:
-      cmd: "npx prettier {path} --check"
+      cmd: npx prettier {path} --check
 
 ruff:
   - name: pypyr.steps.echo
     in:
-      echoMe: "=== ruff check =============================================="
+      echoMe: === ruff check ==============================================
   - name: pypyr.steps.shell
     in:
-      cmd: ruff check {path}
+      cmd: poetry run -- ruff check {path}
 
 pyright:
   - name: pypyr.steps.echo
     in:
-      echoMe: "=== pyright ================================================="
+      echoMe: === pyright =================================================
   - name: pypyr.steps.shell
     in:
-      cmd: pyright --warnings
+      cmd: poetry run -- pyright --warnings
 
 mypy:
   - name: pypyr.steps.echo
     in:
-      echoMe: "=== mypy ==================================================="
+      echoMe: === mypy ===================================================
   - name: pypyr.steps.shell
     in:
-      cmd: mypy src
+      cmd: poetry run -- mypy src
 
 pylint:
   - name: pypyr.steps.echo
     in:
-      echoMe: "=== pylint =================================================="
+      echoMe: === pylint ==================================================
   - name: pypyr.steps.shell
     in:
-      cmd: "pylint {PYLINT_CLI_ARGS} src"
+      cmd: poetry run -- pylint {PYLINT_CLI_ARGS} src

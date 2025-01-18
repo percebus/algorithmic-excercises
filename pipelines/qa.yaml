@@ -3,7 +3,7 @@ context_parser: pypyr.parser.keyvaluepairs
 steps:
   - name: pypyr.steps.echo
     in:
-      echoMe: "= pypyr qa ==================================================="
+      echoMe: = pypyr qa ===================================================
   - name: pypyr.steps.default
     comment: set default values for optional cli inputs
     in:
@@ -18,26 +18,26 @@ steps:
         stats: True
 
   - name: pypyr.steps.shell
-    run: "{clean}"
+    run: {clean}
     in:
-      cmd: "pipx run -- pypyr clean path={path}"
+      cmd: pipx run -- pypyr clean path={path}
 
   - name: pypyr.steps.shell
-    run: "{style}"
+    run: {style}
     in:
-      cmd: "pipx run -- pypyr style path={path} npm={npm} lint=False"
+      cmd: pipx run -- pypyr style path={path} npm={npm} lint=False
 
   - name: pypyr.steps.shell
-    run: "{lint}"
+    run: {lint}
     in:
-      cmd: "pipx run -- pypyr lint path={path} npm={npm} stats={stats}"
+      cmd: pipx run -- pypyr lint path={path} npm={npm} stats={stats}
 
   - name: pypyr.steps.shell
-    run: "{test}"
+    run: {test}
     in:
-      cmd: "pipx run -- pypyr test path={path} lint=False stats={stats}"
+      cmd: pipx run -- pypyr test path={path} lint=False stats={stats}
 
   - name: pypyr.steps.shell
-    run: "{integration}"
+    run: {integration}
     in:
-      cmd: "pipx run -- pypyr test path={path} integration=True stats=False lint=False"
+      cmd: pipx run -- pypyr test path={path} integration=True stats=False lint=False

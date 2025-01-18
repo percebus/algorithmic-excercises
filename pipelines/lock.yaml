@@ -27,7 +27,7 @@ poetry_lock:
 poetry_export:
   - name: pypyr.steps.echo
     in:
-      echoMe: "= poetry export requirements(cli|dev|main).txt ============"
+      echoMe: = poetry export requirements(cli|dev|main).txt ============
   - name: pypyr.steps.shell
     foreach: ["cli", "main", "dev"]
     in:
@@ -37,7 +37,7 @@ pip_freeze:
   - name: pypyr.steps.echo
     run: "{freeze}"
     in:
-      echoMe: "= pip freeze =============================================="
+      echoMe: = pip freeze ==============================================
   - name: pypyr.steps.shell
     run: "{freeze}"
     in:

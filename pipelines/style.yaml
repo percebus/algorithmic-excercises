@@ -2,7 +2,7 @@ context_parser: pypyr.parser.keyvaluepairs
 steps:
   - name: pypyr.steps.echo
     in:
-      echoMe: "= pypyr style ================================================="
+      echoMe: = pypyr style =================================================
   - name: pypyr.steps.default
     comment: set default values for optional cli inputs
     in:
@@ -13,7 +13,7 @@ steps:
         stats: False
 
   - name: pypyr.steps.call
-    run: "{npm}"
+    run: {npm}
     in:
       call:
         - prettier
@@ -25,22 +25,22 @@ steps:
         - ruff
 
   - name: pypyr.steps.shell
-    run: "{lint}"
+    run: {lint}
     in:
-      cmd: "pipx run -- pypyr lint path={path} npm={npm} stats={stats}"
+      cmd: pipx run -- pypyr lint path={path} npm={npm} stats={stats}
 
 prettier:
   - name: pypyr.steps.echo
     in:
-      echoMe: "=== npx prettier --write ======================================"
+      echoMe: === npx prettier --write ======================================
   - name: pypyr.steps.shell
     in:
-      cmd: "npx prettier {path} --write"
+      cmd: npx prettier {path} --write
 
 poetry_sort:
   - name: pypyr.steps.echo
     in:
-      echoMe: "=== poetry sort ========================================"
+      echoMe: === poetry sort ========================================
   - name: pypyr.steps.shell
     in:
       cmd: poetry sort
@@ -48,14 +48,14 @@ poetry_sort:
 ruff:
   - name: pypyr.steps.echo
     in:
-      echoMe: "=== ruff check --fix ========================================="
+      echoMe: === ruff check --fix =========================================
   - name: pypyr.steps.shell
     in:
-      cmd: ruff check --fix {path}
+      cmd: poetry run -- ruff check --fix {path}
 
   - name: pypyr.steps.echo
     in:
-      echoMe: "=== ruff format --fix ========================================"
+      echoMe: === ruff format --fix ========================================
   - name: pypyr.steps.shell
     in:
-      cmd: ruff format {path}
+      cmd: poetry run -- ruff format {path}
