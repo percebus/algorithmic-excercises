@@ -51,11 +51,11 @@ ruff:
       echoMe: === ruff check --fix =========================================
   - name: pypyr.steps.shell
     in:
-      cmd: "poetry run -- ruff check --fix {path}"
+      cmd: "ruff check --fix {path}"
 
   - name: pypyr.steps.echo
     in:
       echoMe: === ruff format --fix ========================================
   - name: pypyr.steps.shell
     in:
-      cmd: "poetry run -- ruff format {path}"
+      cmd: "ruff format {path}"
