@@ -18,7 +18,7 @@ steps:
   - name: pypyr.steps.shell
     run: "{lint}"
     in:
-      cmd: pipx run -- pypyr lint path={path} npm={npm} stats={stats}
+      cmd: "pipx run -- pypyr lint path={path} npm={npm} stats={stats}"
 
   - name: pypyr.steps.call
     in:
@@ -42,4 +42,4 @@ pytest:
       echoMe: === pytest:{markers} =======================================
   - name: pypyr.steps.shell
     in:
-      cmd: poetry run -- pytest {PYTEST_CLI_ARGS} -m {markers} --junit-xml=test-results.xml
+      cmd: "poetry run -- pytest {PYTEST_CLI_ARGS} -m {markers} --junit-xml=test-results.xml"

@@ -47,7 +47,7 @@ prettier:
       echoMe: === npx prettier --check ====================================
   - name: pypyr.steps.shell
     in:
-      cmd: npx prettier {path} --check
+      cmd: "npx prettier {path} --check"
 
 ruff:
   - name: pypyr.steps.echo
@@ -55,7 +55,7 @@ ruff:
       echoMe: === ruff check ==============================================
   - name: pypyr.steps.shell
     in:
-      cmd: poetry run -- ruff check {path}
+      cmd: "poetry run -- ruff check {path}"
 
 pyright:
   - name: pypyr.steps.echo
@@ -79,4 +79,4 @@ pylint:
       echoMe: === pylint ==================================================
   - name: pypyr.steps.shell
     in:
-      cmd: poetry run -- pylint {PYLINT_CLI_ARGS} src
+      cmd: "poetry run -- pylint {PYLINT_CLI_ARGS} src"
