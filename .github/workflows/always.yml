@@ -77,11 +77,15 @@ jobs:
         with:
           architecture: ${{ env.ARCHITECTURE }}
           python-version: ${{ env.PYTHON_VERSION }}
-      - name: pip install
-        run: bash _scripts/install.ba.sh
 
       - uses: percebus/github-actions-node/.github/actions/node_setup@main
       - uses: percebus/github-actions-npm/.github/actions/npm_install@main
+
+      - name: scripts/prepare.ba.sh
+        run: bash scripts/prepare.ba.sh
+
+      - name: pypyr lint
+        run: pipx run -- pypyr lint stats=True
 
       - name: pypyr lint
         run: pipx run -- pypyr lint stats=True
@@ -149,17 +153,20 @@ jobs:
       #     echo "JOB_NAME: ${{ env.JOB_NAME }}"
 
       - uses: percebus/github-actions-common/.github/actions/checkout@main
+        with:
+          ssh-private-key:  ${{ secrets.SSH_KEY_PRIVATE }}
 
       - name: setup python @ ${{ matrix.PYTHON_VERSION }}
         uses: actions/setup-python@v5
         with:
           architecture: ${{ matrix.ARCHITECTURE }}
           python-version: ${{ matrix.PYTHON_VERSION }}
-      - name: pip install
-        run: bash _scripts/install.ba.sh
 
       - uses: percebus/github-actions-node/.github/actions/node_setup@main
       - uses: percebus/github-actions-npm/.github/actions/npm_install@main
+
+      - name: scripts/prepare.ba.sh
+        run: bash scripts/prepare.ba.sh
 
       # FIXME prettier fails on windows
       # Because of EOL differences
@@ -173,6 +180,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
+        with:
+          ssh-private-key:  ${{ secrets.SSH_KEY_PRIVATE }}
+
+      - name: scripts/prepare.ba.sh
+        run: bash scripts/prepare.ba.sh
 
       - name: docker compose up
         run: docker compose up --abort-on-container-exit
@@ -197,6 +209,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
+        with:
+          ssh-private-key:  ${{ secrets.SSH_KEY_PRIVATE }}
+
+      - name: scripts/prepare.ba.sh
+        run: bash scripts/prepare.ba.sh
 
       - name: "docker build: ${{ matrix.DOCKER_TARGET }}"
         run: |
