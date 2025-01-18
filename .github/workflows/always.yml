@@ -33,7 +33,12 @@ jobs:
 
       # includes poetry install
       - name: scripts/prepare.ba.sh
-        run: bash scripts/prepare.ba.sh ci
+        run: bash scripts/prepare.ba.sh
+
+      - name: poetry install
+        run: |
+          poetry config virtualenvs.create false
+          poetry install
 
       - name: pypyr lock
         run: pipx run -- pypyr lock freeze=True
@@ -79,7 +84,12 @@ jobs:
       - uses: percebus/github-actions-npm/.github/actions/npm_install@main
 
       - name: scripts/prepare.ba.sh
-        run: bash scripts/prepare.ba.sh ci
+        run: bash scripts/prepare.ba.sh
+
+      - name: poetry install
+        run: |
+          poetry config virtualenvs.create false
+          poetry install
 
       - name: pypyr lint
         run: pipx run -- pypyr lint stats=True
@@ -160,7 +170,12 @@ jobs:
       - uses: percebus/github-actions-npm/.github/actions/npm_install@main
 
       - name: scripts/prepare.ba.sh
-        run: bash scripts/prepare.ba.sh ci
+        run: bash scripts/prepare.ba.sh
+
+      - name: poetry install
+        run: |
+          poetry config virtualenvs.create false
+          poetry install
 
       # FIXME prettier fails on windows
       # Because of EOL differences
@@ -177,8 +192,11 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
+      - name: mv scripts/setup/noop.ba.sh
+        run: mv scripts/setup/noop.ba.sh scripts/setup.ba.sh
+
       - name: scripts/prepare.ba.sh
-        run: bash scripts/prepare.ba.sh ci
+        run: bash scripts/prepare.ba.sh 'pre-docker'
 
       - name: docker compose up
         run: docker compose up --abort-on-container-exit
@@ -207,7 +225,7 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
       - name: scripts/prepare.ba.sh
-        run: bash scripts/prepare.ba.sh ci
+        run: bash scripts/prepare.ba.sh
 
       - name: "docker build: ${{ matrix.DOCKER_TARGET }}"
         run: |
