@@ -19,7 +19,7 @@ steps:
 poetry_lock:
   - name: pypyr.steps.echo
     in:
-      echoMe: = poetry lock =============================================="
+      echoMe: = poetry lock ==============================================
   - name: pypyr.steps.shell
     in:
       cmd: poetry lock
