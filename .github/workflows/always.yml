@@ -32,11 +32,8 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
 
       # includes poetry install
-      - name: _scripts/setup.ba.sh
-        run: bash _scripts/setup.ba.sh
-
-      - name: poetry install
-        run: poetry install
+      - name: _scripts/prepare.ba.sh
+        run: bash _scripts/prepare.ba.sh
 
       - name: pypyr lock
         run: pipx run -- pypyr lock freeze=True
