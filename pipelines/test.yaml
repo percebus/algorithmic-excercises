@@ -12,8 +12,8 @@ steps:
         lint: True
         stats: False
         integration: False
-        markers: not integration
-        PYTEST_CLI_ARGS:
+        markers: "not integration"
+        PYTEST_CLI_ARGS: ""
 
   - name: pypyr.steps.shell
     run: "{lint}"
