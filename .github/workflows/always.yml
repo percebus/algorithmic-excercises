@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
         with:
-          ssh-private-key:  ${{ secrets.SSH_KEY_PRIVATE }}
+          ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
       - name: setup python @ ${{ env.PYTHON_VERSION }}
         uses: actions/setup-python@v5
@@ -67,7 +67,7 @@ jobs:
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
         with:
-          ssh-private-key:  ${{ secrets.SSH_KEY_PRIVATE }}
+          ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
       - name: setup python @ ${{ env.PYTHON_VERSION }}
         uses: actions/setup-python@v5
@@ -151,7 +151,7 @@ jobs:
 
       - uses: percebus/github-actions-common/.github/actions/checkout@main
         with:
-          ssh-private-key:  ${{ secrets.SSH_KEY_PRIVATE }}
+          ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
       - name: setup python @ ${{ matrix.PYTHON_VERSION }}
         uses: actions/setup-python@v5
@@ -178,7 +178,7 @@ jobs:
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
         with:
-          ssh-private-key:  ${{ secrets.SSH_KEY_PRIVATE }}
+          ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
       - name: scripts/prepare.ba.sh
         run: bash scripts/prepare.ba.sh
@@ -207,7 +207,7 @@ jobs:
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
         with:
-          ssh-private-key:  ${{ secrets.SSH_KEY_PRIVATE }}
+          ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
       - name: scripts/prepare.ba.sh
         run: bash scripts/prepare.ba.sh
