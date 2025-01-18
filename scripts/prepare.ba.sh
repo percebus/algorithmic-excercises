@@ -15,8 +15,8 @@ if [ "${environment}" == "pre-docker" ]; then
 fi
 
 # Upgrades top-level dependencies, like pipx
-bash ${scripts_path}/gil/setup.ba.sh
-
+bash ${scripts_path}/pip/upgrade.ba.sh
+gil clone
 bash ./repos/commons/scripts/prepare.ba.sh
 
 set +x

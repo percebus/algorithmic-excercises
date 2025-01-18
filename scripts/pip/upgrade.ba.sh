@@ -4,10 +4,7 @@ set -e
 set -x
 
 python -m pip install --upgrade pip
-python -m pip install pipx
-python -m pipx install gil
-pipx run -- gil clone
-
+python -m pip install --upgrade --requirement requirements.upgrade.txt
 
 set +x
 set +e
