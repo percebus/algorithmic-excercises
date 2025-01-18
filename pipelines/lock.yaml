@@ -2,7 +2,7 @@ context_parser: pypyr.parser.keyvaluepairs
 steps:
   - name: pypyr.steps.echo
     in:
-      echoMe: "= pypyr lock ==============================================="
+      echoMe: = pypyr lock ===============================================
   - name: pypyr.steps.default
     comment: set default values for optional cli inputs
     in:
@@ -19,7 +19,7 @@ steps:
 poetry_lock:
   - name: pypyr.steps.echo
     in:
-      echoMe: "= poetry lock ============================================="
+      echoMe: = poetry lock =============================================="
   - name: pypyr.steps.shell
     in:
       cmd: poetry lock

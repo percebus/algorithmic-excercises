@@ -13,13 +13,13 @@ steps:
         PYLINT_CLI_ARGS:
 
   - name: pypyr.steps.set
-    run: { stats }
+    run: "{stats}"
     in:
       set:
         PYLINT_CLI_ARGS: --report y
 
   - name: pypyr.steps.call
-    run: { npm }
+    run: "{npm}"
     in:
       call:
         - dockerlint

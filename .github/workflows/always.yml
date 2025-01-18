@@ -84,9 +84,6 @@ jobs:
       - name: pypyr lint
         run: pipx run -- pypyr lint stats=True
 
-      - name: pypyr lint
-        run: pipx run -- pypyr lint stats=True
-
       - name: pypyr test
         run: pipx run -- pypyr ci lint=False
 
