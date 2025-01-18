@@ -1,12 +1,10 @@
+#!/bin/bash
 
 set -e
-set -v
+set -x
 
-# pip upgrades pip
-python -m pip install --verbose --upgrade pip
+python -m pip install --upgrade pip
+python -m pip install --upgrade --requirement requirements.upgrade.txt
 
-# pip upgrades pipx
-python -m pip install --verbose --upgrade --requirement requirements.upgrade.txt
-
-set +v
+set +x
 set +e

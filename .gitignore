@@ -1,6 +1,11 @@
 tmp/
 test-results.xml
 
+# commons/scripts
+repos/
+_scripts/
+
+
 ########################
 ### Python.gitignore ### SRC: https://github.com/github/gitignore/blob/main/Python.gitignore
 ########################

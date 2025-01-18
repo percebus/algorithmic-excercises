@@ -22,6 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
       - name: setup python @ ${{ env.PYTHON_VERSION }}
         uses: actions/setup-python@v5
@@ -29,15 +31,14 @@ jobs:
           architecture: ${{ env.ARCHITECTURE }}
           python-version: ${{ env.PYTHON_VERSION }}
 
-      # includes poetry install
-      - name: scripts/setup.ba.sh
-        run: bash scripts/setup.ba.sh
+      - name: scripts/prepare.ba.sh
+        run: bash scripts/prepare.ba.sh
 
       - name: poetry install
-        run: poetry install
+        run: bash _scripts/poetry/install.ba.sh ci
 
       - name: pypyr lock
-        run: pypyr lock freeze=True
+        run: pipx run -- pypyr lock freeze=True
 
       # TODO commit back upgraded requirements
 
@@ -67,23 +68,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
       - name: setup python @ ${{ env.PYTHON_VERSION }}
         uses: actions/setup-python@v5
         with:
           architecture: ${{ env.ARCHITECTURE }}
           python-version: ${{ env.PYTHON_VERSION }}
-      - name: pip install
-        run: bash scripts/install.ba.sh
 
       - uses: percebus/github-actions-node/.github/actions/node_setup@main
       - uses: percebus/github-actions-npm/.github/actions/npm_install@main
 
+      - name: scripts/prepare.ba.sh
+        run: bash scripts/prepare.ba.sh
+
+      - name: poetry install
+        run: bash _scripts/poetry/install.ba.sh ci
+
       - name: pypyr lint
-        run: pypyr lint stats=True
+        run: pipx run -- pypyr lint stats=True
 
       - name: pypyr test
-        run: pypyr ci lint=False
+        run: pipx run -- pypyr ci lint=False
 
       - name: Publish test-results.xml Summary
         if: always()
@@ -145,23 +152,29 @@ jobs:
       #     echo "JOB_NAME: ${{ env.JOB_NAME }}"
 
       - uses: percebus/github-actions-common/.github/actions/checkout@main
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
       - name: setup python @ ${{ matrix.PYTHON_VERSION }}
         uses: actions/setup-python@v5
         with:
           architecture: ${{ matrix.ARCHITECTURE }}
           python-version: ${{ matrix.PYTHON_VERSION }}
-      - name: pip install
-        run: bash scripts/install.ba.sh
 
       - uses: percebus/github-actions-node/.github/actions/node_setup@main
       - uses: percebus/github-actions-npm/.github/actions/npm_install@main
+
+      - name: scripts/prepare.ba.sh
+        run: bash scripts/prepare.ba.sh
+
+      - name: poetry install
+        run: bash _scripts/poetry/install.ba.sh ci
 
       # FIXME prettier fails on windows
       # Because of EOL differences
       # Thus, we disabled 'npm'
       - name: pypyr test
-        run: pypyr ci npm=False
+        run: pipx run -- pypyr ci npm=False
 
   docker_compose:
     name: docker compose
@@ -169,6 +182,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
+
+      - name: scripts/prepare.ba.sh
+        run: bash scripts/prepare.ba.sh 'pre-docker'
 
       - name: docker compose up
         run: docker compose up --abort-on-container-exit
@@ -193,6 +211,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
+
+      - name: scripts/prepare.ba.sh
+        run: bash scripts/prepare.ba.sh
 
       - name: "docker build: ${{ matrix.DOCKER_TARGET }}"
         run: |
