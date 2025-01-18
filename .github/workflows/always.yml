@@ -112,7 +112,7 @@ jobs:
   verify_matrix:
     name: Verify
     needs: verify
-    # if: github.ref == 'refs/heads/main' # FIXME
+    if: github.ref == 'refs/heads/main'
     continue-on-error: true
     strategy:
       max-parallel: 10
@@ -192,7 +192,7 @@ jobs:
         run: docker compose up --abort-on-container-exit
 
   docker_build_matrix:
-    # if: github.ref == 'refs/heads/main' # FIXME
+    if: github.ref == 'refs/heads/main'
     name: docker build --target
     needs: docker_compose
     continue-on-error: true
