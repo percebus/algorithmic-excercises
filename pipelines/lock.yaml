@@ -41,4 +41,4 @@ pip_freeze:
   - name: pypyr.steps.shell
     run: "{freeze}"
     in:
-      cmd: bash scripts/pip/freeze.ba.sh
+      cmd: bash _scripts/pip/freeze.ba.sh
