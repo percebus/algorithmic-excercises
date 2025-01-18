@@ -10,12 +10,13 @@ echo "Script directory: ${scripts_path}"
 
 set -x
 
+if [[ "${enironment}" == "ci" ]]; then
+    rm ${scripts_path}/setup.ba.sh
+    mv ${scripts_path}/setup/ci.ba.sh ${scripts_path}/setup.ba.sh
+fi
+
 # Upgrades top-level dependencies, like pipx
 bash ${scripts_path}/gil/setup.ba.sh
-
-if [[ "${enironment}" == "ci" ]]; then
-    mv ${scripts_path}/setup/ci.ba.sh setup.ba.sh
-fi
 
 bash ./repos/commons/scripts/prepare.ba.sh
 
