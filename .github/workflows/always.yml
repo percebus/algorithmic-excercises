@@ -92,7 +92,10 @@ jobs:
       - name: pypyr test
         run: pipx run -- pypyr ci lint=False
 
-      - uses: percebus/github-actions-testing/.github/actions/junit@main
+      - uses: percebus/github-actions-testing/.github/actions/test-summary@main
+        with:
+          files_pattern: test-results.xml
+      - uses: percebus/github-actions-testing/.github/actions/publish-test-deltas@main
         with:
           files_pattern: test-results.xml
 
@@ -162,11 +165,6 @@ jobs:
       # Thus, we disabled 'npm'
       - name: pypyr test
         run: pipx run -- pypyr ci npm=False
-
-      - uses: percebus/github-actions-testing/.github/actions/test-reporter@main
-        with:
-          name: Unit Tests @ python@${{ matrix.PYTHON_VERSION }}
-          files_pattern: test-results.xml
 
   docker_compose:
     name: docker compose
