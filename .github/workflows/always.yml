@@ -92,22 +92,12 @@ jobs:
       - name: pypyr test
         run: pipx run -- pypyr ci lint=False
 
-      - name: Publish test-results.xml Summary
-        if: always()
-        uses: pmeier/pytest-results-action@main
+      - uses: percebus/github-actions-testing/.github/actions/test-summary@main
         with:
-          path: test-results.xml
-          summary: true
-          display-options: fEX
-          fail-on-empty: true
-          title: Test results
-
-      - name: Publish test-results.xml
-        uses: EnricoMi/publish-unit-test-result-action@v2
-        if: always()
+          files_pattern: test-results.xml
+      - uses: percebus/github-actions-testing/.github/actions/publish-test-deltas@main
         with:
-          files: |
-            test-results.xml
+          files_pattern: test-results.xml
 
   verify_matrix:
     name: Verify
