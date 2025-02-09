@@ -93,11 +93,9 @@ jobs:
       - name: pypyr test
         run: pipx run -- pypyr ci lint=False
 
-      - uses: percebus/github-actions-testing/.github/actions/test-summary@main
+      - uses: percebus/github-actions-testing/.github/actions/junit@main
         with:
-          files_pattern: test-results.xml
-      - uses: percebus/github-actions-testing/.github/actions/publish-test-deltas@main
-        with:
+          tests_name: "" # disables actipns/test-reporter. It doesn't like pytest's junit format
           files_pattern: test-results.xml
 
   verify_matrix:
@@ -183,14 +181,13 @@ jobs:
         run: docker compose up --abort-on-container-exit
 
   docker_build_matrix:
-    if: github.ref == 'refs/heads/main'
     name: docker build --target
     needs: docker_compose
     continue-on-error: true
     strategy:
       max-parallel: 10
       matrix:
-        DOCKER_TARGET:
+        target:
           # - base
           # - project
           # - dev
@@ -210,4 +207,4 @@ jobs:
 
       - uses: percebus/github-actions-docker/.github/actions/docker_build_target@main
         with:
-          target: ${{ matrix.DOCKER_TARGET }}
+          target: ${{ matrix.target }}
