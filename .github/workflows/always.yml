@@ -15,6 +15,7 @@ permissions:
   checks: write
   contents: read
   pull-requests: write
+  security-events: write
 
 jobs:
   pypyr_lock:
@@ -207,7 +208,6 @@ jobs:
       - name: scripts/prepare.ba.sh
         run: bash scripts/prepare.ba.sh
 
-      - name: "docker build: ${{ matrix.DOCKER_TARGET }}"
-        run: |
-          docker build . \
-            --target ${{ matrix.DOCKER_TARGET }}
+      - uses: percebus/github-actions-docker/.github/actions/docker_build_target@main
+        with:
+          target: ${{ matrix.DOCKER_TARGET }}
