@@ -2,23 +2,12 @@ shortcuts:
   dev:
     pipeline_name: qa
     args:
-      path: .
-      npm: True
       clean: False
-      style: True
-      lint: True
-      test: True
       integration: False
       stats: False
 
   ci:
     pipeline_name: qa
     args:
-      path: .
-      npm: True
-      clean: True
       style: False
-      lint: True
-      test: True
       integration: False
-      stats: True
