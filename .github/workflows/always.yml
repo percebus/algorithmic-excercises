@@ -85,7 +85,7 @@ jobs:
 
       - uses: percebus/github-actions-testing/.github/actions/junit@main
         with:
-          tests_name: "" # disables actipns/test-reporter. It doesn't like pytest's junit format
+          tests_name: "" # disables actions/test-reporter. It doesn't like pytest's junit format
           files_pattern: test-results.xml
 
   verify_matrix:
@@ -105,7 +105,7 @@ jobs:
         PYTHON_VERSION:
           # - 3.11 # poetry is not setup
           - 3.12.x # latest 3.12.x
-          # - 3.13.x # FIXME "The version '3.13' with architecture 'x64' was not found for Ubuntu 22.04."
+          - 3.13.x
 
         # Different architectures
         ARCHITECTURE:
@@ -180,8 +180,9 @@ jobs:
           # - dev
           - tested
 
-          # docker-compose tests this
-          # - release
+          # - base
+          # - project
+          - release
 
     runs-on: ubuntu-latest
     steps:
