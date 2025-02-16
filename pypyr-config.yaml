@@ -11,3 +11,11 @@ shortcuts:
     args:
       style: False
       integration: False
+
+  ci_docker:
+    pipeline_name: qa
+    args:
+      npm: False
+      style: False
+      integration: False
+      stats: False
