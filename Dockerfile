@@ -10,7 +10,7 @@ RUN bash _scripts/bash/clean.ba.sh
 FROM project AS dev
 RUN bash _scripts/install.ba.sh
 
-FROM dev AS test
+FROM dev AS tested
 RUN pipx run -- pypyr ci npm=False stats=False
 
 # TODO use light image. alpine?
