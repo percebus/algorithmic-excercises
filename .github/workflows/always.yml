@@ -11,6 +11,8 @@ env:
 
   DOCKER_BUILDKIT: 1
 
+  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
 permissions:
   checks: write
   contents: read
@@ -32,11 +34,8 @@ jobs:
           architecture: ${{ env.ARCHITECTURE }}
           python-version: ${{ env.PYTHON_VERSION }}
 
-      - name: scripts/prepare.ba.sh
-        run: bash scripts/prepare.ba.sh
-
-      - name: poetry install
-        run: bash _scripts/poetry/install.ba.sh ci
+      - name: scripts/setup_ci.ba.sh
+        run: bash scripts/setup_ci.ba.sh
 
       - name: pypyr lock
         run: pipx run -- pypyr lock freeze=True
@@ -47,21 +46,15 @@ jobs:
   semantic-release:
     name: semantic-release
     needs: pypyr_lock
-    runs-on: ubuntu-latest
     permissions:
       issues: write # to be able to comment on released issues
       contents: write # to be able to publish a GitHub release
       id-token: write # to enable use of OIDC for npm provenance
       pull-requests: write # to be able to comment on released pull requests
-    steps:
-      - uses: percebus/github-actions-common/.github/actions/checkout@main
-      - uses: percebus/github-actions-node/.github/actions/node_setup@main
-      - uses: percebus/github-actions-npm/.github/actions/npm_install@main
 
-      - name: semantic-release
-        run: npm run semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+    uses: percebus/github-actions-npm/.github/workflows/npm_run_script.yml@main
+    with:
+      script: semantic-release
 
   verify:
     name: Verify
@@ -81,11 +74,8 @@ jobs:
       - uses: percebus/github-actions-node/.github/actions/node_setup@main
       - uses: percebus/github-actions-npm/.github/actions/npm_install@main
 
-      - name: scripts/prepare.ba.sh
-        run: bash scripts/prepare.ba.sh
-
-      - name: poetry install
-        run: bash _scripts/poetry/install.ba.sh ci
+      - name: scripts/setup_ci.ba.sh
+        run: bash scripts/setup_ci.ba.sh
 
       - name: pypyr lint
         run: pipx run -- pypyr lint stats=True
@@ -95,7 +85,7 @@ jobs:
 
       - uses: percebus/github-actions-testing/.github/actions/junit@main
         with:
-          tests_name: "" # disables actipns/test-reporter. It doesn't like pytest's junit format
+          tests_name: "" # disables actions/test-reporter. It doesn't like pytest's junit format
           files_pattern: test-results.xml
 
   verify_matrix:
@@ -115,7 +105,7 @@ jobs:
         PYTHON_VERSION:
           # - 3.11 # poetry is not setup
           - 3.12.x # latest 3.12.x
-          # - 3.13.x # FIXME "The version '3.13' with architecture 'x64' was not found for Ubuntu 22.04."
+          - 3.13.x
 
         # Different architectures
         ARCHITECTURE:
@@ -153,11 +143,8 @@ jobs:
       - uses: percebus/github-actions-node/.github/actions/node_setup@main
       - uses: percebus/github-actions-npm/.github/actions/npm_install@main
 
-      - name: scripts/prepare.ba.sh
-        run: bash scripts/prepare.ba.sh
-
-      - name: poetry install
-        run: bash _scripts/poetry/install.ba.sh ci
+      - name: scripts/setup_ci.ba.sh
+        run: bash scripts/setup_ci.ba.sh
 
       # FIXME prettier fails on windows
       # Because of EOL differences
@@ -175,7 +162,7 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
       - name: scripts/prepare.ba.sh
-        run: bash scripts/prepare.ba.sh 'pre-docker'
+        run: bash scripts/prepare.ba.sh
 
       - name: docker compose up
         run: docker compose up --abort-on-container-exit
@@ -191,10 +178,11 @@ jobs:
           # - base
           # - project
           # - dev
-          - test
+          - tested
 
-          # docker-compose tests this
-          # - release
+          # - base
+          # - project
+          - release
 
     runs-on: ubuntu-latest
     steps:

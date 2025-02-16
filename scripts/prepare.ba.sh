@@ -2,18 +2,9 @@
 
 set -e
 
-environment=${1}
-echo "environment: ${environment}"
-
 scripts_path="$(dirname "$(readlink -f "$0")")"
 echo "Script directory: ${scripts_path}"
 
-
-if [ "${environment}" == "pre-docker" ]; then
-    set -x
-    rm ${scripts_path}/setup.ba.sh
-    set +x
-fi
 
 set -x
 
