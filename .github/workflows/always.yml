@@ -92,8 +92,7 @@ jobs:
           tests_name: "" # disables actions/test-reporter. It doesn't like pytest's junit format
           files_pattern: test-results.xml
 
-  verify_matrix:
-    name: Verify
+  verify__matrix:
     needs: verify
     if: github.ref == 'refs/heads/main'
     continue-on-error: true
@@ -109,7 +108,7 @@ jobs:
         PYTHON_VERSION:
           # - 3.11 # poetry is not setup
           - 3.12.x # latest 3.12.x
-          - 3.13.x
+          # - 3.13.x # FIXME PEP517 build of a dependency failed
 
         # Different architectures
         ARCHITECTURE:
@@ -123,6 +122,7 @@ jobs:
             ARCHITECTURE: x64
 
     runs-on: ${{ matrix.OS }}
+    name: "python@${{ matrix.PYTHON_VERSION }} @ ${{ matrix.OS }}@${{ matrix.ARCHITECTURE }}"
     steps:
       # FIXME: Does NOT work on Windows
       # - run: echo ${{ github.job }}
