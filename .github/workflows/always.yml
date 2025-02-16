@@ -42,26 +42,19 @@ jobs:
 
       # TODO commit back upgraded requirements
 
-  # TODO use npm_run_script
   # SRC: https://github.com/semantic-release/semantic-release/blob/master/docs/recipes/ci-configurations/github-actions.md
   semantic-release:
     name: semantic-release
     needs: pypyr_lock
-    runs-on: ubuntu-latest
     permissions:
       issues: write # to be able to comment on released issues
       contents: write # to be able to publish a GitHub release
       id-token: write # to enable use of OIDC for npm provenance
       pull-requests: write # to be able to comment on released pull requests
-    steps:
-      - uses: percebus/github-actions-common/.github/actions/checkout@main
-      - uses: percebus/github-actions-node/.github/actions/node_setup@main
-      - uses: percebus/github-actions-npm/.github/actions/npm_install@main
 
-      - name: semantic-release
-        run: npm run semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+    uses: percebus/github-actions-npm/.github/workflows/npm_run_script.yml@main
+    with:
+      script: semantic-release
 
   verify:
     name: Verify
