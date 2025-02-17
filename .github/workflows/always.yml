@@ -83,7 +83,7 @@ jobs:
 
   verify__matrix:
     needs: verify
-    if: github.ref == 'refs/heads/main'
+    # if: github.ref == 'refs/heads/main' # FIXME
     continue-on-error: true
     strategy:
       max-parallel: 10
