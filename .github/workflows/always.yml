@@ -4,9 +4,7 @@ on:
 
 env:
   OS: ubuntu-latest
-  ARCHITECTURE: x64
 
-  PYTHON_VERSION: 3.12.1
   PYRIGHT_PYTHON_FORCE_VERSION: latest
 
   DOCKER_BUILDKIT: 1
@@ -26,11 +24,7 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
-      - name: setup python @ ${{ env.PYTHON_VERSION }}
-        uses: actions/setup-python@v5
-        with:
-          architecture: ${{ env.ARCHITECTURE }}
-          python-version: ${{ env.PYTHON_VERSION }}
+      - uses: percebus/github-actions-python/.github/actions/python_setup@main
 
       - name: scripts/setup_ci.ba.sh
         run: bash scripts/setup_ci.ba.sh
@@ -52,6 +46,7 @@ jobs:
       pull-requests: write # to be able to comment on released pull requests
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
+
       - uses: percebus/github-actions-node/.github/actions/node_setup@main
       - uses: percebus/github-actions-npm/.github/actions/npm_install@main
 
@@ -69,14 +64,11 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
-      - name: setup python @ ${{ env.PYTHON_VERSION }}
-        uses: actions/setup-python@v5
-        with:
-          architecture: ${{ env.ARCHITECTURE }}
-          python-version: ${{ env.PYTHON_VERSION }}
-
+      # prettier & dockerlint
       - uses: percebus/github-actions-node/.github/actions/node_setup@main
       - uses: percebus/github-actions-npm/.github/actions/npm_install@main
+
+      - uses: percebus/github-actions-python/.github/actions/python_setup@main
 
       - name: scripts/setup_ci.ba.sh
         run: bash scripts/setup_ci.ba.sh
@@ -124,28 +116,18 @@ jobs:
     runs-on: ${{ matrix.OS }}
     name: "python@${{ matrix.PYTHON_VERSION }} @ ${{ matrix.OS }}@${{ matrix.ARCHITECTURE }}"
     steps:
-      # FIXME: Does NOT work on Windows
-      # - run: echo ${{ github.job }}
-      # - run: |
-      #     JOB_NAME="OS:${{ matrix.os }}, python@${{ matrix.PYTHON_VERSION }}, node@${{ matrix.NODE_VERSION }}, ${{ matrix.ARCHITECTURE }}"
-      #     echo $JOB_NAME
-      #     echo "JOB_NAME=$JOB_NAME" >> $GITHUB_ENV
-      # - name: echo JOB_NAME
-      #   run: |
-      #     echo "JOB_NAME: ${{ env.JOB_NAME }}"
-
       - uses: percebus/github-actions-common/.github/actions/checkout@main
         with:
           ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
-      - name: setup python @ ${{ matrix.PYTHON_VERSION }}
-        uses: actions/setup-python@v5
-        with:
-          architecture: ${{ matrix.ARCHITECTURE }}
-          python-version: ${{ matrix.PYTHON_VERSION }}
+      # TODO? or DELETE? npm=False
+      # - uses: percebus/github-actions-node/.github/actions/node_setup@main
+      # - uses: percebus/github-actions-npm/.github/actions/npm_install@main
 
-      - uses: percebus/github-actions-node/.github/actions/node_setup@main
-      - uses: percebus/github-actions-npm/.github/actions/npm_install@main
+      - uses: percebus/github-actions-python/.github/actions/python_setup@main
+        with:
+          python-version: ${{ matrix.PYTHON_VERSION }}
+          architecture: ${{ matrix.ARCHITECTURE }}
 
       - name: scripts/setup_ci.ba.sh
         run: bash scripts/setup_ci.ba.sh
@@ -171,7 +153,7 @@ jobs:
       - name: docker compose up
         run: docker compose up --abort-on-container-exit
 
-  docker_build_matrix:
+  docker_build__matrix:
     name: docker build --target
     needs: docker_compose
     continue-on-error: true
