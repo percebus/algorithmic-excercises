@@ -105,7 +105,7 @@ jobs:
           # - arm64 # "The version '3.12.x' with architecture 'arm64' was not found for Ubuntu 22.04."
 
     runs-on: ${{ matrix.OS }}
-    name: "python@${{ matrix.python-version }} @ ${{ matrix.OS }}@${{ matrix.architecture }}"
+    name: "Verify: python@${{ matrix.python-version }} @ ${{ matrix.OS }}@${{ matrix.architecture }}"
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
         with:
