@@ -84,8 +84,8 @@ jobs:
   verify__matrix:
     needs: verify
     # if: github.ref == 'refs/heads/main' # FIXME
-    continue-on-error: true
     strategy:
+      fail-fast: false
       max-parallel: 10
       matrix:
         # Different OS
@@ -94,24 +94,18 @@ jobs:
           - windows-latest
 
         # Past/Future versions
-        PYTHON_VERSION:
+        python-version:
           # - 3.11 # poetry is not setup
           - 3.12.x # latest 3.12.x
           # - 3.13.x # FIXME PEP517 build of a dependency failed
 
         # Different architectures
-        ARCHITECTURE:
+        architecture:
           - x64
           # - arm64 # "The version '3.12.x' with architecture 'arm64' was not found for Ubuntu 22.04."
 
-        exclude:
-          # Repetitive from job:verify
-          - OS: ubuntu-latest
-            PYTHON_VERSION: 3.12.x
-            ARCHITECTURE: x64
-
     runs-on: ${{ matrix.OS }}
-    name: "python@${{ matrix.PYTHON_VERSION }} @ ${{ matrix.OS }}@${{ matrix.ARCHITECTURE }}"
+    name: "python@${{ matrix.python-version }} @ ${{ matrix.OS }}@${{ matrix.architecture }}"
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
         with:
@@ -123,8 +117,8 @@ jobs:
 
       - uses: percebus/github-actions-python/.github/actions/python_setup@main
         with:
-          python-version: ${{ matrix.PYTHON_VERSION }}
-          architecture: ${{ matrix.ARCHITECTURE }}
+          python-version: ${{ matrix.python-version }}
+          architecture: ${{ matrix.architecture }}
 
       - name: scripts/setup_ci.ba.sh
         run: bash scripts/setup_ci.ba.sh
@@ -134,6 +128,31 @@ jobs:
       # Thus, we disabled 'npm'
       - name: pypyr test
         run: pipx run -- pypyr ci npm=False
+
+  # TODO? merge into verify?
+  codeQL__matrix:
+    needs: verify
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language:
+          - python
+
+    name: "CodeQL: ${{ matrix.language }}"
+    steps:
+      - uses: percebus/github-actions-common/.github/actions/checkout@main
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
+
+      - name: setup CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+
+      - name: CodeQL
+        uses: github/codeql-action/analyze@v3
 
   docker_compose:
     name: docker compose
