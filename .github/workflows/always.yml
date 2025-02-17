@@ -3,11 +3,8 @@ on:
   push:
 
 env:
-  OS: ubuntu-latest
-
-  PYRIGHT_PYTHON_FORCE_VERSION: latest
-
   DOCKER_BUILDKIT: 1
+  PYRIGHT_PYTHON_FORCE_VERSION: latest
 
 permissions:
   checks: write
