@@ -2,7 +2,7 @@ tmp/
 test-results.xml
 
 # commons/scripts
-repos/
+repositories/
 _scripts/
 
 
