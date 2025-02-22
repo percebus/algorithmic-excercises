@@ -11,7 +11,7 @@ set -x
 # Upgrades top-level dependencies, like pipx
 bash ${scripts_path}/pip/upgrade.ba.sh
 gil clone
-bash ./repos/commons/scripts/prepare.ba.sh
+bash ./repositories/commons/scripts/prepare.ba.sh
 
 set +x
 set +e
