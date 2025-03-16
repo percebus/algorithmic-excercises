@@ -1,5 +1,15 @@
 # algorithmic-excercises CHANGELOG
 
+# [3.2.0](https://github.com/percebus/algorithmic-excercises/compare/v3.1.0...v3.2.0) (2025-03-16)
+
+### Features
+
+- **doc linting:** w/ ruff ([#54](https://github.com/percebus/algorithmic-excercises/issues/54)) ([77adc4f](https://github.com/percebus/algorithmic-excercises/commit/77adc4f7cb6fe89b66130d8b7a6ee892f7b4ee60))
+
+### Reverts
+
+- **semantic-release:** Use steps ([b5bc088](https://github.com/percebus/algorithmic-excercises/commit/b5bc088864932315f2c6d7ed38a261cd71237da4))
+
 # [3.1.0](https://github.com/percebus/algorithmic-excercises/compare/v3.0.0...v3.1.0) (2025-01-07)
 
 ### Features
