@@ -2,15 +2,19 @@ from ..types import NestedStrDict
 
 
 def pluck(data: NestedStrDict) -> list[str]:
-    """_summary_
+    """
+    Pluck keys from a nested dictionary.
 
-    Args:
-        data (dict[str, Any  |  str]): A dictionary tree with common prefixes
+    Parameters
+    ----------
+    - `data:NestedStrDict`.- A dictionary tree with common prefixes
 
-    Returns:
-        list[str]: Plucks the keys from a nested dictionary
+    Returns
+    -------
+    `list[str]`.- Plucks the keys from a nested dictionary
 
-    Example:
+    Example
+    -------
         {
             'b': 'bananas',
             'd': {
@@ -22,7 +26,6 @@ def pluck(data: NestedStrDict) -> list[str]:
             'z': 'zebra'
         }
     """
-
     results: list[str] = []
 
     def recurse(dictionary: NestedStrDict) -> None:

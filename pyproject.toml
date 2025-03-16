@@ -49,7 +49,7 @@ defineConstant = { DEBUG = true }
 typeCheckingMode = "strict"
 include = ["src"]
 strict = ["src"]
-# stubPath = "src/stubs" # TODO?
+stubPath = "typings"
 # ignore = ["src/oldstuff"] # NOTE what is the difference between exclude and ignore?
 exclude = [
     ".venv",
@@ -61,6 +61,12 @@ exclude = [
 
 [tool.coverage.run]
 omit = [
+    "src/**/__main__.py",
+    "src/**/i_*.py",
+    "src/**/protocol.py",
+    "src/**/base.py",
+    "src/**/benchmark*/**",
+    "src/**/benchmark*.py",
     "**/tests/**",
 ]
 

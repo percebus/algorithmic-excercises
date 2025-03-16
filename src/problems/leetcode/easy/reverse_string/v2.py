@@ -3,19 +3,21 @@ from math import floor
 from src.problems.leetcode.easy.reverse_string.protocol import SolutionProtocol
 
 
-class Solution:  # (SolutionProtocol)
+class Solution(SolutionProtocol):
     def reverseString(self, s: list[str]) -> None:
         """
-        v2.Solution.reverseString
+        v2.Solution.reverseString.
 
         Given an array of characters s, it modifies the same array.
 
-        Parameters:
-            - `s` (`list[str]`): An array of string characters.
+        Parameters
+        ----------
+        - `s:list[str]`.- An array of string characters.
 
-        Returns: `None`
+        Returns
+        -------
+        `None`
         """
-
         chars = s
         size: int = len(chars)
         top: int = size - 1

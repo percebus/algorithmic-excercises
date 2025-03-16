@@ -24,9 +24,11 @@ line-ending = "auto"
 
 [lint]
 select = [
-    "F",   # Pyflakes
+    "D",   # Docstrings
     "E",   # pycodestyle
+    "F",   # Pyflakes
     "I",   # isort
+    "PL",  # PyLint
     "SIM", # flake8-simplify
     "TID", # flake8-tidy-imports
     "W",   # warning
@@ -38,6 +40,14 @@ extend-select = ["C4", "SIM", "TCH"]
 fixable = ["ALL"]
 ignore = [
     "TD",  # TODO
-    "D1",  # Missing docstring
+    "D1",    # Missing docstring # XXX
+    "D104",  # Missing docstring in public package, like empty __init__.py # XXX?
+    "PLR2004", # Magic value used in comparison,
     "TID252", # "Prefer absolute imports over relative imports from parent modules"
 ]
+
+[lint.pydocstyle]
+convention = "numpy"
+
+[lint.per-file-ignores]
+"tests/*" = ["D"]

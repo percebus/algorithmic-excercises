@@ -1,3 +1,4 @@
+from abc import ABC, abstractmethod
 from typing import Optional
 
 # SRC: https://leetcode.com/problems/two-sum/
@@ -12,17 +13,22 @@ from typing import Optional
 # You can return the answer in any order.
 
 
-class SolutionInterface:
+# TODO? ABC?
+class SolutionBase(ABC):
     """An Interface for the two sum problem Solution class."""
 
+    @abstractmethod
     def twoSum(self, nums: list[int], target: int) -> Optional[tuple[int, int]]:
-        """Two Sum
+        """
+        SolutionInterface.twoSum.
 
-        Parameters:
-            - :param: `nums` (list[int]): An array of integers.
-            - :param: `target` (int): A target integer.
+        Parameters
+        ----------
+        - `nums:list[int]`.- An array of integers.
+        - `target:int`.- A target integer.
 
-        Returns:
-            - :result: Optional[tuple[int, int]]: indices of two numbers such that they add up to the target.
+        Returns
+        -------
+            `Optional[tuple[int, int]]`.- indices of two numbers such that they add up to the target.
         """
         raise NotImplementedError

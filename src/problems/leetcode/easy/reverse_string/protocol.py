@@ -13,13 +13,16 @@ You must do this by modifying the input array in-place with O(1) extra memory.
 class SolutionProtocol(Protocol):
     def reverseString(self, s: list[str]) -> None:
         """
-        SolutionProtocol.reverseString
+        SolutionProtocol.reverseString.
 
         Given an array of characters s, it modifies the same array.
 
-        Parameters:
-          - `s` (`list[str]`): An array of string characters.
+        Parameters
+        ----------
+        - `s:list[str]`.- An array of string characters.
 
-        Returns: `None`
+        Returns
+        -------
+        `None`
         """
-        raise NotImplementedError
+        ...  # pylint: disable=unnecessary-ellipsis
