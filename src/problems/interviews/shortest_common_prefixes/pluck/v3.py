@@ -5,17 +5,20 @@ import more_itertools
 from ..types import NestedStrDict
 
 
-def pluck(data: dict[str, Any | str]) -> Iterator[Any]:
-    """_summary_
+def pluck(data: NestedStrDict) -> Iterator[Any]:
+    """
+    Pluck keys from a nested dictionary.
 
-    Args:
-        data (dict[str, Any  |  str]): A dictionary tree with common prefixes
+    Parameters
+    ----------
+        - `data:NestedStrDict`.- A dictionary tree with common prefixes
 
     Returns
     -------
-        list[str]: Plucks the keys from a nested dictionary
+        `list[str]`.- Plucks the keys from a nested dictionary
 
-    Example:
+    Example
+    -------
         {
             'b': 'bananas',
             'd': {

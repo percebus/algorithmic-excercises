@@ -33,7 +33,7 @@ def getHitProbability(R: int, C: int, G: List[List[int]]) -> float:
     """
     A function that gets the probability that the cell hit by a shot contains a battleship.
 
-    Arguments:
+    Parameters:
         R (int): Rows
         C (int): Columns
         G (List[List[int]]): Grid
