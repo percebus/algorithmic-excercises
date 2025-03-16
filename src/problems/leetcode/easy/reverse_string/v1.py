@@ -1,7 +1,7 @@
 from src.problems.leetcode.easy.reverse_string.protocol import SolutionProtocol
 
 
-class Solution:  # (SolutionProtocol)
+class Solution(SolutionProtocol):
     def reverseString(self, s: list[str]) -> None:
         """
         v1.Solution.reverseString.

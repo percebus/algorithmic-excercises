@@ -25,4 +25,4 @@ class SolutionProtocol(Protocol):
                 - `True` when it reads the same backward as forward.
                 - Otherwise `False`.
         """
-        raise NotImplementedError
+        ...  # pylint: disable=unnecessary-ellipsis

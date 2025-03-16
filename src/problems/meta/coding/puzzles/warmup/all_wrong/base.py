@@ -10,8 +10,10 @@ Your task is to implement the function getWrongAnswers(N, C) which returns a str
 the ith of which is the answer you should give for question ii in order to get it wrong (either "A" or "B").
 """
 
+from abc import ABC, abstractmethod
 
-# TODO? ABC?
-class PuzzleInterface:
+
+class PuzzleBase(ABC):
+    @abstractmethod
     def getWrongAnswers(self, numOfQuestions: int, letters: str) -> str:
         raise NotImplementedError

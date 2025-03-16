@@ -61,6 +61,10 @@ exclude = [
 
 [tool.coverage.run]
 omit = [
+    "src/**/i_*.py",
+    "src/**/protocol.py",
+    "src/**/base.py",
+    "src/**/__main__.py",
     "**/tests/**",
 ]
 

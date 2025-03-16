@@ -1,9 +1,10 @@
-from typing import Optional
+from typing import Optional, override
 
-from .base import SolutionInterface
+from .base import SolutionBase
 
 
-class Solution(SolutionInterface):
+class Solution(SolutionBase):
+    @override
     def twoSum(self, nums: list[int], target: int) -> Optional[tuple[int, int]]:
         for idx1, value1 in enumerate(nums):
             for idx2, value2 in enumerate(nums):

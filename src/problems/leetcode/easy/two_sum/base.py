@@ -1,3 +1,4 @@
+from abc import ABC, abstractmethod
 from typing import Optional
 
 # SRC: https://leetcode.com/problems/two-sum/
@@ -13,9 +14,10 @@ from typing import Optional
 
 
 # TODO? ABC?
-class SolutionInterface:
+class SolutionBase(ABC):
     """An Interface for the two sum problem Solution class."""
 
+    @abstractmethod
     def twoSum(self, nums: list[int], target: int) -> Optional[tuple[int, int]]:
         """
         SolutionInterface.twoSum.

@@ -1,7 +1,9 @@
-from src.problems.meta.coding.puzzles.warmup.all_wrong.base import PuzzleInterface
+from typing import override
+
+from src.problems.meta.coding.puzzles.warmup.all_wrong.base import PuzzleBase
 
 
-class Puzzle(PuzzleInterface):
+class Puzzle(PuzzleBase):
     A, B = ("A", "B")
     opposites = {"A": B, "B": A}
 
@@ -17,6 +19,7 @@ class Puzzle(PuzzleInterface):
 
     # pylint: disable=invalid-name
     # pylint: disable=unused-argument
+    @override
     def getWrongAnswers(self, numOfQuestions: int, letters: str) -> str:
         return self._get_wrong_answers(letters)
 

@@ -25,4 +25,4 @@ class SolutionProtocol(Protocol):
         -------
         `None`
         """
-        raise NotImplementedError
+        ...  # pylint: disable=unnecessary-ellipsis
