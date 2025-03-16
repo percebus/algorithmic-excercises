@@ -11,6 +11,7 @@ from typing import Optional
 
 # You can return the answer in any order.
 
+
 # TODO? ABC?
 class SolutionInterface:
     """An Interface for the two sum problem Solution class."""

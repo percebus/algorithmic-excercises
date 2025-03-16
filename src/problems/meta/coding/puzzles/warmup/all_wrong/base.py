@@ -10,6 +10,7 @@ Your task is to implement the function getWrongAnswers(N, C) which returns a str
 the ith of which is the answer you should give for question ii in order to get it wrong (either "A" or "B").
 """
 
+
 # TODO? ABC?
 class PuzzleInterface:
     def getWrongAnswers(self, numOfQuestions: int, letters: str) -> str:
