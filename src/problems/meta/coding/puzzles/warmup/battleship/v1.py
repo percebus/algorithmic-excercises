@@ -1,5 +1,3 @@
-from typing import List
-
 from hamcrest import assert_that, has_length
 
 SHIP = 1
@@ -20,7 +18,7 @@ of at most 10^ -6 to be considered correct.
 """
 
 
-def calculate_hit_probability(rows: List[List[int]]) -> float:
+def calculate_hit_probability(rows: list[list[int]]) -> float:
     flattened = [column for row in rows for column in row]
     spaces = len(flattened)
     ships = flattened.count(SHIP)
@@ -29,14 +27,17 @@ def calculate_hit_probability(rows: List[List[int]]) -> float:
 
 # pylint: disable=invalid-name
 # pylint: disable=unused-argument
-def getHitProbability(R: int, C: int, G: List[List[int]]) -> float:
+def getHitProbability(R: int, C: int, G: list[list[int]]) -> float:
     """
+    Get hit probability.
+
     A function that gets the probability that the cell hit by a shot contains a battleship.
 
-    Parameters:
-        R (int): Rows
-        C (int): Columns
-        G (List[List[int]]): Grid
+    Parameters
+    ----------
+    - `R:int`.- Rows
+    - `C:int`.- Columns
+    - `G:list[list[int]]`.- Grid
 
     Returns
     -------

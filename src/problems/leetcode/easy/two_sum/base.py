@@ -11,20 +11,21 @@ from typing import Optional
 
 # You can return the answer in any order.
 
-
+# TODO? ABC?
 class SolutionInterface:
     """An Interface for the two sum problem Solution class."""
 
     def twoSum(self, nums: list[int], target: int) -> Optional[tuple[int, int]]:
-        """Two Sum
+        """
+        SolutionInterface.twoSum.
 
         Parameters
         ----------
-            - :param: `nums` (list[int]): An array of integers.
-            - :param: `target` (int): A target integer.
+        - `nums:list[int]`.- An array of integers.
+        - `target:int`.- A target integer.
 
         Returns
         -------
-            - :result: Optional[tuple[int, int]]: indices of two numbers such that they add up to the target.
+            `Optional[tuple[int, int]]`.- indices of two numbers such that they add up to the target.
         """
         raise NotImplementedError

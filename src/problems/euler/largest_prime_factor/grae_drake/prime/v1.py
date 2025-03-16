@@ -6,12 +6,12 @@ def is_prime(n: int) -> bool:
     That is: it has no factors.
 
     Parameters
-    ---------
-        - `n:int`.- The number to check.
+    ----------
+    - `n:int`.- The number to check.
 
     Returns
     -------
-        `bool`.- True if the number is prime, False otherwise.
+    `bool`.- True if the number is prime, False otherwise.
     """
     for x in range(2, n):  # noqa: SIM110
         if n % x == 0:

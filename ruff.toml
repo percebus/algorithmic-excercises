@@ -40,7 +40,8 @@ extend-select = ["C4", "SIM", "TCH"]
 fixable = ["ALL"]
 ignore = [
     "TD",  # TODO
-    "D1",  # Missing docstring
+    "D1",    # Missing docstring # XXX
+    "D104",  # Missing docstring in public package, like empty __init__.py # XXX?
     "PLR2004", # Magic value used in comparison,
     "TID252", # "Prefer absolute imports over relative imports from parent modules"
 ]

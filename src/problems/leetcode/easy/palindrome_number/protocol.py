@@ -11,17 +11,18 @@ from typing import Protocol, runtime_checkable
 class SolutionProtocol(Protocol):
     def isPalindrome(self, number: int) -> bool:
         """
-        SolutionProtocol.isPalindrome
+        SolutionProtocol.isPalindrome.
 
         Given an integer x, return true if x is palindrome integer.
 
         Parameters
         ----------
-            `number` (`int`): An integer x.
+            - `number:int`.- An integer x.
 
         Returns
         -------
-            `bool`:
-                `True` or `False`.
+            `bool`.-
+                - `True` when it reads the same backward as forward.
+                - Otherwise `False`.
         """
         raise NotImplementedError

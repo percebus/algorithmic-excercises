@@ -7,11 +7,11 @@ def pluck(data: NestedStrDict) -> list[str]:
 
     Parameters
     ----------
-        - `data:NestedStrDict`.- A dictionary tree with common prefixes
+    - `data:NestedStrDict`.- A dictionary tree with common prefixes
 
     Returns
     -------
-        `list[str]`.- Plucks the keys from a nested dictionary
+    `list[str]`.- Plucks the keys from a nested dictionary
 
     Example
     -------

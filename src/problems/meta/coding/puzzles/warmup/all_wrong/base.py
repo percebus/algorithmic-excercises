@@ -1,4 +1,6 @@
 """
+All wrong interface.
+
 There's a multiple-choice test with N questions, numbered from 1 to N.
 Each question has 2 answer options, labelled A and B.
 
@@ -8,7 +10,7 @@ Your task is to implement the function getWrongAnswers(N, C) which returns a str
 the ith of which is the answer you should give for question ii in order to get it wrong (either "A" or "B").
 """
 
-
+# TODO? ABC?
 class PuzzleInterface:
     def getWrongAnswers(self, numOfQuestions: int, letters: str) -> str:
         raise NotImplementedError
