@@ -24,9 +24,11 @@ line-ending = "auto"
 
 [lint]
 select = [
-    "F",   # Pyflakes
+    "D",   # Docstrings
     "E",   # pycodestyle
+    "F",   # Pyflakes
     "I",   # isort
+    "PL",  # PyLint
     "SIM", # flake8-simplify
     "TID", # flake8-tidy-imports
     "W",   # warning
@@ -41,3 +43,9 @@ ignore = [
     "D1",  # Missing docstring
     "TID252", # "Prefer absolute imports over relative imports from parent modules"
 ]
+
+[lint.pydocstyle]
+convention = "numpy"
+
+[lint.per-file-ignores]
+"tests/*" = ["D"]

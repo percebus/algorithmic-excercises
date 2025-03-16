@@ -38,7 +38,8 @@ def getHitProbability(R: int, C: int, G: List[List[int]]) -> float:
         C (int): Columns
         G (List[List[int]]): Grid
 
-    Returns:
+    Returns
+    -------
         float: probability with an absolute or relative error of at most 10^ -6.
     """
     first_row = G[0]

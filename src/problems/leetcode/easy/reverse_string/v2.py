@@ -10,12 +10,12 @@ class Solution:  # (SolutionProtocol)
 
         Given an array of characters s, it modifies the same array.
 
-        Parameters:
+        Parameters
+        ----------
             - `s` (`list[str]`): An array of string characters.
 
         Returns: `None`
         """
-
         chars = s
         size: int = len(chars)
         top: int = size - 1

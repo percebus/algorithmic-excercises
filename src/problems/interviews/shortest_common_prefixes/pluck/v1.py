@@ -7,7 +7,8 @@ def pluck(data: NestedStrDict) -> list[str]:
     Args:
         data (dict[str, Any  |  str]): A dictionary tree with common prefixes
 
-    Returns:
+    Returns
+    -------
         list[str]: Plucks the keys from a nested dictionary
 
     Example:
@@ -22,7 +23,6 @@ def pluck(data: NestedStrDict) -> list[str]:
             'z': 'zebra'
         }
     """
-
     results: list[str] = []
 
     def recurse(dictionary: NestedStrDict) -> None:

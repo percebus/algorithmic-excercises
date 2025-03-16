@@ -18,11 +18,13 @@ class SolutionInterface:
     def twoSum(self, nums: list[int], target: int) -> Optional[tuple[int, int]]:
         """Two Sum
 
-        Parameters:
+        Parameters
+        ----------
             - :param: `nums` (list[int]): An array of integers.
             - :param: `target` (int): A target integer.
 
-        Returns:
+        Returns
+        -------
             - :result: Optional[tuple[int, int]]: indices of two numbers such that they add up to the target.
         """
         raise NotImplementedError

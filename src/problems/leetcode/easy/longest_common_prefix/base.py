@@ -35,10 +35,12 @@ class SolutionInterface(metaclass=SolutionMeta):
     def longestCommonPrefix(self, words: list[str]) -> str:
         """Longest Common Prefix
 
-        Parameters:
+        Parameters
+        ----------
             - :param: `words` (list[str]): Different words that might share a common prefix.
 
-        Returns:
+        Returns
+        -------
             - :result: str:
               - The longest common prefix string amongst an array of strings.
               - If there is no common prefix, it returns an empty string.

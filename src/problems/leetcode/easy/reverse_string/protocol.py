@@ -17,7 +17,8 @@ class SolutionProtocol(Protocol):
 
         Given an array of characters s, it modifies the same array.
 
-        Parameters:
+        Parameters
+        ----------
           - `s` (`list[str]`): An array of string characters.
 
         Returns: `None`

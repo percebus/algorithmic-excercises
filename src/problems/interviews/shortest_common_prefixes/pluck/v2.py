@@ -11,7 +11,8 @@ def pluck(data: dict[str, Any | str]) -> Iterator[Any]:
     Args:
         data (dict[str, Any  |  str]): A dictionary tree with common prefixes
 
-    Returns:
+    Returns
+    -------
         list[str]: Plucks the keys from a nested dictionary
 
     Example:

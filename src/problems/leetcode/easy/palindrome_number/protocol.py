@@ -15,10 +15,12 @@ class SolutionProtocol(Protocol):
 
         Given an integer x, return true if x is palindrome integer.
 
-        Parameters:
+        Parameters
+        ----------
             `number` (`int`): An integer x.
 
-        Returns:
+        Returns
+        -------
             `bool`:
                 `True` or `False`.
         """
