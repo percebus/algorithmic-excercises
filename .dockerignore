@@ -3,7 +3,7 @@ test*.xml
 
 # commons/scripts
 repositories/
-_scripts/
+# _scripts/
 
 
 ########################
