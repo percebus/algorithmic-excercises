@@ -22,7 +22,7 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
-      - uses: percebus/github-actions-python/.github/actions/python_setup@main
+      - uses: percebus/github-actions-python/.github/actions/setup@main
 
       - name: scripts/setup_ci.ba.sh
         run: bash scripts/setup_ci.ba.sh
@@ -45,7 +45,7 @@ jobs:
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
 
-      - uses: percebus/github-actions-node/.github/actions/node_setup@main
+      - uses: percebus/github-actions-node/.github/actions/setup@main
       - uses: percebus/github-actions-npm/.github/actions/npm_install@main
 
       - name: semantic-release
@@ -63,10 +63,10 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
       # prettier & dockerlint
-      - uses: percebus/github-actions-node/.github/actions/node_setup@main
+      - uses: percebus/github-actions-node/.github/actions/setup@main
       - uses: percebus/github-actions-npm/.github/actions/npm_install@main
 
-      - uses: percebus/github-actions-python/.github/actions/python_setup@main
+      - uses: percebus/github-actions-python/.github/actions/setup@main
 
       - name: scripts/setup_ci.ba.sh
         run: bash scripts/setup_ci.ba.sh
@@ -113,10 +113,10 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
       # TODO? or DELETE? npm=False
-      # - uses: percebus/github-actions-node/.github/actions/node_setup@main
+      # - uses: percebus/github-actions-node/.github/actions/setup@main
       # - uses: percebus/github-actions-npm/.github/actions/npm_install@main
 
-      - uses: percebus/github-actions-python/.github/actions/python_setup@main
+      - uses: percebus/github-actions-python/.github/actions/setup@main
         with:
           python-version: ${{ matrix.python-version }}
           architecture: ${{ matrix.architecture }}
