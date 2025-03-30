@@ -14,24 +14,6 @@ permissions:
   security-events: write
 
 jobs:
-  pypyr_lock:
-    name: pypyr lock
-    runs-on: ubuntu-latest
-    steps:
-      - uses: percebus/github-actions-common/.github/actions/checkout@main
-        with:
-          ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
-
-      - uses: percebus/github-actions-python/.github/actions/setup@main
-
-      - name: scripts/setup_ci.ba.sh
-        run: bash scripts/setup_ci.ba.sh
-
-      - name: pypyr lock
-        run: pipx run -- pypyr lock freeze=True
-
-      # TODO commit back upgraded requirements
-
   # SRC: https://github.com/semantic-release/semantic-release/blob/master/docs/recipes/ci-configurations/github-actions.md
   semantic-release:
     name: semantic-release
