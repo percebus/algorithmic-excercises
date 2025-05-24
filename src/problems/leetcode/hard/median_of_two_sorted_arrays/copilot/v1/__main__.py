@@ -1,5 +1,8 @@
+# type: ignore
+
 from hamcrest import assert_that, equal_to
-from solution import find_median
+
+from .solution import find_median
 
 
 def test(nums1: list[int], nums2: list[int], expected: float) -> None:

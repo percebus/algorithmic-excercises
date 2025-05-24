@@ -1,5 +1,6 @@
 from hamcrest import assert_that, equal_to
-from solution import solution
+
+from .solution import solution
 
 
 def test(nums1: list[int], nums2: list[int], expected: float) -> None:

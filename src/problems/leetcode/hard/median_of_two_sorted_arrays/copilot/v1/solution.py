@@ -1,3 +1,8 @@
+# ruff: noqa
+# type: ignore
+# pylint: skip-file
+
+
 def find_median(nums1, nums2):
     """
     Finds the median of two sorted arrays with a time complexity of O(log (m+n)).
@@ -17,11 +22,11 @@ def find_median(nums1, nums2):
         partition_y = (x + y + 1) // 2 - partition_x
 
         # Handle edge cases for partitions
-        max_left_x = float('-inf') if partition_x == 0 else nums1[partition_x - 1]
-        min_right_x = float('inf') if partition_x == x else nums1[partition_x]
+        max_left_x = float("-inf") if partition_x == 0 else nums1[partition_x - 1]
+        min_right_x = float("inf") if partition_x == x else nums1[partition_x]
 
-        max_left_y = float('-inf') if partition_y == 0 else nums2[partition_y - 1]
-        min_right_y = float('inf') if partition_y == y else nums2[partition_y]
+        max_left_y = float("-inf") if partition_y == 0 else nums2[partition_y - 1]
+        min_right_y = float("inf") if partition_y == y else nums2[partition_y]
 
         # Check if we have found the correct partition
         if max_left_x <= min_right_y and max_left_y <= min_right_x:

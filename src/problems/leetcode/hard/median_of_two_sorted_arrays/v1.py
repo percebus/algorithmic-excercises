@@ -1,5 +1,7 @@
 import math
 
+from src.problems.leetcode.hard.median_of_two_sorted_arrays.protocol import SolutionProtocol
+
 """
 SRC: https://leetcode.com/problems/median-of-two-sorted-arrays/
 
@@ -8,6 +10,7 @@ of size m and n respectively,
 return the median of the two sorted arrays.
 The overall run time complexity should be O(log (m+n)). # TODO TEST
 """
+
 
 class Solution(SolutionProtocol):
     def findMedianSortedArrays(self, nums1: list[int], nums2: list[int]) -> float:
@@ -23,5 +26,6 @@ class Solution(SolutionProtocol):
 
         # implicit else
         return (nums3[idx] + nums3[idx + 1]) / 2
+
 
 solution = Solution()
