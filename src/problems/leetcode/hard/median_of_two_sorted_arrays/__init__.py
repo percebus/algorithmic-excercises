@@ -1,3 +1,5 @@
-from .v1 import find_median
+from .v1 import Solution, solution
 
-__all__ = ["find_median"]
+find_median = solution.findMedianSortedArrays
+
+__all__ = ["Solution", "solution", "find_median"]
