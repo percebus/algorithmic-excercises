@@ -1,5 +1,11 @@
 # algorithmic-excercises CHANGELOG
 
+# [3.3.0](https://github.com/percebus/algorithmic-excercises/compare/v3.2.0...v3.3.0) (2025-05-24)
+
+### Features
+
+- **median_of_two_sorted_arrays:** w/ copilot code ([#55](https://github.com/percebus/algorithmic-excercises/issues/55)) ([02ce282](https://github.com/percebus/algorithmic-excercises/commit/02ce282947d5363288abc2717f867972778593f4))
+
 # [3.2.0](https://github.com/percebus/algorithmic-excercises/compare/v3.1.0...v3.2.0) (2025-03-16)
 
 ### Features
