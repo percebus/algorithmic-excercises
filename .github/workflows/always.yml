@@ -19,28 +19,9 @@ permissions:
   security-events: write
 
 jobs:
-  pypyr_lock:
-    name: pypyr lock
-    runs-on: ubuntu-latest
-    steps:
-      - uses: percebus/github-actions-common/.github/actions/checkout@main
-        with:
-          ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
-
-      - uses: percebus/github-actions-python/.github/actions/setup@main
-
-      - name: scripts/setup_ci.ba.sh
-        run: bash scripts/setup_ci.ba.sh
-
-      - name: pypyr lock
-        run: pipx run -- pypyr lock freeze=True
-
-      # TODO commit back upgraded requirements
-
   # SRC: https://github.com/semantic-release/semantic-release/blob/master/docs/recipes/ci-configurations/github-actions.md
   semantic-release:
     name: semantic-release
-    needs: pypyr_lock
     runs-on: ubuntu-latest
     permissions:
       issues: write # to be able to comment on released issues
@@ -58,6 +39,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
+      # TODO commit back upgraded requirements
   verify:
     name: Verify
     needs: semantic-release
@@ -67,14 +49,15 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
+      - uses: percebus/github-actions-python/.github/actions/setup@main
+      - uses: percebus/github-actions-pip/.github/actions/install-upgrade@main
+      - uses: percebus/github-actions-pipx/.github/actions/pipx_install@main
+      - uses: percebus/github-actions-poetry/.github/actions/self_add_plugins@main
+      - uses: percebus/github-actions-poetry/.github/actions/install@main
+
       # prettier & dockerlint
       - uses: percebus/github-actions-node/.github/actions/setup@main
       - uses: percebus/github-actions-npm/.github/actions/npm_install@main
-
-      - uses: percebus/github-actions-python/.github/actions/setup@main
-
-      - name: scripts/setup_ci.ba.sh
-        run: bash scripts/setup_ci.ba.sh
 
       - name: pypyr lint
         run: pipx run -- pypyr lint stats=True
@@ -86,6 +69,25 @@ jobs:
         with:
           tests_name: "" # disables actions/test-reporter. It doesn't like pytest's junit format
           files_pattern: test-results.xml
+
+  verify__scripts:
+    name: Verify scripts
+    needs: verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: percebus/github-actions-common/.github/actions/checkout@main
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
+
+      - uses: percebus/github-actions-python/.github/actions/setup@main
+      - uses: percebus/github-actions-node/.github/actions/setup@main
+      - uses: percebus/github-actions-npm/.github/actions/npm_install@main
+
+      - name: scripts/setup_ci.ba.sh
+        run: bash scripts/setup_ci.ba.sh
+
+      - name: pypyr ci
+        run: pipx run -- pypyr ci
 
   verify__matrix:
     needs: verify
@@ -117,23 +119,21 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
-      # TODO? or DELETE? npm=False
-      # - uses: percebus/github-actions-node/.github/actions/setup@main
-      # - uses: percebus/github-actions-npm/.github/actions/npm_install@main
-
       - uses: percebus/github-actions-python/.github/actions/setup@main
         with:
           python-version: ${{ matrix.python-version }}
           architecture: ${{ matrix.architecture }}
 
-      - name: scripts/setup_ci.ba.sh
-        run: bash scripts/setup_ci.ba.sh
+      - uses: percebus/github-actions-pip/.github/actions/install-upgrade@main
+      - uses: percebus/github-actions-pipx/.github/actions/pipx_install@main
+      - uses: percebus/github-actions-poetry/.github/actions/self_add_plugins@main
+      - uses: percebus/github-actions-poetry/.github/actions/install@main
 
-      # FIXME prettier fails on windows
-      # Because of EOL differences
-      # Thus, we disabled 'npm'
+      - uses: percebus/github-actions-node/.github/actions/setup@main
+      - uses: percebus/github-actions-npm/.github/actions/npm_install@main
+
       - name: pypyr test
-        run: pipx run -- pypyr ci npm=False
+        run: pipx run -- pypyr ci
 
   # TODO? merge into verify?
   codeQL__matrix:

@@ -5,6 +5,9 @@ test*.xml
 repositories/
 _scripts/
 
+# poetry export
+# requirements.poetry.*.txt  # TODO? or XXX?
+
 
 ########################
 ### Python.gitignore ### SRC: https://github.com/github/gitignore/blob/main/Python.gitignore
