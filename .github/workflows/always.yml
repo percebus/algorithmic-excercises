@@ -80,15 +80,13 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
       - uses: percebus/github-actions-python/.github/actions/setup@main
+      - uses: percebus/github-actions-node/.github/actions/setup@main
+      - uses: percebus/github-actions-npm/.github/actions/npm_install@main
 
       - name: scripts/setup_ci.ba.sh
         run: bash scripts/setup_ci.ba.sh
 
-      # prettier & dockerlint
-      - uses: percebus/github-actions-node/.github/actions/setup@main
-      - uses: percebus/github-actions-npm/.github/actions/npm_install@main
-
-      - name: pypyr lint
+      - name: pypyr ci
         run: pipx run -- pypyr ci
 
   verify__matrix:
