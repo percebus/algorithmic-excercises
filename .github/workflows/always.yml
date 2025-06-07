@@ -70,7 +70,6 @@ jobs:
           tests_name: "" # disables actions/test-reporter. It doesn't like pytest's junit format
           files_pattern: test-results.xml
 
-
   verify__scripts:
     name: Verify scripts
     needs: verify
