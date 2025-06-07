@@ -19,7 +19,6 @@ permissions:
   security-events: write
 
 jobs:
-
   # SRC: https://github.com/semantic-release/semantic-release/blob/master/docs/recipes/ci-configurations/github-actions.md
   semantic-release:
     name: semantic-release
@@ -39,7 +38,6 @@ jobs:
         run: npm run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-
 
       # TODO commit back upgraded requirements
   verify:
@@ -95,7 +93,6 @@ jobs:
 
       - name: pypyr lint
         run: pipx run -- pypyr ci
-
 
   verify__matrix:
     needs: verify
