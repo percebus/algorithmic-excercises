@@ -70,8 +70,6 @@ jobs:
           tests_name: "" # disables actions/test-reporter. It doesn't like pytest's junit format
           files_pattern: test-results.xml
 
-      - name: pypyr lock
-        run: pipx run -- pypyr lock freeze=True
 
   verify__scripts:
     name: Verify scripts

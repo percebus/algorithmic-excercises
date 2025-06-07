@@ -6,7 +6,7 @@ repositories/
 _scripts/
 
 # poetry export
-requirements.poetry.*.txt
+# requirements.poetry.*.txt  # TODO? or XXX?
 
 
 ########################
