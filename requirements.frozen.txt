@@ -1,4 +1,4 @@
--e git+ssh://git@github.com/percebus/algorithmic-excercises.git@36bd2afde708cea96af545ffbab9e01691453806#egg=algorithmic_excercises
+-e git+ssh://git@github.com/percebus/algorithmic-excercises.git@17c849d73aedd1f4e9faf9a6d196874931de4f1a#egg=algorithmic_excercises
 annotated-types==0.7.0
 argcomplete==3.5.3
 astroid==3.3.8
@@ -7,6 +7,7 @@ colorama==0.4.6
 coverage==7.6.10
 dill==0.3.9
 flake8==7.1.1
+gherkin-official==29.0.0
 gil==1.25.0.0
 iniconfig==2.0.0
 isort==5.13.2
@@ -38,7 +39,7 @@ PyHamcrest==2.1.0
 pylint==3.3.3
 pyright==1.1.391
 pytest==7.4.4
-pytest-bdd==7.2.0
+pytest-bdd==8.1.0
 pytest-cov==5.0.0
 pytest-dotenv==0.5.2
 python-dateutil==2.9.0.post0

@@ -12,7 +12,7 @@ Feature: Battleship
   # Sample test case #1
   Scenario: 3 boats in 2 x 3
     Given a battleship matrix of 2 by 3
-    And with the following data:
+    And has the following data:
       |0|0|1|
       |1|0|1|
 
@@ -26,7 +26,7 @@ Feature: Battleship
   # Sample test case #2
   Scenario: 4 boats in 2 x 2
     Given a battleship matrix of 2 by 2
-    And with the following data:
+    And has the following data:
       |1|1|
       |1|1|
 
@@ -38,7 +38,7 @@ Feature: Battleship
 
   Scenario: 0 boats in 2 x 2
     Given a battleship matrix of 2 by 2
-    And with the following data:
+    And has the following data:
       |0|0|
       |0|0|
 
