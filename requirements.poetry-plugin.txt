@@ -1,2 +1,3 @@
-poetry-plugin-sort
 poetry-plugin-export
+poetry-plugin-shell
+poetry-plugin-sort
