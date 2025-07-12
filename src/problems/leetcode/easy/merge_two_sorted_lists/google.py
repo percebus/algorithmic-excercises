@@ -3,9 +3,10 @@
 from typing import Optional
 
 from src.problems.leetcode.easy.merge_two_sorted_lists.list_node import ListNode
+from src.problems.leetcode.easy.merge_two_sorted_lists.protocol import SolutionProtocol
 
 
-class Solution:
+class Solution(SolutionProtocol):
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         dummy = ListNode()
         tail = dummy
