@@ -10,12 +10,9 @@ if TYPE_CHECKING:
 
 
 def test(list1: list[int], list2: list[int], expected: list[int]) -> None:
-    node1: ListNode = list_to_nodes(list1)
-    node2: ListNode = list_to_nodes(list2)
+    node1: Optional[ListNode] = list_to_nodes(list1)
+    node2: Optional[ListNode] = list_to_nodes(list2)
     last_node: Optional[ListNode] = merge_two_sorted_lists(node1, node2)
-    if last_node is None:
-        raise ValueError("What happened?")
-
     result = nodes_to_list(last_node)
 
     assert_that(result, equal_to(expected))

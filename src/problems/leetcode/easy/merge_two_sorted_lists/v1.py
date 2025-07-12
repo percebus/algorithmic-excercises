@@ -42,11 +42,9 @@ class Solution(SolutionProtocol):
         # We point to w/e is remaining
         lastListNode.next = redListNode or purpleListNode
 
-        # Again, since the lists are pre-sorted
-        # We point to the next value
-
-        # return lastListNode.next  # TODO?
-        return firstListNode.next  # XXX?
+        # Since firstListNode doesn't contain a value in itself
+        # We'll return the next one.
+        return firstListNode.next
 
 
 solution = Solution()
