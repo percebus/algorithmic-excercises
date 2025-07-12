@@ -1,5 +1,11 @@
 # algorithmic-excercises CHANGELOG
 
+# [3.4.0](https://github.com/percebus/algorithmic-excercises/compare/v3.3.0...v3.4.0) (2025-07-12)
+
+### Features
+
+- **leetcode:** "Merge Two Sorted Lists" (easy) ([#62](https://github.com/percebus/algorithmic-excercises/issues/62)) ([5d99bfe](https://github.com/percebus/algorithmic-excercises/commit/5d99bfe8435d0e240a19d02507feaafb7d732df9))
+
 # [3.3.0](https://github.com/percebus/algorithmic-excercises/compare/v3.2.0...v3.3.0) (2025-05-24)
 
 ### Features
