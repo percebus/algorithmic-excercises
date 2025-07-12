@@ -1,4 +1,5 @@
 from typing import Optional
+
 from src.problems.leetcode.easy.merge_two_sorted_lists.list_node import ListNode
 
 
