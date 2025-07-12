@@ -16,12 +16,13 @@ Return the head of the merged linked list.
 @runtime_checkable  # NOTE: Allows for isinstance check.
 class SolutionProtocol(Protocol):
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        """_summary_
+        """Merge Two Sorted Lists.
 
         Args:
-            list1 (Optional[ListNode]): _description_
-            list2 (Optional[ListNode]): _description_
+            list1 (Optional[ListNode]): First node of Red list
+            list2 (Optional[ListNode]): First node of Purple list
 
-        Returns:
-            Optional[ListNode]: _description_
+        Returns
+        -------
+            Optional[ListNode]: First Node
         """

@@ -8,6 +8,7 @@ from src.problems.euler.largest_prime_factor import __main__ as largest_prime_fa
 from src.problems.euler.multiples_of_3_or_5 import __main__ as multiples_of_3_or_5
 from src.problems.interviews.shortest_common_prefixes import __main__ as shortest_common_prefixes
 from src.problems.leetcode.easy.longest_common_prefix import __main__ as longest_common_prefix
+from src.problems.leetcode.easy.merge_two_sorted_lists import __main__ as merge_two_sorted_lists
 from src.problems.leetcode.easy.palindrome_number import __main__ as palindrome_number
 from src.problems.leetcode.easy.reverse_string import __main__ as reverse_string
 from src.problems.leetcode.easy.roman_to_integer import __main__ as roman_to_integer
@@ -20,21 +21,22 @@ from src.problems.meta.coding.puzzles.warmup.sum_abc import __main__ as sum_abc
 
 # fmt: off
 modules = [
-    sum_fibonacci_evens,
+    all_wrong,
+    battleship,
     largest_palindrome_product,
     largest_prime_factor,
-    multiples_of_3_or_5,
-    shortest_common_prefixes,
     longest_common_prefix,
+    median_of_two_sorted_arrays,
+    merge_two_sorted_lists,
+    multiples_of_3_or_5,
     palindrome_number,
     reverse_string,
     roman_to_integer,
+    shortest_common_prefixes,
+    sum_abc,
+    sum_fibonacci_evens,
     two_sum,
     valid_parentheses,
-    median_of_two_sorted_arrays,
-    all_wrong,
-    battleship,
-    sum_abc,
 ]
 # fmt: on
 

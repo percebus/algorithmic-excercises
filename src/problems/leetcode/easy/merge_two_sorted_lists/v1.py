@@ -1,6 +1,7 @@
 """v1 implementation."""
 
 from typing import Optional
+
 from src.problems.leetcode.easy.merge_two_sorted_lists.list_node import ListNode
 from src.problems.leetcode.easy.merge_two_sorted_lists.protocol import SolutionProtocol
 
@@ -8,34 +9,34 @@ from src.problems.leetcode.easy.merge_two_sorted_lists.protocol import SolutionP
 class Solution(SolutionProtocol):
     """Solution class."""
 
+    # Time Complexity: O(M+N)
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         """Merge Two Sorted Lists."""
-
-        resultListNode = ListNode()
+        firstListNode = ListNode()
 
         # By ref
-        lastListNode = resultListNode
+        lastListNode = firstListNode
 
         # We don't want to re-assing list1 or list2
         redListNode = list1
         purpleListNode = list2
         while redListNode and purpleListNode:
-          if redListNode.val < purpleListNode.val:
-            # Assign tail to the lower value
-            lastListNode.next = redListNode
+            if redListNode.val < purpleListNode.val:
+                # Assign tail to the lower value
+                lastListNode.next = redListNode
 
-            # Shift red to next node
-            redListNode = redListNode.next
-          else:
-            # Assign tail to the lower value
-            lastListNode.next = purpleListNode
+                # Shift red to next node
+                redListNode = redListNode.next
+            else:
+                # Assign tail to the lower value
+                lastListNode.next = purpleListNode
 
-            # Shift purple to next node
-            purpleListNode = purpleListNode.next
+                # Shift purple to next node
+                purpleListNode = purpleListNode.next
 
-          # Since the 2 lists are pre-sorted
-          # We point to the next node
-          lastListNode = lastListNode.next
+            # Since the 2 lists are pre-sorted
+            # We point to the next node
+            lastListNode = lastListNode.next
 
         # Since we ran out of values
         # We point to w/e is remaining
@@ -45,6 +46,7 @@ class Solution(SolutionProtocol):
         # We point to the next value
 
         # return lastListNode.next  # TODO?
-        return resultListNode.next  # XXX?
+        return firstListNode.next  # XXX?
+
 
 solution = Solution()
