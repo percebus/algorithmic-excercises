@@ -11,7 +11,17 @@ class Solution(SolutionProtocol):
 
     # Time Complexity: O(M+N)
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        """Merge Two Sorted Lists."""
+        """
+        v1.Solution.mergeTwoLists.
+
+        Args:
+            list1 (Optional[ListNode]): First node of Red list
+            list2 (Optional[ListNode]): First node of Purple list
+
+        Returns
+        -------
+            Optional[ListNode]: First Node
+        """
         firstListNode = ListNode()
 
         # By ref
