@@ -1,5 +1,11 @@
 # algorithmic-excercises CHANGELOG
 
+# [3.5.0](https://github.com/percebus/algorithmic-excercises/compare/v3.4.0...v3.5.0) (2025-07-17)
+
+### Features
+
+- **doctest:** 1 module self-documented w/ testable examples ([#64](https://github.com/percebus/algorithmic-excercises/issues/64)) ([991ff84](https://github.com/percebus/algorithmic-excercises/commit/991ff8490f5f5aa45c53dde24bb789b2a3916492))
+
 # [3.4.0](https://github.com/percebus/algorithmic-excercises/compare/v3.3.0...v3.4.0) (2025-07-12)
 
 ### Features
