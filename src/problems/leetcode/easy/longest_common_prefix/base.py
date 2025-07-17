@@ -33,7 +33,8 @@ class SolutionInterface(metaclass=SolutionMeta):
     """An Interface for LongestCommonPrefix Solution problem."""
 
     def longestCommonPrefix(self, words: list[str]) -> str:
-        """
+        """SolutionInterface.longestCommonPrefix.
+
         Calculate the Longest Common Prefix.
 
         Parameters
