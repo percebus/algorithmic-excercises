@@ -1,8 +1,8 @@
 {
-    "recommendations": [
-        "charliermarsh.ruff",
-        "ms-python.pylint",
-        "ms-pyright.pyright",
-        "esbenp.prettier-vscode"
-    ]
+  "recommendations": [
+    "charliermarsh.ruff",
+    "ms-python.pylint",
+    "ms-pyright.pyright",
+    "esbenp.prettier-vscode"
+  ]
 }

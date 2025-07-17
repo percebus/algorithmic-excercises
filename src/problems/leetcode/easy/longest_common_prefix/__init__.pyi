@@ -1,4 +1,3 @@
-
 def longest_common_prefix(words: list[str]) -> str:
     """longest_common_prefix.
 
