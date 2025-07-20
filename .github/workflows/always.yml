@@ -32,7 +32,7 @@ jobs:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
 
       - uses: percebus/github-actions-node/.github/actions/setup@main
-      - uses: percebus/github-actions-npm/.github/actions/npm_install@main
+      - uses: percebus/github-actions-npm/.github/actions/install@main
 
       - name: semantic-release
         run: npm run semantic-release
@@ -58,7 +58,7 @@ jobs:
 
       # prettier & dockerlint
       - uses: percebus/github-actions-node/.github/actions/setup@main
-      - uses: percebus/github-actions-npm/.github/actions/npm_install@main
+      - uses: percebus/github-actions-npm/.github/actions/install@main
 
       - name: pypyr lint
         run: pipx run -- pypyr lint stats=True
@@ -85,7 +85,7 @@ jobs:
 
       - uses: percebus/github-actions-python/.github/actions/setup@main
       - uses: percebus/github-actions-node/.github/actions/setup@main
-      - uses: percebus/github-actions-npm/.github/actions/npm_install@main
+      - uses: percebus/github-actions-npm/.github/actions/install@main
 
       - name: scripts/setup_ci.ba.sh
         run: bash scripts/setup_ci.ba.sh
@@ -134,7 +134,7 @@ jobs:
       - uses: percebus/github-actions-poetry/.github/actions/install@main
 
       - uses: percebus/github-actions-node/.github/actions/setup@main
-      - uses: percebus/github-actions-npm/.github/actions/npm_install@main
+      - uses: percebus/github-actions-npm/.github/actions/install@main
 
       - name: pypyr test
         run: pipx run -- pypyr ci
