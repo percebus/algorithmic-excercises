@@ -1,5 +1,5 @@
-from src.problems.euler.multiples_of_3_or_5.benchmark.simple import run as run_multiples_of_3_or_5_simple
-from src.problems.interviews.shortest_common_prefixes.pluck.benchmark.simple import run as run_pluck_simple
+from problems.euler.multiples_of_3_or_5.benchmark.simple import run as run_multiples_of_3_or_5_simple
+from problems.interviews.shortest_common_prefixes.pluck.benchmark.simple import run as run_pluck_simple
 
 modules = [
     run_pluck_simple,

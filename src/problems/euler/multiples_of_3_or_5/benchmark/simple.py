@@ -1,8 +1,8 @@
 import timeit
 
-from src.problems.euler.multiples_of_3_or_5.nayuki import sum_multiples as sum_multiples_nayuki
-from src.problems.euler.multiples_of_3_or_5.v1 import sum_multiples as sum_multiples_v1
-from src.problems.euler.multiples_of_3_or_5.v2 import sum_multiples as sum_multiples_v2
+from problems.euler.multiples_of_3_or_5.nayuki import sum_multiples as sum_multiples_nayuki
+from problems.euler.multiples_of_3_or_5.v1 import sum_multiples as sum_multiples_v1
+from problems.euler.multiples_of_3_or_5.v2 import sum_multiples as sum_multiples_v2
 
 
 def run() -> None:

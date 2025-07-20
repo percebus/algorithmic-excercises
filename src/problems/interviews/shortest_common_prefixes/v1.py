@@ -1,4 +1,4 @@
-# from src.problems.config.configuration import configuration # TODO
+# from problems.config.configuration import configuration # TODO
 from typing import TYPE_CHECKING
 
 from .categorize import categorize
