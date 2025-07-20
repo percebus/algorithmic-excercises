@@ -1,5 +1,11 @@
 # algorithmic-excercises CHANGELOG
 
+## [3.5.1](https://github.com/percebus/algorithmic-excercises/compare/v3.5.0...v3.5.1) (2025-07-20)
+
+### Bug Fixes
+
+- **github-actions-npm:** Broken references ([#68](https://github.com/percebus/algorithmic-excercises/issues/68)) ([93f8064](https://github.com/percebus/algorithmic-excercises/commit/93f80649027cd06e92ec08bc447dd25cc95fa3bb))
+
 # [3.5.0](https://github.com/percebus/algorithmic-excercises/compare/v3.4.0...v3.5.0) (2025-07-17)
 
 ### Features
