@@ -3,7 +3,7 @@ import string
 from hamcrest import assert_that, equal_to, instance_of, is_
 from pytest_bdd import given, parsers, scenarios, then, when
 
-from src.problems.leetcode.easy.longest_common_prefix import longest_common_prefix
+from problems.leetcode.easy.longest_common_prefix import longest_common_prefix
 from tests.utils import assert_is_in_range
 
 scenarios("problems/leetcode/easy/Longest Common Prefix.feature")

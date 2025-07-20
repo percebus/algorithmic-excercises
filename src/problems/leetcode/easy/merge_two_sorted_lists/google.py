@@ -2,8 +2,8 @@
 
 from typing import Optional
 
-from src.problems.leetcode.easy.merge_two_sorted_lists.list_node import ListNode
-from src.problems.leetcode.easy.merge_two_sorted_lists.protocol import SolutionProtocol
+from problems.leetcode.easy.merge_two_sorted_lists.list_node import ListNode
+from problems.leetcode.easy.merge_two_sorted_lists.protocol import SolutionProtocol
 
 
 class Solution(SolutionProtocol):

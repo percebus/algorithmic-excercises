@@ -2,7 +2,7 @@ from typing import Optional
 
 from hamcrest import assert_that, equal_to
 
-from src.problems.leetcode.easy.reverse_string import reverse_string
+from problems.leetcode.easy.reverse_string import reverse_string
 
 
 def test(chars: list[str], expected: Optional[list[str]] = None) -> None:

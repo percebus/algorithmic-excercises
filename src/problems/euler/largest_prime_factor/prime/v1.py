@@ -1,6 +1,6 @@
 from typing import Generator
 
-from src.problems.commons.utils import noop
+from problems.commons.utils import noop
 
 
 def get_factors(x: int) -> Generator[tuple[int, int], None, None]:

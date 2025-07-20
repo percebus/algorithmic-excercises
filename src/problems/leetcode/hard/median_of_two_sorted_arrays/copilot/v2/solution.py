@@ -2,7 +2,7 @@
 # pylint: skip-file
 
 
-from src.problems.leetcode.hard.median_of_two_sorted_arrays.protocol import SolutionProtocol
+from problems.leetcode.hard.median_of_two_sorted_arrays.protocol import SolutionProtocol
 
 
 class Solution(SolutionProtocol):

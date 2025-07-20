@@ -3,7 +3,7 @@ from typing import Any
 from hamcrest import assert_that, equal_to
 from pytest_bdd import given, parsers, scenarios, then, when
 
-from src.problems.meta.coding.puzzles.warmup.all_wrong import get_wrong_answers
+from problems.meta.coding.puzzles.warmup.all_wrong import get_wrong_answers
 
 scenarios("problems/meta/coding/puzzles/warmup/All Wrong.feature")
 

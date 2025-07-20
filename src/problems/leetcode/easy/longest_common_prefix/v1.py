@@ -1,4 +1,4 @@
-from src.problems.leetcode.easy.longest_common_prefix.base import SolutionInterface
+from problems.leetcode.easy.longest_common_prefix.base import SolutionInterface
 
 
 class Solution(SolutionInterface):

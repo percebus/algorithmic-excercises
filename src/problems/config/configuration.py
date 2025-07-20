@@ -5,7 +5,7 @@ from dataclasses import dataclass, field
 from logging import Logger
 from typing import Any, Optional
 
-from src.problems.config.settings import Settings
+from problems.config.settings import Settings
 
 
 @dataclass
