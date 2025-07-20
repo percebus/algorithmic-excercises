@@ -65,7 +65,6 @@ jobs:
 
       - name: pypyr test
         run: pipx run -- pypyr ci lint=False
-          bash scripts/doctest/run.ba.sh
 
       - name: doctest
         run: bash scripts/doctest/run.ba.sh
