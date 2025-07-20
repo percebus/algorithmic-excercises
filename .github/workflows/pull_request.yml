@@ -4,7 +4,6 @@ name: Pull Request
 #  Please ensure you are using the "pull_request" event for this workflow."
 on:
   pull_request:
-  workflow_call: # SRC: https://docs.github.com/en/actions/using-workflows/reusing-workflows
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
@@ -29,6 +28,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
       - uses: percebus/github-actions-python/.github/actions/setup@main
       - uses: percebus/github-actions-pipx/.github/actions/run_pip-audit@main
