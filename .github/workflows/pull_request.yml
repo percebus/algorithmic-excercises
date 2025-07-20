@@ -15,3 +15,13 @@ permissions:
 jobs:
   dependency-review:
     uses: percebus/github-actions-common/.github/workflows/dependency-review.yml@main
+    permissions:
+      contents: read
+      pull-requests: read
+
+  npm_audit:
+    uses: percebus/github-actions-npm/.github/workflows/audit.yml@main
+
+  # TODO
+  # pip-audit:
+  #   uses: percebus/github-actions-pipx/.github/workflows/run_pip-audit.yml@main

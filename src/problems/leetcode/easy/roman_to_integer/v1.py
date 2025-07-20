@@ -31,7 +31,7 @@ class Solution(SolutionBase):
             if idx + 1 >= length:
                 continue
 
-            if values[idx] < values[idx + 1]: # noqa: PLR1736
+            if values[idx] < values[idx + 1]:  # noqa: PLR1736
                 values[idx] = value * -1
 
         return sum(values)
