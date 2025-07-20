@@ -12,10 +12,7 @@ class SolutionBase(metaclass=abc.ABCMeta):
         if not all(attributes):
             return False
 
-        if not all(callable(attribute) for attribute in attributes):
-            return False
-
-        return True
+        return all(callable(attribute) for attribute in attributes)
 
     @abc.abstractmethod
     def romanToInt(self, string: str) -> int:

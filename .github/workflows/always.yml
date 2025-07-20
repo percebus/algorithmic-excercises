@@ -40,6 +40,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       # TODO commit back upgraded requirements
+
   verify:
     name: Verify
     needs: semantic-release
@@ -64,6 +65,9 @@ jobs:
 
       - name: pypyr test
         run: pipx run -- pypyr ci lint=False
+
+      - name: doctest
+        run: bash scripts/doctest/run.ba.sh
 
       - uses: percebus/github-actions-testing/.github/actions/junit@main
         with:

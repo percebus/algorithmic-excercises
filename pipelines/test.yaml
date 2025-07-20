@@ -24,6 +24,11 @@ steps:
     in:
       call: pytest
 
+  # FIXME
+  # - name: pypyr.steps.call
+  #   in:
+  #     call: doctest
+
 pytest:
   - name: pypyr.steps.set
     run: "{stats}"
@@ -43,3 +48,11 @@ pytest:
   - name: pypyr.steps.shell
     in:
       cmd: pytest {PYTEST_CLI_ARGS} -m "{markers}"
+
+doctest:
+  - name: pypyr.steps.echo
+    in:
+      echoMe: "=== doctest ================================================"
+  - name: pypyr.steps.shell
+    in:
+      cmd: bash ./scripts/doctest/run.ba.sh

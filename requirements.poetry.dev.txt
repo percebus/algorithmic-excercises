@@ -152,6 +152,9 @@ pytest-bdd==8.1.0 ; python_version >= "3.12" and python_full_version < "4.0.0" \
 pytest-cov==5.0.0 ; python_version >= "3.12" and python_full_version < "4.0.0" \
     --hash=sha256:4f0764a1219df53214206bf1feea4633c3b558a2925c8b59f144f682861ce652 \
     --hash=sha256:5837b58e9f6ebd335b0f8060eecce69b662415b16dc503883a02f45dfeb14857
+pytest-doctestplus==1.4.0 ; python_version >= "3.12" and python_full_version < "4.0.0" \
+    --hash=sha256:cfbae130ec90d4a2831819bbbfd097121b8e55f1e4d20a47ea992e4eaad2539a \
+    --hash=sha256:df83832b1d11288572df2ee4c7cccdb421d812b8038a658bb514c9c62bdbd626
 pytest-dotenv==0.5.2 ; python_version >= "3.12" and python_full_version < "4.0.0" \
     --hash=sha256:2dc6c3ac6d8764c71c6d2804e902d0ff810fa19692e95fe138aefc9b1aa73732 \
     --hash=sha256:40a2cece120a213898afaa5407673f6bd924b1fa7eafce6bda0e8abffe2f710f
