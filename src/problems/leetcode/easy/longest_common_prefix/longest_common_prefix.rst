@@ -1,5 +1,5 @@
 Longest Common Prefix
-===================
+=====================
 
 .. doctest::
     >>> from src.problems.leetcode.easy.longest_common_prefix import longest_common_prefix

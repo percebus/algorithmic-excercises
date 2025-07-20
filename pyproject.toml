@@ -40,7 +40,8 @@ flake8 = "^7.1.1"
 mypy = "^1.14.1"
 pylint = "^3.3.3"
 pyright = "^1.1.391"
-ruff = "~0.4.10"
+rst2md = "^0.1.1"
+ruff = "~0.12.4"
 
 
 [tool.pyright]
