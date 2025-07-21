@@ -164,9 +164,6 @@ pytest==7.4.4 ; python_version >= "3.12" and python_full_version < "4.0.0" \
 python-dotenv==1.0.1 ; python_version >= "3.12" and python_full_version < "4.0.0" \
     --hash=sha256:e324ee90a023d808f1959c46bcbc04446a10ced277783dc6ee09987c37ec10ca \
     --hash=sha256:f7b63ef50f1b690dddf550d03497b66d609393b40b564ed0d674909a68ebf16a
-setuptools==69.5.1 ; python_version >= "3.12" and python_full_version < "4.0.0" \
-    --hash=sha256:6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987 \
-    --hash=sha256:c636ac361bc47580504644275c9ad802c50415c7522212252c033bd15f301f32
 six==1.16.0 ; python_version >= "3.12" and python_full_version < "4.0.0" \
     --hash=sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926 \
     --hash=sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254
