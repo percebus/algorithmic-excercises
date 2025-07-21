@@ -14,9 +14,11 @@ permissions:
 
 jobs:
   dependency-review:
-    uses: percebus/github-actions-pipx/.github/workflows/dependency-review.yml@main
-    with:
-      audit-requirements-file: requirements.release.txt
+    # TODO
+    #   uses: percebus/github-actions-pipx/.github/workflows/dependency-review.yml@main
+    #   with:
+    #     audit-requirements-file: requirements.release.txt
+    uses: percebus/github-actions-common/.github/workflows/dependency-review.yml@main
     permissions:
       contents: read
       pull-requests: read
