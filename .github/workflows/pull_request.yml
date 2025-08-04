@@ -28,7 +28,9 @@ jobs:
 
       - name: pip-audit
         # run: pipx run -- pip-audit . --locked  # FIXME "ERROR:pip_audit._cli:no lockfiles found in ."
-        run: pipx run -- pip-audit .
+        run: |
+          pip install pip-audit
+          pip-audit .
 
   #
   # package.json dependencies
