@@ -27,7 +27,8 @@ jobs:
       - uses: percebus/github-actions-pip/.github/actions/install-upgrade@main
 
       - name: pip-audit
-        run: pipx run -- pip-audit . --locked
+        # run: pipx run -- pip-audit . --locked  # FIXME "ERROR:pip_audit._cli:no lockfiles found in ."
+        run: pipx run -- pip-audit .
 
   #
   # package.json dependencies
