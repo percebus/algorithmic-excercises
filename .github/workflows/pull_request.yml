@@ -18,7 +18,7 @@ jobs:
     uses: percebus/github-actions-common/.github/workflows/dependency-review.yml@main
 
   pip_audit:
-    uses: percebus/github-actions-pipx/.github/workflows/dependency-review.yml@main
+    uses: percebus/github-actions-pipx/.github/workflows/pip_audit.yml@main
     with:
       # audit-requirements-file: pyproject.toml  # Scans all dependencies. We only care about release dependencies.
       audit-requirements-file: requirements.release.txt
