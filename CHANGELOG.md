@@ -1,5 +1,11 @@
 # algorithmic-excercises CHANGELOG
 
+# [3.6.0](https://github.com/percebus/algorithmic-excercises/compare/v3.5.1...v3.6.0) (2025-08-04)
+
+### Features
+
+- **workflows/pull_request:** Added pip audit) ([#70](https://github.com/percebus/algorithmic-excercises/issues/70)) ([57f932b](https://github.com/percebus/algorithmic-excercises/commit/57f932b5b5fca60ef9e6bd596377e69a4ed2199f)), closes [#58](https://github.com/percebus/algorithmic-excercises/issues/58)
+
 ## [3.5.1](https://github.com/percebus/algorithmic-excercises/compare/v3.5.0...v3.5.1) (2025-07-20)
 
 ### Bug Fixes
