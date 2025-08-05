@@ -20,7 +20,7 @@ jobs:
   # FIXME:
   # "ERROR:pip_audit._virtual_env:internal pip failure:   error: subprocess-exited-with-error
   #   raise NotImplementedError, 'emit must be implemented '\
-  #   SyntaxError: invalid syntax
+  #   SyntaxError: invalid syntax"
   #
   # pip-audit:
   #   # uses: percebus/github-actions-pipx/.github/workflows/run_pip-audit_detect.yml@main  # TODO
