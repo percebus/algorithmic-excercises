@@ -18,18 +18,26 @@ jobs:
     uses: percebus/github-actions-common/.github/workflows/dependency-review.yml@main
 
   # FIXME:
-  # "creating virtual environment...
-  #  installing pip-audit...
-  #  ERROR:pip_audit._virtual_env:internal pip failure:   error: subprocess-exited-with-error"
-  #  ...
-  #  raise NotImplementedError, 'emit must be implemented '\
-  #  SyntaxError: invalid syntax ^"
+  # "ERROR:pip_audit._virtual_env:internal pip failure:   error: subprocess-exited-with-error
+  #   raise NotImplementedError, 'emit must be implemented '\
+  #   SyntaxError: invalid syntax"
   #
-  # pip_audit:
-  #   uses: percebus/github-actions-pipx/.github/workflows/run_pip-audit.yml@main
-  #   with:
-  #     # audit-requirements-file: pyproject.toml  # Scans all dependencies. We only care about release dependencies.
-  #     audit-requirements-file: requirements.poetry.main.txt
+  # pip-audit:
+  #   # uses: percebus/github-actions-pipx/.github/workflows/run_pip-audit_detect.yml@main  # TODO
+  #
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: percebus/github-actions-common/.github/actions/checkout@main
+  #     - uses: percebus/github-actions-python/.github/actions/setup@main
+  #     - uses: percebus/github-actions-pip/.github/actions/install-upgrade@main
+  #
+  #     - name: pip-audit
+  #       # run: pipx run -- pip-audit . --locked  # FIXME "ERROR:pip_audit._cli:no lockfiles found in ."
+  #       run: |
+  #         pip install pip-audit
+  #         pip-audit .
 
+  #
+  # package.json dependencies
   npm_audit:
     uses: percebus/github-actions-npm/.github/workflows/audit.yml@main
