@@ -1,4 +1,4 @@
-from src.problems.leetcode.easy.reverse_string.protocol import SolutionProtocol
+from problems.leetcode.easy.reverse_string.protocol import SolutionProtocol
 
 
 class Solution(SolutionProtocol):

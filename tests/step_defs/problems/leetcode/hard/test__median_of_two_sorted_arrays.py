@@ -1,7 +1,7 @@
 from hamcrest import assert_that, equal_to, instance_of, is_
 from pytest_bdd import given, parsers, scenarios, then, when
 
-from src.problems.leetcode.hard.median_of_two_sorted_arrays import find_median
+from problems.leetcode.hard.median_of_two_sorted_arrays import find_median
 from tests.utils import assert_is_in_range
 
 scenarios("problems/leetcode/hard/Median of Two Sorted Arrays.feature")

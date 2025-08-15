@@ -1,6 +1,6 @@
 from typing import Optional
 
-from src.problems.leetcode.easy.merge_two_sorted_lists.list_node import ListNode
+from problems.leetcode.easy.merge_two_sorted_lists.list_node import ListNode
 
 
 def list_to_nodes(numbers: list[int]) -> Optional[ListNode]:

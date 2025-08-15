@@ -2,7 +2,7 @@ from typing import Optional
 
 from hamcrest import assert_that, equal_to
 
-from src.problems.euler.largest_prime_factor import get_largest_prime_factor
+from problems.euler.largest_prime_factor import get_largest_prime_factor
 
 
 def test(x: int, expected: Optional[int] = None) -> None:

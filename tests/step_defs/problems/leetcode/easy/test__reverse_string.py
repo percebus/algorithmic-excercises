@@ -1,7 +1,7 @@
 from hamcrest import assert_that, equal_to, is_
 from pytest_bdd import given, parsers, scenarios, then, when
 
-from src.problems.leetcode.easy.reverse_string import reverse_string
+from problems.leetcode.easy.reverse_string import reverse_string
 
 scenarios("problems/leetcode/easy/Reverse String.feature")
 

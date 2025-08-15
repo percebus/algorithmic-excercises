@@ -1,7 +1,7 @@
 from hamcrest import assert_that, equal_to
 from pytest_bdd import given, parsers, scenarios, then, when
 
-from src.problems.euler.even_fibonacci_numbers import sum_fibonacci_evens
+from problems.euler.even_fibonacci_numbers import sum_fibonacci_evens
 
 scenarios("problems/euler/Sum Even Fibonacci Numbers.feature")
 
