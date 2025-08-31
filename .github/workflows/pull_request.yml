@@ -11,20 +11,22 @@ concurrency:
 
 permissions:
   contents: read
-  pull-requests: read
 
 jobs:
   dependency-review:
-    uses: percebus/github-actions-common/.github/workflows/dependency-review.yml@main
+    uses: percebus/github-actions-compliance/.github/workflows/dependency-review.yml@main
+    permissions:
+      contents: read
+      pull-requests: read
 
   # FIXME:
   # "ERROR:pip_audit._virtual_env:internal pip failure:   error: subprocess-exited-with-error
   #   raise NotImplementedError, 'emit must be implemented '\
   #   SyntaxError: invalid syntax"
   #
-  # pip-audit:
-  #   # uses: percebus/github-actions-pipx/.github/workflows/run_pip-audit_detect.yml@main  # TODO
-  #
+  pip-audit:
+    uses: percebus/github-actions-pipx/.github/workflows/run_pip-audit_path.yml@main # TODO
+
   #   runs-on: ubuntu-latest
   #   steps:
   #     - uses: percebus/github-actions-common/.github/actions/checkout@main
