@@ -1,5 +1,11 @@
 # algorithmic-excercises CHANGELOG
 
+## [3.6.2](https://github.com/percebus/algorithmic-excercises/compare/v3.6.1...v3.6.2) (2025-08-31)
+
+### Bug Fixes
+
+- **`always.yml`:** Rename `docker_build_target` ([#74](https://github.com/percebus/algorithmic-excercises/issues/74)) ([6d0a9b7](https://github.com/percebus/algorithmic-excercises/commit/6d0a9b7648f269de93212d4a0d316bcf39017d0c))
+
 ## [3.6.1](https://github.com/percebus/algorithmic-excercises/compare/v3.6.0...v3.6.1) (2025-08-05)
 
 ### Bug Fixes
