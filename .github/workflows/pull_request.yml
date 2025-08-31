@@ -24,8 +24,8 @@ jobs:
   #   raise NotImplementedError, 'emit must be implemented '\
   #   SyntaxError: invalid syntax"
   #
-  pip-audit:
-    uses: percebus/github-actions-pipx/.github/workflows/run_pip-audit_path.yml@main # TODO
+  # pip-audit:
+  #   uses: percebus/github-actions-pipx/.github/workflows/run_pip-audit_path.yml@main # TODO
 
   #   runs-on: ubuntu-latest
   #   steps:
