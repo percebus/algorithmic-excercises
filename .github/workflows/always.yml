@@ -203,6 +203,6 @@ jobs:
       - name: scripts/prepare.ba.sh
         run: bash scripts/prepare.ba.sh
 
-      - uses: percebus/github-actions-docker/.github/actions/docker_build_target@main
+      - uses: percebus/github-actions-docker/.github/actions/build@main
         with:
           target: ${{ matrix.target }}
