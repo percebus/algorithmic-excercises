@@ -1,5 +1,11 @@
 # algorithmic-excercises CHANGELOG
 
+# [3.7.0](https://github.com/percebus/algorithmic-excercises/compare/v3.6.2...v3.7.0) (2025-10-23)
+
+### Features
+
+- **leet/easy:** build-array-from-permutation ([#79](https://github.com/percebus/algorithmic-excercises/issues/79)) ([782c381](https://github.com/percebus/algorithmic-excercises/commit/782c3810657ff2e4f5e8bb9eca5c40e7cc930936)), closes [#76](https://github.com/percebus/algorithmic-excercises/issues/76)
+
 ## [3.6.2](https://github.com/percebus/algorithmic-excercises/compare/v3.6.1...v3.6.2) (2025-08-31)
 
 ### Bug Fixes
