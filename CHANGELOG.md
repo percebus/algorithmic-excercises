@@ -1,5 +1,11 @@
 # algorithmic-excercises CHANGELOG
 
+## [3.7.1](https://github.com/percebus/algorithmic-excercises/compare/v3.7.0...v3.7.1) (2025-10-23)
+
+### Bug Fixes
+
+- **build_array_from_permutation:** simplify ([a8554ca](https://github.com/percebus/algorithmic-excercises/commit/a8554ca62cbec67ac82fab5169bd3a65410a6502))
+
 # [3.7.0](https://github.com/percebus/algorithmic-excercises/compare/v3.6.2...v3.7.0) (2025-10-23)
 
 ### Features
