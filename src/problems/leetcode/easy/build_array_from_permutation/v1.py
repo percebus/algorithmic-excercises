@@ -9,4 +9,5 @@ class Solution(SolutionProtocol):
             for i in range(len(nums))]
         # fmt: on
 
+
 solution = Solution()

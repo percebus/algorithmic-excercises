@@ -9,4 +9,5 @@ class Solution(SolutionProtocol):
         reordered_numbers = (nums[i] for i in numbers)
         return list(reordered_numbers)
 
+
 solution = Solution()
