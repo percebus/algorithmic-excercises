@@ -2,6 +2,8 @@ from src.problems.leetcode.easy.build_array_from_permutation.protocol import Sol
 
 
 class Solution(SolutionProtocol):
+    """Claude Sonnet 4's solution."""
+
     def buildArray(self, nums: list[int]) -> list[int]:
         # fmt: off
         return [
