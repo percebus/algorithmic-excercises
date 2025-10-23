@@ -2,5 +2,10 @@
   "python.testing.pytestArgs": ["."],
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
-  "sarif-viewer.connectToGithubCodeScanning": "off"
+  "sarif-viewer.connectToGithubCodeScanning": "off",
+  "cSpell.words": [
+    "hamcrest",
+    "leetcode"
+  ],
+  "python-envs.pythonProjects": []
 }
