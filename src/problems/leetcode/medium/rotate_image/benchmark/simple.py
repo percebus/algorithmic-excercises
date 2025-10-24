@@ -27,7 +27,7 @@ def run() -> None:
         # fmt: on
 
         print(f"{key}:")
-        result = timeit.timeit(lambda: oSolution.rotate(matrix), number=samples)
+        result = timeit.timeit(lambda: oSolution.rotate(matrix), number=samples)  # pylint: disable=cell-var-from-loop # FIXME?
         print(f" - result: {result}")
 
 
