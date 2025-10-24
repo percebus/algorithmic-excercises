@@ -1,6 +1,6 @@
 from hamcrest import assert_that, equal_to
 
-from src.problems.leetcode.easy.build_array_from_permutation import build_array_from_permutation
+from problems.leetcode.easy.build_array_from_permutation import build_array_from_permutation
 
 
 def test(numbers: list[int], expected: list[int]) -> None:

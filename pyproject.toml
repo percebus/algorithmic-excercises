@@ -24,7 +24,7 @@ dependencies = [
 ]
 
 [tool.poetry]
-packages = [{include = "src"}]
+packages = [{include = "problems", from = "src"}]
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.3"
