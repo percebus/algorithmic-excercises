@@ -15,6 +15,7 @@ from src.problems.leetcode.easy.reverse_string import __main__ as reverse_string
 from src.problems.leetcode.easy.roman_to_integer import __main__ as roman_to_integer
 from src.problems.leetcode.easy.two_sum import __main__ as two_sum
 from src.problems.leetcode.easy.valid_parentheses import __main__ as valid_parentheses
+from src.problems.leetcode.medium.rotate_image import __main__ as rotate_image
 from src.problems.leetcode.hard.median_of_two_sorted_arrays import __main__ as median_of_two_sorted_arrays
 from src.problems.meta.coding.puzzles.warmup.all_wrong import __main__ as all_wrong
 from src.problems.meta.coding.puzzles.warmup.battleship import __main__ as battleship
@@ -34,6 +35,7 @@ modules = [
     palindrome_number,
     reverse_string,
     roman_to_integer,
+    rotate_image,
     shortest_common_prefixes,
     sum_abc,
     sum_fibonacci_evens,
