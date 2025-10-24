@@ -1,5 +1,41 @@
 # algorithmic-excercises CHANGELOG
 
+## [3.7.1](https://github.com/percebus/algorithmic-excercises/compare/v3.7.0...v3.7.1) (2025-10-23)
+
+### Bug Fixes
+
+- **build_array_from_permutation:** simplify ([a8554ca](https://github.com/percebus/algorithmic-excercises/commit/a8554ca62cbec67ac82fab5169bd3a65410a6502))
+
+# [3.7.0](https://github.com/percebus/algorithmic-excercises/compare/v3.6.2...v3.7.0) (2025-10-23)
+
+### Features
+
+- **leet/easy:** build-array-from-permutation ([#79](https://github.com/percebus/algorithmic-excercises/issues/79)) ([782c381](https://github.com/percebus/algorithmic-excercises/commit/782c3810657ff2e4f5e8bb9eca5c40e7cc930936)), closes [#76](https://github.com/percebus/algorithmic-excercises/issues/76)
+
+## [3.6.2](https://github.com/percebus/algorithmic-excercises/compare/v3.6.1...v3.6.2) (2025-08-31)
+
+### Bug Fixes
+
+- **`always.yml`:** Rename `docker_build_target` ([#74](https://github.com/percebus/algorithmic-excercises/issues/74)) ([6d0a9b7](https://github.com/percebus/algorithmic-excercises/commit/6d0a9b7648f269de93212d4a0d316bcf39017d0c))
+
+## [3.6.1](https://github.com/percebus/algorithmic-excercises/compare/v3.6.0...v3.6.1) (2025-08-05)
+
+### Bug Fixes
+
+- **pip-audit:** Auto-detect ([#71](https://github.com/percebus/algorithmic-excercises/issues/71)) ([6f2afad](https://github.com/percebus/algorithmic-excercises/commit/6f2afaddb44c6f603544fe96af84004e66914a2d)), closes [#58](https://github.com/percebus/algorithmic-excercises/issues/58)
+
+# [3.6.0](https://github.com/percebus/algorithmic-excercises/compare/v3.5.1...v3.6.0) (2025-08-04)
+
+### Features
+
+- **workflows/pull_request:** Added pip audit) ([#70](https://github.com/percebus/algorithmic-excercises/issues/70)) ([57f932b](https://github.com/percebus/algorithmic-excercises/commit/57f932b5b5fca60ef9e6bd596377e69a4ed2199f)), closes [#58](https://github.com/percebus/algorithmic-excercises/issues/58)
+
+## [3.5.1](https://github.com/percebus/algorithmic-excercises/compare/v3.5.0...v3.5.1) (2025-07-20)
+
+### Bug Fixes
+
+- **github-actions-npm:** Broken references ([#68](https://github.com/percebus/algorithmic-excercises/issues/68)) ([93f8064](https://github.com/percebus/algorithmic-excercises/commit/93f80649027cd06e92ec08bc447dd25cc95fa3bb))
+
 # [3.5.0](https://github.com/percebus/algorithmic-excercises/compare/v3.4.0...v3.5.0) (2025-07-17)
 
 ### Features

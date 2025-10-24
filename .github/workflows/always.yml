@@ -32,7 +32,7 @@ jobs:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
 
       - uses: percebus/github-actions-node/.github/actions/setup@main
-      - uses: percebus/github-actions-npm/.github/actions/npm_install@main
+      - uses: percebus/github-actions-npm/.github/actions/install@main
 
       - name: semantic-release
         run: npm run semantic-release
@@ -58,7 +58,7 @@ jobs:
 
       # prettier & dockerlint
       - uses: percebus/github-actions-node/.github/actions/setup@main
-      - uses: percebus/github-actions-npm/.github/actions/npm_install@main
+      - uses: percebus/github-actions-npm/.github/actions/install@main
 
       - name: pypyr lint
         run: pipx run -- pypyr lint stats=True
@@ -86,7 +86,7 @@ jobs:
 
       - uses: percebus/github-actions-python/.github/actions/setup@main
       - uses: percebus/github-actions-node/.github/actions/setup@main
-      - uses: percebus/github-actions-npm/.github/actions/npm_install@main
+      - uses: percebus/github-actions-npm/.github/actions/install@main
 
       - name: scripts/setup_ci.ba.sh
         run: bash scripts/setup_ci.ba.sh
@@ -135,7 +135,7 @@ jobs:
       - uses: percebus/github-actions-poetry/.github/actions/install@main
 
       - uses: percebus/github-actions-node/.github/actions/setup@main
-      - uses: percebus/github-actions-npm/.github/actions/npm_install@main
+      - uses: percebus/github-actions-npm/.github/actions/install@main
 
       - name: pypyr test
         run: pipx run -- pypyr ci
@@ -149,7 +149,9 @@ jobs:
       fail-fast: false
       matrix:
         language:
+          - actions
           - python
+          - javascript
 
     name: "CodeQL: ${{ matrix.language }}"
     steps:
@@ -157,13 +159,9 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
-      - name: setup CodeQL
-        uses: github/codeql-action/init@v3
+      - uses: percebus/github-actions-compliance/.github/actions/codeql_analyze@main
         with:
-          languages: ${{ matrix.language }}
-
-      - name: CodeQL
-        uses: github/codeql-action/analyze@v3
+          language: ${{ matrix.language }}
 
   docker_compose:
     name: docker compose
@@ -206,6 +204,6 @@ jobs:
       - name: scripts/prepare.ba.sh
         run: bash scripts/prepare.ba.sh
 
-      - uses: percebus/github-actions-docker/.github/actions/docker_build_target@main
+      - uses: percebus/github-actions-docker/.github/actions/build@main
         with:
           target: ${{ matrix.target }}

@@ -1,4 +1,4 @@
--e git+ssh://git@github.com/percebus/algorithmic-excercises.git@1898d34db0fbaf68e8df9f31ef30eb1ba9b581ad#egg=algorithmic_excercises
+-e git+ssh://git@github.com/percebus/algorithmic-excercises.git@8e993cef565618d85de76623f89656dd4d70ac7c#egg=algorithmic_excercises
 annotated-types==0.7.0
 argcomplete==3.5.3
 astroid==3.3.8
@@ -49,7 +49,6 @@ python-dotenv==1.0.1
 pytz==2024.1
 rst2md==0.1.1
 ruff==0.12.4
-setuptools==69.5.1
 six==1.16.0
 tomlkit==0.13.2
 types-pytz==2024.2.0.20241003
