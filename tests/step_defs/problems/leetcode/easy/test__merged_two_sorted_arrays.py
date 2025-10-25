@@ -6,10 +6,17 @@ from pytest_bdd import given, parsers, scenarios, then, when
 from problems.leetcode.easy.merge_two_sorted_lists import merge_two_sorted_lists
 from problems.leetcode.easy.merge_two_sorted_lists.list_node import ListNode
 
+scenarios("problems/leetcode/easy/Merge Two Sorted Arrays.feature")
+
 
 def extract_numbers(text: str) -> list[int]:
     """Extracts numbers from the string representation of a list of nodes."""
-    str_numbers = text.replace("(", "").replace(")", "").split("->")
+
+    # fmt: off
+    str_numbers = text \
+        .replace("(", "").replace(")", "") \
+        .split("->")
+    # fmt: on
 
     int_numbers = map(int, str_numbers)
     return list(int_numbers)
@@ -33,8 +40,9 @@ def parse_linked_list(string: str) -> Optional[ListNode]:
     if string == "None":
         return None
 
-    numbers = extract_numbers(string)
-    return build_linked_list(numbers)
+    numbers: list[int] = extract_numbers(string)
+    headListNode: ListNode = build_linked_list(numbers)
+    return headListNode
 
 
 def extract_linked_list_values(head: Optional[ListNode]) -> list[int]:
@@ -46,9 +54,6 @@ def extract_linked_list_values(head: Optional[ListNode]) -> list[int]:
         current = current.next
 
     return values
-
-
-scenarios("problems/leetcode/easy/Merge Two Sorted Lists.feature")
 
 
 @given(
@@ -85,14 +90,13 @@ def then_it_returns_the_head_of_the_merged_linked_list(context: dict[str, Any], 
     parsers.parse("it merges the two lists into one sorted list {result}"),
     converters={"result": parse_linked_list},
 )
-def then_it_merges_the_two_lists_into_one_sorted_list(context: dict[str, Any], actualListNode: Optional[ListNode]) -> None:
+def then_it_merges_the_two_lists_into_one_sorted_list(context: dict[str, Any], result: Optional[ListNode]) -> None:
+    expectedListNode: Optional[ListNode] = result
     actualListNode: Optional[ListNode] = context["result"]
-    expectedListNode: Optional[ListNode] = parse_linked_list(actualListNode)
-    assert_that(actualListNode, equal_to(expectedListNode))
     if expectedListNode is None:
+        assert_that(actualListNode, equal_to(expectedListNode))
         assert_that(actualListNode, is_(None))
     else:
         actual_values: list[int] = extract_linked_list_values(actualListNode)
         expected_values: list[int] = extract_linked_list_values(expectedListNode)
-
         assert_that(actual_values, equal_to(expected_values))
