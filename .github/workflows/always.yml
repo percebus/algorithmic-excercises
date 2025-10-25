@@ -9,6 +9,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
+  PYTHONPATH: src
   DOCKER_BUILDKIT: 1
   PYRIGHT_PYTHON_FORCE_VERSION: latest
 
@@ -66,9 +67,8 @@ jobs:
       - name: pypyr test
         run: pipx run -- pypyr ci lint=False
 
-      # FIXME
-      # - name: doctest
-      #   run: bash scripts/doctest/run.ba.sh
+      - name: doctest
+        run: bash scripts/doctest/run.ba.sh
 
       - uses: percebus/github-actions-testing/.github/actions/junit@main
         with:
