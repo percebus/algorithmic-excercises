@@ -1,4 +1,4 @@
-from src.problems.leetcode.easy.build_array_from_permutation.protocol import SolutionProtocol
+from problems.leetcode.easy.build_array_from_permutation.protocol import SolutionProtocol
 
 
 class Solution(SolutionProtocol):

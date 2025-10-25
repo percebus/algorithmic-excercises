@@ -3,7 +3,7 @@ from typing import Any
 from hamcrest import assert_that, equal_to
 from pytest_bdd import given, parsers, scenarios, then, when
 
-from src.problems.leetcode.easy.build_array_from_permutation import build_array_from_permutation
+from problems.leetcode.easy.build_array_from_permutation import build_array_from_permutation
 
 scenarios("problems/leetcode/easy/Build Array from Permutation.feature")
 

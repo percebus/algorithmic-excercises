@@ -9,6 +9,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
+  PYTHONPATH: src
   DOCKER_BUILDKIT: 1
   PYRIGHT_PYTHON_FORCE_VERSION: latest
 
@@ -75,7 +76,7 @@ jobs:
           files_pattern: test-results.xml
 
   verify__scripts:
-    name: Verify scripts
+    name: Verify w/ scripts/setup_ci.ba.sh
     needs: verify
     runs-on: ubuntu-latest
     steps:
@@ -178,23 +179,25 @@ jobs:
         run: docker compose up --abort-on-container-exit
 
   docker_build__matrix:
-    name: docker build --target
     needs: docker_compose
     continue-on-error: true
     strategy:
       max-parallel: 10
       matrix:
-        target:
+        include:
           # - base
           # - project
           # - dev
-          - tested
+          - target: tested
+            scan-image: false
 
           # - base
           # - project
-          - release
+          - target: release
+            scan-image: ${{ github.ref == 'refs/heads/main' }}
 
     runs-on: ubuntu-latest
+    name: docker build --target ${{ matrix.target }}
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
         with:
@@ -206,3 +209,4 @@ jobs:
       - uses: percebus/github-actions-docker/.github/actions/build@main
         with:
           target: ${{ matrix.target }}
+          scan-image: ${{ matrix.scan-image }}

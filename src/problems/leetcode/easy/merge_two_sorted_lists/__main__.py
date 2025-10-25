@@ -2,11 +2,11 @@ from typing import TYPE_CHECKING, Optional
 
 from hamcrest import assert_that, equal_to
 
-from src.problems.leetcode.easy.merge_two_sorted_lists import merge_two_sorted_lists
-from src.problems.leetcode.easy.merge_two_sorted_lists.utils import list_to_nodes, nodes_to_list
+from problems.leetcode.easy.merge_two_sorted_lists import merge_two_sorted_lists
+from problems.leetcode.easy.merge_two_sorted_lists.utils import list_to_nodes, nodes_to_list
 
 if TYPE_CHECKING:
-    from src.problems.leetcode.easy.merge_two_sorted_lists.list_node import ListNode
+    from problems.leetcode.easy.merge_two_sorted_lists.list_node import ListNode
 
 
 def test(list1: list[int], list2: list[int], expected: list[int]) -> None:

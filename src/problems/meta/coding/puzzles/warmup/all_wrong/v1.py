@@ -1,6 +1,6 @@
 from typing import override
 
-from src.problems.meta.coding.puzzles.warmup.all_wrong.base import PuzzleBase
+from problems.meta.coding.puzzles.warmup.all_wrong.base import PuzzleBase
 
 
 class Puzzle(PuzzleBase):

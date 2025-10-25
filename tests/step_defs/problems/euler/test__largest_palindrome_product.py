@@ -3,7 +3,7 @@ from typing import Any
 from hamcrest import assert_that, equal_to
 from pytest_bdd import given, parsers, scenarios, then, when
 
-from src.problems.euler.largest_palindrome_product import get_largest_paindrome_product, get_limits
+from problems.euler.largest_palindrome_product import get_largest_paindrome_product, get_limits
 
 scenarios("problems/euler/Largest Palindrome Product.feature")
 

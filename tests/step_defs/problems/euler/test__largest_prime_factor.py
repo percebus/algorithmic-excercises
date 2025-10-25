@@ -3,7 +3,7 @@ from typing import Any, Optional
 from hamcrest import assert_that, equal_to
 from pytest_bdd import given, parsers, scenarios, then, when
 
-from src.problems.euler.largest_prime_factor import get_largest_prime_factor
+from problems.euler.largest_prime_factor import get_largest_prime_factor
 
 scenarios("problems/euler/Largest Prime Factor.feature")
 

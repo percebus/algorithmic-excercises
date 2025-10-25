@@ -1,6 +1,6 @@
 from typing import Optional
 
-from src.problems.euler.largest_prime_factor.prime.v1 import get_factors, is_prime_number
+from problems.euler.largest_prime_factor.prime.v1 import get_factors, is_prime_number
 
 
 def get_largest_prime_factor(x: int) -> Optional[int]:
