@@ -76,7 +76,7 @@ jobs:
           files_pattern: test-results.xml
 
   verify__scripts:
-    name: Verify scripts
+    name: Verify w/ scripts/setup_ci.ba.sh
     needs: verify
     runs-on: ubuntu-latest
     steps:
@@ -185,15 +185,17 @@ jobs:
     strategy:
       max-parallel: 10
       matrix:
-        target:
+        include:
           # - base
           # - project
           # - dev
-          - tested
+          - target: tested
+            scan-image: false
 
           # - base
           # - project
-          - release
+          - target: release
+            scan-image: ${{ github.ref == 'refs/heads/main' }}
 
     runs-on: ubuntu-latest
     steps:
@@ -207,3 +209,4 @@ jobs:
       - uses: percebus/github-actions-docker/.github/actions/build@main
         with:
           target: ${{ matrix.target }}
+          scan-image: ${{ matrix.scan-image }}
