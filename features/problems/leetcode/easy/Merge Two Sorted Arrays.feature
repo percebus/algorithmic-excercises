@@ -10,28 +10,28 @@ Feature: Merge Two Sorted Arrays
 Scenario Outline: Both ListNodes have values
     Given the heads of two sorted linked lists <list1> and <list2>
     When merge_sorted_arrays is invoked
-    Then it merges the two lists into one sorted list <result>.
+    Then it merges the two lists into one sorted list <result>
     And it returns the <head> of the merged linked list
 
   Examples:
     |     list1     |     list2     |       result                 | head |
-    | (1)->(2)->(4) | (1)->(3)->(4) | (1)->(1)->(2)->(3)->(4)->(4) | (1)    |
+    | (1)->(2)->(4) | (1)->(3)->(4) | (1)->(1)->(2)->(3)->(4)->(4) | (1)  |
 
 
-Scenario Outline: Some ListNodes are null
+Scenario Outline: Some ListNodes are None
     Given the heads of two sorted linked lists <list1> and <list2>
     When merge_sorted_arrays is invoked
-    Then it merges the two lists into one sorted list <result>.
+    Then it merges the two lists into one sorted list <result>
     And it returns the <head> of the merged linked list
 
   Examples:
     | list1 | list2 | result | head |
-    | null  | (0)   | (0)    | (0)  |
+    | None  | (0)   | (0)    | (0)  |
 
-Scenario Outline: Both ListNodes are null
+Scenario Outline: Both ListNodes are None
     Given the heads of two sorted linked lists <list1> and <list2>
     When merge_sorted_arrays is invoked
-    Then it merges the two lists into one sorted list <result>.
+    Then it merges the two lists into one sorted list <result>
     And it returns the <head> of the merged linked list
     | list1 | list2 | result | head |
-    | null  | null  | null   | null |
+    | None  | None  | None   | None |
