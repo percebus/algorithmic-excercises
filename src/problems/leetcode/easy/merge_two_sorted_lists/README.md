@@ -10,7 +10,7 @@ Return _the head of the merged linked list._
 
 **Example 1:**
 
-![example1](../../../../../assets/img/problems/leetcode/easy/merge_two_sorted_lists/example.png)
+![example1](../../../../../assets/img/problems/leetcode/easy/merge-two-sorted-lists/example.png)
 
 > Input: `list1 = [1,2,4], list2 = [1,3,4]`
 
