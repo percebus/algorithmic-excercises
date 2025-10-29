@@ -1,4 +1,4 @@
-from src.problems.leetcode.easy.build_array_from_permutation.v2 import Solution, solution
+from problems.leetcode.easy.build_array_from_permutation.v2 import Solution, solution
 
 build_array_from_permutation = solution.buildArray
 

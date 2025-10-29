@@ -1,7 +1,7 @@
 import logging
 from typing import Optional
 
-from src.problems.commons.palindromes.check.reversing import is_palindrome
+from problems.commons.palindromes.check.reversing import is_palindrome
 
 
 def get_limits(chars: int) -> tuple[int, int]:

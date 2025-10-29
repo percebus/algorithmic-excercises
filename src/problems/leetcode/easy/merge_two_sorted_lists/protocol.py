@@ -1,6 +1,6 @@
 from typing import Optional, Protocol, runtime_checkable
 
-from src.problems.leetcode.easy.merge_two_sorted_lists.list_node import ListNode
+from problems.leetcode.easy.merge_two_sorted_lists.list_node import ListNode
 
 """
 SRC: https://leetcode.com/problems/merge-two-sorted-lists/

@@ -2,7 +2,7 @@ import logging
 
 from hamcrest import assert_that, equal_to
 
-from src.problems.euler.largest_palindrome_product.v1 import get_largest_paindrome_product, get_limits
+from problems.euler.largest_palindrome_product.v1 import get_largest_paindrome_product, get_limits
 
 
 def format_pair(numbers: tuple[int, int]) -> str:

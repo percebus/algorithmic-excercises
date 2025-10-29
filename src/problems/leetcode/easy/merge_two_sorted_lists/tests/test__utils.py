@@ -2,8 +2,8 @@ from typing import Optional
 
 from hamcrest import assert_that, equal_to, instance_of, is_, is_not
 
-from src.problems.leetcode.easy.merge_two_sorted_lists.list_node import ListNode
-from src.problems.leetcode.easy.merge_two_sorted_lists.utils import list_to_nodes, nodes_to_list
+from problems.leetcode.easy.merge_two_sorted_lists.list_node import ListNode
+from problems.leetcode.easy.merge_two_sorted_lists.utils import list_to_nodes, nodes_to_list
 
 
 def test__1_2_4__gets_converted_to_and_from_nodes() -> None:

@@ -1,4 +1,4 @@
-from src.problems.euler.largest_prime_factor.grae_drake.prime.v2 import is_prime
+from problems.euler.largest_prime_factor.grae_drake.prime.v2 import is_prime
 
 """
 Ok, let’s just iterate over every number

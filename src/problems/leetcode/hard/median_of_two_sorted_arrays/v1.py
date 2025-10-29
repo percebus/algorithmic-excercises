@@ -1,6 +1,6 @@
 import math
 
-from src.problems.leetcode.hard.median_of_two_sorted_arrays.protocol import SolutionProtocol
+from problems.leetcode.hard.median_of_two_sorted_arrays.protocol import SolutionProtocol
 
 """
 SRC: https://leetcode.com/problems/median-of-two-sorted-arrays/

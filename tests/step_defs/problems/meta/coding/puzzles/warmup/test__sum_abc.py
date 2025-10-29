@@ -1,7 +1,7 @@
 from hamcrest import assert_that, equal_to
 from pytest_bdd import given, parsers, scenarios, then, when
 
-from src.problems.meta.coding.puzzles.warmup.sum_abc import getSum
+from problems.meta.coding.puzzles.warmup.sum_abc import getSum
 from tests.utils import assert_is_in_range
 
 scenarios("problems/meta/coding/puzzles/warmup/sum ABCs.feature")

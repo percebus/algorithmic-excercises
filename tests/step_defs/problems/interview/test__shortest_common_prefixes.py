@@ -2,7 +2,7 @@ from hamcrest import assert_that, equal_to
 from pytest_bdd import given, parsers, scenarios, then, when
 
 # NOTE: v1 is actually faster
-from src.problems.interviews.shortest_common_prefixes import get_prefixes
+from problems.interviews.shortest_common_prefixes import get_prefixes
 
 scenarios("problems/interviews/Shortest Common Prefixes.feature")
 
