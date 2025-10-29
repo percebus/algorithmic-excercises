@@ -12,8 +12,8 @@ def run() -> None:
     noop(solution_v1)
     versions = {
         "numpy": solution_numpy,
-        # "v1": solution_v1,  # FIXME doesn't work properly
-        "v2": solution_google,
+        "v1": solution_v1,
+        "google": solution_google,
     }
 
     for key, oSolution in versions.items():

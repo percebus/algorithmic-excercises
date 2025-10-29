@@ -5,8 +5,10 @@
 It appears that our implementation is faster than the numpy clone based approach
 
 ```
-numpy...
- - result: 1.0168914000096265
-v2...
- - result: 0.10083840001607314
+numpy:
+ - result: 1.1414310999971349
+v1:
+ - result: 0.1787395999999717
+google:
+ - result: 0.10188390000257641
 ```
