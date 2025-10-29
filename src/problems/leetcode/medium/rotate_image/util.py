@@ -1,5 +1,3 @@
-
-
 from problems.leetcode.medium.rotate_image._typing import MatrixType
 
 

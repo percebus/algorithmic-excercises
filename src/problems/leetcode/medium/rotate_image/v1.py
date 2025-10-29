@@ -1,8 +1,8 @@
 from typing import Iterable
 
-from problems.leetcode.medium.rotate_image.util import update_matrix
-from problems.leetcode.medium.rotate_image.protocol import SolutionProtocol
 from problems.leetcode.medium.rotate_image._typing import MatrixType, RowType
+from problems.leetcode.medium.rotate_image.protocol import SolutionProtocol
+from problems.leetcode.medium.rotate_image.util import update_matrix
 
 
 class Solution(SolutionProtocol):

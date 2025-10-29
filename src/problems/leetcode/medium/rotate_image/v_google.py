@@ -1,5 +1,5 @@
-from problems.leetcode.medium.rotate_image.protocol import SolutionProtocol
 from problems.leetcode.medium.rotate_image._typing import MatrixType
+from problems.leetcode.medium.rotate_image.protocol import SolutionProtocol
 
 
 # Google's Solution (Gemini?)
