@@ -2,7 +2,6 @@ import logging
 
 # TODO make each module self contained and importable
 # TODO or perhaps look recursively for all '__main__' modules in the problems directory
-from problems.leetcode.medium.rotate_image import __main__ as rotate_image
 from problems.euler.even_fibonacci_numbers import __main__ as sum_fibonacci_evens
 from problems.euler.largest_palindrome_product import __main__ as largest_palindrome_product
 from problems.euler.largest_prime_factor import __main__ as largest_prime_factor
@@ -17,6 +16,7 @@ from problems.leetcode.easy.roman_to_integer import __main__ as roman_to_integer
 from problems.leetcode.easy.two_sum import __main__ as two_sum
 from problems.leetcode.easy.valid_parentheses import __main__ as valid_parentheses
 from problems.leetcode.hard.median_of_two_sorted_arrays import __main__ as median_of_two_sorted_arrays
+from problems.leetcode.medium.rotate_image import __main__ as rotate_image
 from problems.meta.coding.puzzles.warmup.all_wrong import __main__ as all_wrong
 from problems.meta.coding.puzzles.warmup.battleship import __main__ as battleship
 from problems.meta.coding.puzzles.warmup.sum_abc import __main__ as sum_abc
