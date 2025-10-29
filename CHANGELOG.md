@@ -1,5 +1,11 @@
 # algorithmic-excercises CHANGELOG
 
+# [3.8.0](https://github.com/percebus/algorithmic-excercises/compare/v3.7.1...v3.8.0) (2025-10-29)
+
+### Features
+
+- **`leetcode/medium`:** `rotate_image` ([#84](https://github.com/percebus/algorithmic-excercises/issues/84)) ([94961ec](https://github.com/percebus/algorithmic-excercises/commit/94961ec11dc6bb28fe377a281f7f72a1efa1060e)), closes [#77](https://github.com/percebus/algorithmic-excercises/issues/77)
+
 ## [3.7.1](https://github.com/percebus/algorithmic-excercises/compare/v3.7.0...v3.7.1) (2025-10-23)
 
 ### Bug Fixes
