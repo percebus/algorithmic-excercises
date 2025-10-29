@@ -1,4 +1,4 @@
-from src.problems.leetcode.medium.rotate_image.v2 import Solution, solution
+from problems.leetcode.medium.rotate_image.v_google import Solution, solution
 
 rotate = solution.rotate
 

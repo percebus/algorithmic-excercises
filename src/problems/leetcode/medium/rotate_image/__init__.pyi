@@ -1,4 +1,4 @@
-from src.problems.leetcode.medium.rotate_image.typing import MatrixType
+from problems.leetcode.medium.rotate_image.typing import MatrixType
 
 def rotate(nums: MatrixType) -> None:
     """Rotate.

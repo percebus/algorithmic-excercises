@@ -1,9 +1,9 @@
 import timeit
 
-from src.problems.commons.utils import noop
-from src.problems.leetcode.medium.rotate_image.v0 import solution as solution_v0
-from src.problems.leetcode.medium.rotate_image.v1 import solution as solution_v1
-from src.problems.leetcode.medium.rotate_image.v2 import solution as solution_v2
+from problems.commons.utils import noop
+from problems.leetcode.medium.rotate_image.v1 import solution as solution_v1
+from problems.leetcode.medium.rotate_image.v_google import solution as solution_google
+from problems.leetcode.medium.rotate_image.v_numpy import solution as solution_numpy
 
 
 def run() -> None:
@@ -11,9 +11,9 @@ def run() -> None:
 
     noop(solution_v1)
     versions = {
-        "numpy": solution_v0,
+        "numpy": solution_numpy,
         # "v1": solution_v1,  # FIXME doesn't work properly
-        "v2": solution_v2,
+        "v2": solution_google,
     }
 
     for key, oSolution in versions.items():
