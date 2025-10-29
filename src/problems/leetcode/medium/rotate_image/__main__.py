@@ -1,7 +1,7 @@
 from hamcrest import assert_that, equal_to
 
 from problems.leetcode.medium.rotate_image import rotate
-from problems.leetcode.medium.rotate_image.typing import MatrixType
+from problems.leetcode.medium.rotate_image._typing import MatrixType
 
 
 def test(matrix: MatrixType, expected: MatrixType) -> None:

@@ -2,8 +2,9 @@ from typing import TYPE_CHECKING, Any
 
 import numpy
 
+from problems.leetcode.medium.rotate_image.util import update_matrix
 from problems.leetcode.medium.rotate_image.protocol import SolutionProtocol
-from problems.leetcode.medium.rotate_image.typing import MatrixType
+from problems.leetcode.medium.rotate_image._typing import MatrixType
 
 if TYPE_CHECKING:
     from numpy.typing import NDArray
@@ -12,11 +13,7 @@ if TYPE_CHECKING:
 class Solution(SolutionProtocol):
     def rotate(self, matrix: MatrixType) -> None:
         new_matrix: NDArray[Any] = numpy.rot90(matrix, -1)
-
-        # matrix = new_matrix  # This does NOT work
-        for i, new_row in enumerate(new_matrix):
-            for j, number in enumerate(new_row):
-                matrix[i][j] = number
+        update_matrix(matrix, new_matrix)
 
 
 solution = Solution()
