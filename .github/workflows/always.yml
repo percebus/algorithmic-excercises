@@ -118,18 +118,18 @@ jobs:
           # - the build requirements are incompatible with your operating system or Python version
           # - the build requirements are missing system dependencies (eg: compilers, libraries, headers).
           # You can verify this by running pip wheel --no-cache-dir --use-pep517 "pandas (==2.2.2)".
-          - 3.13.x  # FIXME only fails in ubuntu-linux
+          - 3.13.x # FIXME only fails in ubuntu-linux
 
         # Different architectures
         architecture:
           - x64
           # - arm64 # "The version '3.12.x' with architecture 'arm64' was not found for Ubuntu 22.04."
 
-        exclude:  # FIXME XXX only fails in ubuntu-linux
+        # FIXME XXX only fails in ubuntu-linux
+        exclude:
           - OS: ubuntu-latest
             architecture: x64
             python-version: 3.13.x
-
 
     runs-on: ${{ matrix.OS }}
     name: "Verify: python@${{ matrix.python-version }} @ ${{ matrix.OS }}@${{ matrix.architecture }}"
