@@ -96,7 +96,7 @@ jobs:
 
   verify__matrix:
     needs: verify
-    if: github.ref == 'refs/heads/main'
+    # if: github.ref == 'refs/heads/main'
     strategy:
       fail-fast: false
       max-parallel: 10
@@ -104,13 +104,14 @@ jobs:
         # Different OS
         OS:
           - ubuntu-latest
+          - macos-latest
           - windows-latest
 
         # Past/Future versions
         python-version:
           # - 3.11 # poetry is not setup
           - 3.12.x # latest 3.12.x
-          # - 3.13.x # FIXME PEP517 build of a dependency failed
+          - 3.13.x # FIXME PEP517 build of a dependency failed
 
         # Different architectures
         architecture:
