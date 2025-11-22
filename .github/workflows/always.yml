@@ -12,7 +12,7 @@ env:
   PYTHONPATH: src
   DOCKER_BUILDKIT: 1
   PYRIGHT_PYTHON_FORCE_VERSION: latest
-  SEMANTIC_RELEASE_ARGS: "${{ github.ref }} == 'refs/heads/main' ? '' : '--noop'"
+  SEMANTIC_RELEASE_ARGS: "${{ github.ref == 'refs/heads/main' && '' || '--noop' }}"
 
 permissions:
   checks: write
