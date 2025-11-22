@@ -24,11 +24,12 @@ jobs:
   verify:
     name: Verify
     runs-on: ubuntu-latest
-    permissions:
-      issues: write # to be able to comment on released issues
-      contents: write # to be able to publish a GitHub release
-      id-token: write # to enable use of OIDC for npm provenance
-      pull-requests: write # to be able to comment on released pull requests
+    # TODO re-enable permissions when semantic-release supports GITHUB_TOKEN
+    # permissions:
+    #   issues: write # to be able to comment on released issues
+    #   contents: write # to be able to publish a GitHub release
+    #   id-token: write # to enable use of OIDC for npm provenance
+    #   pull-requests: write # to be able to comment on released pull requests
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
         with:
