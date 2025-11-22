@@ -108,13 +108,8 @@ jobs:
           # - 3.11 # poetry is not setup
           - 3.12.x # latest 3.12.x
 
-          # FIXME PEP517 build of a dependency failed
-          # - not supporting PEP 517 builds
-          # - not specifying PEP 517 build requirements correctly
-          # - the build requirements are incompatible with your operating system or Python version
-          # - the build requirements are missing system dependencies (eg: compilers, libraries, headers).
-          # You can verify this by running pip wheel --no-cache-dir --use-pep517 "pandas (==2.2.2)".
-          - 3.13.x # FIXME only fails in ubuntu-linux
+          # FIXME only fails in ubuntu-linux
+          - 3.13.x
 
         # Different architectures
         architecture:
@@ -122,6 +117,12 @@ jobs:
           # - arm64 # "The version '3.12.x' with architecture 'arm64' was not found for Ubuntu 22.04."
 
         # FIXME XXX only fails in ubuntu-linux
+        # "PEP517 build of a dependency failed"
+        # - not supporting PEP 517 builds
+        # - not specifying PEP 517 build requirements correctly
+        # - the build requirements are incompatible with your operating system or Python version
+        # - the build requirements are missing system dependencies (eg: compilers, libraries, headers).
+        # You can verify this by running pip wheel --no-cache-dir --use-pep517 "pandas (==2.2.2)".
         exclude:
           - OS: ubuntu-latest
             architecture: x64
@@ -161,7 +162,6 @@ jobs:
         language:
           - actions
           - python
-          - javascript
 
     name: "CodeQL: ${{ matrix.language }}"
     steps:
