@@ -9,7 +9,6 @@
 - `CHANGELOG.md`
   ([`f544f03`](https://github.com/percebus/algorithmic-excercises/commit/f544f03247199e39bed5c255d43868732878162b))
 
-
 # [3.8.0](https://github.com/percebus/algorithmic-excercises/compare/v3.7.1...v3.8.0) (2025-10-29)
 
 ### Features
