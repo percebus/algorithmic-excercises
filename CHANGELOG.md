@@ -2,6 +2,19 @@
 
 <!-- version list -->
 
+## v3.8.11 (2025-11-22)
+
+### Bug Fixes
+
+- Pipeline
+  ([`a7d67f9`](https://github.com/percebus/algorithmic-excercises/commit/a7d67f9930f21d33a0d768eb01a31ec8b15aa69e))
+
+### Testing
+
+- Commons
+  ([`eb3c2eb`](https://github.com/percebus/algorithmic-excercises/commit/eb3c2ebecad19a292e7955b4d5f92eb7f3ce0799))
+
+
 ## v3.8.10 (2025-11-22)
 
 ### Bug Fixes
