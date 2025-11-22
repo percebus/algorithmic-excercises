@@ -25,11 +25,10 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       checks: write
-      contents: write # to be able to publish a GitHub release
       issues: write # to be able to comment on released issues
+      contents: write # to be able to publish a GitHub release
+      id-token: write # to be able to authenticate with cloud providers
       pull-requests: write # to be able to comment on released pull requests
-    env:
-      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
         with:
@@ -64,10 +63,14 @@ jobs:
       - name: semantic-release
         id: release
         run: semantic-release -v version --push --vcs-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: semantic-release
         if: steps.release.outputs.released == 'true'
         run: semantic-release -v publish --tag ${{ steps.release.outputs.tag }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   verify__scripts:
     name: Verify w/ scripts/setup_ci.ba.sh
