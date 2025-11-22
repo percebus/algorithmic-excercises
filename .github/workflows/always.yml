@@ -12,6 +12,7 @@ env:
   PYTHONPATH: src
   DOCKER_BUILDKIT: 1
   PYRIGHT_PYTHON_FORCE_VERSION: latest
+  SEMANTIC_RELEASE_AGRS: "${{ github.ref }} === 'refs/heads/main' ? '' : '--noop'"
 
 permissions:
   checks: write
@@ -20,32 +21,15 @@ permissions:
   security-events: write
 
 jobs:
-  # SRC: https://github.com/semantic-release/semantic-release/blob/master/docs/recipes/ci-configurations/github-actions.md
-  semantic-release:
-    name: semantic-release
+  verify:
+    name: Verify
+    needs: semantic-release
     runs-on: ubuntu-latest
     permissions:
       issues: write # to be able to comment on released issues
       contents: write # to be able to publish a GitHub release
       id-token: write # to enable use of OIDC for npm provenance
       pull-requests: write # to be able to comment on released pull requests
-    steps:
-      - uses: percebus/github-actions-common/.github/actions/checkout@main
-
-      - uses: percebus/github-actions-node/.github/actions/setup@main
-      - uses: percebus/github-actions-npm/.github/actions/install@main
-
-      - name: semantic-release
-        run: npm run semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-
-      # TODO commit back upgraded requirements
-
-  verify:
-    name: Verify
-    needs: semantic-release
-    runs-on: ubuntu-latest
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
         with:
@@ -74,6 +58,12 @@ jobs:
         with:
           tests_name: "" # disables actions/test-reporter. It doesn't like pytest's junit format
           files_pattern: test-results.xml
+
+      - name: semantic-release
+        run: semantic-release -vv --push --vcs-release ${{ env.SEMANTIC_RELEASE_ARGS }} version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
 
   verify__scripts:
     name: Verify w/ scripts/setup_ci.ba.sh
