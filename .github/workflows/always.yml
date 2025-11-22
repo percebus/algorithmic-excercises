@@ -58,19 +58,6 @@ jobs:
           tests_name: "" # disables actions/test-reporter. It doesn't like pytest's junit format
           files_pattern: test-results.xml
 
-      # TODO Move to github-actions-python
-      # - name: semantic-release
-      #   id: release
-      #   run: semantic-release -v version --push --vcs-release
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # - name: semantic-release
-      #   if: steps.release.outputs.released == 'true'
-      #   run: semantic-release -v publish --tag ${{ steps.release.outputs.tag }}
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       # SRC: https://python-semantic-release.readthedocs.io/en/latest/configuration/automatic-releases/github-actions.html#common-workflow-example
       - name: semantic-release version
         id: semantic-release-version
