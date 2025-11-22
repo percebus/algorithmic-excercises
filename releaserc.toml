@@ -1,5 +1,5 @@
 [semantic_release]
-assets = []
+assets = ["CHANGELOG.md", "package.json", "requirements*.txt"]
 # build_command = "poetry build"  # FIXME
 build_command_env = []
 version_toml = ["pyproject.toml:project.version"]
