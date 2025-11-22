@@ -1,4 +1,8 @@
 shortcuts:
+  # alias
+  style:
+    pipeline_name: format
+
   dev:
     pipeline_name: qa
     args:
@@ -9,13 +13,13 @@ shortcuts:
   ci:
     pipeline_name: qa
     args:
-      style: False
+      format: False
       integration: False
 
   ci_docker:
     pipeline_name: qa
     args:
       npm: False
-      style: False
+      format: False
       integration: False
       stats: False

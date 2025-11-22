@@ -12,6 +12,7 @@ env:
   PYTHONPATH: src
   DOCKER_BUILDKIT: 1
   PYRIGHT_PYTHON_FORCE_VERSION: latest
+  SEMANTIC_RELEASE_ARGS: "${{ github.ref == 'refs/heads/main' && '' || '--noop' }}"
 
 permissions:
   checks: write
@@ -20,32 +21,17 @@ permissions:
   security-events: write
 
 jobs:
-  # SRC: https://github.com/semantic-release/semantic-release/blob/master/docs/recipes/ci-configurations/github-actions.md
-  semantic-release:
-    name: semantic-release
-    runs-on: ubuntu-latest
-    permissions:
-      issues: write # to be able to comment on released issues
-      contents: write # to be able to publish a GitHub release
-      id-token: write # to enable use of OIDC for npm provenance
-      pull-requests: write # to be able to comment on released pull requests
-    steps:
-      - uses: percebus/github-actions-common/.github/actions/checkout@main
-
-      - uses: percebus/github-actions-node/.github/actions/setup@main
-      - uses: percebus/github-actions-npm/.github/actions/install@main
-
-      - name: semantic-release
-        run: npm run semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-
-      # TODO commit back upgraded requirements
-
   verify:
     name: Verify
-    needs: semantic-release
     runs-on: ubuntu-latest
+    # TODO re-enable permissions when semantic-release supports GITHUB_TOKEN
+    # permissions:
+    #   contents: write # to be able to publish a GitHub release
+    #   issues: write # to be able to comment on released issues
+    #   id-token: write # to enable use of OIDC for npm provenance
+    #   pull-requests: write # to be able to comment on released pull requests
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
         with:
@@ -74,6 +60,16 @@ jobs:
         with:
           tests_name: "" # disables actions/test-reporter. It doesn't like pytest's junit format
           files_pattern: test-results.xml
+
+      # TODO Move to github-actions-python
+      # SRC: https://python-semantic-release.readthedocs.io/en/latest/configuration/automatic-releases/github-actions.html#common-workflow-example
+      - name: semantic-release
+        id: release
+        run: semantic-release -vv ${{ env.SEMANTIC_RELEASE_ARGS }} version --push --vcs-release
+
+      - name: semantic-release
+        if: steps.release.outputs.released == 'true'
+        run: semantic-release -vv ${{ env.SEMANTIC_RELEASE_ARGS }} publish --tag ${{ steps.release.outputs.tag }}
 
   verify__scripts:
     name: Verify w/ scripts/setup_ci.ba.sh
@@ -112,13 +108,8 @@ jobs:
           # - 3.11 # poetry is not setup
           - 3.12.x # latest 3.12.x
 
-          # FIXME PEP517 build of a dependency failed
-          # - not supporting PEP 517 builds
-          # - not specifying PEP 517 build requirements correctly
-          # - the build requirements are incompatible with your operating system or Python version
-          # - the build requirements are missing system dependencies (eg: compilers, libraries, headers).
-          # You can verify this by running pip wheel --no-cache-dir --use-pep517 "pandas (==2.2.2)".
-          - 3.13.x # FIXME only fails in ubuntu-linux
+          # FIXME only fails in ubuntu-linux
+          - 3.13.x
 
         # Different architectures
         architecture:
@@ -126,6 +117,12 @@ jobs:
           # - arm64 # "The version '3.12.x' with architecture 'arm64' was not found for Ubuntu 22.04."
 
         # FIXME XXX only fails in ubuntu-linux
+        # "PEP517 build of a dependency failed"
+        # - not supporting PEP 517 builds
+        # - not specifying PEP 517 build requirements correctly
+        # - the build requirements are incompatible with your operating system or Python version
+        # - the build requirements are missing system dependencies (eg: compilers, libraries, headers).
+        # You can verify this by running pip wheel --no-cache-dir --use-pep517 "pandas (==2.2.2)".
         exclude:
           - OS: ubuntu-latest
             architecture: x64
@@ -165,7 +162,6 @@ jobs:
         language:
           - actions
           - python
-          - javascript
 
     name: "CodeQL: ${{ matrix.language }}"
     steps:
