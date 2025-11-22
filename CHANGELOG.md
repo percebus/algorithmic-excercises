@@ -2,6 +2,19 @@
 
 <!-- version list -->
 
+## v3.8.12 (2025-11-22)
+
+### Bug Fixes
+
+- **`.prettierignore`**: Fixed `default` ignores
+  ([`87c87f8`](https://github.com/percebus/algorithmic-excercises/commit/87c87f84d4b4ee20fc32d4e2add5f78810888ac2))
+
+### Chores
+
+- Remove `SILLY` `verbosity`
+  ([`c26977d`](https://github.com/percebus/algorithmic-excercises/commit/c26977dcf25aa49a65be6bde7d0cb337437bf83f))
+
+
 ## v3.8.11 (2025-11-22)
 
 ### Bug Fixes
