@@ -1,8 +1,15 @@
+# XXX FIXME
+CHANGELOG.md
+
+# python
 __pycache__/
-.pytest_cache/
 .venv/
+.*_cache/
+.pytest_cache/
 .ruff_cache/
 
-# FIXME add default
-
+# default # SRC: https://prettier.io/docs/en/ignore.html
+**/.git
+**/.svn
+**/.hg
 node_modules/
