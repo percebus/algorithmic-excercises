@@ -23,7 +23,6 @@ permissions:
 jobs:
   verify:
     name: Verify
-    needs: semantic-release
     runs-on: ubuntu-latest
     permissions:
       issues: write # to be able to comment on released issues
