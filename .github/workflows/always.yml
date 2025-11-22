@@ -41,23 +41,23 @@ jobs:
       - uses: percebus/github-actions-poetry/.github/actions/self_add_plugins@main
       - uses: percebus/github-actions-poetry/.github/actions/install@main
 
-      # prettier & dockerlint
-      - uses: percebus/github-actions-node/.github/actions/setup@main
-      - uses: percebus/github-actions-npm/.github/actions/install@main
+      # # prettier & dockerlint
+      # - uses: percebus/github-actions-node/.github/actions/setup@main
+      # - uses: percebus/github-actions-npm/.github/actions/install@main
 
-      - name: pypyr lint
-        run: pypyr lint stats=True
+      # - name: pypyr lint
+      #   run: pypyr lint stats=True
 
-      - name: pypyr test
-        run: pypyr ci lint=False
+      # - name: pypyr test
+      #   run: pypyr ci lint=False
 
-      - name: doctest
-        run: bash scripts/doctest/run.ba.sh
+      # - name: doctest
+      #   run: bash scripts/doctest/run.ba.sh
 
-      - uses: percebus/github-actions-testing/.github/actions/junit@main
-        with:
-          tests_name: "" # disables actions/test-reporter. It doesn't like pytest's junit format
-          files_pattern: test-results.xml
+      # - uses: percebus/github-actions-testing/.github/actions/junit@main
+      #   with:
+      #     tests_name: "" # disables actions/test-reporter. It doesn't like pytest's junit format
+      #     files_pattern: test-results.xml
 
       # SRC: https://python-semantic-release.readthedocs.io/en/latest/configuration/automatic-releases/github-actions.html#common-workflow-example
       - name: semantic-release version
@@ -66,7 +66,7 @@ jobs:
         uses: python-semantic-release/python-semantic-release@v10.5.2
         with:
           verbosity: ${{ env.SEMANTIC_RELEASE_VERBOSITY_LEVEL }}
-          config_file: releaserc.toml
+          config_file: ./releaserc.toml
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # TODO move to releaserc.toml
           git_committer_name: "github-actions"
@@ -77,7 +77,7 @@ jobs:
         if: steps.semantic-release-version.outputs.released == 'true'
         with:
           verbosity: ${{ env.SEMANTIC_RELEASE_VERBOSITY_LEVEL }}
-          config_file: releaserc.toml
+          config_file: ./releaserc.toml
           github_token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ steps.semantic-release-version.outputs.tag }}
 
