@@ -12,7 +12,7 @@ env:
   PYTHONPATH: src
   DOCKER_BUILDKIT: 1
   PYRIGHT_PYTHON_FORCE_VERSION: latest
-  SEMANTIC_RELEASE_AGRS: "${{ github.ref }} === 'refs/heads/main' ? '' : '--noop'"
+  SEMANTIC_RELEASE_ARGS: "${{ github.ref }} == 'refs/heads/main' ? '' : '--noop'"
 
 permissions:
   checks: write
@@ -60,7 +60,7 @@ jobs:
           files_pattern: test-results.xml
 
       - name: semantic-release
-        run: semantic-release -vv --push --vcs-release ${{ env.SEMANTIC_RELEASE_ARGS }} version
+        run: semantic-release -vv ${{ env.SEMANTIC_RELEASE_ARGS }} version --push --vcs-release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
