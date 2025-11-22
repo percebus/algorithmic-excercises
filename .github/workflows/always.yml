@@ -46,10 +46,10 @@ jobs:
       - uses: percebus/github-actions-npm/.github/actions/install@main
 
       - name: pypyr lint
-        run: pipx run -- pypyr lint stats=True
+        run: pypyr lint stats=True
 
       - name: pypyr test
-        run: pipx run -- pypyr ci lint=False
+        run: pypyr ci lint=False
 
       - name: doctest
         run: bash scripts/doctest/run.ba.sh
@@ -86,7 +86,7 @@ jobs:
         run: bash scripts/setup_ci.ba.sh
 
       - name: pypyr ci
-        run: pipx run -- pypyr ci
+        run: pypyr ci
 
   verify__matrix:
     needs: verify
@@ -147,7 +147,7 @@ jobs:
       - uses: percebus/github-actions-npm/.github/actions/install@main
 
       - name: pypyr test
-        run: pipx run -- pypyr ci
+        run: pypyr ci
 
   # TODO? merge into verify?
   codeQL__matrix:
