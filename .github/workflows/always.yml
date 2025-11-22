@@ -63,7 +63,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
-
   verify__scripts:
     name: Verify w/ scripts/setup_ci.ba.sh
     needs: verify
