@@ -11,7 +11,7 @@ steps:
         path: .
         npm: True
         clean: True
-        style: True
+        format: True
         lint: True
         test: True
         integration: False
@@ -23,9 +23,9 @@ steps:
       cmd: "pipx run -- pypyr clean path={path}"
 
   - name: pypyr.steps.shell
-    run: "{style}"
+    run: "{format}"
     in:
-      cmd: "pipx run -- pypyr style path={path} npm={npm} lint=False"
+      cmd: "pipx run -- pypyr format path={path} npm={npm} lint=False"
 
   - name: pypyr.steps.shell
     run: "{lint}"
