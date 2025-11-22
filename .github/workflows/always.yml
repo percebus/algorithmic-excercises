@@ -12,7 +12,7 @@ env:
   PYTHONPATH: src
   DOCKER_BUILDKIT: 1
   PYRIGHT_PYTHON_FORCE_VERSION: latest
-  SEMANTIC_RELEASE_VERBOSITY_LEVEL: 3
+  SEMANTIC_RELEASE_VERBOSITY_LEVEL: 1
 
 permissions:
   checks: write
@@ -41,12 +41,12 @@ jobs:
       - uses: percebus/github-actions-poetry/.github/actions/self_add_plugins@main
       - uses: percebus/github-actions-poetry/.github/actions/install@main
 
+      - name: pypyr lock
+        run: pypyr lock freeze=True
+
       # prettier & dockerlint
       - uses: percebus/github-actions-node/.github/actions/setup@main
       - uses: percebus/github-actions-npm/.github/actions/install@main
-
-      - name: pypyr lock
-        run: pypyr lock freeze=True
 
       - name: pypyr lint
         run: pypyr lint stats=True

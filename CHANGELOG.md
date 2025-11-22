@@ -14,7 +14,6 @@
 - Commons
   ([`eb3c2eb`](https://github.com/percebus/algorithmic-excercises/commit/eb3c2ebecad19a292e7955b4d5f92eb7f3ce0799))
 
-
 ## v3.8.10 (2025-11-22)
 
 ### Bug Fixes
