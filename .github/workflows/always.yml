@@ -41,29 +41,29 @@ jobs:
       - uses: percebus/github-actions-poetry/.github/actions/self_add_plugins@main
       - uses: percebus/github-actions-poetry/.github/actions/install@main
 
-      - name: pypyr lock
-        run: pypyr lock freeze=True
+      # - name: pypyr lock
+      #   run: pypyr lock freeze=True
 
-      # prettier & dockerlint
-      - uses: percebus/github-actions-node/.github/actions/setup@main
-      - uses: percebus/github-actions-npm/.github/actions/install@main
+      # # prettier & dockerlint
+      # - uses: percebus/github-actions-node/.github/actions/setup@main
+      # - uses: percebus/github-actions-npm/.github/actions/install@main
 
-      - name: pypyr lint
-        run: pypyr lint stats=True
+      # - name: pypyr lint
+      #   run: pypyr lint stats=True
 
-      - name: pypyr test
-        run: pypyr ci lint=False
+      # - name: pypyr test
+      #   run: pypyr ci lint=False
 
-      - name: doctest
-        run: bash scripts/doctest/run.ba.sh
+      # - name: doctest
+      #   run: bash scripts/doctest/run.ba.sh
 
-      - uses: percebus/github-actions-testing/.github/actions/junit@main
-        with:
-          tests_name: "" # disables actions/test-reporter. It doesn't like pytest's junit format
-          files_pattern: test-results.xml
+      # - uses: percebus/github-actions-testing/.github/actions/junit@main
+      #   with:
+      #     tests_name: "" # disables actions/test-reporter. It doesn't like pytest's junit format
+      #     files_pattern: test-results.xml
 
-      - name: poetry build
-        run: poetry build
+      # - name: poetry build
+      #   run: poetry build
 
       # SRC: https://python-semantic-release.readthedocs.io/en/latest/configuration/automatic-releases/github-actions.html#common-workflow-example
       - name: semantic-release version

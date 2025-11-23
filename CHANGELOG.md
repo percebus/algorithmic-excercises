@@ -14,7 +14,6 @@
 - Remove `SILLY` `verbosity`
   ([`c26977d`](https://github.com/percebus/algorithmic-excercises/commit/c26977dcf25aa49a65be6bde7d0cb337437bf83f))
 
-
 ## v3.8.11 (2025-11-22)
 
 ### Bug Fixes
