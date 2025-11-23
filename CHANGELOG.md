@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v3.8.13 (2025-11-23)
+
+### Bug Fixes
+
+- **`CHANGELOG.md`**: `trim_blocks`
+  ([`b300791`](https://github.com/percebus/algorithmic-excercises/commit/b3007917853cde802f52f0e25a3ff60e639e784e))
+
+
 ## v3.8.12 (2025-11-22)
 
 ### Bug Fixes
