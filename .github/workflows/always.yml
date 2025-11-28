@@ -41,7 +41,7 @@ jobs:
       - uses: percebus/github-actions-poetry/.github/actions/install@main
 
       - name: pypyr lock
-        if: github.ref == 'refs/heads/main'  # TODO? or XXX?
+        if: github.ref == 'refs/heads/main' # TODO? or XXX?
         run: pypyr lock freeze=True
 
       # prettier & dockerlint
