@@ -41,7 +41,7 @@ jobs:
       - uses: percebus/github-actions-poetry/.github/actions/install@main
 
       - name: pypyr lock
-        # if: github.ref == 'refs/heads/main'  # TODO? or XXX?
+        if: github.ref == 'refs/heads/main'  # TODO? or XXX?
         run: pypyr lock freeze=True
 
       # prettier & dockerlint
@@ -72,8 +72,8 @@ jobs:
 
       # TODO Move to `github-actions-testing`
       - name: coverage-badge
-        if: github.ref == 'refs/heads/main'
-        uses: we-cli/coverage-badge-action@main
+        # if: github.ref == 'refs/heads/main'
+        uses: we-cli/coverage-badge-action@v1.0.1
 
   verify__scripts:
     name: Verify w/ scripts/setup_ci.ba.sh
