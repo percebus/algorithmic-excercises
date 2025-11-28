@@ -62,11 +62,6 @@ jobs:
           tests_name: ""  # disables actions/test-reporter. It doesn't like pytest's junit format
           files_pattern: test-results.xml
 
-      # TODO Move to `github-actions-testing`
-      - name: coverage-badge
-        if: github.ref == 'refs/heads/main'
-        uses: we-cli/coverage-badge-action@main
-
       - name: poetry build
         run: poetry build
 
@@ -74,6 +69,12 @@ jobs:
         with:
           verbosity: 1
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      # TODO Move to `github-actions-testing`
+      - name: coverage-badge
+        if: github.ref == 'refs/heads/main'
+        uses: we-cli/coverage-badge-action@main
+
 
   verify__scripts:
     name: Verify w/ scripts/setup_ci.ba.sh
