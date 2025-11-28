@@ -59,7 +59,7 @@ jobs:
 
       - uses: percebus/github-actions-testing/.github/actions/junit@main
         with:
-          tests_name: ""  # disables actions/test-reporter. It doesn't like pytest's junit format
+          tests_name: "" # disables actions/test-reporter. It doesn't like pytest's junit format
           files_pattern: test-results.xml
 
       - name: poetry build
@@ -74,7 +74,6 @@ jobs:
       - name: coverage-badge
         if: github.ref == 'refs/heads/main'
         uses: we-cli/coverage-badge-action@main
-
 
   verify__scripts:
     name: Verify w/ scripts/setup_ci.ba.sh
