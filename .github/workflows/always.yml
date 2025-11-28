@@ -41,6 +41,7 @@ jobs:
       - uses: percebus/github-actions-poetry/.github/actions/install@main
 
       - name: pypyr lock
+        # if: github.ref == 'refs/heads/main'  # TODO? or XXX?
         run: pypyr lock freeze=True
 
       # prettier & dockerlint
@@ -58,13 +59,12 @@ jobs:
 
       - uses: percebus/github-actions-testing/.github/actions/junit@main
         with:
-          tests_name: "" # disables actions/test-reporter. It doesn't like pytest's junit format
+          tests_name: ""  # disables actions/test-reporter. It doesn't like pytest's junit format
           files_pattern: test-results.xml
 
+      # TODO Move to `github-actions-testing`
       - name: coverage-badge
-        # GitHub actions: default branch variable
-        # https://stackoverflow.com/questions/64781462/github-actions-default-branch-variable
-        # if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+        if: github.ref == 'refs/heads/main'
         uses: we-cli/coverage-badge-action@main
 
       - name: poetry build
