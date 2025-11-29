@@ -69,6 +69,15 @@ jobs:
           verbosity: 1
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: git restore
+        run: git restore .
+
+      # TODO Move to `github-actions-testing`
+      - name: coverage-badge
+        if: github.ref == 'refs/heads/main'
+        # uses: we-cli/coverage-badge-action@v1.0.1  # TODO
+        uses: we-cli/coverage-badge-action@main
+
   verify__scripts:
     name: Verify w/ scripts/setup_ci.ba.sh
     needs: verify

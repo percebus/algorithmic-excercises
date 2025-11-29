@@ -3,6 +3,7 @@
 assets = [
     "CHANGELOG.md",
     "package.json",
+    "poetry.lock",
     "requirements.poetry.cli.txt",
     "requirements.poetry.dev.txt",
     "requirements.poetry.main.txt",
