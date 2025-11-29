@@ -4,8 +4,14 @@
   "python.testing.pytestEnabled": true,
   "sarif-viewer.connectToGithubCodeScanning": "off",
   "cSpell.words": [
+    "BUILDKIT",
+    "dockerlint",
+    "doctest",
     "hamcrest",
-    "leetcode"
+    "leetcode",
+    "pipx",
+    "pypyr",
+    "PYTHONPATH"
   ],
   "python-envs.pythonProjects": []
 }
