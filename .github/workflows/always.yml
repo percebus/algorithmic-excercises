@@ -73,7 +73,8 @@ jobs:
       # TODO Move to `github-actions-testing`
       - name: coverage-badge
         # if: github.ref == 'refs/heads/main'
-        uses: we-cli/coverage-badge-action@v1.0.1
+        # uses: we-cli/coverage-badge-action@v1.0.1  # TODO
+        uses: we-cli/coverage-badge-action@main
 
   verify__scripts:
     name: Verify w/ scripts/setup_ci.ba.sh
