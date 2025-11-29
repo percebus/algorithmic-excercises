@@ -1,6 +1,9 @@
 tmp/
 test*.xml
 
+coverage.*
+coverage/
+
 # commons/scripts
 repositories/
 # _scripts/
