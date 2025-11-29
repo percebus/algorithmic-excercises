@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v3.8.15 (2025-11-29)
+
+### Bug Fixes
+
+- **`README.md`**: Removed `|`
+  ([`ec0a6ee`](https://github.com/percebus/algorithmic-excercises/commit/ec0a6ee9f11e44886f30911e777c5d38663d17c2))
+
+
 ## v3.8.14 (2025-11-29)
 
 ### Bug Fixes
