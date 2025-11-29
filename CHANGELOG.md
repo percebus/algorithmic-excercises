@@ -2,6 +2,25 @@
 
 <!-- version list -->
 
+## v3.8.14 (2025-11-29)
+
+### Bug Fixes
+
+- **`workflows/always.yml`**: `git restore`
+  ([`db6fda8`](https://github.com/percebus/algorithmic-excercises/commit/db6fda805848f8fd3965c5d4c6662308c9ff7ad1))
+
+### Documentation
+
+- **`README.md`**: `coverage` ([#88](https://github.com/percebus/algorithmic-excercises/pull/88),
+  [`2f7a4f5`](https://github.com/percebus/algorithmic-excercises/commit/2f7a4f541983b2f833a6104735a7fef76cd4b198))
+
+### Refactoring
+
+- **`workflows/always.yml`**: Reuse `python-semantic-release`
+  ([#87](https://github.com/percebus/algorithmic-excercises/pull/87),
+  [`d041b09`](https://github.com/percebus/algorithmic-excercises/commit/d041b09d8f7caf38ada551e1f78ab4c216dc8996))
+
+
 ## v3.8.13 (2025-11-23)
 
 ### Bug Fixes
