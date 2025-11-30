@@ -14,7 +14,7 @@
 
 [![LeetCode](https://img.shields.io/badge/-LeetCode-FFA116?style=flat&logo=LeetCode&logoColor=black)](https://leetcode.com/u/percebus/)
 ![git](https://badgen.net/badge/icon/git?icon=git&label&color=red)
-![GitHub](https://badgen.net/badge/icon/github?icon=github&label&color=purple)
+![GitHub](https://badgen.net/badge/icon/github?icon=github&label&color=black)
 ![Poetry](https://img.shields.io/badge/Poetry-%233B82F6.svg?logo=poetry)
 ![Pydantic](https://img.shields.io/badge/pydantic-%23E92063.svg?logo=pydantic&logoColor=white)
 ![PyPi](https://badgen.net/badge/icon/pypi?icon=pypi&label)
