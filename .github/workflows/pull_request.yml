@@ -16,7 +16,7 @@ jobs:
   semantic-pull-request:
     uses: percebus/github-actions-compliance/.github/workflows/semantic-pull-request.yml@main
 
-  dependency-review:
+  github-actions-pipx:
     uses: percebus/github-actions-pipx/.github/workflows/dependency-review.yml@main
     permissions:
       contents: read
@@ -25,5 +25,5 @@ jobs:
       audit-requirements-file: requirements.release.txt
 
   # package.json dependencies
-  npm_audit:
+  github-actions-npm:
     uses: percebus/github-actions-npm/.github/workflows/audit.yml@main
