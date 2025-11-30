@@ -17,15 +17,15 @@ jobs:
     uses: percebus/github-actions-compliance/.github/workflows/semantic-pull-request.yml@main
 
   dependency-review:
-    uses: percebus/github-actions-compliance/.github/workflows/dependency-review.yml@main
+    uses: percebus/github-actions-pipx/.github/workflows/dependency-review.yml@main
     permissions:
       contents: read
       pull-requests: read
-
-  pip-audit:
-    uses: percebus/github-actions-pipx/.github/workflows/run_pip-audit.yml@main
     with:
       audit-requirements-file: requirements.release.txt
+
+  # pip-audit:
+  #   uses: percebus/github-actions-pipx/.github/workflows/run_pip-audit.yml@main
 
   # package.json dependencies
   npm_audit:
