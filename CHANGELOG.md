@@ -2,6 +2,23 @@
 
 <!-- version list -->
 
+## v3.8.16 (2025-11-30)
+
+### Bug Fixes
+
+- **`workflows/pull_request`**: `pip audit`
+  ([#91](https://github.com/percebus/algorithmic-excercises/pull/91),
+  [`df9f7be`](https://github.com/percebus/algorithmic-excercises/commit/df9f7be72618af14b6d321f3886a19d51dc1e0ac))
+
+### Documentation
+
+- **`README.md`**: More badges ([#90](https://github.com/percebus/algorithmic-excercises/pull/90),
+  [`96c4e99`](https://github.com/percebus/algorithmic-excercises/commit/96c4e999b0252d14f19a8b00fa4819d12cb5863a))
+
+- **`README`**: Badges ([#89](https://github.com/percebus/algorithmic-excercises/pull/89),
+  [`eb44a67`](https://github.com/percebus/algorithmic-excercises/commit/eb44a676ebe833dd820e2b9dd34cf2f855d38a9f))
+
+
 ## v3.8.15 (2025-11-29)
 
 ### Bug Fixes
