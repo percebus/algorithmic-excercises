@@ -13,7 +13,7 @@ permissions:
   contents: read
 
 jobs:
-  semantic-pull-request:
+  github-actions-compliance:
     uses: percebus/github-actions-compliance/.github/workflows/semantic-pull-request.yml@main
 
   github-actions-pipx:
