@@ -23,9 +23,9 @@ jobs:
       pull-requests: read
 
   pip-audit:
-    uses: percebus/github-actions-pipx/.github/workflows/run_pip-audit_path.yml@main
+    uses: percebus/github-actions-pipx/.github/workflows/run_pip-audit.yml@main
     with:
-      requirements-file: requirements.release.txt
+      audit-requirements-file: requirements.release.txt
 
   # package.json dependencies
   npm_audit:
