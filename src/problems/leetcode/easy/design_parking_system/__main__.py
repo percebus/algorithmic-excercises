@@ -1,7 +1,7 @@
 from hamcrest import assert_that, is_  # pyright: ignore[reportUnknownVariableType] # FIXME
 
+from problems.leetcode.easy.design_parking_system import ParkingSystem
 from problems.leetcode.easy.design_parking_system.car_type import CarType
-from problems.leetcode.easy.design_parking_system.v2 import ParkingSystem
 
 
 def test(actual: False, expected: False):  # type: ignore # FIXME
