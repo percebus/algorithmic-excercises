@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v3.10.0 (2025-12-26)
+
+### Features
+
+- Parking processor ([#93](https://github.com/percebus/algorithmic-excercises/pull/93),
+  [`6244d79`](https://github.com/percebus/algorithmic-excercises/commit/6244d79223317f6fa43d04902bb5f926a6e2b587))
+
+
 ## v3.9.0 (2025-12-26)
 
 ### Features
