@@ -1,7 +1,8 @@
 name: "[C]ontinuous [I]ntegration"
 
 on:
-  push:
+  push: # XXX?
+  # pull_request:  # TODO?
   workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
 
 concurrency:

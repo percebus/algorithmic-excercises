@@ -8,6 +8,7 @@ from problems.euler.largest_prime_factor import __main__ as largest_prime_factor
 from problems.euler.multiples_of_3_or_5 import __main__ as multiples_of_3_or_5
 from problems.interviews.shortest_common_prefixes import __main__ as shortest_common_prefixes
 from problems.leetcode.easy.build_array_from_permutation import __main__ as build_array_from_permutation
+from problems.leetcode.easy.design_parking_system import __main__ as design_parking_system
 from problems.leetcode.easy.longest_common_prefix import __main__ as longest_common_prefix
 from problems.leetcode.easy.merge_two_sorted_lists import __main__ as merge_two_sorted_lists
 from problems.leetcode.easy.palindrome_number import __main__ as palindrome_number
@@ -26,6 +27,7 @@ modules = [
     all_wrong,
     battleship,
     build_array_from_permutation,
+    design_parking_system,
     largest_palindrome_product,
     largest_prime_factor,
     longest_common_prefix,
