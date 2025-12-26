@@ -1,6 +1,6 @@
-from problems.leetcode.easy.design_parking_system.processing.processor import Processor
+from problems.leetcode.easy.design_parking_system.processing.processor import BatchProcessor
 from problems.leetcode.easy.design_parking_system.v2 import ParkingSystem
 
-processor = Processor()
+processor = BatchProcessor()
 
-__all__ = ["ParkingSystem", "Processor", "processor"]
+__all__ = ["ParkingSystem", "BatchProcessor", "processor"]

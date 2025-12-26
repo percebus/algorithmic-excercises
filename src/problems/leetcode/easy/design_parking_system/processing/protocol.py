@@ -1,7 +1,7 @@
 from typing import Any, Protocol
 
 
-class ProcessorProtocol(Protocol):
+class BatchProcessorProtocol(Protocol):
     def process(self, invoker_names: list[str], arguments: list[Any]) -> list[Any]:
         """Process.
 

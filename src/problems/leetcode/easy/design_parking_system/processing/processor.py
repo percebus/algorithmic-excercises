@@ -1,12 +1,12 @@
 from dataclasses import dataclass
 from typing import Any, ClassVar, Type
 
-from problems.leetcode.easy.design_parking_system.processing.protocol import ProcessorProtocol
+from problems.leetcode.easy.design_parking_system.processing.protocol import BatchProcessorProtocol
 from problems.leetcode.easy.design_parking_system.v2 import ParkingSystem
 
 
 @dataclass
-class Processor(ProcessorProtocol):
+class BatchProcessor(BatchProcessorProtocol):
     classes: ClassVar[dict[str, Type[Any]]] = {
         "ParkingSystem": ParkingSystem,
     }
