@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v3.9.0 (2025-12-26)
+
+### Features
+
+- **`leetcode`**: Parking ([#92](https://github.com/percebus/algorithmic-excercises/pull/92),
+  [`c2356a3`](https://github.com/percebus/algorithmic-excercises/commit/c2356a3ec13160523bb431f9cab7e8f30baebd44))
+
+
 ## v3.8.16 (2025-11-30)
 
 ### Bug Fixes
