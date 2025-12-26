@@ -3,14 +3,14 @@ from problems.leetcode.easy.design_parking_system.protocol import ParkingSystemP
 
 class ParkingSystem(ParkingSystemProtocol):
     def __init__(self, big: int, medium: int, small: int):
-        self.cars: dict[int, int] = {}
-        self.cars[1] = big
-        self.cars[2] = medium
-        self.cars[3] = small
+        self.parking_spots: dict[int, int] = {}
+        self.parking_spots[1] = big
+        self.parking_spots[2] = medium
+        self.parking_spots[3] = small
 
     def addCar(self, carType: int) -> bool:
-        if self.cars[carType] < 1:
+        if self.parking_spots[carType] < 1:
             return False
 
-        self.cars[carType] -= 1
+        self.parking_spots[carType] -= 1
         return True
