@@ -1,12 +1,11 @@
+from hamcrest import assert_that, is_  # pyright: ignore[reportUnknownVariableType] # FIXME
 
-
-from hamcrest import assert_that, is_
 from problems.leetcode.easy.design_parking_system.car_type import CarType
-from problems.leetcode.easy.design_parking_system.v1 import ParkingSystem
+from problems.leetcode.easy.design_parking_system.v2 import ParkingSystem
 
 
-def test(actual: False, expected: False):
-    assert_that(actual, is_(expected))
+def test(actual: False, expected: False):  # type: ignore # FIXME
+    assert_that(actual, is_(expected))  # pyright: ignore[reportUnknownArgumentType] # FIXME
     print("✅", end="")
 
 
@@ -24,10 +23,10 @@ def run_scenario_01() -> None:
     )
     # fmt: on
 
-    test(parking_system.addCar(carType=CarType.BIG.value), True) # 1 -1
-    test(parking_system.addCar(carType=CarType.MEDIUM.value), True) # 1 -1
-    test(parking_system.addCar(carType=CarType.SMALL.value), False) # 0
-    test(parking_system.addCar(carType=CarType.BIG.value), False) # 0
+    test(parking_system.addCar(carType=CarType.BIG.value), True)  # 1 -1
+    test(parking_system.addCar(carType=CarType.MEDIUM.value), True)  # 1 -1
+    test(parking_system.addCar(carType=CarType.SMALL.value), False)  # 0
+    test(parking_system.addCar(carType=CarType.BIG.value), False)  # 0
 
 
 def run() -> None:
