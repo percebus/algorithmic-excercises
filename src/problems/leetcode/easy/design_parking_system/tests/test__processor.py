@@ -5,6 +5,7 @@ import pytest
 from hamcrest import assert_that, equal_to, is_
 
 from problems.leetcode.easy.design_parking_system import ParkingSystem
+from problems.leetcode.easy.design_parking_system.car_type import CarType
 from problems.leetcode.easy.design_parking_system.processing.processor import BatchProcessor
 
 
@@ -35,3 +36,24 @@ def test__process__1_1_0__no_methods__initializes_ParkingSystem_with_1_1_0(batch
         args1, _ = ParkingSystem__init__.call_args
         args1_without_cls = args1[1:]  # remove 'cls' from args
         assert_that(args1_without_cls, is_(equal_to((1, 1, 0))))
+
+
+def test__process__Example_1__returns__None_True_True_False_False(batch_processor: BatchProcessor) -> None:
+    invoker_names = [
+        "ParkingSystem",
+        "addCar",
+        "addCar",
+        "addCar",
+        "addCar",
+    ]
+
+    arguments = [
+        [1, 1, 0],
+        [CarType.BIG.value], # 1 -1 = 0 big cars
+        [CarType.MEDIUM.value], # 1 -1 = 0 medium cars
+        [CarType.SMALL.value], # False, No small spots
+        [CarType.BIG.value], # False, No big spots
+    ]
+
+    actual_results = batch_processor.process(invoker_names, arguments)
+    assert_that(actual_results, is_(equal_to([None, True, True, False, False])))
