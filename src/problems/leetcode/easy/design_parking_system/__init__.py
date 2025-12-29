@@ -1,5 +1,4 @@
-from problems.leetcode.easy.design_parking_system.processing.processor import BatchProcessor
-from problems.leetcode.easy.design_parking_system.v2 import ParkingSystem
+from problems.leetcode.easy.design_parking_system.processing.processor import BatchProcessor, ParkingSystem
 
 processor = BatchProcessor()
 
