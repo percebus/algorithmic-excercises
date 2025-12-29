@@ -1,17 +1,15 @@
-
 from collections.abc import Generator
 from unittest.mock import patch
 
-from hamcrest import assert_that, equal_to, is_
-from problems.leetcode.easy.design_parking_system.processing.processor import BatchProcessor
-
 import pytest
+from hamcrest import assert_that, equal_to, is_
 
 from problems.leetcode.easy.design_parking_system import ParkingSystem
+from problems.leetcode.easy.design_parking_system.processing.processor import BatchProcessor
 
 
-@pytest.fixture
-def processor() -> Generator[BatchProcessor, None, None]:
+@pytest.fixture(name="batch_processor")
+def fixture_batch_processor() -> Generator[BatchProcessor, None, None]:
     # Before each test
     processor = BatchProcessor()
 
@@ -19,17 +17,17 @@ def processor() -> Generator[BatchProcessor, None, None]:
     yield processor
 
     # After each test
-    processor = None
+    # processor = None
 
 
-def test__process__1_1_0__no_methods__returns_None(processor: BatchProcessor) -> None:
-    actual_results = processor.process(["ParkingSystem"], [[1, 1, 0]])
+def test__process__1_1_0__no_methods__returns_None(batch_processor: BatchProcessor) -> None:
+    actual_results = batch_processor.process(["ParkingSystem"], [[1, 1, 0]])
     assert_that(actual_results, is_(equal_to([None])))
 
 
-def test__process__1_1_0__no_methods__initializes_ParkingSystem_with_1_1_0(processor: BatchProcessor) -> None:
+def test__process__1_1_0__no_methods__initializes_ParkingSystem_with_1_1_0(batch_processor: BatchProcessor) -> None:
     with patch.object(ParkingSystem, "__init__", autospec=True, return_value=None) as ParkingSystem__init__:
-        actual_results = processor.process(["ParkingSystem"], [[1, 1, 0]])
+        actual_results = batch_processor.process(["ParkingSystem"], [[1, 1, 0]])
         assert_that(actual_results, is_(equal_to([None])))
 
         assert_that(ParkingSystem__init__.call_count, is_(1))
