@@ -49,10 +49,10 @@ def test__process__Example_1__returns__None_True_True_False_False(batch_processo
 
     arguments = [
         [1, 1, 0],
-        [CarType.BIG.value], # 1 -1 = 0 big cars
-        [CarType.MEDIUM.value], # 1 -1 = 0 medium cars
-        [CarType.SMALL.value], # False, No small spots
-        [CarType.BIG.value], # False, No big spots
+        [CarType.BIG.value],  # 1 -1 = 0 big cars
+        [CarType.MEDIUM.value],  # 1 -1 = 0 medium cars
+        [CarType.SMALL.value],  # False, No small spots
+        [CarType.BIG.value],  # False, No big spots
     ]
 
     actual_results = batch_processor.process(invoker_names, arguments)
