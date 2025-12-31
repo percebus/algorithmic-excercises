@@ -20,7 +20,7 @@ Implement the `ParkingSystem` class:
 >>> processor.process(
 ...     ["ParkingSystem", "addCar", "addCar", "addCar", "addCar"],
 ...     [[1, 1, 0]      , [big]   , [medium], [small] , [big]])
-[        None           , True    , True    , False   , False]
+[None, True, True, False, False]
 
 ```
 
