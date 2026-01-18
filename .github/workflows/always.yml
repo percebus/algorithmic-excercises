@@ -60,8 +60,9 @@ jobs:
 
       - uses: percebus/github-actions-testing/.github/actions/junit@main
         with:
-          tests_name: "" # disables actions/test-reporter. It doesn't like pytest's junit format
+          reporter: python-xunit
           files_pattern: test-results.xml
+          list-tests: all
 
       - name: poetry build
         run: poetry build
