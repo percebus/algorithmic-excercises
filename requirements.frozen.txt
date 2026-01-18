@@ -1,4 +1,4 @@
--e git+https://github.com/percebus/algorithmic-excercises@6244d79223317f6fa43d04902bb5f926a6e2b587#egg=algorithmic_excercises
+-e git+https://github.com/percebus/algorithmic-excercises@c3a20d6d607c470af0d6dbfe60f3ee5c474fb019#egg=algorithmic_excercises
 annotated-types==0.7.0
 argcomplete==3.6.3
 astroid==3.3.8

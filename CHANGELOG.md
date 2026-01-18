@@ -2,6 +2,24 @@
 
 <!-- version list -->
 
+## v3.10.1 (2026-01-18)
+
+### Bug Fixes
+
+- Test-reporter ([#96](https://github.com/percebus/algorithmic-excercises/pull/96),
+  [`c3a20d6`](https://github.com/percebus/algorithmic-excercises/commit/c3a20d6d607c470af0d6dbfe60f3ee5c474fb019))
+
+### Testing
+
+- **`leetcode`**: `design-parking-system`
+  ([#94](https://github.com/percebus/algorithmic-excercises/pull/94),
+  [`7c6f75c`](https://github.com/percebus/algorithmic-excercises/commit/7c6f75cda6d6f1edcd51c6ebc0b71150e61ff670))
+
+- **`leetcode`**: `doctest` for `ParkingSystem`
+  ([#95](https://github.com/percebus/algorithmic-excercises/pull/95),
+  [`c3f30b5`](https://github.com/percebus/algorithmic-excercises/commit/c3f30b5c67cfea94c5a69059f578915ec454d613))
+
+
 ## v3.10.0 (2025-12-26)
 
 ### Features
