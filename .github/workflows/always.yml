@@ -1,9 +1,11 @@
 name: "[C]ontinuous [I]ntegration"
 
 on:
-  push: # XXX?
-  # pull_request:  # TODO?
   workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
+  pull_request:
+  push:
+    branches:
+      - main
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
