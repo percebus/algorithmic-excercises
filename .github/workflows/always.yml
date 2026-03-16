@@ -70,6 +70,7 @@ jobs:
         run: poetry build
 
       - uses: percebus/github-actions-python/.github/actions/semantic-release@main
+        continue-on-error: true # XXX FIXME
         with:
           verbosity: 1
           github_token: ${{ secrets.GITHUB_TOKEN }}
