@@ -173,13 +173,13 @@ jobs:
           - actions
           - python
 
-    name: "CodeQL: ${{ matrix.language }}"
+    name: CodeQL analyze
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
         with:
           ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
-      - uses: percebus/github-actions-compliance/.github/actions/codeql_analyze@main
+      - uses: percebus/github-actions-compliance/.github/actions/codeql_init_and_analyze@main
         with:
           language: ${{ matrix.language }}
 
