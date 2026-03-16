@@ -3,6 +3,7 @@
     "charliermarsh.ruff",
     "ms-python.pylint",
     "ms-pyright.pyright",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "github.vscode-codeql"
   ]
 }
