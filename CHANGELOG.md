@@ -2,6 +2,20 @@
 
 <!-- version list -->
 
+## v3.11.0 (2026-03-16)
+
+### Bug Fixes
+
+- **`codeql`**: Action name changed
+  ([#97](https://github.com/percebus/algorithmic-excercises/pull/97),
+  [`269b2b2`](https://github.com/percebus/algorithmic-excercises/commit/269b2b2de4154e2bbc4f5f7a2ca63aa9e76887bc))
+
+### Features
+
+- **`codeql`**: Scan `dist` ([#100](https://github.com/percebus/algorithmic-excercises/pull/100),
+  [`af33358`](https://github.com/percebus/algorithmic-excercises/commit/af333587cca1dbfa97e08115d5887bdc1fadfa22))
+
+
 ## v3.10.1 (2026-01-18)
 
 ### Bug Fixes
