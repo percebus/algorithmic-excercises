@@ -1,9 +1,11 @@
 name: "[C]ontinuous [I]ntegration"
 
 on:
-  push: # XXX?
-  # pull_request:  # TODO?
   workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
+  pull_request:
+  push:
+    branches:
+      - main
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
@@ -68,6 +70,7 @@ jobs:
         run: poetry build
 
       - uses: percebus/github-actions-python/.github/actions/semantic-release@main
+        continue-on-error: true # XXX FIXME
         with:
           verbosity: 1
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -173,13 +176,13 @@ jobs:
           - actions
           - python
 
-    name: "CodeQL: ${{ matrix.language }}"
+    name: CodeQL analyze
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
         with:
           ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
-      - uses: percebus/github-actions-compliance/.github/actions/codeql_analyze@main
+      - uses: percebus/github-actions-compliance/.github/actions/codeql_init_and_analyze@main
         with:
           language: ${{ matrix.language }}
 
