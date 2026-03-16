@@ -230,24 +230,29 @@ jobs:
           # - project
           # - dev
           - target: tested
+            run: true
             scan-image: false
 
           # - base
           # - project
           - target: release
+            run: ${{ github.ref == 'refs/heads/main' }}
             scan-image: ${{ github.ref == 'refs/heads/main' }}
 
     runs-on: ubuntu-latest
     name: docker build --target ${{ matrix.target }}
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
+        if: ${{ matrix.run }}
         with:
           ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
       - name: scripts/prepare.ba.sh
+        if: ${{ matrix.run }}
         run: bash scripts/prepare.ba.sh
 
       - uses: percebus/github-actions-docker/.github/actions/build@main
+        if: ${{ matrix.run }}
         with:
           target: ${{ matrix.target }}
           scan-image: ${{ matrix.scan-image }}
