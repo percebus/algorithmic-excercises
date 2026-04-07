@@ -22,10 +22,9 @@ jobs:
   github-actions-pipx:
     uses: percebus/github-actions-pipx/.github/workflows/dependency-review.yml@main
     name: github-actions-pipx
-    # TODO? or XXX?
-    # permissions:
-    #   contents: read
-    #   pull-requests: read
+    permissions:
+      contents: read
+      pull-requests: read
     with:
       audit-requirements-file: requirements.release.txt
 
