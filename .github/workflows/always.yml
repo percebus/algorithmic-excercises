@@ -69,12 +69,8 @@ jobs:
       - name: poetry build
         run: poetry build
 
-      # TODO move to `github-actions-common`
       - name: dist.zip
-        uses: actions/upload-artifact@v4
-        with:
-          name: dist
-          path: ./dist
+        uses: percebus/github-actions-common/.github/actions/artifact-upload@main
 
       - uses: percebus/github-actions-python/.github/actions/semantic-release@main
         continue-on-error: true # XXX FIXME
@@ -192,13 +188,9 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
 
-      # TODO move to `github-actions-common`
       - name: dist.zip
         if: ${{ matrix.dist }}
-        uses: actions/download-artifact@v4
-        with:
-          name: dist
-          path: dist
+        uses: percebus/github-actions-common/.github/actions/artifact-download@main
 
       - uses: percebus/github-actions-compliance/.github/actions/codeql_init_and_analyze@main
         with:
