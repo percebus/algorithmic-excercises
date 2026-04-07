@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v3.11.1 (2026-04-07)
+
+### Bug Fixes
+
+- **`workflows/pull_request`**: Naming
+  ([`866a23d`](https://github.com/percebus/algorithmic-excercises/commit/866a23d2ecf35e8590bf51731f75b98ace6ecffd))
+
+
 ## v3.11.0 (2026-03-16)
 
 ### Bug Fixes
