@@ -2,6 +2,15 @@
 
 <!-- version list -->
 
+## v3.11.2 (2026-04-07)
+
+### Bug Fixes
+
+- **`workflows/pull_request`**: Change of `name`s & `permissions`
+  ([#101](https://github.com/percebus/algorithmic-excercises/pull/101),
+  [`eb4df31`](https://github.com/percebus/algorithmic-excercises/commit/eb4df3161c3539422c2a22b5331fefedfb9b6e64))
+
+
 ## v3.11.1 (2026-04-07)
 
 ### Bug Fixes
