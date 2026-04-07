@@ -15,15 +15,20 @@ permissions:
 jobs:
   github-actions-compliance:
     uses: percebus/github-actions-compliance/.github/workflows/semantic-pull-request.yml@main
+    name: github-actions-compliance
+    permissions:
+      pull-requests: read
 
   github-actions-pipx:
     uses: percebus/github-actions-pipx/.github/workflows/dependency-review.yml@main
-    permissions:
-      contents: read
-      pull-requests: read
+    name: github-actions-pipx
+    # permissions:
+    #   contents: read
+    #   pull-requests: read
     with:
       audit-requirements-file: requirements.release.txt
 
   # package.json dependencies
   github-actions-npm:
+    name: npm
     uses: percebus/github-actions-npm/.github/workflows/audit.yml@main
