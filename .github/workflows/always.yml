@@ -170,8 +170,6 @@ jobs:
   # TODO? merge into verify?
   codeQL__matrix:
     needs: verify
-    runs-on: ubuntu-latest
-
     strategy:
       fail-fast: false
       matrix:
@@ -182,20 +180,15 @@ jobs:
           - language: actions
             dist: false
 
-    name: CodeQL analyze
-    steps:
-      - uses: percebus/github-actions-common/.github/actions/checkout@main
-        with:
-          ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE }}
+    uses: percebus/github-actions-compliance/.github/workflows/codeql_analyze.yml@main
+    with:
+      language: ${{ matrix.language }}
+      download-artifact_name: dist
+      download-artifact_path: dist
+    secrets:
+      SSH_KEY_PRIVATE: ${{ secrets.SSH_KEY_PRIVATE }}
 
-      - name: dist.zip
-        if: ${{ matrix.dist }}
-        uses: percebus/github-actions-common/.github/actions/artifact-download@main
-
-      - uses: percebus/github-actions-compliance/.github/actions/codeql_init_and_analyze@main
-        with:
-          language: ${{ matrix.language }}
-
+  # TODO? move this to github-actions-docker ?
   docker_compose:
     name: docker compose
     needs: verify
