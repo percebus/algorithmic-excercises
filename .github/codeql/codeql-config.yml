@@ -14,7 +14,7 @@ paths-ignore:
   - .venv
   - typings
   - tmp
-  - dist
+  # - dist # TODO? or XXX?
   #
   # commons
   - _scripts
