@@ -18,6 +18,7 @@ env:
 
 permissions:
   checks: write
+  actions: read
   contents: read
   pull-requests: write
   security-events: write
@@ -167,6 +168,7 @@ jobs:
       - name: pypyr test
         run: pypyr ci
 
+  #
   # TODO? merge into verify?
   codeQL__matrix:
     needs: verify
@@ -183,11 +185,12 @@ jobs:
     uses: percebus/github-actions-compliance/.github/workflows/codeql_analyze.yml@main
     with:
       language: ${{ matrix.language }}
-      download-artifact_name: dist
+      download-artifact_name: ${{ matrix.dist == true && 'dist' || '' }}
       download-artifact_path: dist
     secrets:
-      SSH_KEY_PRIVATE: ${{ secrets.SSH_KEY_PRIVATE }}
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY_PRIVATE }}
 
+  #
   # TODO? move this to github-actions-docker ?
   docker_compose:
     name: docker compose
@@ -204,6 +207,7 @@ jobs:
       - name: docker compose up
         run: docker compose up --abort-on-container-exit
 
+  #
   docker_build__matrix:
     needs: docker_compose
     continue-on-error: true
