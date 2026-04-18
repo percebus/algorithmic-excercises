@@ -1,0 +1,30 @@
+name: CodeQL Configuration
+
+paths:
+  - .github
+  - .vscode
+  - src
+  - tests
+  - pipelines
+  - features
+  - env
+  - scripts
+
+paths-ignore:
+  - .venv
+  - typings
+  - tmp
+  # - dist # TODO? or XXX?
+  #
+  # commons
+  - _scripts
+  - repositories
+  #
+  # node
+  - node_modules
+
+  # other folders
+  - "*cache"
+  - "*_cache"
+  - .mypy_cache
+  - .pytest_cache
