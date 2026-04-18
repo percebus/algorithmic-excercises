@@ -2,6 +2,24 @@
 
 <!-- version list -->
 
+## v3.11.3 (2026-04-18)
+
+### Bug Fixes
+
+- **always**: Global permissions
+  ([`52b1f74`](https://github.com/percebus/algorithmic-excercises/commit/52b1f7494ee0496c7d736bebfc456e8a9cdfb2b4))
+
+### Refactoring
+
+- **`workflows/always`**: Refine CodeQL
+  ([#103](https://github.com/percebus/algorithmic-excercises/pull/103),
+  [`a61fa45`](https://github.com/percebus/algorithmic-excercises/commit/a61fa4547109fee545276e52c9dac6efd1d63706))
+
+- **`workflows/always`**: Use `common...artifacts-*`
+  ([#102](https://github.com/percebus/algorithmic-excercises/pull/102),
+  [`8003902`](https://github.com/percebus/algorithmic-excercises/commit/8003902709b76460ba8223114b917a8cf1814579))
+
+
 ## v3.11.2 (2026-04-07)
 
 ### Bug Fixes
