@@ -16,12 +16,12 @@ env:
   DOCKER_BUILDKIT: 1
   PYRIGHT_PYTHON_FORCE_VERSION: latest
 
-permissions:
-  checks: write
-  actions: read
-  contents: read
-  pull-requests: write
-  security-events: write
+# XXX?
+# permissions:
+#   checks: write
+#   contents: read
+#   pull-requests: write
+#   security-events: write
 
 jobs:
   verify:
@@ -172,6 +172,10 @@ jobs:
   # TODO? merge into verify?
   codeQL__matrix:
     needs: verify
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
     strategy:
       fail-fast: false
       matrix:
@@ -185,8 +189,8 @@ jobs:
     uses: percebus/github-actions-compliance/.github/workflows/codeql_analyze.yml@main
     with:
       language: ${{ matrix.language }}
-      download-artifact_name: ${{ matrix.dist == true && 'dist' || '' }}
-      download-artifact_path: dist
+      download-artifact_name: ${{ matrix.dist && 'dist' || '' }}
+      # download-artifact_path: dist
     secrets:
       SSH_KEY_PRIVATE: ${{ secrets.SSH_KEY_PRIVATE }}
 
