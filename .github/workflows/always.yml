@@ -188,7 +188,7 @@ jobs:
       download-artifact_name: ${{ matrix.dist == true && 'dist' || '' }}
       download-artifact_path: dist
     secrets:
-      SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY_PRIVATE }}
+      SSH_KEY_PRIVATE: ${{ secrets.SSH_KEY_PRIVATE }}
 
   #
   # TODO? move this to github-actions-docker ?
