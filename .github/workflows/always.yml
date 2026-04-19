@@ -17,11 +17,7 @@ env:
   PYRIGHT_PYTHON_FORCE_VERSION: latest
 
 permissions:
-  checks: write
-  actions: read
   contents: read
-  pull-requests: write
-  security-events: write
 
 jobs:
   verify:
@@ -33,6 +29,7 @@ jobs:
       contents: write # to be able to publish a GitHub release
       id-token: write # to be able to authenticate with cloud providers
       pull-requests: write # to be able to comment on released pull requests
+      security-events: write
     steps:
       - uses: percebus/commons/.github/actions/checkout@main
         with:
@@ -43,6 +40,10 @@ jobs:
       - uses: percebus/github-actions-pipx/.github/actions/install@main
       - uses: percebus/github-actions-poetry/.github/actions/self_add_plugins@main
       - uses: percebus/github-actions-poetry/.github/actions/install@main
+
+      - uses: percebus/github-actions-compliance/.github/actions/codeql_init_and_analyze@main
+        with:
+          language: python
 
       - name: pypyr lock
         # if: github.ref == 'refs/heads/main' # TODO? or XXX?
@@ -88,6 +89,7 @@ jobs:
         # uses: we-cli/coverage-badge-action@v1.0.1  # TODO
         uses: we-cli/coverage-badge-action@main
 
+  #
   verify__scripts:
     name: Verify w/ scripts/setup_ci.ba.sh
     needs: verify
@@ -99,7 +101,6 @@ jobs:
 
       - uses: percebus/github-actions-python/.github/actions/setup@main
       - uses: percebus/github-actions-node/.github/actions/setup@main
-      - uses: percebus/github-actions-npm/.github/actions/install@main
 
       - name: scripts/setup_ci.ba.sh
         run: bash scripts/setup_ci.ba.sh
@@ -107,6 +108,7 @@ jobs:
       - name: pypyr ci
         run: pypyr ci
 
+  #
   verify__matrix:
     needs: verify
     if: github.ref == 'refs/heads/main'
@@ -169,18 +171,27 @@ jobs:
         run: pypyr ci
 
   #
-  # TODO? merge into verify?
   codeQL__matrix:
     needs: verify
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
     strategy:
       fail-fast: false
       matrix:
         include:
-          - language: python
-            dist: true
+          # NOTE: Running this on verify instead
+          # - language: python
+          #   dist: true
 
           - language: actions
             dist: false
+
+          # Do we need to?
+          # We only have package.json and node_modules/
+          # - language: javascript
+          #   dist: false
 
     uses: percebus/github-actions-compliance/.github/workflows/codeql_analyze.yml@main
     with:
@@ -211,6 +222,10 @@ jobs:
   docker_build__matrix:
     needs: docker_compose
     continue-on-error: true
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
     strategy:
       max-parallel: 10
       matrix:

@@ -16,6 +16,10 @@ bash ${scripts_path}/pipx/install.ba.sh
 # poetry has its own plugins
 bash ${scripts_path}/poetry/plugin/add.ba.sh
 
+# npm installs linters like prettier & dockerlint
+npm run setup
+npm ci
+
 
 set +x
 set +e
