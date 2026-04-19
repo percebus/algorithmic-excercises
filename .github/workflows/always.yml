@@ -44,6 +44,10 @@ jobs:
       - uses: percebus/github-actions-poetry/.github/actions/self_add_plugins@main
       - uses: percebus/github-actions-poetry/.github/actions/install@main
 
+      - uses: percebus/github-actions-compliance/.github/actions/codeql_init_and_analyze@main
+        with:
+          language: python
+
       - name: pypyr lock
         # if: github.ref == 'refs/heads/main' # TODO? or XXX?
         run: pypyr lock freeze=True
@@ -176,8 +180,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - language: python
-            dist: true
+          # NOTE: Running this on verify instead
+          # - language: python
+          #   dist: true
 
           - language: actions
             dist: false
