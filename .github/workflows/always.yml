@@ -89,6 +89,7 @@ jobs:
         # uses: we-cli/coverage-badge-action@v1.0.1  # TODO
         uses: we-cli/coverage-badge-action@main
 
+  #
   verify__scripts:
     name: Verify w/ scripts/setup_ci.ba.sh
     needs: verify
@@ -101,15 +102,13 @@ jobs:
       - uses: percebus/github-actions-python/.github/actions/setup@main
       - uses: percebus/github-actions-node/.github/actions/setup@main
 
-      # XXX Move to `scripts/setup_ci.ba.sh`
-      - uses: percebus/github-actions-npm/.github/actions/install@main
-
       - name: scripts/setup_ci.ba.sh
         run: bash scripts/setup_ci.ba.sh
 
       - name: pypyr ci
         run: pypyr ci
 
+  #
   verify__matrix:
     needs: verify
     if: github.ref == 'refs/heads/main'
@@ -172,7 +171,6 @@ jobs:
         run: pypyr ci
 
   #
-  # TODO? merge into verify?
   codeQL__matrix:
     needs: verify
     permissions:
