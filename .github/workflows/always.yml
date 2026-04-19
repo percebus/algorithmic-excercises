@@ -103,6 +103,8 @@ jobs:
 
       - uses: percebus/github-actions-python/.github/actions/setup@main
       - uses: percebus/github-actions-node/.github/actions/setup@main
+
+      # XXX Move to `scripts/setup_ci.ba.sh`
       - uses: percebus/github-actions-npm/.github/actions/install@main
 
       - name: scripts/setup_ci.ba.sh
