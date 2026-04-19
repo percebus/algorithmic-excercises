@@ -2,19 +2,29 @@ name: CodeQL Configuration
 
 paths:
   - .github
-  - .vscode
   - src
   - tests
-  - pipelines
   - features
-  - env
   - scripts
 
 paths-ignore:
+  #
+  # python
   - .venv
+  - env
+  - dist
   - typings
   - tmp
-  # - dist # TODO? or XXX?
+  #
+  # cache folders
+  - "*cache"
+  - "*_cache"
+  - .mypy_cache
+  - .pytest_cache
+  #
+  - .vscode
+  - assets
+  - pipelines
   #
   # commons
   - _scripts
@@ -22,9 +32,3 @@ paths-ignore:
   #
   # node
   - node_modules
-
-  # other folders
-  - "*cache"
-  - "*_cache"
-  - .mypy_cache
-  - .pytest_cache
