@@ -16,7 +16,7 @@
     "pre-commit:install": "pre-commit install",
     "dockerlint": "dockerlint Dockerfile",
     "setup": "npm run pipx:install && npm run pre-commit:install",
-    "setup:ci": "npm run pre-commit:install",
+    "setup:ci": "npm run setup",
     "lint": "npm run prettier:check && npm run dockerlint",
     "format": "npm run prettier:write",
     "postformat": "npm run lint",
