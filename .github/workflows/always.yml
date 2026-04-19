@@ -175,6 +175,10 @@ jobs:
   # TODO? merge into verify?
   codeQL__matrix:
     needs: verify
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
     strategy:
       fail-fast: false
       matrix:
