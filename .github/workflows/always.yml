@@ -172,32 +172,15 @@ jobs:
 
   #
   codeQL__matrix:
+    name: codeQL
     needs: verify
     permissions:
       actions: read
       contents: read
       security-events: write
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          # NOTE: Running this on verify instead
-          # - language: python
-          #   dist: true
-
-          - language: actions
-            dist: false
-
-          # Do we need to?
-          # We only have package.json and node_modules/
-          # - language: javascript
-          #   dist: false
-
     uses: percebus/github-actions-compliance/.github/workflows/codeql_analyze.yml@main
     with:
-      language: ${{ matrix.language }}
-      download-artifact_name: ${{ matrix.dist && 'dist' || '' }}
-      # download-artifact_path: dist
+      language: action
     secrets:
       SSH_KEY_PRIVATE: ${{ secrets.SSH_KEY_PRIVATE }}
 
