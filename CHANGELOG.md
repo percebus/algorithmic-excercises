@@ -2,6 +2,20 @@
 
 <!-- version list -->
 
+## v3.11.4 (2026-07-19)
+
+### Bug Fixes
+
+- **`main.yml`**: CodeQL
+  ([`cc48b57`](https://github.com/percebus/algorithmic-excercises/commit/cc48b57f10742dedd3159758ed69a9df6aa6ab4f))
+
+### Refactoring
+
+- **`workflows/always`**: Move `codeql`
+  ([#104](https://github.com/percebus/algorithmic-excercises/pull/104),
+  [`d40e752`](https://github.com/percebus/algorithmic-excercises/commit/d40e752f5d852fc2e3d5dbf139246705321dd0a2))
+
+
 ## v3.11.3 (2026-04-18)
 
 ### Bug Fixes
