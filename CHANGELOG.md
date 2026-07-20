@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v3.11.5 (2026-07-20)
+
+### Bug Fixes
+
+- **`workflows/always.yml`**: `coverage`
+  ([`3941cec`](https://github.com/percebus/algorithmic-excercises/commit/3941cec68672d09276fb8b6398f2159a6c0a2490))
+
+
 ## v3.11.4 (2026-07-19)
 
 ### Bug Fixes
