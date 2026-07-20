@@ -172,7 +172,7 @@ jobs:
         run: pypyr ci
 
   #
-  codeQL__matrix:
+  codeQL_actions:
     name: codeQL
     needs: verify
     permissions:
@@ -181,7 +181,7 @@ jobs:
       security-events: write
     uses: percebus/github-actions-compliance/.github/workflows/codeql_analyze.yml@main
     with:
-      language: action
+      language: actions
     secrets:
       SSH_KEY_PRIVATE: ${{ secrets.SSH_KEY_PRIVATE }}
 
