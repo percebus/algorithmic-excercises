@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v3.11.6 (2026-07-20)
+
+### Bug Fixes
+
+- **`workflows/always.yml`**: `codeQL` `actions`
+  ([`9b13653`](https://github.com/percebus/algorithmic-excercises/commit/9b13653932cdcb5eb444d0adbd8fb9bbdd535c3f))
+
+
 ## v3.11.5 (2026-07-20)
 
 ### Bug Fixes
